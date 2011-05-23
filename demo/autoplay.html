@@ -1,0 +1,84 @@
+{% extends "doc.html" %}
+{% block page_title%}Autoplay Demo{% endblock %}
+{% block page_description%}Embedly API | Autoplay Demo{%endblock%}
+
+{% block extra_head %}
+    <style>
+      .result {margin:10px 0; width:600px}
+      .thumb {float: left; margin: 0 10px 10px 0; width: 120px;}
+      .thumb img { width:120px;}
+      .thumb a {position:relative; width:120px; display:block;}
+      .thumb canvas {bottom: 7px; position: absolute;  right:5px;}
+      .info {}
+      .info a{ color: #222222; display: block; font-weight: bold; margin: 0 0 5px 2px; text-decoration: none;}
+      input[type=text] {width: 400px;}
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="docs">
+    <div class="apibody">
+    <h1>Autoplay Demo</h1>
+    <p>Autoplay tells the video to start playing immediately after it is loaded. Input a link to a video and hit embed.
+    It will generate a thumbnail and description for the video and will autoplay when the user clicks play.</p>
+    <form id="autoplay" method="get" action=".">
+      <input type="text" value="http://vimeo.com/18150336" />
+      <input type="submit" value="Embed">
+    </form>
+    <div id="results">
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+     <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
+    <script type="text/javascript">
+      function add_play_button(){
+        //Uses canvas to draw a play button. Could be an image.
+        var canvas = document.getElementById('play');
+        if (canvas.getContext){
+          var ctx = canvas.getContext('2d');
+          ctx.beginPath();
+          ctx.moveTo(0,0);
+          ctx.lineTo(0,30);
+          ctx.lineTo(20,15);
+          ctx.fillStyle = "#ddd"
+          ctx.fill();
+        }
+      }
+      
+      $(document).ready(function() {
+      $('#autoplay').submit(function() {
+        try {
+        $.embedly($("input:first").val(),
+           {maxWidth: 600,
+            maxHeight: 400,
+            autoplay : 'true',
+            success: function(oembed, dict){
+              var html = '<div class="result"><div class="thumb"><a href="#"><img src="';
+              html += oembed.thumbnail_url;
+              html += '"/><canvas id="play" width="20" height="30"></canvas></a></div><div class="info"><a href="#">';
+              html += oembed.title;
+              html += '</a><p>'
+              html += oembed.description;
+              html += '</p></div>'
+              $('#results').append(html);
+              add_play_button();
+              $('.result:last').data({'code' : oembed.code});
+           }
+           });
+        } catch(e){
+          console.log(e);
+        }
+        return false
+      });
+
+      $('.result a').live('click', function(){
+        var result = $(this).parents('.result')
+        result.html(result.data('code'));
+        return false;
+      });
+     });
+    </script>
+{% endblock %}
