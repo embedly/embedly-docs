@@ -11,6 +11,9 @@ Embedly Documentation Contents
     endpoints/index
     tutorials/index
     demo/index
+    libraries/index
 
+    tools
     mobile
     faq
+    pricing

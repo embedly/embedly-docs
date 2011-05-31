@@ -254,3 +254,11 @@ epub_copyright = u'2011, Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
+
+rst_prolog = """
+.. |num_providers| replace:: 216
+.. |more| raw:: html
+
+   <span class="more"></span>
+
+"""

@@ -6,7 +6,6 @@ everything we know about a URL out so you can use as you like. If you don't
 need this much information we suggest using :doc:`../1/oembed` or
 :doc:`../1/preview`.
 
-
 Example Calls
 
 ``http://pro.embed.ly/2/objectify?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
@@ -22,74 +21,9 @@ handle on what this API returns. Try these examples:
 * `Tumblr <http://explore.embed.ly/objectify/?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
 * `YouTube <http://explore.embed.ly/objectify/?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
 
-Query Parameters
+Query Arguments
 ----------------
-
-``key``
-    The API key for your registered account.{% if key != ':key' %} Your key is: **{{key}}** {% endif %}
-    
-``url``
-    The URL to retrieve embedding information for.
-
-``urls``
-    A comma separated list of urls for Embedly to process. URLs must be URL
-    encoded.  Commas separating URLS must NOT be URL encoded.  It accepts a
-    maximum of 20 urls at a time. Embedly processes these urls in parallel, so
-    it's much quicker to use ``urls`` for batched processing.
-
-``maxwidth`` (optional)
-    The maximum width of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum width.
-   
-``maxheight`` (optional)
-    The maximum height of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum height.
-     
-``format`` (optional)
-    The response format. Accepted value: ``(json)``
- 
-``callback`` (optional)
-    Returns ``(jsonp)`` response format. The callback is the name of the 
-    javascript function to execute.
-
-``wmode`` (optional)
-    Will append the wmode value to the flash object. Possible values include 
-    'window', 'opaque' and 'transparent'. For more information view Adobe's
-    `documentation <http://kb2.adobe.com/cps/127/tn_12701.html>`_.
-
-``allowscripts`` (optional)
-    By default Embedly does not return script embeds for ``jsonp`` requests.
-    They just don't work and cause lots of issues. In some cases you may need
-    the script tag for saving and displaying later. To tell Embedly to send the
-    script embeds over ``jsonp`` add ``allowscripts=true``. Use with care and
-    this option is only valid when a callback is supplied, otherwise it is
-    ignored.
-
-``nostyle`` (optional)
-    There are a number of embeds that Embedly has created including Amazon.com,
-    Foursquare and Formspring. These all have `<style>` elements and inline
-    styles associated with them that make the embeds look good. If you wish to
-    style these embeds yourself you can add ``nostyle=true`` and Embedly will
-    remove the style elements. Note this is global change, so you must account
-    for all embeds with styles or only use a subset.
-
-``autoplay`` (optional)
-    Will tell the video/rich media to automatically play when the media is
-    loaded. Accepted values: ``(true, false)`` Default: ``false``
-
-``videosrc`` (optional)
-    If ``true`` Embedly will use the ``video_src`` meta or Open Graph tag to
-    create a video object to embed. While Embedly uses the ``video_src`` tag to
-    create embeds for supported providers it can create unexpected behavior
-    when it's used in a broader context. Videos will autoplay or my contain
-    malicious content. Only enable this feature if you know what you are doing.
-    Accepted values: ``(true, false)`` Default: ``false``
-
-``width`` (optional)
-    Will scale embeds of type `rich` and `video` to the exact width that a
-    developers specifies is pixels. Embeds smaller than this width will be
-    scaled up and embeds larger than this width will be scaled down. Note that
-    using this may cause distortion when scaling up embeds.
+As specified in the :doc:`Query Arguments documentation<../arguments>`
 
 Example Response::
 
@@ -212,7 +146,7 @@ Response
     redirects.
 
 ``type``
-    See :ref:`objectify-types` 
+    See :ref:`response-types` 
 
 ``safe``
     See :ref:`safebrowse`.
@@ -328,52 +262,6 @@ Response
 ``embeds``
     A list of embeds that Embedly found in the document.
 
-
-
-.. _objectify-types:
-
-Objectify Types
----------------
-Objectify types are different then oEmbed types. They closely follow the
-mimetype for a given resource. They are as follows.
-
-``html``
-    The most common response. The resource is an ``html`` document.
-
-``test``
-    The response is a plain ``text`` document.
-
-``image``
-    This is a static viewable ``image``.
-
-``video``
-    This is a playable ``video``.
-
-``audio``
-    This is a playable ``audio``.
-
-``rss``
-    The resource is an ``rss`` feed.
-
-``xml``
-    The resource is an ``xml`` document.
-
-``atom``
-    The resource is an ``atom`` feed.
-
-``json``
-    The resource is a ``json`` document.
-
-``ppt``
-    The resource is a PowerPoint document.
-
-``link``
-    This is a general embed that may not contain HTML.
-
-``error``
-    When accessing multiple urls at once Embedly will not throw HTTP errors as
-    normal. Instead it will return an 'error' type response that includes the 
-    'url', 'error_message' and 'error_code'.
 
 Objectify Examples
 ------------------

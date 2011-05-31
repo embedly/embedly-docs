@@ -15,4 +15,5 @@ needed on github. Each tutorial is broken out by programming language.
     :maxdepth: 2
 
     simple
+    start
     reddit
