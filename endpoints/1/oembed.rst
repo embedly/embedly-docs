@@ -23,74 +23,9 @@ handle on what this API returns. Try these examples:
 * `SoundCloud <http://explore.embed.ly/oembed/?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
 * `YouTube (bitly short link) <http://explore.embed.ly/oembed/?url=http://bit.ly/cXVifg>`_
 
-Query Parameters
+Query Arguments
 ----------------
-
-``key``
-    The API key for your registered account.{% if key != ':key' %} Your key is: **{{key}}** {% endif %}
-
-``url``
-    The URL to retrieve embedding information for.
-
-``urls``
-    A comma separated list of urls for Embedly to process. URLs must be URL
-    encoded.  Commas separating URLS must NOT be URL encoded.  It accepts a
-    maximum of 20 urls at a time. Embedly processes these urls in parallel, so
-    it's much quicker to use ``urls`` for batched processing.
-
-``maxwidth`` (optional)
-    The maximum width of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum width.
-   
-``maxheight`` (optional)
-    The maximum height of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum height.
-     
-``format`` (optional)
-    The response format. Accepted values: ``(xml, json)``
- 
-``callback`` (optional)
-    Returns ``(jsonp)`` response format. The callback is the name of the 
-    javascript function to execute.
-
-``wmode`` (optional)
-    Will append the wmode value to the flash object. Possible values include 
-    'window', 'opaque' and 'transparent'. For more information view Adobe's
-    `documentation <http://kb2.adobe.com/cps/127/tn_12701.html>`_.
-
-``allowscripts`` (optional)
-    By default Embedly does not return script embeds for ``jsonp`` requests.
-    They just don't work and cause lots of issues. In some cases you may need
-    the script tag for saving and displaying later. To tell Embedly to send the
-    script embeds over ``jsonp`` add ``allowscripts=true``. Use with care and
-    this option is only valid when a callback is supplied, otherwise it is
-    ignored.
-
-``nostyle`` (optional)
-    There are a number of embeds that Embedly has created including Amazon.com,
-    Foursquare and Formspring. These all have `<style>` elements and inline
-    styles associated with them that make the embeds look good. If you wish to
-    style these embeds yourself you can add ``nostyle=true`` and Embedly will
-    remove the style elements. Note this is global change, so you must account
-    for all embeds with styles or only use a subset.
-
-``autoplay`` (optional)
-    Will tell the video/rich media to automatically play when the media is
-    loaded. Accepted values: ``(true, false)`` Default: ``false``
-
-``videosrc`` (optional)
-    If ``true`` Embedly will use the ``video_src`` meta or Open Graph tag to
-    create a video object to embed. While Embedly uses the ``video_src`` tag to
-    create embeds for supported providers it can create unexpected behavior
-    when it's used in a broader context. Videos will autoplay or my contain
-    malicious content. Only enable this feature if you know what you are doing.
-    Accepted values: ``(true, false)`` Default: ``false``
-
-``width`` (optional)
-    Will scale embeds of type `rich` and `video` to the exact width that a
-    developers specifies is pixels. Embeds smaller than this width will be
-    scaled up and embeds larger than this width will be scaled down. Note that
-    using this may cause distortion when scaling up embeds.
+As specified in the :doc:`Query Arguments documentation<../arguments>`
 
 oEmbed Types
 ------------
@@ -259,9 +194,9 @@ API Example Calls
 ^^^^^^^^^^^^^^^^^
 
 Vimeo.com video
-    ``http://pro.embed.ly/1/oembed?key={{key}}&url=http://vimeo.com/10179697``
+    ``http://pro.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
 Plixi.com photo
-    ``http://pro.embed.ly/1/oembed?key={{key}}&url=http://plixi.com/p/12870944``
+    ``http://pro.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
     
 JavaScript
 ^^^^^^^^^^
@@ -269,7 +204,7 @@ A short example for using jQuery and Embedly::
 
     // Call API to get a video oEmbed JSON response
     var url = escape('http://vimeo.com/9503416');
-    var api_url = 'http://pro.embed.ly/1/oembed?key={{key}}&url=' + url + '&callback=?';
+    var api_url = 'http://pro.embed.ly/1/oembed?key=:key&url=' + url + '&callback=?';
     //jQuery JSON call
     $.getJSON( api_url, function(json) {
         var html = json.html;
@@ -299,7 +234,7 @@ A short example for using Python and Embedly::
         """
         api_url = 'http://pro.embed.ly/1/oembed?'
     
-        params = {'url': url , 'key': '{{key}}' }
+        params = {'url': url , 'key': ':key' }
     
         for key, value in kwargs.items():
             if key not in ACCEPTED_ARGS:

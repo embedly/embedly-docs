@@ -17,3 +17,4 @@ Embedly Documentation Contents
     mobile
     faq
     pricing
+    explore

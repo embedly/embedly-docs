@@ -270,6 +270,6 @@ Some sample usages of the API.
 API Example Calls
 ^^^^^^^^^^^^^^^^^
 Foursquare Venue
-    `http://pro.embed.ly/2/objectify?key={{key}}&url=http://foursquare.com/venue/49547`
+    `http://pro.embed.ly/2/objectify?key=:key&url=http://foursquare.com/venue/49547`
 Posterous blog post
-    `http://pro.embed.ly/2/objectify?key={{key}}&url=http://sachin.posterous.com/writing-rails-code-makes-me-miss-writing-in-o`
+    `http://pro.embed.ly/2/objectify?key=:key&url=http://sachin.posterous.com/writing-rails-code-makes-me-miss-writing-in-o`
