@@ -1,34 +1,79 @@
 .. _arguments:
 
-Request Arguments
-=================
-An in depth view of all the request arguments.
+Query Arguments
+===============
+An in depth view of all the query arguments.
 
 ``key``
-    The API key for your registered account.
+    The :doc:`API key <auth>` for your registered account.
 
 ``url``
-    The URL to retrieve embedding information for.
+    The URL to retrieve embedding information for. This URL must be escaped to
+    insure that Embedly retrieves the correct link. For example this Embedly
+    URL::
+
+        http://embed.ly/?embedly,is_awesome#docs
+
+    Should be sent as::
+
+        http%3A//embed.ly/%3Fembedly%2Cis_awesome%23docs
+
+    In Javascript this is as easy as using the `escape
+    <http://mzl.la/moz_escape>`_ function.
 
 ``urls``
-    A comma separated list of urls for Embedly to process. URLs must be URL
-    encoded.  Commas separating URLS must NOT be URL encoded.  It accepts a
-    maximum of 20 urls at a time. Embedly processes these urls in parallel, so
-    it's much quicker to use ``urls`` for batched processing.
+    A comma separated list of urls for Embedly to process. Each URL must be
+    escaped, but Commas separating URLS must NOT be URL encoded. For example
+    the request for::
+
+        var urls = ['http://google.com', 'http://apple.com', 'http://embed.ly']
+
+    would be::
+
+        http%3A//google.com,http%3A//apple.com,http%3A//embed.ly
+
+    We can obtain this path in Javascript by using::
+
+         urls.map(escape).join(',')
+
+    ``urls`` accepts a maximum of 20 urls at a time. Embedly processes these
+    urls in parallel, so it's much quicker to use ``urls`` for batched
+    processing.
 
 ``maxwidth`` (optional)
-    The maximum width of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum width.
-   
+    The maximum width of the embed in pixels. ``maxwidth`` is used for scaling
+    down embeds so they fit into a certain width. If the container for an embed
+    is ``500px`` you should pass ``maxwidth=500`` in the query parameters. For
+    example if you don't set a ``maxwidth`` for the a Vimeo `video`_ Embedly
+    will return the following html::
+    
+        <iframe src="http://player.vimeo.com/video/18150336" width="1280"
+         height="720" frameborder="0"></iframe>
+    
+    This width may cause the embed to overflow the containing ``div``. If we
+    `pass`_ ``maxwidth=500`` the html will be::
+    
+        <iframe src="http://player.vimeo.com/video/18150336" width="500"
+        height="281" frameborder="0"></iframe>
+
+    It is highly recommended that developers pass a ``maxwidth`` to Embedly.
+
 ``maxheight`` (optional)
-    The maximum height of the embed in pixels.
-    Note: we will attempt to scale the embed to fit within the maximum height.
-     
+    The maximum height of the embed in pixels. Functions the same as
+    ``maxwidth``, but for the height of the embed instead. It's noteworthy that
+    ``maxwidth`` is preferred over ``maxheight``.
+
+``width`` (optional)
+    Will scale embeds of type ``rich`` and ``video`` to the exact width that a
+    developers specifies is pixels. Embeds smaller than this width will be
+    scaled up and embeds larger than this width will be scaled down. Note that
+    using this may cause distortion when scaling up embeds.
+
 ``format`` (optional)
     The response format. Accepted values: ``(xml, json)``
  
 ``callback`` (optional)
-    Returns ``(jsonp)`` response format. The callback is the name of the 
+    Returns a ``(jsonp)`` response format. The callback is the name of the 
     javascript function to execute.
 
 ``wmode`` (optional)
@@ -46,7 +91,7 @@ An in depth view of all the request arguments.
 
 ``nostyle`` (optional)
     There are a number of embeds that Embedly has created including Amazon.com,
-    Foursquare and Formspring. These all have `<style>` elements and inline
+    Foursquare and Formspring. These all have ``<style>`` elements and inline
     styles associated with them that make the embeds look good. If you wish to
     style these embeds yourself you can add ``nostyle=true`` and Embedly will
     remove the style elements. Note this is global change, so you must account
@@ -64,16 +109,11 @@ An in depth view of all the request arguments.
     malicious content. Only enable this feature if you know what you are doing.
     Accepted values: ``(true, false)`` Default: ``false``
 
-``width`` (optional)
-    Will scale embeds of type `rich` and `video` to the exact width that a
-    developers specifies is pixels. Embeds smaller than this width will be
-    scaled up and embeds larger than this width will be scaled down. Note that
-    using this may cause distortion when scaling up embeds.
-
 ``words`` (optional)
-    The words parameter has a default value of 50 and works by trying to split
-    the description at the closest sentence to that word count. For example the
-    following lorem ipsum description is made up of 33 words and 5 sentences::
+    The ``words`` parameter has a default value of 50 and works by trying to
+    split the description at the closest sentence to that word count. For
+    example the following lorem ipsum description is made up of 33 words and
+    5 sentences::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
@@ -81,13 +121,13 @@ An in depth view of all the request arguments.
         imperdiet sem.
 
     Now by default Embedly will return all 33 words, but say you want only 20
-    words Embedly would return::
+    words. By passing ``words=20`` Embedly would return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
 
     This is actually only 19 words, but we split at the closest sentence.
-    Alternatively if you want 25 words Embedly will return:
+    Alternatively if you want 25 words Embedly will return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
@@ -98,14 +138,17 @@ An in depth view of all the request arguments.
     experience to your users, but you should plan accordingly for this variance
     in word count.
 
-
 ``chars`` (optional)
-    chars is much simpler than words. Embedly will blindly truncate a
-    description to the number of characters you specify adding '...' at the end
-    when needed. For the above description if we set chars=100 it will return:
+    ``chars`` is much simpler than ``words``. Embedly will blindly truncate a
+    description to the number of characters you specify adding ``...`` at the
+    end when needed. For the above description if we set ``chars=100`` it will
+    return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec ...
 
-    Which is 98 characters due to splitting at the closest word. chars is useful
-    when dealing with a fixed space for displaying descriptions.
+    Which is 98 characters due to splitting at the closest word. ``chars`` is
+    useful when dealing with a fixed space for displaying descriptions.
+
+.. _pass: http://api.embed.ly/1/oembed?maxwidth=500&url=http%3A//vimeo.com/18150336
+.. _video: http://api.embed.ly/1/oembed?url=http%3A//vimeo.com/18150336

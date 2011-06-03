@@ -1,6 +1,5 @@
 Embedly Documentation
 ======================
-
 Embedly is the best way to retrieve meta data associated with a URL. We offer
 a full suite of tools that you can tailor to your needs to make embedding
 simple and easy. These docs will help you understand how to get the most out of
@@ -12,20 +11,20 @@ Embedly provides a few different services levels depending on your usage. While
 the basic usage level is free we do rate limit developers. Please check out our
 :doc:`pricing` page to learn more about our service levels.
 
-Tools
------
-There are a number of tools that Embedly and the community have built that
-plugin to existing software. If you are using Wordpress, Drupal or Joomla this
-is the best place to start.
-
-|more| :doc:`Tools <tools>`
-
-Libraries
+Tutorials
 ---------
-Embedly has libraries for jQuery, Python, Ruby, PHP, Node, iOS and Java. Learn
-more and walk through tutorials.
+Are you new to Embedly? Let's walk through a few tutorials on how to use the
+service to fullest.
 
-|more| :doc:`Libraries <libraries/index>`
+|more| :doc:`tutorials/index`
+
+Tools and Libraries
+-------------------
+There are a number of tools and libraries that Embedly and the community have
+built that plugin to existing software and programming languages. This is the
+best place to start developing.
+
+|more| :doc:`Tools and Libraries <libraries/index>`
 
 Endpoints
 ---------
@@ -36,20 +35,6 @@ use cases. We recommend looking over each to see which is best suited for you.
 
 |more| :doc:`Endpoints <endpoints/index>`
 
-Authentication
---------------
-Embedly requires developers to authenticate their requests to Embedly. There
-are two different methods to authenticate requests: key based and oAuth. Read
-more about how to use these methods
-
-|more| :doc:`Authentication<auth>`
-
-Mobile `Beta`
--------------
-We are Beta testing our mobile support for the iOS and Android platforms.
-
-|more| :doc:`mobile`
-
 Explore
 -------
 To better understand the what Embedly offers we built :doc:`Explore <explore>`.
@@ -57,3 +42,7 @@ It allows you to view example responses in both rich and raw view for any URL.
 
 |more| :doc:`explore`
 
+.. toctree::
+    :hidden:
+
+    contents

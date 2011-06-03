@@ -1,30 +1,29 @@
 Mobile Beta Support
 ===================
-
-Embedly is now offering Mobile support in Beta mode. This means you will get all the
-rich previews of Embedly Pro + HTML5 video, audio and document embeds that work on some of
-your favorite mobile devices. Having the Beta tag in place explicitly means that 
-this is a very new feature and is open to community feedback. We will initially be supporting 
-iOS devices and various Android devices.
-
+Embedly is now offering Mobile support in Beta mode. This means you will get
+all the rich previews of Embedly Pro + HTML5 video, audio and document embeds
+that work on some of your favorite mobile devices. Having the Beta tag in place
+explicitly means that this is a very new feature and is open to community
+feedback. We will initially be supporting iOS devices and various Android
+devices.
 
 Endpoints 
 ---------
-All API endpoints will be supported for mobile. View the 
-complete list here :doc:`index`.
+All API endpoints will be supported for mobile. View the complete list here
+:doc:`index`.
 
 Responses 
 ---------
-API responses will be based on the "User-Agent" of your device, i.e.
-We will *not* return Flash for an iOS device.
-
+API responses will be based on the "User-Agent" of your device, i.e. We will
+*not* return Flash for an iOS device.
 
 HTML5 Providers 
 ---------------
-HTML5 has been gaining support among video and rich media providers. We currently
-support 26 providers and are actively working with other media providers to give you
-access. **Note**: If you do not set *maxwidth* or *maxheight* parameters we will default 
-the width and height to 100%. This makes scaling a lot easier for different mobile devices.
+HTML5 has been gaining support among video and rich media providers. We
+currently support 26 providers and are actively working with other media
+providers to give you access. **Note**: If you do not set `maxwidth` or
+`maxheight` parameters we will default the width and height to 100%. This makes
+scaling a lot easier for different mobile devices.
 
 * `YouTube  <http://youtube.com>`_
 * `UStream  <http://ustream.com>`_
@@ -67,8 +66,8 @@ These are the devices that will support video and audio streaming embeds.
  
 Mobile Libraries
 ----------------
-To streamline your mobile development we have created libraries
-to get you started. Here is the complete list:
+To streamline your mobile development we have created libraries to get you
+started. Here is the complete list:
 
 * `iOS <https://github.com/embedly/embedly-ios>`_
 * `Java <https://github.com/embedly/embedly-java>`_

@@ -12,7 +12,7 @@ needed on github. Each tutorial is broken out by programming language.
 
 
 .. toctree::
-    :maxdepth: 2
+    :hidden:
 
     simple
     start

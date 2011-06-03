@@ -6,15 +6,10 @@ Embedly Documentation Contents
 .. toctree::
     :maxdepth: 2
 
-    auth
-    
-    endpoints/index
     tutorials/index
-    demo/index
     libraries/index
-
-    tools
-    mobile
+    endpoints/index
+    explore
+    demo/index
     faq
     pricing
-    explore
