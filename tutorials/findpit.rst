@@ -3,10 +3,10 @@ Findpit
 
 This tutorial was adapted from a `post`_ on Embedly's `blog`_.
 
-Findpit.com allows you to search Twitter for images it's built purely in
+Findpit.com allows you to search Twitter for images built by them purely in
 javascript using the Twitter Search API and the Embedly's oEmbed API. It was
 built a year before Twitter launched their own version of photo search. To get
-started you should have an understand of how the Twitter Search API works and
+started you should have an understanding of how the Twitter Search API works and
 read the Embedly oEmbed API.
 
 The first thing we need to do is actually get the photo links. This is done by
@@ -18,9 +18,9 @@ be::
     "hats twitpic OR yfrog OR flic.kr OR lockerz.com OR twitgoo OR post.ly OR
     tumblr.com OR moby.to OR imgur filter:links"
 
-You will notice that there are only 9 providers, yes we can do more, but
+You will notice that there are only 9 providers, yes, we can do more, but
 Twitter only lets our query be 140 characters long, so we leave out
-Photobucket, Phodriod and a few others with long urls. To actually make the
+Photobucket, Phodriod, and a few others with long urls. To actually make the
 call we use jQuery's $.ajax method::
 
     function searchTwitter(q){
@@ -33,7 +33,7 @@ call we use jQuery's $.ajax method::
       });
     }
 
-Now that we have the results we can filter out the links from the tweets like
+Now that we have the results, we can filter out the links from the tweets like
 so::
 
     var urls = [];
@@ -46,7 +46,7 @@ so::
       }
     });
 
-Once we have those urls we can send them to Embedly all at once to speed up the
+Once we have those urls, we can send them to Embedly all at once to speed up the
 overall response time::
 
     $.embedly(urls, {maxWidth:500}, function(oembed){
@@ -55,8 +55,8 @@ overall response time::
         $("UL").append('<li>'+oembed.code+'</li>');
     });
 
-That's it for the coding, the rest lies in the html. All we need is a simple
-form and bind the submit function to the ``searchTwitter`` function like so::
+That's it for the coding, the rest stands in the html. All we need is a simple
+form and binding the submit function to the ``searchTwitter`` function like so::
 
     <form action="" method="get">
       <input type="text" name="q"/>
@@ -73,7 +73,7 @@ form and bind the submit function to the ``searchTwitter`` function like so::
     </script>
 
 
-When we put that all together we get findpit.com. Here is a simple version::
+When we put that all together, we get findpit.com. Here is a simple version::
 
     <html>
       <head>
@@ -121,10 +121,10 @@ When we put that all together we get findpit.com. Here is a simple version::
     </html>
 
 
-Findpit doesn't do anything amazing, it doesn't remove duplicates, do it's own
-filters, trends or personalization. That's the hard stuff the Twitter
-development community and Twitter itself is working on. So do the hard stuff
-Developers, leave the embedding to Embedly and make your life easier.
+Findpit doesn't do anything amazing, it doesn't: remove duplicates, do its own
+filters, trends, or personalization. That's the hard stuff that the Twitter
+development community and Twitter itself is working on. So, to do the hard
+stuff, developers leave the embedding to Embedly and make your life easier.
 
 Findpit.com has some extra features to make it pretty and you can find the
 source on `github <https://github.com/embedly/findpit>`_.

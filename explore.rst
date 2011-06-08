@@ -1,7 +1,7 @@
 Explore
 =======
 
-To better understand the what Embedly offers we built Explore. It allows you to
+To better understand the what Embedly offers, we built Explore. It allows you to
 view example responses in both rich and raw view for any URL. Here are a few
 examples and we highly recommend referring back to Explore when you are
 building against Embedly.

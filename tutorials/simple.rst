@@ -4,8 +4,8 @@ Tutorial
 ========
 
 This document is meant to walk you through embedding a video into a blog post.
-It is by no means the end all be all of Embedly use cases, but should give you
-a firm understanding of how to use Embedly with jQuery. We have a few other
+Embedly's use cases also have many more uses, but this should give you a firm
+understanding of how to use Embedly with jQuery. We have a few other
 tutorials that we wrote on our blog as well. You can see the full list 
 :ref:`here <tutorial-more>`.
 
@@ -43,7 +43,7 @@ you have the latest version of jQuery loaded. You should include that in the
 
 Load Embedly
 ------------
-After jQuery is loading, we need to load the latest version of Embedly jQuery.
+After jQuery is loaded, we need to load the latest version of Embedly jQuery.
 Embedly jQuery is hosted by us at 
 ``http://scripts.embed.ly/jquery.embedly.min.js``. You can find more
 documentation for this plugin on our `GitHub 
@@ -59,13 +59,13 @@ documentation for this plugin on our `GitHub
 
 Call the Script
 ---------------
-Once the Embedly jQuery plugin is loaded, all you have to do is point embedly
-to the urls you want to embed. In this example I'm setting the scope of embedly
-to the container div (div.content) that holds all of the URLs I have to embed. 
-By setting the scope like this I prevent Embedly from trying to embed URLs 
-outside the main content div. With this div selected Embedly will do a search 
-for all <a> tags inside that div and attempt to replace them with an embed. In 
-this example that would be the youtube link.
+Once the Embedly jQuery plugin is loaded, all you have to do is point to the
+urls you want to embed. In this example I'm setting the scope of Embedly to the
+container div (div.content) that holds all of the URLs I have to embed. By
+setting the scope like this I prevent Embedly from trying to embed URLs 
+outside the main content div. With this div selected it will search for all <a>
+tags inside that div and attempt to replace them with an embed. In this example
+that would be the youtube link.
 ::
 
   <head>
@@ -90,7 +90,7 @@ Advanced Options
 ----------------
 This is all well and good for basic usage, but you may find that you want to
 customize your embeds a little bit more. This is fairly easy to do with some
-optional parameters you can pass in to the Embedly jQuery script. Let's take
+optional parameters you can pass into the Embedly jQuery script. Let's take
 a look at a few of them.
 ::
 
@@ -110,20 +110,21 @@ a look at a few of them.
     </script>
   </head>
 
-By default, embedly will replace the link with the embed. By changing the 
-'method' parameter to "after", we're telling Embedly to insert the embed after
-the link. This way the URL is still visible and the embed shows up as well. 
-Additionally, I set the wmode to "transparent." This is important for flash
-video in case you have any fancy JavaScript popups.  I also set the MaxWidth to
-450 pixels.  This will shrink any larger embeds to fit within our column but 
-leave any smaller ones their original size. This is particularly important for
-photo embeds. Try popping a flickr url in your page. Those photos are huge, and
-generally look strange unless you wrangle them in to a manageable size.
+By default, Embedly will replace the link with the embed. By changing the 
+``method`` parameter to ``after`` we're telling Embedly to insert the embed
+after the link. This way the URL is still visible and the embed shows up as
+well. Additionally, I set the wmode to "transparent." This is important for
+flash video in case you have any fancy JavaScript popups.  I also set the
+MaxWidth to 450 pixels.  This will shrink any larger embeds to fit within our
+column but leave any smaller ones at their original size. This is particularly
+important for photo embeds. Try popping a flickr url in your page. Those photos
+are huge, and generally look strange unless you tweak them in to a manageable
+size.
 
 Final Source
 ------------
-That's it. here's the final sample in case you want to see it running. Copy this
-code into an HTML file and pop it up in your browser.
+That is it; here's the final sample in case you want to see it running. Copy
+this code into an HTML file and pop it up in your browser.
 
 ::
 

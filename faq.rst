@@ -2,8 +2,8 @@
 
 Frequently Asked Questions
 ==========================
-A list of questions we get a lot. If none of these answer your question you can
-ask us at `<http://support.embed.ly>`_
+Great minds think alike...if none of these answer your question(s)
+you can ask us at `<http://support.embed.ly>`_
 
 General
 -------
@@ -13,15 +13,15 @@ What is Embedly?
 It is a solution that automatically converts posted links into 
 embedded media on the fly. With its set of APIs, tools and libraries 
 you are able to create unique visual experiences by embedding videos,
-images, rich media, RSS entries and article previews.
+images, rich media, RSS entries, and article previews.
 
 Why Embedly?
 ^^^^^^^^^^^^
-The simple answer is that Embedly is the easiest way to embed content. In less
-then 10 minutes you can embed content from hundreds of providers and generate
-rich previews for any URL on the web through one API.
+Conduciveness. Embedly is the easiest way to embed content. In less then 10
+minutes you can embed content from hundreds of providers and generate rich
+previews for any URL on the web through one API.
 
-Simplicity is the key benefit of Embedly Pro. Here is a quote from one of our
+Simplicity is the key benefit of Embedly. Here is a quote from one of our
 users.
 
   If we weren't using Embedly we'd have had to spend probably around a week of 
@@ -34,35 +34,11 @@ users.
 
 We take care of all the logic for retrieving information about URLs, traversing
 html, making API calls to hundreds of providers, processing RSS feeds, checking
-the URLs against malware lists and validating all the information.
+the URLs against malware lists, and validating all the information.
 
-Don't spend weeks or months building a complex system then hours every week
+Don't spend weeks or months building a complex system, then hours every week
 maintaining it. Let Embedly handle the content while you focus on making your
 site or app great!
-
-
-What's the difference between API and PRO?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-`api.embed.ly <http://api.embed.ly>`_ allows you to embed content from hundreds
-of services, and is provided by Embedly as a free service. It is, however,
-restrictive in nature. Only providers listed in our `official api.embed.ly
-provider list <http://api.embed.ly>`_ will be resolved.  URLs must be validated
-against the `Service API <http://api.embed.ly/docs/service>`_ before being sent to
-any of the other APIs.
-
-`pro.embed.ly </>`_ is a paid service that allows you to
-embed any URL. It provides the following features:
-
-* Html Previews
-* RSS entries
-* Analytics
-* Safe Browse
-* HTTPS
-* Support
-* Unlimited Scale
-
-Pro gives you all the providers that API does, but with a number of features
-that makes it a complete embedding endpoint.
 
 Am I paying for content?
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,23 +47,23 @@ processing engine.
 
 How fast is Embedly?
 ^^^^^^^^^^^^^^^^^^^^
-Fast. Making an http request is inherently slow, so we can only be as fast as
-the URL we are resolving. However, Embedly Pro uses a number of tools to make
-this process as fast as possible.
+Making an http request is inherently slow, so we can only be as fast as
+the URL we are resolving. However, Embedly uses a number of tools to make this
+process as expedient as possible.
 
-Caching. Take advantage of being a part of the Embedly network. The first time
+Caching - Take advantage of being a part of the Embedly network. The first time
 we see a URL we will resolve the URL and put it into cache. Subsequent
 requests are served from cache. We invalidate requests daily, if not sooner
 depending on the http response code.
 
-Parallel Processing. Once we have resolved the initial URL we process the API
-calls, image parsing and malware detection in parallel. This greatly reduces
+Parallel Processing - Once we have resolved the initial URL we process the API
+calls, image parsing, and malware detection in parallel. This greatly reduces
 the processing time.
 
-Batch Processing. Send up to 20 URLs at a time to Embedly Pro. We will process
+Batch Processing - Send up to 20 URLs at a time to Embedly. We will process
 them all in parallel greatly improving performance.
 
-Where can I find a demo of `pro.embed.ly </>`_ in action?
+Where can I find a demo of `/product/customers`_ in action?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you are using new Twitter, the `Parrotfish plugin <http://labs.embed.ly>`_
 was built using the :doc:`endpoints/1/preview`.
@@ -113,7 +89,7 @@ can do about it. Here are some steps to follow:
   time or a timeout could have happened. You can attempt to fix a URL by 
   forcing Embedly to reevaluate the page. To do this just add `force=true` 
   to the query parameters of your call.
-* Nothing works help! If none of those things work, please submit a ticket and
+* Nothing works...help! If none of those things work, please submit a ticket and
   we will have a look. You can either file a ticket through your Pro dashboard
   or send an email to support@embed.ly.
 
@@ -129,9 +105,9 @@ do the leg work of adding it.
 
 .. NOTE::
   It's much easier for us to add providers if they have an `oembed
-  <http://oembed.com>`_ endpoint or use Facebook meta tags. Not all video or
-  image providers can be added because it's impossible for us to reverse
-  engineer the URL scheme.
+  <http://oembed.com>`_ endpoint or use Facebook meta tags. Not all videos or
+  image providers can be added because it's impossible for us to reverse the
+  engineer's URL scheme.
 
 Where can I find example code for calling the Embedly API?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

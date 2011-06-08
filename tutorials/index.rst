@@ -1,9 +1,9 @@
 Tutorials
 =========
-No doubt that the best way to learn a tool is though tutorials. We created a
-few to help you understand Embedly's Strengths. You can find all the code
-needed on `github <http://github.com/embed;y>`_. Each tutorial is broken out by
-programming language.
+The best way to learn a tool is though tutorials; we wrote those words for a
+reason. They were created to help you understand Embedly's strengths. You can
+find all the codes needed on `github <http://github.com/embed;y>`_. Each
+tutorial is broken down by programming language.
 
 * Getting Started
 
