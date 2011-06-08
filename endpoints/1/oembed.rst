@@ -8,20 +8,20 @@ Embedly's oEmbed API is a single endpoint that allows you to embed content from
 
 Example Calls:
 
-``http://pro.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
-``http://pro.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
 Response Explorer
 -----------------
-`explore.embed.ly <http://explore.embed.ly>`_ can be used to get a better
-handle on what this API returns. Try these examples:
+:doc:`Embedly Explore <../../explore>` can be used to get a better handle on
+what this API returns. Try these examples:
 
-* `YFrog <http://explore.embed.ly/oembed?url=http://yfrog.com/ng41306327j>`_
-* `Twitter <http://explore.embed.ly/oembed/?url=http://twitter.com/embedly/status/29481593334>`_
-* `Embedly blog <http://explore.embed.ly/oembed/?url=http://blog.embed.ly/31814817>`_
-* `SoundCloud <http://explore.embed.ly/oembed/?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
-* `YouTube (bitly short link) <http://explore.embed.ly/oembed/?url=http://bit.ly/cXVifg>`_
+* `YFrog <http://embed.ly/docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
+* `Twitter <http://embed.ly/docs/explore/oembed/?url=http://twitter.com/embedly/status/29481593334>`_
+* `Embedly blog <http://embed.ly/docs/explore/oembed/?url=http://blog.embed.ly/31814817>`_
+* `SoundCloud <http://embed.ly/docs/explore/oembed/?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
+* `YouTube (bitly short link) <http://embed.ly/docs/explore/oembed/?url=http://bit.ly/cXVifg>`_
 
 Query Arguments
 ----------------
@@ -193,10 +193,13 @@ Some sample usages of the API.
 API Example Calls
 ^^^^^^^^^^^^^^^^^
 
-Vimeo.com video
-    ``http://pro.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
-Plixi.com photo
-    ``http://pro.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
+Vimeo.com video::
+
+    ``http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
+
+Plixi.com photo::
+
+    ``http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
     
 JavaScript
 ^^^^^^^^^^
@@ -204,7 +207,7 @@ A short example for using jQuery and Embedly::
 
     // Call API to get a video oEmbed JSON response
     var url = escape('http://vimeo.com/9503416');
-    var api_url = 'http://pro.embed.ly/1/oembed?key=:key&url=' + url + '&callback=?';
+    var api_url = 'http://api.embed.ly/1/oembed?key=:key&url=' + url + '&callback=?';
     //jQuery JSON call
     $.getJSON( api_url, function(json) {
         var html = json.html;
@@ -232,7 +235,7 @@ A short example for using Python and Embedly::
         """
         Example Embedly oEmbed Function
         """
-        api_url = 'http://pro.embed.ly/1/oembed?'
+        api_url = 'http://api.embed.ly/1/oembed?'
     
         params = {'url': url , 'key': ':key' }
     

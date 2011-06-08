@@ -8,18 +8,18 @@ accurate portrayal of the content.
 
 Example Calls
 
-``http://pro.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
-``http://pro.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
 Response Explorer
 -----------------
-`explore.embed.ly <http://explore.embed.ly>`_ can be used to get a better
-handle on what this API returns. Try these examples:
+:doc:`Embedly Explore <../../explore>` can be used to get a better handle on
+what this API returns. Try these examples:
 
-* `Techcrunch Article <http://explore.embed.ly/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
-* `Deadspin Post <http://explore.embed.ly/preview/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
-* `Embedly blog <http://explore.embed.ly/preview/?url=http://blog.embed.ly/31814817>`_
+* `Techcrunch Article <http://embed.ly/docs/explore/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
+* `Deadspin Post <http://embed.ly/docs/explore/preview/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
+* `Embedly blog <http://embed.ly/docs/explore/preview/?url=http://blog.embed.ly/31814817>`_
 
 Query Arguments
 ----------------
@@ -227,9 +227,12 @@ Some sample usages of the API.
     
 API Example Calls
 ^^^^^^^^^^^^^^^^^
-Article w/ images
-    `http://pro.embed.ly/1/preview?key={{key}}&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1`
-Article w/ video and images
-    `http://pro.embed.ly/1/preview?key={{key}}&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/`    
+Article w/ images::
+
+    `http://api.embed.ly/1/preview?key=:key&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1`
+
+Article w/ video and images::
+
+    `http://api.embed.ly/1/preview?key=:key&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/`    
 
 

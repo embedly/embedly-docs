@@ -8,18 +8,18 @@ need this much information we suggest using :doc:`../1/oembed` or
 
 Example Calls
 
-``http://pro.embed.ly/2/objectify?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/2/objectify?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
-``http://pro.embed.ly/2/objectify?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+``http://api.embed.ly/2/objectify?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
 Response Explorer
 -----------------
-`explore.embed.ly <http://explore.embed.ly>`_ can be used to get a better
-handle on what this API returns. Try these examples:
+:doc:`Embedly Explore <../../explore>` can be used to get a better handle on
+what this API returns. Try these examples:
 
-* `Foursquare <http://explore.embed.ly/objectify/?url=http://foursquare.com/venue/49547>`_
-* `Tumblr <http://explore.embed.ly/objectify/?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
-* `YouTube <http://explore.embed.ly/objectify/?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
+* `Foursquare <http://embed.ly/docs/explore/objectify/?url=http://foursquare.com/venue/49547>`_
+* `Tumblr <http://embed.ly/docs/explore/objectify/?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
+* `YouTube <http://embed.ly/docs/explore/objectify/?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
 
 Query Arguments
 ----------------
@@ -269,7 +269,10 @@ Some sample usages of the API.
 
 API Example Calls
 ^^^^^^^^^^^^^^^^^
-Foursquare Venue
-    `http://pro.embed.ly/2/objectify?key=:key&url=http://foursquare.com/venue/49547`
-Posterous blog post
-    `http://pro.embed.ly/2/objectify?key=:key&url=http://sachin.posterous.com/writing-rails-code-makes-me-miss-writing-in-o`
+Foursquare Venue::
+
+    `http://api.embed.ly/2/objectify?key=:key&url=http://foursquare.com/venue/49547`
+
+Posterous blog post::
+
+    `http://api.embed.ly/2/objectify?key=:key&url=http://sachin.posterous.com/writing-rails-code-makes-me-miss-writing-in-o`

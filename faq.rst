@@ -63,10 +63,11 @@ the processing time.
 Batch Processing - Send up to 20 URLs at a time to Embedly. We will process
 them all in parallel greatly improving performance.
 
-Where can I find a demo of `/product/customers`_ in action?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where can I find a demo of Embedly in action?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you are using new Twitter, the `Parrotfish plugin <http://labs.embed.ly>`_
-was built using the :doc:`endpoints/1/preview`.
+was built using the :doc:`endpoints/1/preview`. You can also check out what our
+customers have been `building <http://embed.ly/product/customers>`_.
 
 API
 ---
@@ -90,7 +91,7 @@ can do about it. Here are some steps to follow:
   forcing Embedly to reevaluate the page. To do this just add `force=true` 
   to the query parameters of your call.
 * Nothing works...help! If none of those things work, please submit a ticket and
-  we will have a look. You can either file a ticket through your Pro dashboard
+  we will have a look. You can either file a ticket through your app dashboard
   or send an email to support@embed.ly.
 
 Should all photo embeds have a thumbnail?

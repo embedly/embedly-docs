@@ -56,7 +56,7 @@ is an example of using the `python-oauth2
     import oauth2 as oauth
     
     # Set the API endpoint 
-    url = "http://pro.embed.ly/1/preview"
+    url = "http://api.embed.ly/1/preview"
     
     urls = ['http://google.com', 'http://apple.com']
     
