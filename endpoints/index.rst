@@ -10,6 +10,7 @@ Authentication
 Embedly requires developers to authenticate their requests to Embedly. There
 are two different methods to authenticate requests: :ref:`key based 
 <key_based>` and :ref:`oAuth <oauth>`. Read more about how to use these methods
+below.
 
 |more| :doc:`Authentication<auth>`
 
@@ -17,7 +18,7 @@ oEmbed
 ------
 The oEmbed endpoint follows the `oEmbed Spec <http://oembed.com>`_ and is the
 easiest endpoint to integrate into any site. It returns the title, description,
-thumbnail and embed code for any url. If you are automating embedding urls,
+thumbnail, and embed code for any url. If you are automating embedding urls,
 then this endpoint is for you. Embedly already does the work of picking the
 correct information for you and your users.
 
@@ -27,7 +28,7 @@ Preview
 -------
 The preview endpoint was built to allow users to customize embeds. If you are
 building something similar to the Facebook status message update functionality,
-then this endpoint is for you. It returns multiple images, objects and embeds
+then this endpoint is for you. It returns multiple images, objects, and embeds
 to choose from when creating an embed. 
 
 |more| Read the :doc:`1/preview`
@@ -51,7 +52,7 @@ fine tune the service to your needs.
 Response Objects
 ----------------
 There are some common response objects that are passed back in each endpoint.
-We have aggregated these into one documents
+We have aggregated these into one documents.
 
 |more| :doc:`response`
 

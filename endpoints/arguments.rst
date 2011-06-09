@@ -2,14 +2,14 @@
 
 Query Arguments
 ===============
-An in depth view of all the query arguments.
+An in-depth view of all the query arguments:
 
 ``key``
     The :doc:`API key <auth>` for your registered account.
 
 ``url``
-    The URL to retrieve embedding information for. This URL must be escaped to
-    insure that Embedly retrieves the correct link. For example this Embedly
+    The URL is to retrieve embedding information. This URL must be escaped to
+    insure that Embedly retrieves the correct link. For example, this Embedly
     URL::
 
         http://embed.ly/?embedly,is_awesome#docs
@@ -23,7 +23,7 @@ An in depth view of all the query arguments.
 
 ``urls``
     A comma separated list of urls for Embedly to process. Each URL must be
-    escaped, but Commas separating URLS must NOT be URL encoded. For example
+    escaped, but commas separating URLS must NOT be URL encoded. For example,
     the request for::
 
         var urls = ['http://google.com', 'http://apple.com', 'http://embed.ly']
@@ -37,15 +37,15 @@ An in depth view of all the query arguments.
          urls.map(escape).join(',')
 
     ``urls`` accepts a maximum of 20 urls at a time. Embedly processes these
-    urls in parallel, so it's much quicker to use ``urls`` for batched
+    urls in parallel, therefore, it's much quicker to use ``urls`` for batched
     processing.
 
 ``maxwidth`` (optional)
-    The maximum width of the embed in pixels. ``maxwidth`` is used for scaling
-    down embeds so they fit into a certain width. If the container for an embed
-    is ``500px`` you should pass ``maxwidth=500`` in the query parameters. For
-    example if you don't set a ``maxwidth`` for the a Vimeo `video`_ Embedly
-    will return the following html::
+    This is the maximum width of the embed in pixels. ``maxwidth`` is used for
+    scaling down embeds so they fit into a certain width. If the container for
+    an embed is ``500px`` you should pass ``maxwidth=500`` in the query
+    parameters. For example, if you don't set a ``maxwidth`` for the a Vimeo
+    `video`_ Embedly will return the following html::
     
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
          height="720" frameborder="0"></iframe>
@@ -59,18 +59,18 @@ An in depth view of all the query arguments.
     It is highly recommended that developers pass a ``maxwidth`` to Embedly.
 
 ``maxheight`` (optional)
-    The maximum height of the embed in pixels. Functions the same as
+    This is the maximum height of the embed in pixels. Functions the same as
     ``maxwidth``, but for the height of the embed instead. It's noteworthy that
     ``maxwidth`` is preferred over ``maxheight``.
 
 ``width`` (optional)
-    Will scale embeds of type ``rich`` and ``video`` to the exact width that a
-    developers specifies is pixels. Embeds smaller than this width will be
+    Will scale embeds type ``rich`` and ``video`` to the exact width that a
+    developer specifies in pixels. Embeds smaller than this width will be
     scaled up and embeds larger than this width will be scaled down. Note that
     using this may cause distortion when scaling up embeds.
 
 ``format`` (optional)
-    The response format. Accepted values: ``(xml, json)``
+    The response format -- Accepted values: ``(xml, json)``
  
 ``callback`` (optional)
     Returns a ``(jsonp)`` response format. The callback is the name of the 
@@ -78,33 +78,34 @@ An in depth view of all the query arguments.
 
 ``wmode`` (optional)
     Will append the wmode value to the flash object. Possible values include 
-    'window', 'opaque' and 'transparent'. For more information view Adobe's
+    ``window``, ``opaque`` and ``transparent``. For more information view
+    Adobe's
     `documentation <http://kb2.adobe.com/cps/127/tn_12701.html>`_.
 
 ``allowscripts`` (optional)
     By default Embedly does not return script embeds for ``jsonp`` requests.
-    They just don't work and cause lots of issues. In some cases you may need
-    the script tag for saving and displaying later. To tell Embedly to send the
-    script embeds over ``jsonp`` add ``allowscripts=true``. Use with care and
-    this option is only valid when a callback is supplied, otherwise it is
+    They just don't work and cause lots of issues. In some cases, you may need
+    the script tag for saving and displaying later. In order for Embedly to send
+    the script embeds over ``jsonp`` add ``allowscripts=true``. Use with care,
+    and this option is only valid when a callback is supplied, otherwise, it is
     ignored.
 
 ``nostyle`` (optional)
     There are a number of embeds that Embedly has created including Amazon.com,
-    Foursquare and Formspring. These all have ``<style>`` elements and inline
+    Foursquare, and Formspring. These all have ``<style>`` elements and inline
     styles associated with them that make the embeds look good. If you wish to
-    style these embeds yourself you can add ``nostyle=true`` and Embedly will
-    remove the style elements. Note this is global change, so you must account
-    for all embeds with styles or only use a subset.
+    style these embeds yourself, you can add ``nostyle=true`` and Embedly will
+    remove the style elements. Note this is global change, therefore, you must
+    account for all embeds with styles or only use a subset.
 
 ``autoplay`` (optional)
-    Will tell the video/rich media to automatically play when the media is
+    This will tell the video/rich media to automatically play when the media is
     loaded. Accepted values: ``(true, false)`` Default: ``false``
 
 ``videosrc`` (optional)
-    If ``true`` Embedly will use the ``video_src`` meta or Open Graph tag to
+    Either ``true`` Embedly will use the ``video_src`` meta or Open Graph tag to
     create a video object to embed. While Embedly uses the ``video_src`` tag to
-    create embeds for supported providers it can create unexpected behavior
+    create embeds for supported providers, it can create unexpected behavior
     when it's used in a broader context. Videos will autoplay or my contain
     malicious content. Only enable this feature if you know what you are doing.
     Accepted values: ``(true, false)`` Default: ``false``
@@ -112,7 +113,7 @@ An in depth view of all the query arguments.
 ``words`` (optional)
     The ``words`` parameter has a default value of 50 and works by trying to
     split the description at the closest sentence to that word count. For
-    example the following lorem ipsum description is made up of 33 words and
+    example, the following lorem ipsum description is made up of 33 words and
     5 sentences::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -120,14 +121,14 @@ An in depth view of all the query arguments.
         Duis eget mauris lacinia sapien aliquet vulputate a et orci. Sed eu
         imperdiet sem.
 
-    Now by default Embedly will return all 33 words, but say you want only 20
+    Now by default, Embedly will return all 33 words, but say you want only 20
     words. By passing ``words=20`` Embedly would return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
 
     This is actually only 19 words, but we split at the closest sentence.
-    Alternatively if you want 25 words Embedly will return::
+    Alternatively, if you want 25 words Embedly will return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
@@ -141,13 +142,13 @@ An in depth view of all the query arguments.
 ``chars`` (optional)
     ``chars`` is much simpler than ``words``. Embedly will blindly truncate a
     description to the number of characters you specify adding ``...`` at the
-    end when needed. For the above description if we set ``chars=100`` it will
+    end when needed. For the above description, if we set ``chars=100`` it will
     return::
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec ...
 
-    Which is 98 characters due to splitting at the closest word. ``chars`` is
+    This is 98 characters due to splitting at the closest word. ``chars`` is
     useful when dealing with a fixed space for displaying descriptions.
 
 .. _pass: http://api.embed.ly/1/oembed?maxwidth=500&url=http%3A//vimeo.com/18150336

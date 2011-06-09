@@ -14,7 +14,7 @@ Title
 Response Types
 --------------
 Response types are different then oEmbed types. They closely follow the mimetype
-for a given resource. They are as follows.
+for a given resource. They are as follows:
 
 ``html``
     The most common response. The resource is an ``html`` document.
@@ -51,31 +51,31 @@ for a given resource. They are as follows.
 
 ``error``
     When accessing multiple urls at once Embedly will not throw HTTP errors as
-    normal. Instead it will return an 'error' type response that includes the 
-    'url', 'error_message' and 'error_code'.
+    normal. Instead, it will return an ``error`` type response that includes the 
+    ``url``, ``error_message`` and ``error_code``.
 
 .. _safebrowse:
 
 Safe
 ----
-Safe is an attribute that tells you if the url is on a phishing or malware list
-. Embedly uses Google's `Safe Browsing API 
+Safe is an attribute that tells you if the url is on a phishing or malware list.
+Embedly uses Google's `Safe Browsing API 
 <http://code.google.com/apis/safebrowsing/>`_ to obtain a list of malicious
-urls. By using this attribute there are rules that you mush obey that we have
+urls. By using this attribute there are rules that you mush obey, which we have
 agreed to by offering this information. When the `safe` attribute is set as
 `true` you can proceed as normal, but when it's `false` there are a few things
 that need to happen. When a url is deemed unsafe there will be two additional
 attributes to the response:
 
 `safe_type`
-    Will be either `phishing` or `malware`. The `phishing` list is from 
+    Will either be `phishing` or `malware`. The `phishing` list is from 
     `antiphishing.org <http://www.antiphishing.org/>`_ and the malware list is
     from `stopbadware.org <http://www.stopbadware.org/>`_. Please visit these
     sites for more information.
 
 `safe_message`.   
     If you are going to display a message to the user notifying them that the
-    url they are about to click on is malicious you need to use these messages
+    url they are about to click on is malicious, you need to use these messages
     or something slightly modified.
     
     `phishing`::
@@ -101,18 +101,18 @@ attributes to the response:
         >Google</a>
 
 We need to make clear that the page is not known with 100% certainty to be a
-phishing site or a distributor of malware, and that the warnings merely
-identify possible risk. Once a url is flagged as malicious you must respect the
+phishing site or a distributor of malware, and the warnings merely
+identify possible risks. Once a url is flagged as malicious you must respect the
 `cache_age` attribute. When `cache_age` expires you must not show the message
 again until you have reevaluated that url with Embedly. We take care of
-updating the list in the background and making sure that you are in compliance
+updating the list in the background and making sure you are in compliance
 with the Safe Browsing API.
 
 .. _place:
 
 Place
 -----
-The place object gives location data that is associated with the url. An
+The place object gives location data, which is associated with the url. An
 example ``place`` value for a Foursquare venue would be::
 
     {

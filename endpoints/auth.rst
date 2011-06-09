@@ -26,7 +26,7 @@ The ``key`` should be sent over on every request via query parameter like so::
 
   http://api.embed.ly/<version>/<endpoint>?key=:key&<rest of query parameters>
 
-Note that if you are using Embedly server side this is the best way to
+Know if you are using Embedly server side, this is the best way to
 authenticate your requests.
 
 .. _oauth:
@@ -34,19 +34,19 @@ authenticate your requests.
 OAuth
 -----
 Embedly uses 2 legged oAuth to authenticate requests. To get started you need
-to login into to the `App dashboard <http://app.embed.ly>`_ and select 'Use 
-oAuth' in the 'Your API Key' section. This will generate a new ``key`` and
+to login into to the `App dashboard <http://app.embed.ly>`_ and select ``Use 
+oAuth`` in the your API ``key`` section. This will generate a new ``key`` and
 ``secret`` that you will need to generate a signature. We are not going to
-attempt to recreate the OAuth documentation here so please review the
+attempt to recreate the OAuth documentation here, so please review the
 following:
 
 * `Beginners Guide to OAuth <http://hueniverse.com/oauth/>`_
 * `OAuth Documentation <http://oauth.net/documentation/>`_
 * `OAuth Libaries <http://oauth.net/code/>`_
 
-The only difference using Embedly's version of OAuth is that there is no user
-and therefore no Access Token. This simplifies things greatly and every OAuth
-library lets developers make 2 legged requests. Generally all you need to do is
+The only difference using Embedly's version of OAuth is that there is no user,
+therefore, no Access Token. This simplifies things greatly; every OAuth
+library lets developers make 2 legged requests. Generally, all you need to do is
 use an empty string (``""``) for both the Access Key and Secret. The following
 is an example of using the `python-oauth2
 <https://github.com/simplegeo/python-oauth2>`_ library::
