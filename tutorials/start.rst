@@ -1,7 +1,7 @@
 
 Getting Started with Embedly
 ============================
-Let's crawl before we walk and then we'll "run".
+Let's crawl before we walk, and then we'll "run".
 
 What is an Embed?
 -----------------
@@ -66,5 +66,5 @@ rich experience for users.
 .. image:: images/simple_embed.jpg
 
 This is just one example of how one can use Embedly. With over 215 different
-providers and more added weekly, Embedly is the apex for embedding any
+providers and more added weekly; Embedly is the apex for embedding any
 url.

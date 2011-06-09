@@ -159,7 +159,7 @@ Response
 
 ``provider_display``
     For display purposes we ``include provider_display``. It's the subdomain,
-    hostname and public suffix of the provider.
+    hostname, and public suffix of the provider.
 
 ``favicon_url``
     The url of the favicon.

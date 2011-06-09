@@ -6,7 +6,7 @@ This tutorial was adapted from a `post`_ on Embedly's `blog`_.
 Findpit.com allows you to search Twitter for images built by them purely in
 javascript using the Twitter Search API and the Embedly's oEmbed API. It was
 built a year before Twitter launched their own version of photo search. To get
-started you should have an understanding of how the Twitter Search API works and
+started you should have an understanding of how the Twitter Search API works,
 read the Embedly oEmbed API.
 
 The first thing we need to do is actually get the photo links. This is done by
@@ -18,8 +18,8 @@ be::
     "hats twitpic OR yfrog OR flic.kr OR lockerz.com OR twitgoo OR post.ly OR
     tumblr.com OR moby.to OR imgur filter:links"
 
-You will notice that there are only 9 providers, yes, we can do more, but
-Twitter only lets our query be 140 characters long, so we leave out
+You will notice that there are only 9 providers. Yes, we can do more, but
+Twitter only lets our query be 140 characters long. So, we leave out
 Photobucket, Phodriod, and a few others with long urls. To actually make the
 call we use jQuery's $.ajax method::
 
@@ -123,8 +123,8 @@ When we put that all together, we get findpit.com. Here is a simple version::
 
 Findpit doesn't do anything amazing, it doesn't: remove duplicates, do its own
 filters, trends, or personalization. That's the hard stuff that the Twitter
-development community and Twitter itself is working on. So, to do the hard
-stuff, developers leave the embedding to Embedly and make your life easier.
+development community and Twitter itself is working on. Therefore, developers
+leave the embedding to Embedly and make your life easier.
 
 Findpit.com has some extra features to make it pretty and you can find the
 source on `github <https://github.com/embedly/findpit>`_.

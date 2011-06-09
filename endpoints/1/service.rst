@@ -5,7 +5,7 @@ Service API
 The services method allows you to easily get information on all the providers
 that Embedly supports.
 
-Example Calls
+Example Calls:
 
 ``http://api.embed.ly/1/services?callback=:callback``
 
@@ -21,15 +21,16 @@ Query Parameters
     Note: if language not specified, default will be generic oEmbed url scheme.
 
 ``callback`` (optional)
-    Returns ``(jsonp)`` response format. The callback is the name of the javascript function to execute.
+    Returns ``(jsonp)`` response format. The callback is the name of the
+    javascript function to execute.
     
 
 Response
 --------
-List of provider entries.
+List of provider entries:
 
 ``type`` 
-    Type of embed. photo, video, product, audio or rich.
+    Type of embed. photo, video, product, audio, or rich.
 ``regex``
     A list of the regexs for the provider.
 ``name``

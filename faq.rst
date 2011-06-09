@@ -11,7 +11,7 @@ General
 What is Embedly?
 ^^^^^^^^^^^^^^^^
 It is a solution that automatically converts posted links into 
-embedded media on the fly. With its set of APIs, tools and libraries 
+embedded media on the fly. With its set of APIs, tools, and libraries 
 you are able to create unique visual experiences by embedding videos,
 images, rich media, RSS entries, and article previews.
 

@@ -3,7 +3,7 @@
 oEmbed API
 ==========
 Embedly's oEmbed API is a single endpoint that allows you to embed content from
-`any` URL, including short urls. This method follows the `oEmbed 
+`any` URL -- including short urls. This method follows the `oEmbed 
 <http://oembed.com>`_ standard and returns the JSON format by default.
 
 Example Calls:
@@ -37,7 +37,7 @@ oEmbed Types
     This is a playable video.
 
 ``rich``
-    This is rich HTML, which may contain images and videos.
+    This is rich HTML that may contain images and videos.
 
 ``link``
     This is a general embed that may not contain HTML.
@@ -51,14 +51,14 @@ Response
 --------
 
 ``type`` (required)
-    The resource type. Valid values, along with value-specific parameters, are
+    The resource type. Valid values, along with value-specific parameters are
     described below.
 
 ``version`` (required)
     The oEmbed version number. This must be 1.0.
 
 ``title`` (optional)
-    A text title, describing the resource.
+    A text title describing the resource.
 
 ``author_name`` (optional)
     The name of the author/owner of the resource.
@@ -78,8 +78,8 @@ Response
 
 ``thumbnail_url`` (optional)
     A URL to a thumbnail image representing the resource. The thumbnail must 
-    respect any maxwidth and maxheight parameters. If this parameter is present
-    , thumbnail_width and thumbnail_height must also be present.
+    respect any maxwidth and maxheight parameters. If this parameter is present,
+    thumbnail_width and thumbnail_height must also be present.
 
 ``thumbnail_width`` (optional)
     The width of the optional thumbnail. If this parameter is present, 
@@ -93,7 +93,7 @@ Response
     We support and pass back a description for all oEmbed types.
 
  
-The 'photo' type
+The ``photo`` type
 ^^^^^^^^^^^^^^^^^^
 This type is used for representing static photos. The following parameters are
 defined:
@@ -109,7 +109,7 @@ defined:
     The height in pixels of the image specified in the ``url`` parameter.
 
     
-The 'video' type
+The ``video`` type
 ^^^^^^^^^^^^^^^^^^
 This type is used for representing playable videos. The following parameters
 are defined:
@@ -125,14 +125,14 @@ are defined:
 ``height`` (required)
     The height in pixels required to display the HTML.
 
-The 'link' type
+The ``link`` type
 ^^^^^^^^^^^^^^^^^
 Responses of this type allow a provider to return any generic embed data (such
 as title and author_name), without providing either the url or html parameters.
 The consumer may then link to the resource, using the URL specified in the 
 original request.
     
-The 'rich' type
+The ``rich`` type
 ^^^^^^^^^^^^^^^^^
 This type is used for rich HTML content that does not fall under one of the
 other categories. The following parameters are defined:

@@ -20,7 +20,7 @@ service to its capacity.
 
 Tools and Libraries
 -------------------
-There are a number of tools and libraries, which Embedly and the community have
+There are a number of tools and libraries that Embedly and the community have
 built, which plug into existing software and programming languages. This is the
 best place to start developing.
 

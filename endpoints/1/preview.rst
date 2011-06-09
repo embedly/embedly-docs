@@ -1,12 +1,12 @@
 Preview API
 ===========
 
-This endpoint provides a simple yet powerful solution for previewing a link.
+This endpoint provides a simple, yet powerful solution for previewing a link.
 It is designed to allow users to select from a number of different options to
-build an embed, because in the end, the user will have the best insight to an 
+build an embed because in the end, the user will have the best insight to an 
 accurate portrayal of the content.
 
-Example Calls
+Example Calls:
 
 ``http://api.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
 
@@ -88,8 +88,8 @@ Response
     See :ref:`response-types`.
     
 ``cache_age``
-    How long Embedly is going to cache the response for. Generally this is for
-    a day unless some external factor tells us to reevaluate the resource.
+    How long Embedly is going to cache the response for? Generally, this is for
+    a day, unless some external factor tells us to reevaluate the resource.
 
 ``safe``
     See :ref:`safebrowse`.
@@ -101,8 +101,8 @@ Response
     The url of the resource provider.
 
 ``provider_display``
-    For display purposes we ``include provider_display`` it's the subdomain,
-    hostname and public suffix of the provider.
+    For display purposes we ``include provider_display``, it's the subdomain,
+    hostname, and public suffix of the provider.
 
 ``favicon_url``
     The url of the favicon.
@@ -171,7 +171,7 @@ of attributes.
     described below.
 
 
-The 'photo' type
+The ``photo`` type
 ^^^^^^^^^^^^^^^^^^
 This type is used for representing static photos. The following parameters are
 defined:
@@ -187,7 +187,7 @@ defined:
     The height in pixels of the image specified in the ``url`` parameter.
 
 
-The 'video' type
+The ``video`` type
 ^^^^^^^^^^^^^^^^^^
 This type is used for representing playable videos. The following parameters
 are defined:
@@ -204,7 +204,7 @@ are defined:
     The height in pixels required to display the HTML.
 
 
-The 'rich' type
+The ``rich`` type
 ^^^^^^^^^^^^^^^^^
 This type is used for rich HTML content that does not fall under one of the
 other categories. The following parameters are defined:
