@@ -67,7 +67,7 @@ Where can I find a demo of Embedly in action?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you are using new Twitter, the `Parrotfish plugin <http://labs.embed.ly>`_
 was built using the :doc:`endpoints/1/preview`. You can also check out what our
-customers have been `building <http://embed.ly/product/customers>`_.
+customers have been `building <http://embed.ly/customers>`_.
 
 API
 ---
@@ -79,9 +79,8 @@ guys need to fix it." There are a number of things that could have gone wrong
 when we process a URL. Sometimes it's our fault, sometimes there is nothing we
 can do about it. Here are some steps to follow:
 
-* Try the URL through one of our testing pages `try oEmbed </try/oembed>`_ ,
-  `try preview </try/preview>`_ or `try objectify </try/objectify>`_. If it 
-  works there, but not in your code, you might be doing something wrong.
+* Try the URL through our `response explorer <http://explore.embed.ly>`_ .
+  If it works there, but not in your code, you might be doing something wrong.
 * If it's a YouTube video make sure embedding has been enabled for that URL. If
   it's disabled then Embedly can't return a video response.
 * If it's a Facebook URL make sure that the photo is public and you are using
@@ -98,18 +97,6 @@ Should all photo embeds have a thumbnail?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 No, not all photo embeds provide a thumbnail.
 
-How do I get a provider added?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you want us to support a provider that we don't already you can file a
-ticket through your Pro dashboard or send an email to support@embed.ly. We will
-do the leg work of adding it.
-
-.. NOTE::
-  It's much easier for us to add providers if they have an `oembed
-  <http://oembed.com>`_ endpoint or use Facebook meta tags. Not all videos or
-  image providers can be added because it's impossible for us to reverse the
-  engineer's URL scheme.
-
 Where can I find example code for calling the Embedly API?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We have created some example apps using the Embedly API that can be used for
@@ -124,12 +111,6 @@ library documentation is either contained or referenced in the projects README
 file.  If you don't see your language of choice, then feel free to request a
 client library for your language via support@embed.ly.
 
-How can I tell if a URL will be resolved by `api.embed.ly <http://api.embed.ly>`_?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-All `api.embed.ly <http://api.embed.ly>`_ urls should be tested using the
-regexes provided by the `Service API <http://api.embed.ly/docs/service>`_.
-Please refer to the `Service API <http://api.embed.ly/docs/service>`_
-documentation for further instruction.
 
 Should I use the URL parameter, or the urls parameter?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
