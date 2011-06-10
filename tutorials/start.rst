@@ -9,8 +9,8 @@ An embed is any piece of HTML that can live on any page. Images, videos, and
 rich media are all embeds. Embeds have two main qualities that are
 advantageous for any site:
 
-* Users will stay on a page %250 percent longer if an embed is present on the
-  page
+* Users will stay on a page 250 percent longer, if an embed is present on the
+  page.
 * Embeds give users a preview of the link, allowing them to make better choices
   about what sites they visit.
 
@@ -66,5 +66,5 @@ rich experience for users.
 .. image:: http://embed.ly/static/images/simple_embed.jpg
 
 This is just one example of how one can use Embedly. With over 215 different
-providers and more added weekly; Embedly is the apex for embedding any
+providers and more added weekly; Embedly is your one-stop shop for embedding any
 url.
