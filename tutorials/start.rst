@@ -13,7 +13,7 @@ advantageous for any site:
   page.
 * Embeds give users a preview of the link, allowing them to make better choices
   about what sites they visit.
-
+|
 Facebook taught 500+ million users what to expect when they share a link; a
 preview should be generated. Every site should have this functionality and
 Embedly makes that easy.
