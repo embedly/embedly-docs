@@ -8,8 +8,8 @@ Embedly and how the API works. If you are new to Embedly we suggest reading the
 of how Embedly works and its benefits. 
 
 Embedly provides a few different service levels depending on your usage. While
-the basic usage level is free, we do rate-limit developers. Please check out our
-`pricing </pricing>`_ page to learn more about our service levels.
+the basic usage level is free, we do have a monthly limit in place. Please 
+check out our `pricing </pricing>`_ page to learn more about our service levels.
 
 Tutorials
 ---------
