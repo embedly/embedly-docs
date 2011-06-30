@@ -1,5 +1,5 @@
-Embedly Documentation
-======================
+Documentation
+=============
 Embedly is the best way to retrieve meta data associated with a URL. We offer
 a full suite of tools that you can tailor to your needs to make embedding
 simple and easy. These docs will help you understand how to get the most out of
@@ -35,6 +35,12 @@ use cases. We recommend looking over each to see which one is best suited for
 you.
 
 |more| :doc:`Endpoints <endpoints/index>`
+
+Mobile `Beta`
+-------------
+We are Beta testing our mobile support for the iOS and Android platforms.
+
+|more| :doc:`mobile`
 
 Explore
 -------
