@@ -198,10 +198,14 @@ are defined:
     avoid XSS vulnerabilities.
 
 ``width``
-    The width in pixels required to display the HTML.
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
 
 ``height``
-    The height in pixels required to display the HTML.
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
 
 
 The ``rich`` type
@@ -215,11 +219,63 @@ other categories. The following parameters are defined:
     avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.
 
 ``width`` (required)
-    The width in pixels required to display the HTML.
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
 
 ``height`` (required)
-    The height in pixels required to display the HTML.
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
 
+
+Error Codes
+-----------
+
+JSON Requests
+^^^^^^^^^^^^^
+
+400 Bad Request
+  Required "url" parameter is missing.
+    
+  Either "url" or "urls" parameter is reqiured.
+    
+  Invalid URL format.
+  
+  Invalid "maxheight" parameter.
+ 
+  Invalid "maxwidth" parameter.
+
+401 Unauthorized
+  Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
+
+  The provided key does not support this endpoint: <key>, contact: support@embed.ly.
+
+403 Forbidden
+  This service requires an embedly key parameter, contact: support@embed.ly.
+
+404 Not Found
+  URL Not Found, we will log this and determine if usable.
+
+500 Server issues
+   Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.
+
+501 Not Implemented
+   Not implemented for format: acceptable values are ``{json}``.
+
+503 Service Unavailable
+  ``Note``: This happens if our service is down, please contact us immediately: support@embed.ly.
+
+JSONP Requests
+^^^^^^^^^^^^^^
+
+Format
+    ``callbackFunction({"url": "url with error", "error_code": "error code", 
+    "error_message": "error message", "type": "error"})``
+ 
+Error Response
+    ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message": 
+    "HTTP 404: Not Found", "type": "error"})``
 
 Preview Examples
 ----------------

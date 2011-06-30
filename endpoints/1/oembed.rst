@@ -119,11 +119,16 @@ are defined:
     or margins. Consumers may wish to load the HTML in an off-domain iframe to
     avoid XSS vulnerabilities.
     
-``width`` (required)
-    The width in pixels required to display the HTML.
+``width``
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
     
-``height`` (required)
-    The height in pixels required to display the HTML.
+``height``
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
+
 
 The ``link`` type
 ^^^^^^^^^^^^^^^^^
@@ -142,11 +147,16 @@ other categories. The following parameters are defined:
     or margins. Consumers may wish to load the HTML in an off-domain iframe to
     avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.
     
-``width`` (required)
-    The width in pixels required to display the HTML.
+``width``
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
 
-``height`` (required)
-    The height in pixels required to display the HTML.
+``height``
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
+
 
 
 Error Codes
@@ -156,23 +166,35 @@ JSON or XML Requests
 ^^^^^^^^^^^^^^^^^^^^
 
 400 Bad Request
-    Required "url" parameter is missing.
-    Invalid URL format, should be http or https resource.
-    Invalid "maxheight" parameter.
-    Invalid "maxwidth" parameter.
+  Required "url" parameter is missing.
     
+  Either "url" or "urls" parameter is reqiured.
+    
+  Invalid URL format.
+  
+  Invalid "maxheight" parameter.
+ 
+  Invalid "maxwidth" parameter.
+
+401 Unauthorized
+  Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
+
+  The provided key does not support this endpoint: <key>, contact: support@embed.ly.
+
 403 Forbidden
-    Invalid key provided: , contact: support@embed.ly
+  This service requires an embedly key parameter, contact: support@embed.ly.
 
 404 Not Found
-    URL Not Found, we will log this and determine if usable.
+  URL Not Found, we will log this and determine if usable.
 
 500 Server issues
-    Embed.ly is having trouble with this url. Please try again or contact us,
-    support@embed.ly.
+   Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.
 
 501 Not Implemented
-    Not implemented for format: acceptable values are ``{json, xml}``.
+   Not implemented for format: acceptable values are ``{json or xml}``.
+
+503 Service Unavailable
+  ``Note``: This happens if our service is down, please contact us immediately: support@embed.ly.
 
 JSONP Requests
 ^^^^^^^^^^^^^^
