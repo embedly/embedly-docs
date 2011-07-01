@@ -1,5 +1,6 @@
 Endpoints
 =========
+
 Embedly offers 3 different endpoints to choose from: :doc:`oEmbed <1/oembed>`,
 :doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each endpoint
 has a different structure and set of use cases. We recommend looking over each
@@ -55,14 +56,3 @@ There are some common response objects that are passed back in each endpoint.
 We have aggregated these into one documents.
 
 |more| :doc:`response`
-
-.. toctree::
-    :hidden:
-
-    arguments
-    response
-    auth
-    mobile
-
-    1/index
-    2/index

@@ -11,45 +11,10 @@ Embedly provides a few different service levels depending on your usage. While
 the basic usage level is free, we do have a monthly limit in place. Please 
 check out our `pricing </pricing>`_ page to learn more about our service levels.
 
-Tutorials
----------
-Are you new to Embedly? Let's walk through a few tutorials on how to use the
-service to its capacity.
-
-|more| :doc:`tutorials/index`
-
-Tools and Libraries
--------------------
-There are a number of tools and libraries that Embedly and the community have
-built, which plug into existing software and programming languages. This is the
-best place to start developing.
-
-|more| :doc:`Tools and Libraries <libraries/index>`
-
-Endpoints
----------
-Embedly offers 3 different endpoints to choose from: :doc:`oEmbed
-<endpoints/1/oembed>`, :doc:`Preview <endpoints/1/preview>` and :doc:`Objectify
-<endpoints/2/objectify>`. Each endpoint has a different structure and set of
-use cases. We recommend looking over each to see which one is best suited for
-you.
-
-|more| :doc:`Endpoints <endpoints/index>`
-
-Mobile `Beta`
--------------
-We are Beta testing our mobile support for the iOS and Android platforms.
-
-|more| :doc:`mobile`
-
-Explore
--------
-To better understand what Embedly offers, we built :doc:`Explore <explore>`.
-It allows you to view example responses in both rich and raw view for any URL.
-
-|more| :doc:`explore`
-
 .. toctree::
-    :hidden:
+    :maxdepth: 2
 
-    contents
+    tutorials/index
+    libraries/contents
+    endpoints/contents
+    faq

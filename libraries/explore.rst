@@ -11,3 +11,4 @@ building against Embedly.
 * `National Geographic <http://embed.ly/docs/explore/preview/?mode=rich&url=http://video.nationalgeographic.com/video/player/news/culture-places-news/mexico-human-reef-vin.html>`_
 * `Twitter (raw) <http://embed.ly/docs/explore/objectify/?mode=raw&url=http://twitter.com/%23!/papajohns/status/37008575440101376>`_
 * `Image <http://embed.ly/docs/explore/preview/?mode=rich&url=http://lh6.ggpht.com/_e7zYcrT4hWQ/TVfjwun4ytI/AAAAAAAAPWI/tEAemzjGx0I/iphonecard.jpg%3Fimgmax%3D800>`_
+

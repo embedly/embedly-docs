@@ -1,5 +1,5 @@
-Mobile Beta Support
-===================
+Mobile Beta
+===========
 Embedly is now offering Mobile support in Beta mode. This means you will get
 all the rich previews of Embedly + HTML5 video, Flash, audio and document embeds
 that work on some of your favorite mobile devices. Having the Beta tag in place

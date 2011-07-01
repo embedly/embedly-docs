@@ -17,6 +17,6 @@ tutorial is broken down by programming language.
 .. toctree::
     :hidden:
 
-    simple
-    start
+    Getting Started <start>
+    jQuery <simple>
     findpit

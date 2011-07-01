@@ -9,7 +9,6 @@ Embedly Documentation Contents
     tutorials/index
     libraries/index
     endpoints/index
-    explore
     demo/index
     faq
     pricing
