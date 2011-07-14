@@ -1,4 +1,4 @@
-Labraries
+Libraries
 =========
 
 There are a number of libraries that already interface with Embedly. Here

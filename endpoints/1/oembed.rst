@@ -215,13 +215,13 @@ Some sample usages of the API.
 API Example Calls
 ^^^^^^^^^^^^^^^^^
 
-Vimeo.com video::
+Vimeo.com video:
 
-    ``http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
+``http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
 
-Plixi.com photo::
+Plixi.com photo:
 
-    ``http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
+``http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
     
 JavaScript
 ^^^^^^^^^^

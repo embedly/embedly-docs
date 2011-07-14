@@ -283,12 +283,13 @@ Some sample usages of the API.
     
 API Example Calls
 ^^^^^^^^^^^^^^^^^
-Article w/ images::
 
-    `http://api.embed.ly/1/preview?key=:key&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1`
+Article w/ images:
 
-Article w/ video and images::
+``http://api.embed.ly/1/preview?key=:key&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1``
 
-    `http://api.embed.ly/1/preview?key=:key&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/`    
+Article w/ video and images:
+
+``http://api.embed.ly/1/preview?key=:key&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/``    
 
 
