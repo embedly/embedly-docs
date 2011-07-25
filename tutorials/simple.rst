@@ -9,6 +9,9 @@ understanding of how to use Embedly with jQuery. We have a few other
 tutorials that we wrote on our blog as well. You can see the full list 
 :ref:`here <tutorial-more>`.
 
+Make sure you have an API key to begin! You can sign up for a free key at
+`embed.ly/pricing <http://embed.ly/pricing>`_.
+
 
 Introduction
 ------------
@@ -75,7 +78,7 @@ that would be the youtube link.
     <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
     <script type="text/javascript">
       $('document').ready(function(){
-        $('div.content').embedly();
+        $('div.content').embedly({key:':your_embedly_api_key'});
       });
     </script>
   </head>
@@ -104,7 +107,8 @@ a look at a few of them.
         $('div.content').embedly({
           maxWidth: 450,
           wmode: 'transparent',
-          method: 'after'
+          method: 'after',
+          key: ':your_embedly_api_key'
         });
       });
     </script>
@@ -139,7 +143,8 @@ this code into an HTML file and pop it up in your browser.
           $('div.content').embedly({
             maxWidth: 450,
             wmode: 'transparent',
-            method: 'after'
+            method: 'after',
+            key:':your_embedly_api_key'
           });
         });
       </script>
