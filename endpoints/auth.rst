@@ -85,3 +85,23 @@ is an example of using the `python-oauth2
     req.sign_request(signature_method, consumer, token)
     
     response = urllib2.urlopen(req.to_url())
+
+Securing an API Key
+-------------------
+If you are using Embedly client side your key will be visable to anyone that
+looks at the page source or the Javascript. While you can use oAuth to truely
+protect your key, it's just not possible for some implementation of Embedly.
+Instead we offer the ability to restrict the referrers that are allowed to use
+your key. Once you sign up for a key at `embed.ly/pricing
+<http://embed.ly/pricing>`_ you can log into your dashboard.
+
+On the dashboard you will see a box named 'Manage your Referrers'. This is a
+list of all the sites that you allow access to. When you click 'Manage' you
+will be taken to the Client Referrers page where you can edit and add new
+referrers. We use a simple wildcard syntax for adding domains much like how
+oEmbed declares schemas. For example, if you want to allow all traffic from
+localhost:8000 you would enter ``localhost:8000*``. If you wanted to allow only
+traffic from subdomains of localhost.com it would look like
+``*.localhost.com*``. Take special note of the wildcard at the end. That is
+required if you want us to match any and all paths for a domain. Otherwise we
+will only allow traffic from the specified URL.
