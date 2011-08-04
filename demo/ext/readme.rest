@@ -215,4 +215,43 @@ We start off with the following simple form::
         <input type="submit" value="submit"/>
     </form>
 
+And then the base for our Preview obj that we will use to wire up all the
+supporting functions. You can use any of the 20 different object declaration
+patterns in JavaScript, ours just happens to look like this::
+
+    var Preview = (function(){
+      var Preview = {};
+      return Preview;
+    })();
+
+A user will come to your site in hopes of posting a status of some sort. In
+this status may contain a link. There are a few events that we need to listen
+to here in order to create the desired effect: ``paste``, ``blur`` and
+``keyup``.
+
+paste
+    
+    Easily the most common way that users move links around. The event fires
+    after anything is pasted into the object you are listening to. In Ext you
+    can listen to the event like so.
+    
+        Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
+
+blur
+
+    When the the status box loses focus we need to check if the user added
+    anything to it. While ``keyup`` and ``paste`` will catch 95% of the cases
+    this one is nice to have::
+    
+        Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
+
+keyup
+
+    If a user wants to be so bold that they actually type in the URL we want to
+    fetch it as soon as they hit the spacebar. This one is a little more tricky
+    because if they are manually typing a url they may edit it a few times
+    causing repeat calls. While we are not going to worry about that here it's
+    just something to think about.
+    
+        Ext.EventManager.on("id_status", 'blur', Preview.onKeyUp);
 

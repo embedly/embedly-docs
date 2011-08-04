@@ -372,22 +372,27 @@ var Preview = (function(){
       
     },
     // Fetches the Metadata from the Embedly API
-    fetchMetadata: function(e,t){
-      //Grabs the url out of the Form.
-      var url = Ext.fly(t).getValue();
+    fetchMetadata: function(){
+      //Grabs the status out of the Form.
+      var status = Ext.fly('id_status').getValue();
 
-      //ignore the url it's blank.
-      if (url == ''){
+      //ignore the status it's blank.
+      if (status == ''){
         return false;
       }
 
       //Simple regex to make sure the url is valid.
       var urlexp = /^http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
-      if ((urlexp.test(url) ? url : null) == null){
-        alert('Invalid Url: '+ url); // Obviously you can do something cleaner here.
+      var matches = status.match(urlexp);
+
+      //No urls is the status.
+      if (matches === null){
         return false;
       };
+      
+      //Use the first url. An enhancement would be multiple URLs
+      var url = matches[0];
 
       //Tells the loaded to start
       Ext.fly('loading').show();
@@ -395,7 +400,7 @@ var Preview = (function(){
       //sets up the data we are going to use in the request.
       data = {
         url:url, 
-        key:'8ebd3ae0b8ad11e0abda4040d3dc5c07', //Your Key
+        key:'internal', //Your Key
         frame:true, //Load Everything in a frame
         secure:true, //Make sure that frame is secure.
         autoplay:true,
@@ -425,8 +430,15 @@ var Preview = (function(){
       Ext.EventManager.on("id_submit", "click", Preview.submitFeedItem);
       
       //Embedly Functions
+      //Loses focus
       Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
       
+      //onPaste Event
+      Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
+
+      //onKeyUp Event
+      //Ext.EventManager.on("id_status", 'keyup', Preview.fetchMetadata);
+
       //Show and Hide the little x button.
       Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
       Ext.getBody().on('mouseout', function(e,t){Ext.fly(t).select('a.close').hide();}, null, {delegate: 'div.item'});
