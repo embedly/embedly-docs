@@ -12,6 +12,7 @@ h2 {
   margin:1em 0 0.5em;
 }
 div.preview_form {
+  margin:2em;
   div.field {
     position:relative;
   }
@@ -24,7 +25,7 @@ div.preview_form {
   textarea {
     border:1px solid #ddd;
     padding:1em 1em 0;
-    width:592px;
+    width:540px;
     line-height:1.4em;
     cursor:text;
     resize: none;
@@ -41,16 +42,28 @@ div.preview_form {
     height: 27px;
     line-height: 27px;
     min-width: 54px;
-    outline: 0 none;
+    outline: none;
     padding: 0 8px;
     text-align: center;
     margin:1em 0;
+    &:hover{
+      background-color:#368200;
+    }
+    &.disabled {
+      opacity:0.5;
+      -moz-opacity:0.5;
+      -webkit-opacity:0.5;
+      -o-opacity:0.5;
+      &:hover{
+        background-color: #3D9400;
+      }
+    }
   }
 }
 #display, #loading {
   border:1px solid #ddd;
   border-top:none;
-  width:592px;
+  width:540px;
   padding:1em;
   margin:-2px 0 0;
 }
@@ -67,16 +80,25 @@ div.preview_form {
       text-decoration:none;
       color:#999;
       padding:2px 5px;
+      outline:none;
       &:hover {
         color:#fff;
       }
     }
+  }
+  .items {
+    margin-top:-23px;
   }
   a.title {
     color:#3366CC;
     font-weight:bold;
     display:block;
     margin-bottom:0.25em;
+  }
+  input.title {
+    display:block;
+    margin-bottom:0.25em;
+    width:550px;
   }
   .description {
     line-height:1.4em;
@@ -87,5 +109,40 @@ div.preview_form {
   }
   #wrap {
     clear:left;
+  }
+}
+#feed {
+  padding:0;
+  margin:0 10px;
+  border:1px solid #ddd;
+  border-width:0px 1px;
+  .item {
+    padding:1em 2em;
+    border-bottom:1px solid #ddd;
+    margin:0;
+    &.first {
+      border-top:1px solid #ddd;
+    }
+    .favicon {
+      float:left;
+      margin:0 5px 5px 0;
+    }
+    a.title {
+      color:#3366CC;
+      font-weight:bold;
+      display:block;
+      margin-bottom:0.25em;
+    }
+    .thumbnail {
+      clear:left;
+      margin-left:5px;
+    }
+    .info {
+      font:13px/1.4 arial,sans-serif;
+      color:#333;
+      p {
+        color:#333;
+      }
+    }
   }
 }

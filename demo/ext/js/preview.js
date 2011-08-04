@@ -126,8 +126,24 @@ var Preview = (function(){
 
       //Set up the item div attributes.
       elem['tag'] = 'div';
-      elem['class'] = 'item grid_7';
+      elem['class'] = 'item';
       elem['children'] = [{
+        tag:'a',
+        class : 'favicon',
+        href : data.provider_url,
+        title : data.provider_display,
+        target :'_blank',
+        children : [{
+          tag : 'img',
+          src : data.favicon_url
+        }]
+      },{
+        tag:'a',
+        class : 'title',
+        href : data.url,
+        html : data.title,
+        target :'_blank'
+      },{
         tag : 'div',
         class : 'grid_2 alpha thumbnail',
         children : [{
@@ -147,12 +163,6 @@ var Preview = (function(){
         class : 'info grid_5 omega',
         children : [{
           tag:'a',
-          class : 'title',
-          href : data.url,
-          html : data.title,
-          target :'_blank'
-        },{
-          tag:'a',
           class: 'provider',
           href : data.provider_url,
           html : data.provider_display,
@@ -168,7 +178,12 @@ var Preview = (function(){
           href : '#',
           html : 'x'
         }]
-      }];
+      },
+        {
+          tag : 'div',
+          class: 'clear',
+          html : '&nbsp;'
+        }];
       Ext.fly('feed').insertFirst(elem);
     },
     // Adds the feed item to localStorage so we can display them on refresh
@@ -285,7 +300,7 @@ var Preview = (function(){
       //display the display section
       Ext.fly('display').show();
 
-
+      Ext.fly('id_submit').removeClass('disabled');
       // We are going to handle just images first. This is when a user
       // directly links to an image asset. i.e.
       //http://images.instagram.com/media/2011/08/01/55d07d3fac974d45ababdb7f04673f72_7.jpg
