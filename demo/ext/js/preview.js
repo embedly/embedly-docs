@@ -1,10 +1,11 @@
 
 var Preview = (function(){
-  
+  // change the display depending on whether we're rendering for a facebook mockup or google plus mockup
+  var target = 'plus';
   var Preview = {
 
     //The set of attributes that we want to POST to the form.
-    attrs : ['type', 'orginal_url', 'url', 'title', 'description', 
+    attrs : ['type', 'orginal_url', 'url', 'title', 'description', 'favicon_url', 
     'provider_url', 'provider_display', 'safe', 'html', 'thumbnail_url'],
 
     /*

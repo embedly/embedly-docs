@@ -5,28 +5,19 @@
 body {
   background-color: #fff; }
 
-<<<<<<< Updated upstream
-#link {
-  width: 490px;
-  margin: 10px auto;
-}
-#link textarea {
-  width: 400px;
-  padding: 5px;
-  font-size: 1.1em;
-}
-=======
+div.main {
+  padding: 2em; }
+
 div.preview_form {
   margin: 1em 0; }
 
 #link {
   width: 490px;
   margin: 10px auto; }
-  #link input {
-    width: 300px;
+  #link textarea {
+    width: 400px;
     padding: 5px;
     font-size: 1.1em; }
->>>>>>> Stashed changes
 
 #loading {
   background-image: url(../images/loading.gif);
@@ -53,13 +44,7 @@ div.preview_form {
 #left, #right {
   display: block;
   position: absolute;
-  background-color: #DDD;
-  border: 1px solid #666;
-  padding: 1px 3px;
-  top: 0;
-  color: #333 !important; }
-  #left:hover, #right:hover {
-    text-decoration: none; }
+  top: 0; }
 
 #left {
   left: 0px; }

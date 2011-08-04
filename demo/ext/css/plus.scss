@@ -1,4 +1,74 @@
+body {
+  font:13px/1.4 Arial,sans-serif;
+}
+div.main {
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+}
+h2 {
+  font-size:18px;
+  color:#333;
+  font-weight:normal;
+  margin:1em 0 0.5em;
+}
 div.preview_form {
+  div.field {
+    position:relative;
+  }
+  label {
+    color:#999;
+    position:absolute;
+    left:15px;
+    top:10px;
+  }
+  textarea {
+    border:1px solid #ddd;
+    padding:1em 1em 0;
+    width:592px;
+    line-height:1.4em;
+    cursor:text;
+    resize: none;
+  }
+  button, input#id_submit {
+    background-color: #3D9400;
+    border: 1px solid #29691D;
+    color: #FFFFFF;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px 2px 2px 2px;
+    cursor: default;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    line-height: 27px;
+    min-width: 54px;
+    outline: 0 none;
+    padding: 0 8px;
+    text-align: center;
+  }
+}
+#display, #loading {
   border:1px solid #ddd;
-  padding:0.5em;
+  border-top:none;
+  width:592px;
+  padding:1em;
+  margin:-2px 0 0;
+}
+#loading {
+  text-align:center;
+  background-position:center center;
+}
+
+#display {
+  .controls {
+    background:rgba(0,0,0,0.7);
+    height:20px;
+    a.button {
+      text-decoration:none;
+      color:#999;
+      padding:2px 5px;
+      &:hover {
+        color:#fff;
+      }
+    }
+  }
 }

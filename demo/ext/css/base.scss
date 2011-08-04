@@ -5,6 +5,9 @@
 body {
   background-color: #fff;
 }
+div.main {
+  padding:2em;
+}
 
 div.preview_form {
   margin:1em 0;
@@ -51,14 +54,7 @@ div.preview_form {
 #left, #right {
   display:block;
   position:absolute;
-  background-color: #DDD;
-  border: 1px solid #666;
-  padding: 1px 3px;
   top:0;
-  color: #333 !important;
-  &:hover {
-    text-decoration:none;
-  }
 }
 
 #left {
