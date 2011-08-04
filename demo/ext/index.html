@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/ext-core.js" type="text/javascript" ></script>
+    <script src="js/jsonp.js" type="text/javascript" ></script>
+    <script src="js/preview.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/base.css">
+  </head>
+  <body>
+    <div id="main" role="main" class="container_12">
+      <div class="grid_8 prefix_2 suffix_2">
+        <form id="preview_form" method="post" action=".">
+        <div id="link" class="grid_8">
+            <input type="text" name="url" id="id_url" />
+        </div>
+        <div id="loading" class="grid_8"></div>
+        <div id="display" class="grid_8">
+          <div class="wrap">
+            <div class="controls">
+              <a id="left" href="#">&lt;</a>
+              <a id="right" href="#" >&gt;</a>
+            </div>
+            <div class="items">
+              <ul id="images"></ul>
+            </div>
+          </div>
+          <div id="attributes"></div>
+          <input id="id_submit" type="submit" value="Save Post"/>
+        </div>
+        </form>
+      </div>
+      <div id="feed" class="grid_7 push_2"></div>
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

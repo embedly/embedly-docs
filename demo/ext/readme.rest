@@ -1,0 +1,106 @@
+Creating a Facebook like Url submission tool with Embedly
+
+One of our clients is currently use Ext and Embedly to implement a Facebook
+like link submission tool. While coding up so examples there is good reason to
+share this with the community as a whole. Herein lies the bible of Ext and
+Embedly.
+
+First off note that I am not an Ext expert. In fact this is the first I have
+ever used the tool. While I disagree with it's obsession with ids I like how
+it creates HTML and fly. If you see anything that is off or just looks wrong,
+blame ignorance.
+
+First off we are trying to build a fairly common design pattern that allows
+users to preview the info for a link before submitting it to their feed. Below
+are a few screenshots from various different services
+
+Facebook:
+
+Yammer (Uses Embedly):
+
+Google:
+
+They are all pretty even when it comes down to it, but you can definitely see
+that the 1st selected image for each are all different. Well why is that? Well
+the `10k Apart <http://10k.aneventapart.com/>`_ site doesn't specify an
+``image_src`` or ``og:image`` tag in the head of the html so it's everyman for
+themselves. I can tell you that Embedly looks for the main content div then
+examines all the images within and scores them according to a number of
+different factors. The others do the same, but with different scoring
+algorithms.
+
+When it comes down to it though, it should be up to the user. Any of the three
+could work, but at the end of the day a user, not code, will always choose the
+best image. So the task is simple, create a form that allows a user to input a
+URL and select the thumbnail they wish to show. There are however a bunch of
+other considerations that you will invariable end up coming across that we will
+look at as well.
+
+One of Embedly's API endpoints was specifically made for this task. The 
+`preview endpoint <http://embed.ly/docs/endpoints/1/preview>`_ expands on
+oEmbed and passes back an array of images, content, place information, event
+details as well as the normal oEmbed html data. It holds a lot of information,
+but we are going to use the following attributes. I'm going to go into detail
+here because I think it's import that you know where the data is coming from
+and how to use it.
+
+title
+
+    Title of the page. Embedly looks for a title in the API response, the Open
+    Graph title tag or the ``<title>`` tag in the head of the doc in that order
+    . For 10k.aneventapart.com we found the title tag::
+    
+        <title>10K Apart - An Event Apart + Mix Online</title>
+
+description
+
+    A description or brief excerpt from the page. Embedly looks for a title in
+    the API response, the Open Graph description, the
+    ``<meta name="description">`` tag in the head of the doc in that order. If
+    none of those exist, or are too short, Embedly will use an algorithm to try
+    to find a good excerpt from the page. It does this by looking for common
+    clues like a string of p tags, divs with lots of text at a simliar depths
+    and a whole slue of other facters.
+   
+    Going back to the Facebook, Google+ and Yammer examples above here are the
+    descriptions that each give back
+   
+    Facebook:: 
+    
+        ''
+
+    Google +:: 
+     
+        10k Apart Responsive Edition. Inspire the Web with Just 10k. Read the
+        Rules Submit an Entry. The Gallery. 1-1 of 1. Launch Details. Colorrrs.
+        Colorrrs. Dave Rupert. Enter Now. Enter Now. The Rules (FA...
+
+    Yammer (Embedly)::
+   
+        Total file size including images, scripts & markup can't be over 10k
+        zipped. Details Use the approved list of libraries without it counting
+        against your 10K. Details We encourage HTML5, and apps must work
+        equally well in IE10 PP2, Firefox & a Webkit browser. Details
+        Applications need to be responsive.
+        
+    As you can see Facebook gave up and was unable to pull a description.
+    Google found the best first line, but quickly degrades to a bunch of
+    nonsense. Embedly found the largest body of text and tried to use that.
+    It's the longest and respects sentence structure, but the description of
+    the rules, not of the contest itself. The fun thing is, if you visit the
+    page, none of this text is initially viewable to the user. It's in divs
+    that are hidden by css, and therefore we have no way of knowing if they are
+    displayed or not.
+    
+    A user could easily intervene, edit the description to something that made
+    a little more sense. As a side note it's harder to know when to not show 
+    an excerpt then to show one.
+
+images
+
+
+
+
+provider_display
+provider_url
+object
