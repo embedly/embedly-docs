@@ -344,7 +344,7 @@ var Preview = (function(){
         //Sets all the data to a hidden inputs for the post.
         for(var i in Preview.attrs){
           var n = Preview.attrs[i];
-          Ext.DomHelper.append('link', {
+          Ext.DomHelper.append('preview_form', {
             tag:'input',
             name : n,
             type : 'hidden',
