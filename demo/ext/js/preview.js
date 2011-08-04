@@ -308,7 +308,7 @@ var Preview = (function(){
       // a video
       if (obj.type == 'html'){
         //add the title or a blank one.
-        Ext.DomHelper.append('attributes', 
+        Ext.DomHelper.insertFirst('display', 
           {
             'tag': 'a',
             'class' : 'title',
@@ -316,6 +316,17 @@ var Preview = (function(){
             'html' : obj.title ? obj.title : 'Click to add your own title.'
           }
         );
+        
+        // add the favicon to the preview to match Google Plus
+        if(target == 'plus' && obj.favicon_url){
+          Ext.DomHelper.insertFirst('display', 
+            {
+              'tag': 'img',
+              'class' : 'favicon',
+              'src' : obj.favicon_url
+            }
+          );
+        }
 
         //add the description or a blank one.
         Ext.DomHelper.append('attributes', 

@@ -39,7 +39,8 @@ div.preview_form button, div.preview_form input#id_submit {
   min-width: 54px;
   outline: 0 none;
   padding: 0 8px;
-  text-align: center; }
+  text-align: center;
+  margin: 1em 0; }
 
 #display, #loading {
   border: 1px solid #ddd;
@@ -61,3 +62,15 @@ div.preview_form button, div.preview_form input#id_submit {
     padding: 2px 5px; }
     #display .controls a.button:hover {
       color: #fff; }
+#display a.title {
+  color: #3366CC;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25em; }
+#display .description {
+  line-height: 1.4em; }
+#display img.favicon {
+  float: left;
+  margin: 0 5px 5px 0; }
+#display #wrap {
+  clear: left; }

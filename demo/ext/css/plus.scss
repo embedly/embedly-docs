@@ -44,6 +44,7 @@ div.preview_form {
     outline: 0 none;
     padding: 0 8px;
     text-align: center;
+    margin:1em 0;
   }
 }
 #display, #loading {
@@ -70,5 +71,21 @@ div.preview_form {
         color:#fff;
       }
     }
+  }
+  a.title {
+    color:#3366CC;
+    font-weight:bold;
+    display:block;
+    margin-bottom:0.25em;
+  }
+  .description {
+    line-height:1.4em;
+  }
+  img.favicon {
+    float:left;
+    margin:0 5px 5px 0;
+  }
+  #wrap {
+    clear:left;
   }
 }
