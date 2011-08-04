@@ -6,13 +6,12 @@ body {
   background-color: #EFEFEF;
 }
 
-
 #link {
   width: 490px;
   margin: 10px auto;
 }
-#link input {
-  width: 300px;
+#link textarea {
+  width: 400px;
   padding: 5px;
   font-size: 1.1em;
 }

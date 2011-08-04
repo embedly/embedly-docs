@@ -196,5 +196,23 @@ object
         }
     
     Don't bother messing with the height. People know how to scroll, so designs
-    that are tolorate to different heights of images are the best.
+    that are tolerate to different heights of images are the best.
+
+While the Preview endpoint passes back more metadata including content, events,
+places and embeds we will not be using that for this demo. We want to make this
+simple and allow people to build from there.
+
+There are two sections to the feed; retrieval and display. Retrieval is the
+long section that describes grabbing metadata from Embedly and allowing the
+user to edit it before submission. Display is much shorter and just goes into
+tips and tricks for displaying the data.
+
+We start off with the following simple form::
+
+    <form action="." method="post">
+        <textarea id="id_status" name="status">
+        </textarea>
+        <input type="submit" value="submit"/>
+    </form>
+
 

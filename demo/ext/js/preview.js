@@ -424,7 +424,7 @@ var Preview = (function(){
       Ext.EventManager.on("id_submit", "click", Preview.submitFeedItem);
       
       //Embedly Functions
-      Ext.EventManager.on("id_url", 'blur', Preview.fetchMetadata);
+      Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
       
       //Show and Hide the little x button.
       Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
