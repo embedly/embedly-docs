@@ -513,3 +513,12 @@ link preview is displayed without worrying about how it effects the ``Preview``
 object. It also helped us create multiple versions of the demo::
 
     Preview.Display.render(obj);
+
+Rendering the link form is actually really boring. You are more than welcome to
+read the code, but at the end of the day, it's going to be up to you. The only
+thing to remember is to to update the hidden inputs with the correct values
+after the user has changed any data. For example we run this after a user has
+updated the title::
+
+    Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
+
