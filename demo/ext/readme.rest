@@ -443,3 +443,46 @@ chars
     
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec ...
+
+Once you make the request we have to deal with the data that we get back from
+Embedly. We discussed the different parts of the object that we are going to
+use earlier, now it's just putting together the pieces. A lot of this is
+actually up to the individual developer, but here are some tricks an tricks.
+We declare the ``metadataCallback`` from before as::
+
+    metadataCallback : function(obj){
+      // Deal with the object here.
+    }
+
+The first thing you need to do is validate the request. Every obj should have a
+``type``. If it's not there this is a clear sign that something is off. This is
+a basic check to make sure we should proceed. Generally will never happen, but
+it's a nice to have just in case::
+
+    if (!obj.hasOwnProperty('type')){
+        console.log('Embedly returned an invalid response');
+        return false;
+    }
+
+The next thing you need to make sure that there isn't an error. If Embedly
+is sent an invalid URL, the URL returns a 404 or some other error Embedly will
+return an object of type ``error``. In this general case the default workflow
+should occur. Generally you need not alert the user, just proceed as everything
+is happening normally::
+
+    if (obj.type == 'error'){
+        console.log('URL ('+obj.url+') returned an error: '+ obj.error_message); 
+        return false;
+    }
+
+At this point you have a response that you can work with, but you need to
+filter out types that you do not want to handle. In this case we will only be
+handling ``html`` and ``image`` type responses. Others link ``pdf`` of
+``video`` we can build in another day::
+
+    if (!(obj.type in {'html':'', 'image':''})){
+        alert('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
+        return false;
+    }
+
+

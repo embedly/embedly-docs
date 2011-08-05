@@ -2,6 +2,159 @@
 var Preview = (function(){
   // change the display depending on whether we're rendering for a facebook mockup or google plus mockup
   var target = 'plus';
+  
+  var Display = {
+    /*
+      Display Functions
+    */
+    
+    render : function(obj){
+      // We are going to handle just images first. This is when a user
+      // directly links to an image asset. i.e.
+      //http://images.instagram.com/media/2011/08/01/55d07d3fac974d45ababdb7f04673f72_7.jpg
+      if (obj.type == 'image'){
+        //Add the image to the scoller that won't scroll in this case.
+        Preview.Display.imageScroller([obj.url]);
+        
+        //Set the title to obj.url
+        obj.title = obj.url;
+        Preview.Display.title(obj);
+      }
+
+      // In here we handle the majority of the use cases. It's a link to an
+      // html page with image assests and words. In this case you also
+      // may have access to an `object` attribute which will be an image or
+      // a video
+      if (obj.type == 'html'){
+        //add the title or a blank one.
+        Preview.Display.title(obj);
+        
+        // add the favicon to the preview to match Google Plus
+        Preview.Display.favicon(obj);
+
+        // If there are images we need to build the slider.
+        Preview.Display.images(obj);
+
+        //add the description or a blank one.
+        Preview.Display.description(obj);
+        
+        //This is the fun where the video comes into play.
+        if (obj.object && obj.object.type == 'video'){
+          //Grab the source.
+          Ext.fly('id_html').dom.value = obj.object.html;
+          Ext.fly('id_type').dom.value = 'video';
+        }
+      }
+      //Clear div.
+      Ext.DomHelper.append('display',{
+          tag : 'div',
+          class : 'clear',
+      });
+    },
+
+    title : function(obj){
+      Ext.DomHelper.insertFirst('display', 
+        {
+          'tag': 'a',
+          'class' : 'title',
+          'href' : '#',
+          'html' : obj.title ? obj.title : 'Click to add your own title.'
+        }
+      );
+    },
+    favicon : function(obj){
+      if(target == 'plus' && obj.favicon_url){
+        Ext.DomHelper.insertFirst('display', 
+          {
+            'tag': 'img',
+            'class' : 'favicon',
+            'src' : obj.favicon_url
+          }
+        );
+      }
+    },
+    description : function(obj){
+      Ext.DomHelper.append('display',{ 
+        tag : 'div',
+        class : 'attributes',
+        children : [{
+          'tag': 'p',
+          'children' : {
+            'tag' : 'a',
+            'class' : 'description',
+            'html' :obj.description ? obj.description : 'Click to add your own description.'
+          }
+      }]});
+    },
+    images : function(obj){
+      if (obj.images.length > 0){
+        var images = [];
+        // Add all the images that are in the `images` array. This allows
+        // the user to select which image they want to use
+        for (var i in obj.images){
+          var img = obj.images[i];
+          if (!img.hasOwnProperty('url')) continue;
+          images.push(img.url);
+        }
+        //Builds the image scroller.
+        Preview.Display.imageScroller(images);
+      }
+    },
+    
+    imageScroller : function(images){
+      // Add the first image as the current thumbnail
+      Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(images[0].url);
+      
+      var image_data = [];
+      // Add all the images that are in the `images` array. This allows
+      // the user to select which image they want to use
+      Ext.each(images, function(img){
+        image_data.push( 
+          {
+            'tag': 'li', 
+            'children' : {
+              'tag': 'img',
+              'src' : img
+            }
+          }
+        );
+      });
+      var image_slider = {
+        tag : 'div',
+        class : 'wrap',
+        children: [{
+          tag : 'div',
+          class : 'controls',
+          children : [{
+              tag: 'a',
+              id : 'left',
+              class: 'button',
+              href :'#',
+              html : '&lt;'
+            },{
+              tag:   'a',
+              id : 'right',
+              class: 'button',
+              href :'#',
+              html : '&gt;'
+            },
+          ] 
+        },{
+          tag : 'div',
+          class : 'items',
+          children: [{
+            tag:'ul',
+            id : 'images',
+            children : image_data
+          }]
+        }]
+      }
+      Ext.DomHelper.append('display',image_slider); 
+    },
+    
+    
+  }
+
   var Preview = {
 
     //The set of attributes that we want to POST to the form.
@@ -248,7 +401,7 @@ var Preview = (function(){
       }
       window.localStorage.setItem('items', JSON.stringify(items));
     },
-    
+        
     /*
     playVideo
     
@@ -348,128 +501,8 @@ var Preview = (function(){
       Ext.fly('display').show();
       Ext.fly('id_submit').removeClass('disabled');
       
-      // We are going to handle just images first. This is when a user
-      // directly links to an image asset. i.e.
-      //http://images.instagram.com/media/2011/08/01/55d07d3fac974d45ababdb7f04673f72_7.jpg
-      if (obj.type == 'image'){
-        //Add the image to the scoller that won't scroll in this case.
-        Ext.DomHelper.append('images', 
-          {
-            'tag': 'li', 
-            'children' : {
-              'tag': 'img',
-              'src' : obj.url
-            }
-          }
-        );
-      }
-
-      // In here we handle the majority of the use cases. It's a link to an
-      // html page with image assests and words. In this case you also
-      // may have access to an `object` attribute which will be an image or
-      // a video
-      if (obj.type == 'html'){
-        //add the title or a blank one.
-        Ext.DomHelper.insertFirst('display', 
-          {
-            'tag': 'a',
-            'class' : 'title',
-            'href' : '#',
-            'html' : obj.title ? obj.title : 'Click to add your own title.'
-          }
-        );
-        
-        // add the favicon to the preview to match Google Plus
-        if(target == 'plus' && obj.favicon_url){
-          Ext.DomHelper.insertFirst('display', 
-            {
-              'tag': 'img',
-              'class' : 'favicon',
-              'src' : obj.favicon_url
-            }
-          );
-        }
-
-        // If there are images we need to build the slider.
-        if (obj.images.length > 0){
-          // Add the first image as the current thumbnail
-          Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(obj.images[0].url);
-          
-          var image_data = [];
-          // Add all the images that are in the `images` array. This allows
-          // the user to select which image they want to use
-          for (var i in obj.images){
-            var img = obj.images[i];
-            if (!img.hasOwnProperty('url')) continue;
-            image_data.push( 
-              {
-                'tag': 'li', 
-                'children' : {
-                  'tag': 'img',
-                  'src' : img.url
-                }
-              }
-            );
-          }
-          var image_slider = {
-            tag : 'div',
-            class : 'wrap',
-            children: [{
-              tag : 'div',
-              class : 'controls',
-              children : [{
-                  tag: 'a',
-                  id : 'left',
-                  class: 'button',
-                  href :'#',
-                  html : '&lt;'
-                },{
-                  tag:   'a',
-                  id : 'right',
-                  class: 'button',
-                  href :'#',
-                  html : '&gt;'
-                },
-              ] 
-            },{
-              tag : 'div',
-              class : 'items',
-              children: [{
-                tag:'ul',
-                id : 'images',
-                children : image_data
-              }]
-            }]
-          }
-          Ext.DomHelper.append('display',image_slider);
-        }
-
-        //add the description or a blank one.
-        Ext.DomHelper.append('display',{ 
-          tag : 'div',
-          class : 'attributes',
-          children : [{
-            'tag': 'p',
-            'children' : {
-              'tag' : 'a',
-              'class' : 'description',
-              'html' :obj.description ? obj.description : 'Click to add your own description.'
-            }
-          }]});
-        
-        //Clear div.
-        Ext.DomHelper.append('display',{
-            tag : 'div',
-            class : 'clear',
-        });
-
-        //This is the fun where the video comes into play.
-        if (obj.object && obj.object.type == 'video'){
-          //Grab the source.
-          Ext.fly('id_html').dom.value = obj.object.html;
-          Ext.fly('id_type').dom.value = 'video';
-        }
-      }
+      Preview.Display.render(obj);
+      
       
     },
     // Fetches the Metadata from the Embedly API
@@ -559,8 +592,10 @@ var Preview = (function(){
       //Wire up the video action
       Ext.getBody().on('click', Preview.playVideo, null, {delegate: 'a.video'});
     }
-    
   };
+  
+  Preview.Display = Display;
+  
   return Preview;
 })();
 
