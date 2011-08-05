@@ -288,4 +288,158 @@ keyup
     a hundred times here. We assume they got it right the first time, otherwise
     we will update the URL when the textarea loses focus.
 
+Now that all the events are hooked up we need to pull the URL out of the status
+textarea. While we won't be handing multiple urls, it's fairly easy to pull out
+a single one::
 
+    var status = Ext.fly('id_status').getValue();
+
+    //Simple regex to make sure the url is valid.
+    var urlexp = /http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+    //Match the status against the urlexp
+    var matches = status.match(urlexp);
+
+    return matches? matches[0] : null
+
+This will catch any url as long as the user has entered the ``http`` or
+``https`` scheme. As we know the scheme is becoming less and less prevalent and
+most users expect it to work if they leave out the ``http://``. For example it
+shouldn't matter if a user enters nyti.ms/qdGs9A or http://nyti.ms/qdGs9A. You
+could be clever here and just update the original regex, but I'm not that smart
+, so we will create a new one.
+
+    var urlexp = /[-\w]+(\.[a-z]{2,})+(\S+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/g;
+    
+    var matches = status.match(urlexp);
+    
+    return matches? 'http://'+matches[0] : null
+
+You are going to catch a number of false positives here. Users editing their
+statuses may type something like "I love it.seriously ..." which will trigger a
+request. You could do something clever with `publicsuffix.org 
+<http://publicsuffix.org>`_ or just be better with regexes. What's interesting
+to note is that neither Facebook or Google Plus offer this feature. They both
+make you use the 'link' function in order to enter a URL without a scheme. They
+must know something or Facebook set the trend and Google Plus copied.
+
+Once you actually have the URL from the status textarea we have to make a JSONP
+request to the Embedly preview endpoint to get the metadata associated with
+that URL. I used ``jsonp.js`` that was bundled in ``examples/jsonp`` in the Ext
+Core download. Here is the code to get it done, then we will go into all the
+availible options::
+
+    // Sets up the params we are going to use in the request.
+    params = {
+      url:url, 
+      key:':key', 
+      autoplay:true,
+      maxwidth:500,
+      wmode : 'opaque',
+      words : 30
+    }
+
+    // Make the request to Embedly. Note we are using the preview endpoint:
+    // http://embed.ly/docs/endpoints/1/preview
+    Ext.ux.JSONP.request('http://api.embed.ly/1/preview', {
+      callbackKey: 'callback',
+      params: params,
+      callback: Preview.metadataCallback
+    });
+
+When setting up the params you have a number of options. We are going to go
+into detail on a number of them here so you know just how each will effect your
+application.
+
+url
+
+    The url that you want to retrieve metadata for. Ext takes care of encoding
+    the URL, but if you aren't using a library you need to escape the URL.
+    Something like this works:
+    
+        var url = encodeURIComponent('http://embed.ly')
+
+key
+
+    Your Embedly API key. You can sign up for one at `embed.ly/pricing
+    <http://embed.ly/pricing>`_. This tutorial uses the Preview endpoint
+    which is only available at the `Starter` plan level and above.
+
+maxwidth
+
+    This is the maximum width of the embed in pixels. ``maxwidth`` is used for
+    scaling down embeds so they fit into a certain width. If the container for
+    an embed is 500px you should pass ``maxwidth: 500`` in the parameters.
+    For example, if you don’t set a maxwidth for the a Vimeo video Embedly will
+    return the following html::
+
+        <iframe src="http://player.vimeo.com/video/18150336" width="1280"
+        height="720" frameborder="0"></iframe>
+    
+    This width may cause the embed to overflow the containing div. If we pass 
+    ``maxwidth=500`` the html will be::
+
+        <iframe src="http://player.vimeo.com/video/18150336" width="500"
+        height="281" frameborder="0"></iframe>
+    
+    It is highly recommended that developers pass a ``maxwidth`` to Embedly.
+
+width
+
+    Will scale embeds type rich and video to the exact ``width`` that a
+    developer specifies in pixels. Embeds smaller than this width will be
+    scaled up and embeds larger than this width will be scaled down. During the
+    scaling process the embed may become distorted, so if you can it's best to
+    use the ``maxwidth`` parameter.
+    
+    Width is however really useful if you are working with a small set of
+    providers that you know scale really well. It will scale up embeds to give
+    a nice constant feel of every embed in your application.
+
+wmode
+
+    Will append the ``wmode`` value to the flash object. Possible values
+    include ``window``, ``opaque`` and ``transparent``. Generally you always
+    want to have ``{ wmode : 'opaque' }`` in the parameters. This prevents
+    embeds from being rendered on top of modals or other html postioned on
+    top of them.
+
+autoplay
+
+    Tells ``video`` embeds to start playing as soon as they are loaded.
+    Generally this is a really bad and annoying feature of some sites, but in
+    our case it's a great feature. It allows us to start playing the video as
+    soon as the the user clicks on the thumbnail.
+    
+words
+
+    The ``words`` parameter has a default value of 50 and works by trying to
+    split the description at the closest sentence to that word count. For
+    example, the following lorem ipsum description is made up of 33 words
+    and 5 sentences:
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+        dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
+        Duis eget mauris lacinia sapien aliquet vulputate a et orci. Sed eu
+        imperdiet sem.
+
+    Now by default, Embedly will return all 33 words, but say you want only 20
+    words. By passing ``{ words : 20}`` Embedly would return:
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+        dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
+    
+    This is actually only 19 words, but we split at the closest sentence. Words
+    is really useful for controlling how long the descriptive text for each URL
+    is. In this case we are going to use 30 words to not overwhelem the page
+    with text.
+    
+chars
+    
+    ``chars`` is link ``words``, but instead of trancating to the nearest
+    sentence, Embedly will blindly truncate a description to the number of 
+    characters you specify adding ... at the end when needed. For the above 
+    description, if we set ``{ chars : 100 }`` it will return::
+    
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+        dapibus auctor aliquam. Donec ...

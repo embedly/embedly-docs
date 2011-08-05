@@ -264,7 +264,7 @@ var Preview = (function(){
     Utils for handling the status.
     */
     getStatusUrl : function(obj){
-      //Grabs the status out of the Form.
+      // Grabs the status out of the Form.
       var status = Ext.fly('id_status').getValue();
 
       //ignore the status it's blank.
@@ -272,18 +272,20 @@ var Preview = (function(){
         return null;
       }
 
-      //Simple regex to make sure the url is valid.
+      // Simple regex to make sure the url with a scheme is valid.
       var urlexp = /^http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-
       var matches = status.match(urlexp);
 
-      //No urls is the status.
-      if (matches === null){
-        return null;
-      };
+      var url = matches? matches[0] : null
+  
+      //No urls is the status. Try for urls without scheme i.e. example.com
+      if (url === null){
+        var urlexp = /[-\w]+(\.[a-z]{2,})+(\S+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/g;
+        var matches = status.match(urlexp);
+        url = matches? 'http://'+matches[0] : null
+      }
       
-      //Use the first url. An enhancement would be multiple URLs
-      var url = matches[0];
+      //Note that in both cases we only grab the first URL.
       return url;
     },
     
@@ -494,7 +496,9 @@ var Preview = (function(){
         frame:true, //Load Everything in a frame
         secure:true, //Make sure that frame is secure.
         autoplay:true,
-        maxwidth:500
+        wmode : 'opaque',
+        maxwidth:500,
+        words:30
       }
 
       // Make the request to Embedly. Note we are using the
