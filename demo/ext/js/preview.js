@@ -5,9 +5,109 @@ var Preview = (function(){
   
   var Display = {
     /*
-      Display Functions
+    Event Handlers
+    ==============
+    Logic that helps the form do what it's suppose to. There is nothing really
+    all that special here in terms of 'the right way'. It's totally up to the
+    developer.
     */
     
+    // The bulk of the scroll left and right functions. dir is either 'left'
+    // or 'right'. I'm pretty sure there is a better wat to do this.
+    scroll : function(dir,e,t){
+      e.preventDefault();
+      //Grabs the current 'left' style
+      var left = Ext.fly('images').getStyle('left');
+      //Gets the number of images
+      var len = Ext.fly('images').select('img').elements.length * 100;
+      //General logic to set the new left value
+      if (dir == 'left'){
+        left = parseInt(left)+100;
+        if (left > 0) return false;
+      } else if (dir == 'right'){
+        left = parseInt(left)-100;
+        if (left <= -len) return false;
+      } else {
+        console.log('not a valid direction: '+dir)
+        return false;
+      }
+      //Puts the current thumbnail into the thumbnail_url input
+      Ext.fly('id_thumbnail_url').dom.value = Ext.DomQuery.select('#images li:nth-child('+((left/-100)+1)+') img')[0].src
+      //Sets the new left.
+      Ext.fly('images').setStyle('left',left+'px');
+    },
+    //Scrolls the image selector when the `right` button is clicked.
+    scrollRight : function(e,t){Preview.Display.scroll('right', e, t)},
+    //Scrolls 
+    scrollLeft : function(e,t){Preview.Display.scroll('left', e, t)},
+    
+    // When a user wants to Edit a title or description we need to switch out
+    // an input or text area
+    setTitle : function(e,t){
+      e.preventDefault();
+      //Make it an Ext element.
+      var elem = Ext.get(t);
+      // Sets the New Title in the hidden inputs
+      Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
+      //overwrite the a tag with the value of the tag.
+      elem = elem.replaceWith({
+          'tag' : 'a', 
+          'class' : 'title',
+          'html': elem.dom.value
+      });
+    },
+    editTitle : function(e, t){
+      e.preventDefault();
+      //Make it an Ext element.
+      var elem = Ext.get(t);
+      //overwrite the a tag with the value of the tag.
+      elem = elem.replaceWith({
+        'tag' : 'input', 
+        'type' : 'text',
+        'class' : 'title',
+        'value': elem.dom.innerHTML
+      });
+      //Set the focus on this element
+      elem.focus();
+      // puts the a tag back on blur. It's a single bind so it will be
+      // trashed on blur.
+      elem.on('blur', Preview.setTitle, null, {single: true});   
+    },
+    //Same as before, but for description
+    setDescription : function(e,t){
+      e.preventDefault();
+      //Make t an Ext Element
+      var elem = Ext.get(t);
+      // Sets the New Description in the hidden inputs
+      Ext.fly('id_description').dom.value = encodeURIComponent(elem.dom.value);
+      //overwrite the a tag with the value of the tag.
+      elem = elem.replaceWith({
+        'tag' : 'a',
+        'class' : 'description',
+        'html': elem.dom.value
+      });
+      
+    },
+    editDescription: function(e,t){
+      e.preventDefault();
+      // Make t an Ext Element
+      var elem = Ext.get(t);
+      // overwrite the a tag with the value of the tag. Passes back the new
+      // element.
+      elem = elem.replaceWith({
+        'tag' : 'textarea',
+        'class' : 'description',
+        'html': elem.dom.innerHTML
+      });
+      //Focus the Text Area
+      elem.focus();
+      //When the element is then blured update the value.
+      elem.on('blur', Preview.setDescription, null, {single : true});
+    },
+    
+    /*
+      Display Functions
+    */
     render : function(obj){
       // We are going to handle just images first. This is when a user
       // directly links to an image asset. i.e.
@@ -103,7 +203,7 @@ var Preview = (function(){
     
     imageScroller : function(images){
       // Add the first image as the current thumbnail
-      Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(images[0].url);
+      Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(images[0]);
       
       var image_data = [];
       // Add all the images that are in the `images` array. This allows
@@ -151,117 +251,13 @@ var Preview = (function(){
       }
       Ext.DomHelper.append('display',image_slider); 
     },
-    
-    
   }
 
-  var Preview = {
-
-    //The set of attributes that we want to POST to the form.
-    attrs : ['type', 'original_url', 'url', 'title', 'description', 'favicon_url', 
-    'provider_url', 'provider_display', 'safe', 'html', 'thumbnail_url'],
-
-    /*
-    Event Handlers
-    ==============
-    Logic that helps the form do what it's suppose to. There is nothing really
-    all that special here in terms of 'the right way'. It's totally up to the
-    developer.
-    */
-    
-    // The bulk of the scroll left and right functions. dir is either 'left'
-    // or 'right'. I'm pretty sure there is a better wat to do this.
-    scroll : function(dir,e,t){
-      e.preventDefault();
-      //Grabs the current 'left' style
-      var left = Ext.fly('images').getStyle('left');
-      //Gets the number of images
-      var len = Ext.fly('images').select('img').elements.length * 100;
-      //General logic to set the new left value
-      if (dir == 'left'){
-        left = parseInt(left)+100;
-        if (left > 0) return false;
-      } else if (dir == 'right'){
-        left = parseInt(left)-100;
-        if (left <= -len) return false;
-      } else {
-        console.log('not a valid direction: '+dir)
-        return false;
-      }
-      //Puts the current thumbnail into the thumbnail_url input
-      Ext.fly('id_thumbnail_url').dom.value = Ext.DomQuery.select('#images li:nth-child('+((left/-100)+1)+') img')[0].src
-      //Sets the new left.
-      Ext.fly('images').setStyle('left',left+'px');
-    },
-    //Scrolls the image selector when the `right` button is clicked.
-    scrollRight : function(e,t){Preview.scroll('right', e, t)},
-    //Scrolls 
-    scrollLeft : function(e,t){Preview.scroll('left', e, t)},
-    
-    // When a user wants to Edit a title or description we need to switch out
-    // an input or text area
-    setTitle : function(e,t){
-      e.preventDefault();
-      //Make it an Ext element.
-      var elem = Ext.get(t);
-      // Sets the New Title in the hidden inputs
-      Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
-      //overwrite the a tag with the value of the tag.
-      elem = elem.replaceWith({
-          'tag' : 'a', 
-          'class' : 'title',
-          'html': elem.dom.value
-      });
-    },
-    editTitle : function(e, t){
-      e.preventDefault();
-      //Make it an Ext element.
-      var elem = Ext.get(t);
-      //overwrite the a tag with the value of the tag.
-      elem = elem.replaceWith({
-        'tag' : 'input', 
-        'type' : 'text',
-        'class' : 'title',
-        'value': elem.dom.innerHTML
-      });
-      //Set the focus on this element
-      elem.focus();
-      // puts the a tag back on blur. It's a single bind so it will be
-      // trashed on blur.
-      elem.on('blur', Preview.setTitle, null, {single: true});   
-    },
-    //Same as before, but for description
-    setDescription : function(e,t){
-      e.preventDefault();
-      //Make t an Ext Element
-      var elem = Ext.get(t);
-      // Sets the New Description in the hidden inputs
-      Ext.fly('id_description').dom.value = encodeURIComponent(elem.dom.value);
-      //overwrite the a tag with the value of the tag.
-      elem = elem.replaceWith({
-        'tag' : 'a',
-        'class' : 'description',
-        'html': elem.dom.value
-      });
-      
-    },
-    editDescription: function(e,t){
-      e.preventDefault();
-      // Make t an Ext Element
-      var elem = Ext.get(t);
-      // overwrite the a tag with the value of the tag. Passes back the new
-      // element.
-      elem = elem.replaceWith({
-        'tag' : 'textarea',
-        'class' : 'description',
-        'html': elem.dom.innerHTML
-      });
-      //Focus the Text Area
-      elem.focus();
-      //When the element is then blured update the value.
-      elem.on('blur', Preview.setDescription, null, {single : true});
-    },
-    
+  /*
+    Feed Functions
+  */
+  
+  var Feed = {
     /*
     Feed Methods
     ============
@@ -359,7 +355,7 @@ var Preview = (function(){
       items = JSON.parse(items);
       //decode the values.
       //for (var n in items) items[n] = decodeURIComponent(items[n]);
-      Ext.each(items, function(i){Preview.createFeedItem(i)});
+      Ext.each(items, function(i){Preview.Feed.createFeedItem(i)});
       
       //We need to add the `first` class to the first .items
       Ext.fly('feed').first().addClass('first');
@@ -373,9 +369,9 @@ var Preview = (function(){
       // we used.
       Ext.select('#preview_form input').each(function(e){data[e.dom.name] = decodeURIComponent(e.dom.value)});
       //Create
-      Preview.createFeedItem(data);
+      Preview.Feed.createFeedItem(data);
       //Stores
-      Preview.storeFeedItem(data);
+      Preview.Feed.storeFeedItem(data);
       
       //Resets the first Attribute on the 
       Ext.fly('feed').select('.item').removeClass('first');
@@ -412,6 +408,15 @@ var Preview = (function(){
       //
       elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
     },
+  }
+
+
+
+  var Preview = {
+
+    //The set of attributes that we want to POST to the form.
+    attrs : ['type', 'original_url', 'url', 'title', 'description', 'favicon_url', 
+    'provider_url', 'provider_display', 'safe', 'html', 'thumbnail_url'],
     
     /*
     Utils for handling the status.
@@ -563,15 +568,15 @@ var Preview = (function(){
     //Binds all the Event Handlers
     bind : function(){
       //Scroll
-      Ext.getBody().on('click', Preview.scrollRight, null, {delegate: '#right'});
-      Ext.getBody().on('click', Preview.scrollLeft, null, {delegate: '#left'});
+      Ext.getBody().on('click', Preview.Display.scrollRight, null, {delegate: '#right'});
+      Ext.getBody().on('click', Preview.Display.scrollLeft, null, {delegate: '#left'});
 
       //Equivalent to $('').live from what I understand.
-      Ext.getBody().on('click', Preview.editTitle, null, {delegate: 'a.title'});
-      Ext.getBody().on('click', Preview.editDescription, null, {delegate: 'a.description'});
+      Ext.getBody().on('click', Preview.Display.editTitle, null, {delegate: 'a.title'});
+      Ext.getBody().on('click', Preview.Display.editDescription, null, {delegate: 'a.description'});
       
       //Form submission
-      Ext.EventManager.on("id_submit", "click", Preview.submitFeedItem);
+      Ext.EventManager.on("id_submit", "click", Preview.Feed.submitFeedItem);
       
       //Embedly Functions
       //Loses focus
@@ -587,15 +592,15 @@ var Preview = (function(){
       Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
       Ext.getBody().on('mouseout', function(e,t){Ext.fly(t).select('a.close').hide();}, null, {delegate: 'div.item'});
       //Do something about the little x button. (useful for testing.)
-      Ext.getBody().on('click', Preview.deleteFeedItem, null, {delegate: 'a.close'});
+      Ext.getBody().on('click', Preview.Feed.deleteFeedItem, null, {delegate: 'a.close'});
       
       //Wire up the video action
-      Ext.getBody().on('click', Preview.playVideo, null, {delegate: 'a.video'});
+      Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
     }
   };
   
   Preview.Display = Display;
-  
+  Preview.Feed = Feed;
   return Preview;
 })();
 
@@ -604,6 +609,6 @@ Ext.onReady(function(){
   Preview.bind();
 
   //Populate the feed
-  Preview.populateFeed();
+  Preview.Feed.populateFeed();
 
 });
