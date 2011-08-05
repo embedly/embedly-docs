@@ -88,6 +88,17 @@ div.preview_form {
     float: left;
     margin:0 10px 0 0;
   }
+  input[type="text"] {
+    width: 400px;
+    padding: 3px;
+    border: 1px solid #999;
+  }
+  textarea {
+    border: 1px solid #999;
+    width: 400px;
+    height: 100px;
+    padding: 3px;
+  }
 }
 
 #attributes {
@@ -102,17 +113,6 @@ div.preview_form {
     &:hover{
       background-color: #FF9;
     }
-  }
-  input {
-    width: 365px;
-    padding: 3px;
-    border: 1px solid #999;
-  }
-  textarea {
-    border: 1px solid #999;
-    width: 365px;
-    height: 100px;
-    padding: 3px;
   }
 }
 

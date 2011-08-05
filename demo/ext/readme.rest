@@ -233,9 +233,17 @@ paste
     
     Easily the most common way that users move links around. The event fires
     after anything is pasted into the object you are listening to. In Ext you
-    can listen to the event like so.
+    can listen to the event like so::
     
         Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
+    
+    The ``paste`` event is a little inconsitant however and at least in Chrome
+    actually fires before the ``textarea`` is filled. Because of that it's
+    better to set a short timeout to make sure the pasted value is there::
+    
+        Ext.EventManager.on("id_status", 'paste', function(){
+            setTimeout(Preview.fetchMetadata, 250);
+        });
 
 blur
 
@@ -254,4 +262,30 @@ keyup
     just something to think about.
     
         Ext.EventManager.on("id_status", 'blur', Preview.onKeyUp);
+    
+    The ``onKeyUp`` function has a different set of rules than just
+    ``fetchMetadata`` as we have to listen for just the spacebar after a URL
+    has been entered::
+
+        onKeyUp : function(e,t){
+          // Ignore Everthing but the spacebar Key event.
+          if (e.getKey() != 32) return null;
+
+          //See if there is a url in the status textarea
+          var url = Preview.getStatusUrl();
+          if (url == null) return null;
+  
+          // If there is a url, then we need to unbind the event so it doesn't
+          // fire again. This is very common for all status updaters as
+          // otherwise it would create a ton of unwanted requests.
+          Ext.EventManager.un("id_status", 'keyup', Preview.onKeyUp);
+  
+          //Fire the fetch metadata function
+          Preview.fetchMetadata();
+        },
+
+    The ``unbind`` is very important here. A user may go back and edit the URL
+    a hundred times here. We assume they got it right the first time, otherwise
+    we will update the URL when the textarea loses focus.
+
 

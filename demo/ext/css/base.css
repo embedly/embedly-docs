@@ -69,6 +69,15 @@ div.preview_form {
     width: 100px;
     float: left;
     margin: 0 10px 0 0; }
+  #display input[type="text"] {
+    width: 400px;
+    padding: 3px;
+    border: 1px solid #999; }
+  #display textarea {
+    border: 1px solid #999;
+    width: 400px;
+    height: 100px;
+    padding: 3px; }
 
 #attributes {
   width: 400px;
@@ -80,15 +89,6 @@ div.preview_form {
     text-decoration: none; }
     #attributes a:hover {
       background-color: #FF9; }
-  #attributes input {
-    width: 365px;
-    padding: 3px;
-    border: 1px solid #999; }
-  #attributes textarea {
-    border: 1px solid #999;
-    width: 365px;
-    height: 100px;
-    padding: 3px; }
 
 /*
 Feed Styles

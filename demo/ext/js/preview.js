@@ -5,7 +5,7 @@ var Preview = (function(){
   var Preview = {
 
     //The set of attributes that we want to POST to the form.
-    attrs : ['type', 'orginal_url', 'url', 'title', 'description', 'favicon_url', 
+    attrs : ['type', 'original_url', 'url', 'title', 'description', 'favicon_url', 
     'provider_url', 'provider_display', 'safe', 'html', 'thumbnail_url'],
 
     /*
@@ -261,6 +261,33 @@ var Preview = (function(){
     },
     
     /*
+    Utils for handling the status.
+    */
+    getStatusUrl : function(obj){
+      //Grabs the status out of the Form.
+      var status = Ext.fly('id_status').getValue();
+
+      //ignore the status it's blank.
+      if (status == ''){
+        return null;
+      }
+
+      //Simple regex to make sure the url is valid.
+      var urlexp = /^http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+      var matches = status.match(urlexp);
+
+      //No urls is the status.
+      if (matches === null){
+        return null;
+      };
+      
+      //Use the first url. An enhancement would be multiple URLs
+      var url = matches[0];
+      return url;
+    },
+    
+    /*
     Embedly Methods
     ===============
     This is where Embedly comes into play.
@@ -277,7 +304,7 @@ var Preview = (function(){
       // something is off. This is a basic check to make sure we should
       // proceed. Generally will never happen.
       if (!obj.hasOwnProperty('type')){
-        alert('Embedly returned an invalid response, or is down: '+url); 
+        alert('Embedly returned an invalid response, or is down'); 
         return false;
       }
 
@@ -285,7 +312,7 @@ var Preview = (function(){
       // endpoint will pass back an obj  of type 'error'. Generally this is
       // were the default workflow should happen.
       if (obj.type == 'error'){
-        alert('URL returned an error: '+ url); 
+        alert('URL returned an error: '+ obj.url); 
         return false;
       }
 
@@ -294,13 +321,31 @@ var Preview = (function(){
       // which I don't believe you have a good solution for yet. We could
       // wrap them in HTML5 tags, but won't work cross browser.
       if (!(obj.type in {'html':'', 'image':''})){
-        alert('URL returned a type not handled by salesforce: '+ url); 
+        alert('URL returned a type not handled: '+ url); 
         return false;
       }
+      
+      // If this is a change in the URL we need to delete all the old
+      // information first.
+      Ext.fly('preview_form').select('input[type="hidden"]').remove();
+      Ext.fly('display').select('*').remove();
+      
+      //Sets all the data to a hidden inputs for the post.
+      for(var i in Preview.attrs){
+        var n = Preview.attrs[i];
+        Ext.DomHelper.append('preview_form', {
+          tag:'input',
+          name : n,
+          type : 'hidden',
+          id : 'id_'+n,
+          value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
+        });
+      }
+
       //display the display section
       Ext.fly('display').show();
-
       Ext.fly('id_submit').removeClass('disabled');
+      
       // We are going to handle just images first. This is when a user
       // directly links to an image asset. i.e.
       //http://images.instagram.com/media/2011/08/01/55d07d3fac974d45ababdb7f04673f72_7.jpg
@@ -343,50 +388,78 @@ var Preview = (function(){
           );
         }
 
+        // If there are images we need to build the slider.
+        if (obj.images.length > 0){
+          // Add the first image as the current thumbnail
+          Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(obj.images[0].url);
+          
+          var image_data = [];
+          // Add all the images that are in the `images` array. This allows
+          // the user to select which image they want to use
+          for (var i in obj.images){
+            var img = obj.images[i];
+            if (!img.hasOwnProperty('url')) continue;
+            image_data.push( 
+              {
+                'tag': 'li', 
+                'children' : {
+                  'tag': 'img',
+                  'src' : img.url
+                }
+              }
+            );
+          }
+          var image_slider = {
+            tag : 'div',
+            class : 'wrap',
+            children: [{
+              tag : 'div',
+              class : 'controls',
+              children : [{
+                  tag: 'a',
+                  id : 'left',
+                  class: 'button',
+                  href :'#',
+                  html : '&lt;'
+                },{
+                  tag:   'a',
+                  id : 'right',
+                  class: 'button',
+                  href :'#',
+                  html : '&gt;'
+                },
+              ] 
+            },{
+              tag : 'div',
+              class : 'items',
+              children: [{
+                tag:'ul',
+                id : 'images',
+                children : image_data
+              }]
+            }]
+          }
+          Ext.DomHelper.append('display',image_slider);
+        }
+
         //add the description or a blank one.
-        Ext.DomHelper.append('attributes', 
-          {
+        Ext.DomHelper.append('display',{ 
+          tag : 'div',
+          class : 'attributes',
+          children : [{
             'tag': 'p',
             'children' : {
               'tag' : 'a',
               'class' : 'description',
-              'href' : '#',
               'html' :obj.description ? obj.description : 'Click to add your own description.'
             }
-          }
-        );
-
-        //Sets all the data to a hidden inputs for the post.
-        for(var i in Preview.attrs){
-          var n = Preview.attrs[i];
-          Ext.DomHelper.append('preview_form', {
-            tag:'input',
-            name : n,
-            type : 'hidden',
-            id : 'id_'+n,
-            value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
-          });
-        }
-
-        // Add all the images that are in the `images` array. This allows
-        // the user to select which image they want to use
-        for (var i in obj.images){
-          var img = obj.images[i];
-          if (!img.hasOwnProperty('url')) continue;
-          Ext.DomHelper.append('images', 
-            {
-              'tag': 'li', 
-              'children' : {
-                'tag': 'img',
-                'src' : img.url
-              }
-            }
-          );
-        }
-
-        if (obj.images.length > 0){
-          Ext.fly('id_thumbnail_url').dom.value = encodeURIComponent(obj.images[0].url);
-        }
+          }]});
+        
+        //Clear div.
+        Ext.DomHelper.append('display',{
+            tag : 'div',
+            class : 'clear',
+        });
 
         //This is the fun where the video comes into play.
         if (obj.object && obj.object.type == 'video'){
@@ -399,26 +472,17 @@ var Preview = (function(){
     },
     // Fetches the Metadata from the Embedly API
     fetchMetadata: function(){
-      //Grabs the status out of the Form.
-      var status = Ext.fly('id_status').getValue();
+      // Get a url out of the status box.
+      var url = Preview.getStatusUrl();
 
-      //ignore the status it's blank.
-      if (status == ''){
-        return false;
-      }
-
-      //Simple regex to make sure the url is valid.
-      var urlexp = /^http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-
-      var matches = status.match(urlexp);
-
-      //No urls is the status.
-      if (matches === null){
-        return false;
-      };
+      // If there is no url return false.
+      if (url === null) return false;
       
-      //Use the first url. An enhancement would be multiple URLs
-      var url = matches[0];
+      // If we already looked for a url, there will be an original_url hidden
+      // input that we should look for and compare values. If they are the
+      // same we will ignore.
+      var original_url = Ext.fly('id_original_url') ? Ext.fly('id_original_url').dom.value : null;
+      if (original_url == encodeURIComponent(url)) return false;
 
       //Tells the loaded to start
       Ext.fly('loading').show();
@@ -441,12 +505,29 @@ var Preview = (function(){
         callback: Preview.metadataCallback
       });      
     },
+    
+    onKeyUp : function(e,t){
+      // Ignore Everthing but the spacebar Key event.
+      if (e.getKey() != 32) return null;
+
+      //See if there is a url in the status textarea
+      var url = Preview.getStatusUrl();
+      if (url == null) return null;
+      
+      // If there is a url, then we need to unbind the event so it doesn't fire
+      // again. This is very common for all status updaters as otherwise it
+      // would create a ton of unwanted requests.
+      Ext.EventManager.un("id_status", 'keyup', Preview.onKeyUp);
+      
+      //Fire the fetch metadata function
+      Preview.fetchMetadata();
+    },
 
     //Binds all the Event Handlers
     bind : function(){
       //Scroll
-      Ext.EventManager.on("right", 'click', Preview.scrollRight);
-      Ext.EventManager.on("left", 'click', Preview.scrollLeft);
+      Ext.getBody().on('click', Preview.scrollRight, null, {delegate: '#right'});
+      Ext.getBody().on('click', Preview.scrollLeft, null, {delegate: '#left'});
 
       //Equivalent to $('').live from what I understand.
       Ext.getBody().on('click', Preview.editTitle, null, {delegate: 'a.title'});
@@ -460,10 +541,10 @@ var Preview = (function(){
       Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
       
       //onPaste Event
-      Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
+      Ext.EventManager.on("id_status", 'paste', function(){setTimeout(Preview.fetchMetadata, 250);});
 
       //onKeyUp Event
-      //Ext.EventManager.on("id_status", 'keyup', Preview.fetchMetadata);
+      Ext.EventManager.on("id_status", 'keyup', Preview.onKeyUp);
 
       //Show and Hide the little x button.
       Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
