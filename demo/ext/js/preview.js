@@ -491,8 +491,7 @@ var Preview = (function(){
       Ext.fly('display').select('*').remove();
       
       //Sets all the data to a hidden inputs for the post.
-      for(var i in Preview.attrs){
-        var n = Preview.attrs[i];
+      Ext.each(Preview.attrs, function(n){
         Ext.DomHelper.append('preview_form', {
           tag:'input',
           name : n,
@@ -500,7 +499,7 @@ var Preview = (function(){
           id : 'id_'+n,
           value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
         });
-      }
+      });
 
       //display the display section
       Ext.fly('display').show();

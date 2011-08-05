@@ -481,8 +481,35 @@ handling ``html`` and ``image`` type responses. Others link ``pdf`` of
 ``video`` we can build in another day::
 
     if (!(obj.type in {'html':'', 'image':''})){
-        alert('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
+        console.log('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
         return false;
     }
 
+To wire up the form to work on POST we need to set all the attributes to hidden
+inputs within the form. When the user is done and hits submit it will send all
+this data back to the server for saving. To do this we iterate over a list of
+elements we want to save::
 
+    Ext.each(Preview.attrs, function(n){
+      Ext.DomHelper.append('preview_form', {
+        tag:'input',
+        name : n,
+        type : 'hidden',
+        id : 'id_'+n,
+        value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
+      });
+    });
+
+You can set Preview.attrs to pretty much anything you want, but in our case we
+user:
+
+    attrs : ['type', 'original_url', 'url', 'title', 'description', 
+            'favicon_url', 'provider_url', 'provider_display', 'safe',
+            'html', 'thumbnail_url'],
+
+The last part of the ``metadataCallback`` function is handing off the obj to be
+rendered by a ``Display`` object. The ``Display`` object lets us change how the
+link preview is displayed without worrying about how it effects the ``Preview``
+object. It also helped us create multiple versions of the demo::
+
+    Preview.Display.render(obj);
