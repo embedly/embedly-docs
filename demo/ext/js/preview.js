@@ -162,6 +162,26 @@ var Preview = (function(){
       Ext.fly('id_status').dom.value = ''
       Ext.fly('id_status').blur();
     },
+    setStylesheet : function(name){
+      var i, obj;
+      Preview.target=name;
+      for(i=0; i<document.getElementsByTagName("link").length; i++)
+      {
+        obj = document.getElementsByTagName("link")[i];
+        if(obj.getAttribute("rel").indexOf("alt") != -1 && obj.getAttribute("title")){
+          obj.disabled = true;
+          if(obj.getAttribute("title") === name){
+              obj.disabled = false;
+          }
+        }
+      }
+    },
+    swapStylesheets : function(){
+      if(Preview.target == 'plus')
+        Preview.Display.setStylesheet('fb');
+      else
+        Preview.Display.setStylesheet('plus');
+    },
 
     title : function(obj){
       Ext.DomHelper.insertFirst('display', 
@@ -595,7 +615,7 @@ var Preview = (function(){
     onKeyUp : function(e,t){
       // Ignore Everthing but the spacebar Key event.
       if (e.getKey() != 32) return null;
-
+      
       //See if there is a url in the status textarea
       var url = Preview.getStatusUrl();
       if (url == null) return null;
@@ -623,7 +643,13 @@ var Preview = (function(){
 
       //onKeyUp Event
       Ext.EventManager.on("id_status", 'keyup', Preview.onKeyUp);
-
+      
+      // key event listener for swapping themes, looking for CMD-' or CTRL-'
+      Ext.EventManager.addListener(document, 'keydown', function(e){
+        if(e.ctrlKey && e.getKey()=="222")
+          Preview.Display.swapStylesheets();
+      });
+      
       //Bind the display Events
       Preview.Display.bind();
       
@@ -644,5 +670,5 @@ Ext.onReady(function(){
 
   //Populate the feed
   Preview.Feed.populateFeed();
-
+  Preview.Display.setStylesheet('plus');
 });
