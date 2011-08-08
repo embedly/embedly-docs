@@ -160,6 +160,11 @@ var Preview = (function(){
       Ext.fly('display').setStyle('display', 'none');
       Ext.fly('id_status').dom.value = ''
       Ext.fly('id_status').blur();
+      if(Preview.site=='fb'){
+        Ext.fly('form_field').show();
+        Ext.fly('id_submit').dom.value='Attach';
+        Ext.fly('id_submit').removeClass('submit');
+      }
     },
     setStylesheet : function(name){
       var i, obj;
@@ -201,7 +206,7 @@ var Preview = (function(){
       );
     },
     favicon : function(obj){
-      if(target == 'plus' && obj.favicon_url){
+      if(Preview.site == 'plus' && obj.favicon_url){
         Ext.DomHelper.insertFirst('display', 
           {
             'tag': 'img',
@@ -301,15 +306,16 @@ var Preview = (function(){
       //Simple Expando function for the text area.
       Ext.EventManager.on("id_status", 'focus', function(e, t){
         var elem = Ext.get(t);
+        Ext.fly('status_label').dom.style.display='none'
         if(Preview.site=='plus')
           elem.dom.rows = 5;
-        Ext.fly('status_label').dom.style.display='none'
       });
       Ext.EventManager.on("id_status", 'blur', function(e, t){
         var elem = Ext.get(t);
+        if(elem.dom.value =='')
+          Ext.fly('status_label').dom.style.display='inline';
         if(Preview.site=='plus')
           elem.dom.rows = 1;
-        Ext.fly('status_label').dom.style.display='inline';
       });
     }
   }
@@ -745,8 +751,10 @@ Ext.onReady(function(){
   //Once everything is ready bind the events.
   Preview.bind();
 
-  //Populate the feed
-  Preview.Feed.populateFeed();
+  //set the default stylesheet and populate the feed accordingly
   Preview.site = 'fb';
   Preview.Display.swapStylesheets();
+  // hide the label if there's text in the form field
+  if(Ext.fly('id_status').dom.value != '')
+    Ext.fly('status_label').dom.style.display='none'
 });
