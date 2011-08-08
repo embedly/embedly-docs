@@ -514,11 +514,19 @@ var Preview = (function(){
       // Get the items.
       Ext.fly('feed').update('');
       var items = window.localStorage.getItem('items');
-      if (items === null || items == '[]') return false;
+      if (items === null || items == '[]'){
+        //Fill with initial data
+        if (EMBEDLY_INITIAL_DATA !== undefined){
+          items = EMBEDLY_INITIAL_DATA;
+          window.localStorage.setItem('items', JSON.stringify(items));
+        } else{ 
+          return false;
+        }
+      } else{
       //Parse the string to JSON
-      items = JSON.parse(items);
+        items = JSON.parse(items);
+      }
       //decode the values.
-      //for (var n in items) items[n] = decodeURIComponent(items[n]);
       Ext.each(items, function(i){Preview.Feed.createFeedItem(i)});
       
       //We need to add the `first` class to the first .items

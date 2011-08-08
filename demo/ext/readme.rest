@@ -657,10 +657,20 @@ with the embed html that we saved in custom data attributes::
       elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
     },
 
-The final product looks something like this
+Once a user clicks the thumbnail, the end result looks like this:
 
 .. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/rdio_expanded.png
 
-We have reached the end of the journey. While we could add a number of other
-features here, they are generally up to the individual developer. We invite you
-to check out the demo.
+While we could add a few other features here, we have chosen to keep it simple.
+Hopefully you have a good understanding of how all the parts fit together and
+can build on additional features. 
+
+The source code for this project is at: 
+`github.com/embedly/embedly-tutorial-ext 
+<https://github.com/embedly/embedly-tutorial-ext>`_. Feel free to use it as a
+reference. It's heavily documented and deals with some of the little things
+like loading notifications and the like.
+
+You can check out the demo at `embedly.github.com/embedly-tutorial-ext 
+<http://embedly.github.com/embedly-tutorial-ext>`_. It uses ``localStorage`` to
+save and render the feed, so it will only work on modern browsers.
