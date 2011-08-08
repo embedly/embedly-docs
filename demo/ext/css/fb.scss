@@ -84,6 +84,84 @@ body {
       right:12px;
       top:11px;
       position:absolute;
+      &.submit {
+        background-color:#5B74A8;
+        background-position:0px -98px;
+        border-color:#29447E #29447E #1A356E;
+        color:#fff;
+        top:inherit;
+        bottom:10px;
+      }
+    }
+  }
+  #preview_form.preview {
+    margin-top:20px;
+    position:relative;
+    border:1px solid #B4BBCD;
+    padding:10px;
+    #form_field {
+      display:none;
+    }
+    a.title {
+      color:#000;
+      font-size:12px;
+      cursor:pointer;
+      &:hover{
+        background:#ff9;
+      }
+    }
+    a.description {
+      color:#000;
+      font-size:11px;
+      cursor:pointer;
+      &:hover {
+        background:#ff9;
+      }
+    }
+    #display {
+      .controls {
+        position:static;
+      }
+      .wrap {
+        padding-bottom:20px;
+      }
+      p.url {
+        white-space:nowrap;
+        overflow:hidden;
+        width:250px;
+        color:#666;
+        margin-bottom:5px;
+      }
+    }
+    #left,#right {
+      width:25px;
+      height:22px;
+      display:block;
+      text-indent:-9999em;
+      outline:none;
+      top:auto;
+      bottom:10px;
+    }
+    #left{
+      left:10px;
+      background:transparent url("https://s-static.ak.facebook.com/rsrc.php/v1/yi/r/8OjNXDy3pHp.gif") no-repeat -50px -83px;
+      &:hover {
+        background-position:0px -83px;
+      }
+      &:active {
+        background-position:-100px -83px;
+      }
+    }
+    #right{
+      right:auto;
+      left:35px;
+      background:transparent url("https://s-static.ak.facebook.com/rsrc.php/v1/yi/r/8OjNXDy3pHp.gif") no-repeat -75px -83px;
+      &:hover {
+        background-position:-25px -83px;
+      }
+      &:active {
+        background-position:-125px -83px;
+      }
     }
   }
 }

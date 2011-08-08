@@ -108,6 +108,11 @@ var Preview = (function(){
       Display Functions
     */
     render : function(obj){
+      if(Preview.site=='fb'){
+        Ext.fly('id_submit').addClass('submit');
+        Ext.fly('id_submit').dom.value = 'Share';
+        Ext.fly('preview_form').addClass('preview');
+      }
       // We are going to handle just images first. This is when a user
       // directly links to an image asset. i.e.
       //http://images.instagram.com/media/2011/08/01/55d07d3fac974d45ababdb7f04673f72_7.jpg
@@ -125,14 +130,35 @@ var Preview = (function(){
       // may have access to an `object` attribute which will be an image or
       // a video
       if (obj.type == 'html'){
-        //add the title or a blank one.
-        Preview.Display.title(obj);
+        if(Preview.site == 'plus'){
+          //add the title or a blank one.
+          Preview.Display.title(obj);
+
+          // add the favicon to the preview to match Google Plus
+          Preview.Display.favicon(obj);
+        }
         
-        // add the favicon to the preview to match Google Plus
-        Preview.Display.favicon(obj);
 
         // If there are images we need to build the slider.
         Preview.Display.images(obj);
+        
+        // display customizations for facebook version
+        if(Preview.site == 'fb'){
+          Ext.DomHelper.append('display', 
+            {
+              'tag': 'a',
+              'class' : 'title',
+              'href' : '#',
+              'html' : obj.title ? obj.title : 'Click to add your own title.'
+            }
+          );
+          Ext.DomHelper.append('display',{
+            'tag':'p',
+            'class':'url',
+            'html':obj.url
+          });
+        }
+        
 
         //add the description or a blank one.
         Preview.Display.description(obj);
@@ -143,6 +169,9 @@ var Preview = (function(){
           Ext.fly('id_type').dom.value = obj.object.type;
         }
       }
+      
+      
+      
       //Clear div.
       Ext.DomHelper.append('display',{
           tag : 'div',
@@ -161,9 +190,9 @@ var Preview = (function(){
       Ext.fly('id_status').dom.value = ''
       Ext.fly('id_status').blur();
       if(Preview.site=='fb'){
-        Ext.fly('form_field').show();
         Ext.fly('id_submit').dom.value='Attach';
         Ext.fly('id_submit').removeClass('submit');
+        Ext.fly('preview_form').removeClass('preview');
       }
     },
     setStylesheet : function(name){

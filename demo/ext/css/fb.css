@@ -72,6 +72,65 @@ body {
       right: 12px;
       top: 11px;
       position: absolute; }
+      body .main #id_submit.submit {
+        background-color: #5B74A8;
+        background-position: 0px -98px;
+        border-color: #29447E #29447E #1A356E;
+        color: #fff;
+        top: inherit;
+        bottom: 10px; }
+  body #preview_form.preview {
+    margin-top: 20px;
+    position: relative;
+    border: 1px solid #B4BBCD;
+    padding: 10px; }
+    body #preview_form.preview #form_field {
+      display: none; }
+    body #preview_form.preview a.title {
+      color: #000;
+      font-size: 12px;
+      cursor: pointer; }
+      body #preview_form.preview a.title:hover {
+        background: #ff9; }
+    body #preview_form.preview a.description {
+      color: #000;
+      font-size: 11px;
+      cursor: pointer; }
+      body #preview_form.preview a.description:hover {
+        background: #ff9; }
+    body #preview_form.preview #display .controls {
+      position: static; }
+    body #preview_form.preview #display .wrap {
+      padding-bottom: 20px; }
+    body #preview_form.preview #display p.url {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 250px;
+      color: #666;
+      margin-bottom: 5px; }
+    body #preview_form.preview #left, body #preview_form.preview #right {
+      width: 25px;
+      height: 22px;
+      display: block;
+      text-indent: -9999em;
+      outline: none;
+      top: auto;
+      bottom: 10px; }
+    body #preview_form.preview #left {
+      left: 10px;
+      background: transparent url("https://s-static.ak.facebook.com/rsrc.php/v1/yi/r/8OjNXDy3pHp.gif") no-repeat -50px -83px; }
+      body #preview_form.preview #left:hover {
+        background-position: 0px -83px; }
+      body #preview_form.preview #left:active {
+        background-position: -100px -83px; }
+    body #preview_form.preview #right {
+      right: auto;
+      left: 35px;
+      background: transparent url("https://s-static.ak.facebook.com/rsrc.php/v1/yi/r/8OjNXDy3pHp.gif") no-repeat -75px -83px; }
+      body #preview_form.preview #right:hover {
+        background-position: -25px -83px; }
+      body #preview_form.preview #right:active {
+        background-position: -125px -83px; }
 
 #feed .item {
   clear: both;
