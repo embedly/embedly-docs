@@ -150,6 +150,18 @@ var Preview = (function(){
           class : 'clear',
       });
     },
+    
+    // Resets the form to the orginal state
+    reset : function(){
+      // If this is a change in the URL we need to delete all the old
+      // information first.
+      Ext.fly('preview_form').select('input[type="hidden"]').remove();
+      Ext.fly('display').select('*').remove();
+      Ext.fly('display').hide();
+      Ext.fly('display').setStyle('display', 'none');
+      Ext.fly('id_status').dom.value = ''
+      Ext.fly('id_status').blur();
+    },
 
     title : function(obj){
       Ext.DomHelper.insertFirst('display', 
@@ -250,6 +262,27 @@ var Preview = (function(){
       }
       Ext.DomHelper.append('display',image_slider); 
     },
+    bind : function(){
+      //Scroll
+      Ext.getBody().on('click', Preview.Display.scrollRight, null, {delegate: '#right'});
+      Ext.getBody().on('click', Preview.Display.scrollLeft, null, {delegate: '#left'});
+
+      //Equivalent to $('').live from what I understand.
+      Ext.getBody().on('click', Preview.Display.editTitle, null, {delegate: 'a.title'});
+      Ext.getBody().on('click', Preview.Display.editDescription, null, {delegate: 'a.description'});
+      
+      //Simple Expando function for the text area.
+      Ext.EventManager.on("id_status", 'focus', function(e, t){
+        var elem = Ext.get(t);
+        elem.dom.rows = 5;
+        Ext.fly('status_label').dom.style.display='none'
+      });
+      Ext.EventManager.on("id_status", 'blur', function(e, t){
+        var elem = Ext.get(t);
+        elem.dom.rows = 1;
+        Ext.fly('status_label').dom.style.display='inline';
+      });
+    }
   }
 
   /*
@@ -375,6 +408,8 @@ var Preview = (function(){
       //Resets the first Attribute on the 
       Ext.fly('feed').select('.item').removeClass('first');
       Ext.fly('feed').first().addClass('first');
+      
+      Preview.Display.reset();
     },
     deleteFeedItem: function(e,t){
       e.preventDefault(); 
@@ -407,6 +442,17 @@ var Preview = (function(){
       //
       elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
     },
+    
+    bind :function (){
+      //Show and Hide the little x button.
+      Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
+      Ext.getBody().on('mouseout', function(e,t){Ext.fly(t).select('a.close').hide();}, null, {delegate: 'div.item'});
+      //Do something about the little x button. (useful for testing.)
+      Ext.getBody().on('click', Preview.Feed.deleteFeedItem, null, {delegate: 'a.close'});
+      
+      //Wire up the video action
+      Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
+    }
   }
 
 
@@ -565,14 +611,6 @@ var Preview = (function(){
 
     //Binds all the Event Handlers
     bind : function(){
-      //Scroll
-      Ext.getBody().on('click', Preview.Display.scrollRight, null, {delegate: '#right'});
-      Ext.getBody().on('click', Preview.Display.scrollLeft, null, {delegate: '#left'});
-
-      //Equivalent to $('').live from what I understand.
-      Ext.getBody().on('click', Preview.Display.editTitle, null, {delegate: 'a.title'});
-      Ext.getBody().on('click', Preview.Display.editDescription, null, {delegate: 'a.description'});
-      
       //Form submission
       Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
       
@@ -586,14 +624,12 @@ var Preview = (function(){
       //onKeyUp Event
       Ext.EventManager.on("id_status", 'keyup', Preview.onKeyUp);
 
-      //Show and Hide the little x button.
-      Ext.getBody().on('mouseover', function(e,t){Ext.fly(t).select('a.close').show();}, null, {delegate: 'div.item'});
-      Ext.getBody().on('mouseout', function(e,t){Ext.fly(t).select('a.close').hide();}, null, {delegate: 'div.item'});
-      //Do something about the little x button. (useful for testing.)
-      Ext.getBody().on('click', Preview.Feed.deleteFeedItem, null, {delegate: 'a.close'});
+      //Bind the display Events
+      Preview.Display.bind();
       
-      //Wire up the video action
-      Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
+      //Bind the Feed Events
+      Preview.Feed.bind();
+      
     }
   };
   

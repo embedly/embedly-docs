@@ -75,8 +75,8 @@ description
     ``<meta name="description">`` tag in the head of the doc in that order. If
     none of those exist, or are too short, Embedly will use an algorithm to try
     to find a good excerpt from the page. It does this by looking for common
-    clues like a string of p tags, divs with lots of text at a simliar depths
-    and a whole slue of other facters.
+    clues like a string of p tags, divs with lots of text at a similar depths
+    and a whole slue of other factors.
    
     Going back to the Facebook, Google+ and Yammer examples above here are the
     descriptions that each give back
@@ -115,7 +115,7 @@ description
 images
 
     This is a JSON array of images of possible thumbnails for the user to
-    select. For 10k.aneventapart.com, the json array looks like this::
+    select. For 10k.aneventapart.com, the JSON array looks like this::
 
         [
           {
@@ -237,7 +237,7 @@ paste
     
         Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
     
-    The ``paste`` event is a little inconsitant however and at least in Chrome
+    The ``paste`` event is a little inconstant however and at least in Chrome
     actually fires before the ``textarea`` is filled. Because of that it's
     better to set a short timeout to make sure the pasted value is there::
     
@@ -268,7 +268,7 @@ keyup
     has been entered::
 
         onKeyUp : function(e,t){
-          // Ignore Everthing but the spacebar Key event.
+          // Ignore Everything but the spacebar Key event.
           if (e.getKey() != 32) return null;
 
           //See if there is a url in the status textarea
@@ -327,7 +327,7 @@ Once you actually have the URL from the status textarea we have to make a JSONP
 request to the Embedly preview endpoint to get the metadata associated with
 that URL. I used ``jsonp.js`` that was bundled in ``examples/jsonp`` in the Ext
 Core download. Here is the code to get it done, then we will go into all the
-availible options::
+available options::
 
     // Sets up the params we are going to use in the request.
     params = {
@@ -370,8 +370,8 @@ maxwidth
     This is the maximum width of the embed in pixels. ``maxwidth`` is used for
     scaling down embeds so they fit into a certain width. If the container for
     an embed is 500px you should pass ``maxwidth: 500`` in the parameters.
-    For example, if you don’t set a maxwidth for the a Vimeo video Embedly will
-    return the following html::
+    For example, if you don’t set a ``maxwidth`` for the a Vimeo video Embedly
+    will return the following html::
 
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
         height="720" frameborder="0"></iframe>
@@ -401,7 +401,7 @@ wmode
     Will append the ``wmode`` value to the flash object. Possible values
     include ``window``, ``opaque`` and ``transparent``. Generally you always
     want to have ``{ wmode : 'opaque' }`` in the parameters. This prevents
-    embeds from being rendered on top of modals or other html postioned on
+    embeds from being rendered on top of modals or other html positioned on
     top of them.
 
 autoplay
@@ -410,7 +410,7 @@ autoplay
     Generally this is a really bad and annoying feature of some sites, but in
     our case it's a great feature. It allows us to start playing the video as
     soon as the the user clicks on the thumbnail.
-    
+
 words
 
     The ``words`` parameter has a default value of 50 and works by trying to
@@ -431,18 +431,19 @@ words
     
     This is actually only 19 words, but we split at the closest sentence. Words
     is really useful for controlling how long the descriptive text for each URL
-    is. In this case we are going to use 30 words to not overwhelem the page
+    is. In this case we are going to use 30 words to not overwhelm the page
     with text.
     
 chars
     
-    ``chars`` is link ``words``, but instead of trancating to the nearest
+    ``chars`` is link ``words``, but instead of truncating to the nearest
     sentence, Embedly will blindly truncate a description to the number of 
     characters you specify adding ... at the end when needed. For the above 
     description, if we set ``{ chars : 100 }`` it will return::
     
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec ...
+
 
 Once you make the request we have to deal with the data that we get back from
 Embedly. We discussed the different parts of the object that we are going to
@@ -500,8 +501,8 @@ elements we want to save::
       });
     });
 
-You can set Preview.attrs to pretty much anything you want, but in our case we
-user:
+You can set ``Preview.attrs`` to pretty much anything you want, but in our case
+we use:
 
     attrs : ['type', 'original_url', 'url', 'title', 'description', 
             'favicon_url', 'provider_url', 'provider_display', 'safe',
@@ -526,12 +527,12 @@ Now it's all about saving the data. You can do it as a basic ``post``, but why
 make the user wait around for the save to happen? Instead we can write the
 status to the feed and save it asynchronously. This way, to the user, it
 appears as though the save happened instantaneously. First we need to bind a
-callback to the ``sumbit`` handler of the form.
+callback to the ``submit`` handler of the form.
 
     Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
 
 The ``Feed`` object is like ``Display`` in that we can switch in and out
-different implimentations for various effects. The basic ``Feed`` object holds
+different implementations for various effects. The basic ``Feed`` object holds
 the CRUD functions for a set of data:: 
 
     var Feed = {
@@ -601,7 +602,7 @@ To be on the safe side of browser bugs we still use::
     elem.dom.getAttribute('data-title')
 
 Using these data attributes we can create an event to autoplay the video when
-a user clicks the thumbnail. In order the acomplish this we need to know that
+a user clicks the thumbnail. In order the accomplish this we need to know that
 the url has a video associated with it. In the ``metadataCallback`` from above
 we actually change the ``type`` of the embed after we do a number of the checks
 to ``video`` or ``rich`` instead of ``html``. We do this by updating the hidden
@@ -642,3 +643,7 @@ with the embed html::
 The final product looks something like this
 
 .. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/rdio_expanded.png
+
+We have reached the end of the journey. While we could add a number of other
+features here, they are generally up to the individual developer. We invite you
+to check out the demo.

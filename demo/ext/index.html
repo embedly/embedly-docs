@@ -18,7 +18,7 @@
         <form id="preview_form" method="post" action=".">
           <div class="field">
             <label for="id_status" id="status_label">Share what's new...</label>
-            <textarea onfocus="document.getElementById('status_label').style.display='none';this.rows=5;" onblur="if(this.value==''){document.getElementById('status_label').style.display='inline';this.rows=1;}" name="status" id="id_status" rows="1"></textarea>
+            <textarea name="status" id="id_status" rows="1"></textarea>
           </div>
           <div id="loading"></div>
           <div id="display"></div>
@@ -28,10 +28,5 @@
       </div>
        <div id="feed" class="grid_8 push_2"></div>
     </div>
-    <script type="text/javascript">
-      if(document.getElementById('id_status').value!=''){
-        document.getElementById('status_label').style.display='none';
-      }
-    </script>
   </body>
 </html>
