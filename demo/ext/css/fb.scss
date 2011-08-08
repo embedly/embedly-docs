@@ -1,1 +1,81 @@
 /* Facebook Styling for Demo */
+body {
+  background:#fff;
+  font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size:11px;
+  #header {
+    background:#3b5988;
+    height:41px;
+  }
+  .container_12 {
+    .grid_8 {
+      width:493px;
+    }
+  }
+  .main, #feed {
+    border-left:1px solid #b3b3b3;
+    padding-left:20px;
+    h2#preview_h2 {
+      color:#1C2A47;
+      font-size:16px; 
+      line-height:22px;
+      span {
+        background:transparent url("https://s-static.ak.facebook.com/rsrc.php/v1/yi/r/XY1BTEJBstt.png") no-repeat -51px -276px;
+        width:16px;
+        height:18px;
+        float:left;
+        display:block;
+        margin-right:6px;
+      }
+    }
+  }
+  .main {
+    padding-top:10px;
+    div.field {
+      margin-top:20px;
+      position:relative;
+      border:1px solid #B4BBCD;
+      padding:10px;
+      label {
+        position:absolute;
+        color:#777;
+        font-size:13px;
+        left:14px;
+        top:13px;
+      }
+      textarea {
+        border:1px solid #BDC7D8;
+        color:#333;
+        width:462px;
+        resize:none;
+        font-size:13px;
+        padding:3px;
+        line-height:16px;
+        height:16px;
+        cursor:text;
+      }
+    }
+    #id_submit {
+      background:#eee url("https://s-static.ak.facebook.com/rsrc.php/v1/yf/r/_IKHHfAgFQe.png") 0px -49px;
+      border:1px solid #999;
+      border-bottom:1px solid #888;
+      box-shadow:0 1px 0 rgba(0, 0, 0, 0.1);
+      -moz-box-shadow:0 1px 0 rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow:0 1px 0 rgba(0, 0, 0, 0.1);
+      -o-box-shadow:0 1px 0 rgba(0, 0, 0, 0.1);
+      padding:2px 4px;
+      line-height:normal !important;
+      white-space:nowrap;
+      cursor:pointer;
+      font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+      font-size:13px;
+      color:#333;
+      font-weight:bold;
+      text-align:center;
+      outline:none;
+      left:422px;
+      top:-35px;
+      position:relative;
+    }
+  }
+}

@@ -12,10 +12,11 @@
     <link rel="alternate stylesheet" href="css/fb.css" title="fb" />
   </head>
   <body>
+    <div id="header"></div>
     <div id="main" role="main" class="container_12">
       <div class="grid_8 push_2 main">
         <div class="preview_form">
-          <h2>Stream</h2>
+          <h2 id="preview_h2"><span></span>Stream</h2>
         <form id="preview_form" method="post" action=".">
           <div class="field">
             <label for="id_status" id="status_label">Share what's new...</label>
@@ -25,9 +26,10 @@
           <div id="display"></div>
           <input id="id_submit" type="submit" class="disabled" value="Share"/>
         </form>
-        </div>
       </div>
-       <div id="feed" class="grid_8 push_2"></div>
+      </div>
+      <div id="feed" class="grid_8 push_2"></div>
+      <div class="clear"></div>
     </div>
   </body>
 </html>

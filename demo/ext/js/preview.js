@@ -1,8 +1,7 @@
 
 var Preview = (function(){
   // change the display depending on whether we're rendering for a facebook mockup or google plus mockup
-  var target = 'plus';
-  
+
   var Display = {
     /*
     Event Handlers
@@ -164,7 +163,7 @@ var Preview = (function(){
     },
     setStylesheet : function(name){
       var i, obj;
-      Preview.target=name;
+      Preview.site=name;
       for(i=0; i<document.getElementsByTagName("link").length; i++)
       {
         obj = document.getElementsByTagName("link")[i];
@@ -177,10 +176,17 @@ var Preview = (function(){
       }
     },
     swapStylesheets : function(){
-      if(Preview.target == 'plus')
+      if(Preview.site == 'plus'){
+        Ext.fly('status_label').update("http://");
+        Ext.fly('id_submit').dom.value = 'Attach';
+        Ext.fly('preview_h2').update("<span></span>News Feed");
         Preview.Display.setStylesheet('fb');
-      else
+      }else{
+        Ext.fly('status_label').update("Share what's new...");
+        Ext.fly('id_submit').dom.value = 'Share';
+        Ext.fly('preview_h2').update("Stream");
         Preview.Display.setStylesheet('plus');
+      }
     },
 
     title : function(obj){
@@ -294,12 +300,14 @@ var Preview = (function(){
       //Simple Expando function for the text area.
       Ext.EventManager.on("id_status", 'focus', function(e, t){
         var elem = Ext.get(t);
-        elem.dom.rows = 5;
+        if(Preview.site=='plus')
+          elem.dom.rows = 5;
         Ext.fly('status_label').dom.style.display='none'
       });
       Ext.EventManager.on("id_status", 'blur', function(e, t){
         var elem = Ext.get(t);
-        elem.dom.rows = 1;
+        if(Preview.site=='plus')
+          elem.dom.rows = 1;
         Ext.fly('status_label').dom.style.display='inline';
       });
     }
@@ -670,5 +678,6 @@ Ext.onReady(function(){
 
   //Populate the feed
   Preview.Feed.populateFeed();
-  Preview.Display.setStylesheet('plus');
+  Preview.site = 'plus';
+  Preview.Display.swapStylesheets();
 });
