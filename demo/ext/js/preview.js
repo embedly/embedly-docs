@@ -187,6 +187,7 @@ var Preview = (function(){
         Ext.fly('preview_h2').update("Stream");
         Preview.Display.setStylesheet('plus');
       }
+      Preview.Feed.populateFeed();
     },
 
     title : function(obj){
@@ -332,10 +333,77 @@ var Preview = (function(){
       // the item div will have a bunch of data-* attributes that help us later
       // with events.
       Ext.each(Preview.attrs, function(n){elem['data-'+(n == 'html' ? 'embed' : n)] = encodeURIComponent(data[n])});
-
-      //Set up the item div attributes.
       elem['tag'] = 'div';
       elem['class'] = 'item';
+      
+      if(Preview.site=='plus')
+        Feed.plusFeedItem(elem, data);
+      else
+        Feed.fbFeedItem(elem, data);
+    },
+    fbFeedItem : function(elem, data){
+      elem['children'] = [{
+        tag:'img',
+        src:'http://www.freshlyinkedmag.com/static/images/noprofileimage.gif',
+        class:'profilepic'
+      }, {
+        tag:'h6',
+        html:'Demo User'
+      },{
+        tag:'div',
+        class:'embed',
+        children: [{
+          tag : 'div',
+          class : data.thumbnail_url? 'grid_2 alpha thumbnail': 'alpha no_thumbnail',
+          children : [{
+            tag : 'a',
+            href : '#',
+            class : data['type'] in {'video':'', 'rich':''}? 'video' : '',
+            children : [{
+              tag : 'img',
+              src : data.thumbnail_url
+            },{
+              tag : 'span',
+              class : 'player_overlay'
+            }]
+          }]
+        },{
+          tag : 'div',
+          class : 'info',
+          children:[{
+              tag:'a',
+              class : 'title',
+              href : data.url,
+              html : data.title,
+              target :'_blank'
+          },{
+            tag:'p',
+            html : data.provider_display,
+            target :'_blank'
+          },{
+            tag : 'p',
+            html : data.description
+          }]
+        },{
+              tag : 'p',
+            class : 'via',
+              children : [{
+                tag:'img',
+                src:data.favicon_url,
+                class:'postIcon'
+              },{
+                tag:'span',
+                html: ' via '+data.provider_display
+              }]
+            }]
+      },{
+        tag:'div',
+        class:'clear',
+        html:''
+      }];
+      Ext.fly('feed').insertFirst(elem);
+    },
+    plusFeedItem : function(elem, data) {
       elem['children'] = [{
         tag:'a',
         class : 'favicon',
@@ -388,11 +456,11 @@ var Preview = (function(){
           html : 'x'
         }]
       },
-        {
-          tag : 'div',
-          class: 'clear',
-          html : '&nbsp;'
-        }];
+      {
+         tag : 'div',
+        class: 'clear',
+        html : '&nbsp;'
+      }];
       Ext.fly('feed').insertFirst(elem);
     },
     // Adds the feed item to localStorage so we can display them on refresh
@@ -409,6 +477,7 @@ var Preview = (function(){
     // Populates your feed on refresh.
     populateFeed: function(){
       // Get the items.
+      Ext.fly('feed').update('');
       var items = window.localStorage.getItem('items');
       if (items === null || items == '[]') return false;
       //Parse the string to JSON

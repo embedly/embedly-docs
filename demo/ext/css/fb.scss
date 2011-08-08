@@ -7,6 +7,11 @@ body {
     background:#3b5988;
     height:41px;
   }
+  a {
+    color:#3b5988;
+    font-weight:bold;
+    text-decoration:none;
+  }
   .container_12 {
     .grid_8 {
       width:493px;
@@ -76,6 +81,39 @@ body {
       left:422px;
       top:-35px;
       position:relative;
+    }
+  }
+}
+#feed {
+  .item {
+    clear:both;
+    border-color:#E9E9E9;
+  }
+  .profilepic {
+    width:50px;
+    margin-right:10px;
+    float:left;
+  }
+  h6 {
+    font-size:11px;
+    font-weight:bold;
+    color:#3B5998;
+    margin-bottom:5px;
+  }
+  .embed {
+    margin:0 0 0 60px;
+    p {
+      font-size:11px;
+      line-height:14px;
+      &.via {
+        clear:left;
+        .postIcon {
+          width:16px;
+          height:16px;
+          float:left;
+          margin-right:3px;
+        }
+      }
     }
   }
 }

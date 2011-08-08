@@ -6,6 +6,10 @@ body {
   body #header {
     background: #3b5988;
     height: 41px; }
+  body a {
+    color: #3b5988;
+    font-weight: bold;
+    text-decoration: none; }
   body .container_12 .grid_8 {
     width: 493px; }
   body .main, body #feed {
@@ -66,3 +70,28 @@ body {
       left: 422px;
       top: -35px;
       position: relative; }
+
+#feed .item {
+  clear: both;
+  border-color: #E9E9E9; }
+#feed .profilepic {
+  width: 50px;
+  margin-right: 10px;
+  float: left; }
+#feed h6 {
+  font-size: 11px;
+  font-weight: bold;
+  color: #3B5998;
+  margin-bottom: 5px; }
+#feed .embed {
+  margin: 0 0 0 60px; }
+  #feed .embed p {
+    font-size: 11px;
+    line-height: 14px; }
+    #feed .embed p.via {
+      clear: left; }
+      #feed .embed p.via .postIcon {
+        width: 16px;
+        height: 16px;
+        float: left;
+        margin-right: 3px; }
