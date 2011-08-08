@@ -671,9 +671,7 @@ var Preview = (function(){
       //sets up the data we are going to use in the request.
       data = {
         url:url, 
-        key:'internal', //Your Key
-        frame:true, //Load Everything in a frame
-        secure:true, //Make sure that frame is secure.
+        key: EMBEDLY_API_KEY, //Your Key
         autoplay:true,
         wmode : 'opaque',
         maxwidth:500,

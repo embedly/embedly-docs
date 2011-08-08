@@ -1,4 +1,5 @@
-Creating a Facebook-like Url submission tool with Embedly
+Creating a Facebook-like URL submission tool with Embedly
+=========================================================
 
 One of our clients is currently using Ext and Embedly to implement a
 Facebook-like link submission tool. While writing up some examples we went
