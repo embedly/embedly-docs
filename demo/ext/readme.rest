@@ -522,3 +522,123 @@ updated the title::
 
     Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
 
+Now it's all about saving the data. You can do it as a basic ``post``, but why
+make the user wait around for the save to happen? Instead we can write the
+status to the feed and save it asynchronously. This way, to the user, it
+appears as though the save happened instantaneously. First we need to bind a
+callback to the ``sumbit`` handler of the form.
+
+    Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
+
+The ``Feed`` object is like ``Display`` in that we can switch in and out
+different implimentations for various effects. The basic ``Feed`` object holds
+the CRUD functions for a set of data:: 
+
+    var Feed = {
+      createFeedItem : function (data){}},
+      storeFeedItem: function(data){},
+      populateFeed: function(){},
+      submitFeedItem: function(e,t){},
+      deleteFeedItem: function(e,t){}
+    }
+
+The ``submitFeedItem`` call back need to pull out all the data out of the form
+like so::
+
+    var data = {};
+    // Get the data we need out of the form.
+    Ext.select('#preview_form input').each(function(e){
+      data[e.dom.name] = decodeURIComponent(e.dom.value)
+    });
+
+    //Create the Feed Item
+    Preview.Feed.createFeedItem(data);
+    
+    //Save the Feed Item
+    Preview.Feed.storeFeedItem(data);
+
+Note that when we grab the data out of the form we need to decode it via the
+``decodeURIComponent`` function. Once that data is out of the form, we can then
+use it to create a feed item on the fly and then save it. The basic structure
+of a feed item for us looks like so::
+
+    <div class="item">
+      <a class="favicon" href="{{provider_url}}" title="{{provider_display}}">
+        <img src="{{favicon_url}}">
+      </a>
+      <a class="title" href="{{url}}">{{title}}</a>
+      <div class="thumbnail">
+        <a href="#">
+          <img src="{{thumbnail_url}}">
+        </a>
+      </div>
+      <div class="info">
+        <a class="provider" href="{{provider_url}}">{{provider_display}}</a>
+        <p>{{description}}</p>
+        <a class="close" href="#">x</a>
+      </div>
+    </div>
+
+We build that via a giant JSON object that you can see here ` <>`_. The
+important thing here is to also save the item data into div as data properties.
+The HTML5 spec describes a method for saving off `custom data attributes 
+<http://dev.w3.org/html5/spec/Overview.html#custom-data-attribute>`_ that we
+will use here. To add these attributes the the outer div '.item' we can use
+something like this when building the JSON object::
+
+    Ext.each(Preview.attrs, function(n){
+      elem['data-'+(n == 'html' ? 'embed' : n)] = encodeURIComponent(data[n])
+    });
+
+We change the ``data-html`` to ``data-embed`` because it appears to be reserved
+by Ext or the browser, but I didn't investigate to deeply. Once this is in
+place we can get the title for any item like so::
+
+    elem.dom.dataset.title;
+
+To be on the safe side of browser bugs we still use::
+
+    elem.dom.getAttribute('data-title')
+
+Using these data attributes we can create an event to autoplay the video when
+a user clicks the thumbnail. In order the acomplish this we need to know that
+the url has a video associated with it. In the ``metadataCallback`` from above
+we actually change the ``type`` of the embed after we do a number of the checks
+to ``video`` or ``rich`` instead of ``html``. We do this by updating the hidden
+inputs to have the correct values::
+
+    if (obj.object && obj.object.type in {'video':'', 'rich':''}){
+      Ext.fly('id_html').dom.value = obj.object.html;
+      Ext.fly('id_type').dom.value = obj.object.type;
+    }
+
+If the type is ``video`` or ``rich`` we change the the thumbnail html to look
+like so::
+
+    <a href="#" class="video">
+        <img src="{{thumbnail_url}}">
+        <span class="player_overlay"></span>
+    </a>
+
+This creates a an embed that looks like
+
+.. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/rdio_item.png
+
+We can then use Ext to bind the click event to the ``Feed.playVideo`` callback::
+
+    Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
+
+When the event is fired we can then replace the contents of the '.item' div
+with the embed html::
+
+    playVideo : function(e,t){
+      e.preventDefault(); 
+      // Get the parent '.item' div
+      var elem = Ext.fly(t).parent('.item');
+      // Set the '.items' content to the 'data-embed' value. 
+      elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
+    },
+
+The final product looks something like this
+
+.. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/rdio_expanded.png

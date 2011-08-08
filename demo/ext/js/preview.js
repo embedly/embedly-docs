@@ -71,7 +71,7 @@ var Preview = (function(){
       elem.focus();
       // puts the a tag back on blur. It's a single bind so it will be
       // trashed on blur.
-      elem.on('blur', Preview.setTitle, null, {single: true});   
+      elem.on('blur', Preview.Display.setTitle, null, {single: true});   
     },
     //Same as before, but for description
     setDescription : function(e,t){
@@ -102,7 +102,7 @@ var Preview = (function(){
       //Focus the Text Area
       elem.focus();
       //When the element is then blured update the value.
-      elem.on('blur', Preview.setDescription, null, {single : true});
+      elem.on('blur', Preview.Display.setDescription, null, {single : true});
     },
     
     /*
@@ -139,10 +139,9 @@ var Preview = (function(){
         Preview.Display.description(obj);
         
         //This is the fun where the video comes into play.
-        if (obj.object && obj.object.type == 'video'){
-          //Grab the source.
+        if (obj.object && obj.object.type in {'video':'', 'rich':''}){
           Ext.fly('id_html').dom.value = obj.object.html;
-          Ext.fly('id_type').dom.value = 'video';
+          Ext.fly('id_type').dom.value = obj.object.type;
         }
       }
       //Clear div.
@@ -298,7 +297,7 @@ var Preview = (function(){
         children : [{
             tag : 'a',
             href : '#',
-            class : data['type'] == 'video'? 'video' : '',
+            class : data['type'] in {'video':'', 'rich':''}? 'video' : '',
             children : [{
                 tag : 'img',
                 src : data.thumbnail_url
@@ -575,7 +574,7 @@ var Preview = (function(){
       Ext.getBody().on('click', Preview.Display.editDescription, null, {delegate: 'a.description'});
       
       //Form submission
-      Ext.EventManager.on("id_submit", "click", Preview.Feed.submitFeedItem);
+      Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
       
       //Embedly Functions
       //Loses focus

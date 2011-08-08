@@ -116,6 +116,11 @@ div.preview_form {
   }
 }
 
+img.favicon, .favicon img {
+  width:16px;
+  height:16px;
+}
+
 /*
 Feed Styles
 */
@@ -145,6 +150,7 @@ Feed Styles
       background-color: black;
       vertical-align: middle;
       position:relative;
+      text-align: center;
     }
     img {
       max-width: 100px;
@@ -153,7 +159,7 @@ Feed Styles
   }
 }
 
-.video {
+.video, .rich {
   .player_overlay {
     background-image: url(../images/play.png);
     width: 25px;

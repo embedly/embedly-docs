@@ -90,6 +90,10 @@ div.preview_form {
     #attributes a:hover {
       background-color: #FF9; }
 
+img.favicon, .favicon img {
+  width: 16px;
+  height: 16px; }
+
 /*
 Feed Styles
 */
@@ -114,12 +118,13 @@ Feed Styles
     overflow: hidden;
     background-color: black;
     vertical-align: middle;
-    position: relative; }
+    position: relative;
+    text-align: center; }
   .container_12 .thumbnail img {
     max-width: 100px;
     vertical-align: middle; }
 
-.video .player_overlay {
+.video .player_overlay, .rich .player_overlay {
   background-image: url(../images/play.png);
   width: 25px;
   height: 25px;
