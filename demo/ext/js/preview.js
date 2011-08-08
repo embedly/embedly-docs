@@ -747,6 +747,6 @@ Ext.onReady(function(){
 
   //Populate the feed
   Preview.Feed.populateFeed();
-  Preview.site = 'plus';
+  Preview.site = 'fb';
   Preview.Display.swapStylesheets();
 });
