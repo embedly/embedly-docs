@@ -326,7 +326,7 @@ var Preview = (function(){
         target :'_blank'
       },{
         tag : 'div',
-        class : 'grid_2 alpha thumbnail',
+        class : data.thumbnail_url? 'grid_2 alpha thumbnail': 'alpha no_thumbnail',
         children : [{
             tag : 'a',
             href : '#',

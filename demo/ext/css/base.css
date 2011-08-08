@@ -108,6 +108,10 @@ Feed Styles
   .item.first {
     border-top: none; }
 
+.container_12 .no_thumbnail {
+  float: left;
+  border-right: 2px solid #DDD;
+  height: 75px; }
 .container_12 .thumbnail {
   margin: 5px 10px 10px 0;
   width: 105px; }

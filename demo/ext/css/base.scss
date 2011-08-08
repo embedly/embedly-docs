@@ -139,6 +139,11 @@ Feed Styles
 }
 
 .container_12 {
+  .no_thumbnail{
+    float: left;
+    border-right: 2px solid #DDD;
+    height: 75px;
+  }
   .thumbnail {
     margin: 5px 10px 10px 0;
     width: 105px;

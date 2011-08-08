@@ -1,18 +1,22 @@
 Creating a Facebook-like Url submission tool with Embedly
 
-One of our clients is currently using Ext and Embedly to implement a Facebook-like 
-link submission tool. While coding up so examples there is good reason to
-share this with the community as a whole. Herein lies the bible of Ext and
-Embedly.
+One of our clients is currently using Ext and Embedly to implement a
+Facebook-like link submission tool. While writing up some examples we went
+overboard and ended up coding the whole thing. It's worth sharing with the
+community as a whole, because we have seen this question many times before.
+This post ended up being a lot longer than expected, some 4,000+ words
+describing the process and design decisions that go into letting users submit
+links. Herein lies the bible of using Embedly to create a URL submission tool.
+in `Ext Core <http://www.sencha.com/products/extcore/>`_.
 
 First off note that I am not an Ext expert. In fact this is the first I have
-ever used the tool. While I disagree with it's obsession with ids I like how
-it creates HTML and fly. If you see anything that is off or just looks wrong,
-blame ignorance.
+ever used the tool. While I disagree with it's obsession with ids I like how it
+creates HTML and the fly method. If you see anything that is off or just looks
+wrong, blame ignorance.
 
-First off we are trying to build a fairly common design pattern that allows
-users to preview the info for a link before submitting it to their feed. Below
-are a few screenshots from various different services
+We are trying to build a fairly common design pattern that allows users to
+preview the metadata for a link before submitting it to their feed. Below are a
+few screenshots from various different services. 
 
 Facebook
 
@@ -26,30 +30,41 @@ Google+
 
 .. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/googleplus.png
 
-They are all pretty even when it comes down to it, but you can definitely see
-that the 1st selected image for each are all different. Well why is that? Well
-the `10k Apart <http://10k.aneventapart.com/>`_ site doesn't specify an
-``image_src`` or ``og:image`` tag in the head of the html so it's everyman for
-themselves. I can tell you that Embedly looks for the main content div then
-examines all the images within and scores them according to a number of
-different factors. The others do the same, but with different scoring
-algorithms.
+The interface for all three are fairly similar. Each has a textarea for the
+status and when a user enters a URL they all recognize it and fetch the
+metadata associated with the URL. The user can then select a thumbnail and
+edit the title and description. The question is why? Well it turns out that
+humans are much better at picking thumbnails, titles and descriptions than
+algorithms will ever be. It's worth delving into an example and showing where
+all the metadata comes from. We will use the `10k Apart
+<http://10k.aneventapart.com/>`_ website as an example and this is a screenshot
+of the homepage at the time of writing.
+
+.. image:: https://github.com/embedly/embedly-docs/raw/master/demo/ext/images/10kapart.png
+
+Let's look at the metadata in the Facebook, Yammer, Google+ comparison from
+above. The title is the same for each, but the first image and description
+are different. Why is that? Each service uses a different set of algorithms to
+pull data out of the page.  The `10k Apart <http://10k.aneventapart.com/>`_
+site doesn't specify any ``image_src``, ``og:image``, ``decription`` or
+``og:description`` tags in the head of the html so it's everyman for themselves
+. Pulling the best image or a great excerpt is hard and when we let code handle
+it their are bound to be variance and incorrect data.
 
 When it comes down to it though, it should be up to the user. Any of the three
-could work, but at the end of the day a user, not code, will always choose the
-best image. So the task is simple, create a form that allows a user to input a
-URL and select the thumbnail they wish to show. There are however a bunch of
-other considerations that you will invariable end up coming across that we will
-look at as well.
+images above could work, but at the end of the day a user, not code, will
+always choose the best image. So the task is simple, create a form that allows
+a user to input a URL and select the thumbnail, title and description they wish
+to show. There are however a bunch of other considerations that you will
+invariable end up coming across that we will look at as well.
 
 One of Embedly's API endpoints was specifically made for this task. The 
 `preview endpoint <http://embed.ly/docs/endpoints/1/preview>`_ expands on
 oEmbed and passes back an array of images, content, place information, event
 details as well as the normal oEmbed html data. It holds a lot of information,
-but we are going to use the following attributes. I'm going to go into detail
-here because I think it's import that you know where the data is coming from
-and how to use it.
-
+but we are only going to use the following attributes. I'm going to go into
+detail here because I think it's import that you know where the data is coming
+from and how to use it.
 
 type
     
@@ -65,8 +80,9 @@ title
     Title of the page. Embedly looks for a title in the API response, the Open
     Graph title tag or the ``<title>`` tag in the head of the doc in that order
     . For 10k.aneventapart.com we found the title tag::
-    
+
         <title>10K Apart - An Event Apart + Mix Online</title>
+
 
 description
 
@@ -108,9 +124,10 @@ description
     that are hidden by css, and therefore we have no way of knowing if they are
     displayed or not.
     
-    A user could easily intervene, edit the description to something that made
-    a little more sense. As a side note, it's really hard to pull good excerpts
-    all the time, it's harder to know when to not show one at all.
+    A user could easily intervene here and edit the description to something
+    that made a little more sense. As a side note, it's very easy to pull text
+    out of a page, it's hard to pull a good excerpt and it's even harder to
+    know when you should be displaying one at all.
 
 images
 
@@ -137,26 +154,25 @@ images
 
     As you can see Embedly values the larger images in the middle of the page
     greater than the smaller logo at the top of the page. Within the middle of
-    the page we value images that appear higher in order.
-    
+    the page we value images that appear higher in the page.
+
     Images are pulled from a bunch of different sources: API responses, the
     Open Graph image tag, the `image_src` link tag and the page itself. Embedly
-    follows all these image to get the correct height, width and verify that
+    follows all these images to get the correct height, width and verify that
     they exist. Scoring these images is really complicated. Each image is
     scored based on where they lie in the page, what the image type is, if they
     matched a list of commonly used ad servers, did the image redirect and a
     whole slew of other factors that have been added over time.
-    
+
     Still with all these factors, it's hard to pick the right image every time.
-    
 
 provider_display
 
     ``provider_display`` is different from oEmbed's ``provider_name``. It is a
-    very easy way to display just the domain of the provider. For example,
-    ``http://www.bbc.co.uk/news/science-environment-14391929`` has a provider
-    display of ``www.bbc.co.uk`. It's just an easy way of showing a user what
-    domain they will be visiting.
+    very easy way to get the domain of the provider. For example,
+    ``http://www.bbc.co.uk/news/science-environment-14391929`` has a
+    ``provider_display``` of ``www.bbc.co.uk`. This allows you to show a user
+    what domain they will be visiting.
 
 provider_url
 
@@ -187,7 +203,7 @@ object
            Ext.fly('item').dom.innerHtml = '<img src="'+preview.object.url'"/>';
         }
     
-    Not that we are *not* using the width and height attributes on the ``img``
+    Note that we are *not* using the width and height attributes on the ``img``
     tag. The images that are passed back are all different sizes so, it's best
     to use the css style ``max-width`` like so::
     
@@ -215,16 +231,16 @@ We start off with the following simple form::
         <input type="submit" value="submit"/>
     </form>
 
-And then the base for our Preview obj that we will use to wire up all the
-supporting functions. You can use any of the 20 different object declaration
-patterns in JavaScript, ours just happens to look like this::
+And the base for our Preview obj that we will use to wire up all the supporting
+functions. You can use any of the 20 different object declaration patterns in
+JavaScript, ours just happens to look like this::
 
     var Preview = (function(){
       var Preview = {};
       return Preview;
     })();
 
-A user will come to your site in hopes of posting a status of some sort. In
+A user will come to your site in hopes of posting a status of some sort and
 this status may contain a link. There are a few events that we need to listen
 to here in order to create the desired effect: ``paste``, ``blur`` and
 ``keyup``.
@@ -232,12 +248,12 @@ to here in order to create the desired effect: ``paste``, ``blur`` and
 paste
     
     Easily the most common way that users move links around. The event fires
-    after anything is pasted into the object you are listening to. In Ext you
+    after anything is pasted into the object you are listening on. In Ext you
     can listen to the event like so::
     
         Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
     
-    The ``paste`` event is a little inconstant however and at least in Chrome
+    The ``paste`` event is a little inconsistent however and at least in Chrome
     actually fires before the ``textarea`` is filled. Because of that it's
     better to set a short timeout to make sure the pasted value is there::
     
@@ -247,7 +263,7 @@ paste
 
 blur
 
-    When the the status box loses focus we need to check if the user added
+    When the the status textarea loses focus we need to check if the user added
     anything to it. While ``keyup`` and ``paste`` will catch 95% of the cases
     this one is nice to have::
     
@@ -255,11 +271,11 @@ blur
 
 keyup
 
-    If a user wants to be so bold that they actually type in the URL we want to
-    fetch it as soon as they hit the spacebar. This one is a little more tricky
-    because if they are manually typing a url they may edit it a few times
-    causing repeat calls. While we are not going to worry about that here it's
-    just something to think about.
+    If a user wants to be so bold that they actually type in the URL, we want
+    to fetch it as soon as they hit the spacebar. This one is a little more
+    tricky because if they are manually typing a url they may edit it a few
+    times causing repeat calls. While we are not going to worry about that here
+    it's just something to think about.
     
         Ext.EventManager.on("id_status", 'blur', Preview.onKeyUp);
     
@@ -315,16 +331,16 @@ could be clever here and just update the original regex, but I'm not that smart
     
     return matches? 'http://'+matches[0] : null
 
-You are going to catch a number of false positives here. Users editing their
-statuses may type something like "I love it.seriously ..." which will trigger a
-request. You could do something clever with `publicsuffix.org 
+This regex is going to catch a number of false positives here. Users editing
+their statuses may type something like "I love it.seriously ..." which will
+trigger a request. You could do something clever with `publicsuffix.org
 <http://publicsuffix.org>`_ or just be better with regexes. What's interesting
 to note is that neither Facebook or Google Plus offer this feature. They both
 make you use the 'link' function in order to enter a URL without a scheme. They
-must know something or Facebook set the trend and Google Plus copied.
+must know something or Facebook set the trend and Google+ just copied.
 
 Once you actually have the URL from the status textarea we have to make a JSONP
-request to the Embedly preview endpoint to get the metadata associated with
+request to the Embedly Preview endpoint to get the metadata associated with
 that URL. I used ``jsonp.js`` that was bundled in ``examples/jsonp`` in the Ext
 Core download. Here is the code to get it done, then we will go into all the
 available options::
@@ -363,13 +379,13 @@ key
 
     Your Embedly API key. You can sign up for one at `embed.ly/pricing
     <http://embed.ly/pricing>`_. This tutorial uses the Preview endpoint
-    which is only available at the `Starter` plan level and above.
+    which is only available at the "Starter" plan level and above.
 
 maxwidth
 
     This is the maximum width of the embed in pixels. ``maxwidth`` is used for
     scaling down embeds so they fit into a certain width. If the container for
-    an embed is 500px you should pass ``maxwidth: 500`` in the parameters.
+    an embed is 500px you should pass ``{ maxwidth: 500 }`` in the parameters.
     For example, if you don’t set a ``maxwidth`` for the a Vimeo video Embedly
     will return the following html::
 
@@ -377,7 +393,7 @@ maxwidth
         height="720" frameborder="0"></iframe>
     
     This width may cause the embed to overflow the containing div. If we pass 
-    ``maxwidth=500`` the html will be::
+    ``{ maxwidth: 500 }`` the html will be::
 
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
@@ -386,10 +402,10 @@ maxwidth
 
 width
 
-    Will scale embeds type rich and video to the exact ``width`` that a
-    developer specifies in pixels. Embeds smaller than this width will be
+    ``width`` will scale embeds type rich and video to the exact ``width`` that
+    a developer specifies in pixels. Embeds smaller than this width will be
     scaled up and embeds larger than this width will be scaled down. During the
-    scaling process the embed may become distorted, so if you can it's best to
+    scaling process the embed may become distorted, so if you can, it's best to
     use the ``maxwidth`` parameter.
     
     Width is however really useful if you are working with a small set of
@@ -398,18 +414,18 @@ width
 
 wmode
 
-    Will append the ``wmode`` value to the flash object. Possible values
-    include ``window``, ``opaque`` and ``transparent``. Generally you always
-    want to have ``{ wmode : 'opaque' }`` in the parameters. This prevents
-    embeds from being rendered on top of modals or other html positioned on
-    top of them.
+    ``wmode`` will append the ``wmode`` value to the flash object. Possible
+    values include ``window``, ``opaque`` and ``transparent``. Generally you
+    always want to have ``{ wmode : 'opaque' }`` in the parameters. This
+    prevents embeds from being rendered on top of modals or other html
+    positioned on top of them.
 
 autoplay
 
     Tells ``video`` embeds to start playing as soon as they are loaded.
-    Generally this is a really bad and annoying feature of some sites, but in
-    our case it's a great feature. It allows us to start playing the video as
-    soon as the the user clicks on the thumbnail.
+    Generally this is a reallyannoying feature of some sites, but in our case
+    it's a great feature. It allows us to start playing the video as soon as
+    the the user clicks on the thumbnail.
 
 words
 
@@ -436,7 +452,7 @@ words
     
 chars
     
-    ``chars`` is link ``words``, but instead of truncating to the nearest
+    ``chars`` is like ``words``, but instead of truncating to the nearest
     sentence, Embedly will blindly truncate a description to the number of 
     characters you specify adding ... at the end when needed. For the above 
     description, if we set ``{ chars : 100 }`` it will return::
@@ -552,7 +568,7 @@ like so::
       data[e.dom.name] = decodeURIComponent(e.dom.value)
     });
 
-    //Create the Feed Item
+    //Create the Feed Item and display it in the feed.
     Preview.Feed.createFeedItem(data);
     
     //Save the Feed Item
@@ -601,7 +617,7 @@ To be on the safe side of browser bugs we still use::
 
     elem.dom.getAttribute('data-title')
 
-Using these data attributes we can create an event to autoplay the video when
+Using these data attributes we can create an event to auto play the video when
 a user clicks the thumbnail. In order the accomplish this we need to know that
 the url has a video associated with it. In the ``metadataCallback`` from above
 we actually change the ``type`` of the embed after we do a number of the checks
@@ -630,7 +646,7 @@ We can then use Ext to bind the click event to the ``Feed.playVideo`` callback::
     Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
 
 When the event is fired we can then replace the contents of the '.item' div
-with the embed html::
+with the embed html that we saved in custom data attributes::
 
     playVideo : function(e,t){
       e.preventDefault(); 
