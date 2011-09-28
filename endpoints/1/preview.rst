@@ -69,7 +69,9 @@ Example Response::
                     'type': 'video',
                     'width': 640},
          
-        'place': {}
+        'place': {},
+        
+        'event': {}
     }
 
 
@@ -152,6 +154,9 @@ Response
 
 ``place``
     See :ref:`place`
+
+``event``
+    See :ref:`event`
 
 ``embeds``
     A list of embeds that Embedly found on the page. They follow the 

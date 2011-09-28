@@ -123,6 +123,8 @@ Example Response::
                                         'uploader': 'dalechase',
                                         'viewCount': 166474}}},
         'place': {},
+        'microformats': {},
+        'event': {},
         'provider_display': 'www.youtube.com',
         'provider_name': 'YouTube',
         'provider_url': 'http://www.youtube.com/',
@@ -258,6 +260,12 @@ Response
 
 ``place``
     See :ref:`place`
+    
+``event``
+    See :ref:`event`
+    
+``microformats``
+    See :ref:`microformats`
 
 ``embeds``
     A list of embeds that Embedly found in the document.

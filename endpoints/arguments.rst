@@ -56,6 +56,12 @@ An in-depth view of all the query arguments:
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
 
+    Note: For photo or images it is recommended to use CSS styles to scale your image
+    to fit within your page. This can also be applied to ``maxheight``. For example::
+        
+        <img src="http://embed.ly/static/images/squiggle2.png" 
+        style="max-width:300px; max-height:200px;"></img>    
+    
     It is highly recommended that developers pass a ``maxwidth`` to Embedly.
 
 ``maxheight`` (optional)

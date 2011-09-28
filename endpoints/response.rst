@@ -112,8 +112,9 @@ with the Safe Browsing API.
 
 Place
 -----
-The place object gives location data, which is associated with the url. An
-example ``place`` value for a Foursquare venue would be::
+The place object gives location data, which is associated with the url. You can find 
+this data in the :doc:`Preview <1/preview>` or :doc:`Objectify <2/objectify>` endpoints. An example ``place`` value
+for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_ venue would be::
 
     {
         "title": "Dupont Circle Metro Station", 
@@ -160,3 +161,57 @@ example ``place`` value for a Foursquare venue would be::
 
 ``longitude``
     Longitude associated with the place.
+    
+
+.. _event:
+
+Event
+-----
+The event object gives time and details data, which is associated with the url. You can find 
+this data in the :doc:`Preview <1/preview>` or :doc:`Objectify <2/objectify>` endpoints. An example ``event`` value
+for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be::
+
+    {
+        "end": 1308263400000,
+        "description": "Register now and enter to win a Galaxy Tab 10.1! The first 50 paid registrations in June will be entered in a drawing to win a Samsung Galaxy Tab 10.1 tablet computer.",
+        "title": "XSITE 2011: The Xconomy Summit on Innovation, Technology & Entrepreneurship",
+        "start": 1308226500000,
+        "offset": -14400000,
+        "id": "1590716877"
+    }
+
+
+``title``
+    Title of the event.
+    
+``description``
+    Description of the ``event``. The word count controlled by words and chars.
+
+``start``
+    Start time in milliseconds from epoch.
+
+``end``
+    End time in milliseconds from epoch.
+
+``offset``
+    UTC offset in milliseconds. Allows you to localize the time to the user's time zone.
+    
+``id``
+    Unique identifier for the ``event`` by the ``provider``.
+ 
+ .. _microformats:
+
+Microformats
+------------
+The microformats object is used to group general html patterns and conventions in pages. Represented
+as a dictionary (key, value pairs) of the below items. You can find this data in the :doc:`Objectify <2/objectify>` endpoint.
+
+``tags``
+    A dictionary of tagged links, designated with "rel=tag", these are used
+    to indicate keyword/subject of content in a page.  See `microformats.org <http://microformats.org/wiki/rel-tag>`_ for more info.
+    An example **tags** value for an `Ecommerce site <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%2Fen%2Fpersonalized-gifts%2Fstatuette-trophy-soccer-player-football.html>`_ would be::
+        {
+            "trophy": "http://www.sunfactory.fr/en/tag/trophy/", 
+            "soccer": "http://www.sunfactory.fr/en/tag/soccer/", 
+            "statuette": "http://www.sunfactory.fr/en/tag/statuette/"
+        }
