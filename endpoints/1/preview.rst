@@ -137,17 +137,7 @@ Response
     See :ref:`object` 
 
 ``images``
-    A list of, at most, 5 images that Embedly found while processing the url.
-    They are listed in the following order:
-    
-    * If the oEmbed type is ``photo`` the url of the oEmbed object
-    * The ``thubnail_url`` of the oEmbed object if the oEmbed type is not
-      ``photo``
-    * The Open Graph ``image`` property
-    * The ``meta`` ``image_src`` tag.
-    
-    The rest of the list is filled in by images that Embedly found within the 
-    html. They are ranked by size and position on the page.
+    See :ref:`images`
 
 ``content``
     The content of the rss entry. 
