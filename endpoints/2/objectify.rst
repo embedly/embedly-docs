@@ -267,20 +267,16 @@ JSON Requests
 ^^^^^^^^^^^^^
 
 400 Bad Request
-  Required "url" parameter is missing.
-    
-  Either "url" or "urls" parameter is reqiured.
-    
-  Invalid URL format.
-  
-  Invalid "maxheight" parameter.
- 
-  Invalid "maxwidth" parameter.
+  * Required "url" parameter is missing.
+  * Either "url" or "urls" parameter is reqiured.
+  * Invalid URL format.
+  * Invalid "maxheight" parameter.
+  * Invalid "maxwidth" parameter.
+  * Invalid "urls" parameter, exceeded max count of 20.
 
 401 Unauthorized
-  Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
-
-  The provided key does not support this endpoint: <key>, contact: support@embed.ly.
+  * Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
+  * The provided key does not support this endpoint: <key>, contact: support@embed.ly.
 
 403 Forbidden
   This service requires an embedly key parameter, contact: support@embed.ly.
@@ -289,10 +285,10 @@ JSON Requests
   URL Not Found, we will log this and determine if usable.
 
 500 Server issues
-   Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.
+  Embed.ly is having trouble with this url. Please try again or contact us, support@embed.ly.
 
 501 Not Implemented
-   Not implemented for format: acceptable values are ``{json}``.
+  Not implemented for format: acceptable values are ``{json}``.
 
 503 Service Unavailable
   ``Note``: This happens if our service is down, please contact us immediately: support@embed.ly.
