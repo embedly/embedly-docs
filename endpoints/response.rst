@@ -261,6 +261,21 @@ You can find this data in the :doc:`Objectify <2/objectify>` endpoint.
     * me
     * contact
 
+``author``
+    A list of tagged links as specified by the `rel author microformat
+    <http://microformats.org/wiki/rel-author>`_. ``author`` is a list of
+    each tag in which each value is a dictionary of the name and href of the
+    author. Here is an example response for a `Mashable post <http://embed.ly/d
+    ocs/explore/objectify?url=http%3A%2F%2Fmashable.com%2F2011%2F11%2F16%2Fchil
+    l-hulu-livestream-vevo%2F>`_::
+    
+        "author": [
+            {
+                "href": "http://mashable.com/author/sarah-kessler/", 
+                "name": "Sarah Kessler"
+            }
+        ]
+
 
 .. _images:
 
