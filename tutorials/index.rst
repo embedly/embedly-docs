@@ -19,6 +19,10 @@ tutorial is broken down by programming language.
 
   * :doc:`Creating URL submission tool with Ext <ext>`
 
+* Python
+
+  * :doc:`requests`
+
 .. toctree::
     :hidden:
 
