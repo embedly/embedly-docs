@@ -13,10 +13,15 @@ tutorial is broken down by programming language.
 
   * :doc:`simple`
   * :doc:`findpit`
+  * :doc:`jquery_preview`
+
+* Ext
+
+  * :doc:`Creating URL submission tool with Ext <ext>`
 
 .. toctree::
     :hidden:
 
     Getting Started <start>
     jQuery <simple>
-    findpit
+    jquery_preview
