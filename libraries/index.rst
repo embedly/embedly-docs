@@ -26,7 +26,7 @@ Here is a list of the current set of tools that easily integrate with Embedly:
   Using the growing API functionality you can control the default height and
   widthfor all transformed links, as well as designate class and type of the
   wrapping element. By using the regex generator you can also limit the type of
-  links that are transformed. 
+  links that are transformed.
 
 
 .. _Embedly Wordpress: http://wordpress.org/extend/plugins/embedly/
@@ -61,6 +61,8 @@ Libraries that were developed by the Embedly community.
   <http://node79.com/>`_
 * `embedly-dotnet <https://github.com/CaptainCodeman/embedly-dotnet>`_ (.Net) by `Simon Green
   <http://www.captaincodeman.com/>`_
+* `OverblogEmbedlyBundle <https://github.com/ebuzzing/OverblogEmbedlyBundle>`_ (Symfony Bundle) by `Laurent
+    Sarrazin <http://www.over-blog.com/>`_
 
 Explore
 -------

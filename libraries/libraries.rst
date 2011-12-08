@@ -24,3 +24,5 @@ Libraries that were developed by the Embedly community.
   <http://node79.com/>`_
 * `embedly-dotnet <https://github.com/CaptainCodeman/embedly-dotnet>`_ (.Net) by `Simon Green
   <http://www.captaincodeman.com/>`_
+* `OverblogEmbedlyBundle <https://github.com/ebuzzing/OverblogEmbedlyBundle>`_ (Symfony Bundle) by `Laurent
+  Sarrazin <http://www.over-blog.com/>`_
