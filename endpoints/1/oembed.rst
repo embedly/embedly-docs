@@ -175,6 +175,8 @@ JSON or XML Requests
   Invalid "maxheight" parameter.
  
   Invalid "maxwidth" parameter.
+  
+  Invalid "urls" parameter, exceeded max count of 20.
 
 401 Unauthorized
   Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
