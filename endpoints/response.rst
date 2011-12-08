@@ -55,7 +55,7 @@ Safe
 Safe is an attribute that tells you if the url is on a phishing or malware list.
 Embedly uses Google's `Safe Browsing API 
 <http://code.google.com/apis/safebrowsing/>`_ to obtain a list of malicious
-urls. By using this attribute there are rules that you mush obey, which we have
+urls. By using this attribute there are rules that you must obey, which we have
 agreed to by offering this information. When the `safe` attribute is set as
 `true` you can proceed as normal, but when it's `false` there are a few things
 that need to happen. When a url is deemed unsafe there will be two additional
