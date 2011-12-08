@@ -166,22 +166,16 @@ JSON or XML Requests
 ^^^^^^^^^^^^^^^^^^^^
 
 400 Bad Request
-  Required "url" parameter is missing.
-    
-  Either "url" or "urls" parameter is reqiured.
-    
-  Invalid URL format.
-  
-  Invalid "maxheight" parameter.
- 
-  Invalid "maxwidth" parameter.
-  
-  Invalid "urls" parameter, exceeded max count of 20.
+  * Required "url" parameter is missing.
+  * Either "url" or "urls" parameter is reqiured.
+  * Invalid URL format.
+  * Invalid "maxheight" parameter.
+  * Invalid "maxwidth" parameter.
+  * Invalid "urls" parameter, exceeded max count of 20.
 
 401 Unauthorized
-  Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
-
-  The provided key does not support this endpoint: <key>, contact: support@embed.ly.
+  * Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
+  * The provided key does not support this endpoint: <key>, contact: support@embed.ly.
 
 403 Forbidden
   This service requires an embedly key parameter, contact: support@embed.ly.

@@ -28,7 +28,7 @@ worrying about finding or using the embed code.
 For example, if you are sharing a Vimeo video with your friends, you will
 probably grab the link and post "check this out http://vimeo.com/18150336".
 
-.. image:: http://embed.ly/static/images/simple.jpg
+.. image:: ../images/simple.jpg
 
 It's our job as a web developers to keep the user on the site they are on and
 embed that video inline. To accomplish this, all a developer needs to do is make
@@ -63,7 +63,7 @@ This will return the following JSON response::
 We can now embed that link by appending this html to the post. This creates a
 rich experience for users.
 
-.. image:: http://embed.ly/static/images/simple_embed.jpg
+.. image:: ../images/simple_embed.jpg
 
 This is just one example of how one can use Embedly. With over 215 different
 providers and more added weekly; Embedly is your one-stop shop for embedding any
