@@ -7,17 +7,17 @@ explicitly means that this is a very new feature and is open to community
 feedback. We will initially be supporting iOS devices and various Android
 devices.
 
-Endpoints 
+Endpoints
 ---------
 All API endpoints will be supported for mobile. View the complete list here
 :doc:`index`.
 
-Responses 
+Responses
 ---------
 API responses will be based on the "User-Agent" of your device - i.e, we will
 *not* return Flash for an iOS device.
 
-HTML5 Providers 
+HTML5 Providers
 ---------------
 HTML5 has been gaining support among video and rich media providers. We
 currently support 26 providers and are actively working with other media
@@ -57,13 +57,15 @@ Supported Streaming Devices
 These are the devices that will support video and audio streaming embeds.
 
 * iOS (3.0 - 4.3)
+
   * iPad
   * iPhone
   * iTouch
 
 * Android (2.2 and up)
+
   * Devices that support Flash Player 10.1 and up.
- 
+
 Mobile Libraries
 ----------------
 To streamline your mobile development, we have created libraries to get you
