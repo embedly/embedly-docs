@@ -108,7 +108,7 @@ a look at a few of them.
           maxWidth: 450,
           wmode: 'transparent',
           method: 'after',
-          key: ':your_embedly_api_key'
+          key: 'your_embedly_api_key'
         });
       });
     </script>
