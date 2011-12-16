@@ -178,8 +178,10 @@ JSON or XML Requests
   * The provided key does not support this endpoint: <key>, contact: support@embed.ly.
 
 403 Forbidden
-  This service requires an embedly key parameter, contact: support@embed.ly.
-
+  * This service requires an embedly key parameter, contact: support@embed.ly.
+  * Invalid IP provided: <ip>, contact: support@embed.ly.
+  * Invalid referrer provided: <referrer>, contact: support@embed.ly.
+  
 404 Not Found
   URL Not Found, we will log this and determine if usable.
 
