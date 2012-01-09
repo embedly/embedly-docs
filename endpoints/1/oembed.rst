@@ -227,7 +227,8 @@ A short example for using jQuery and Embedly::
 
     // Call API to get a video oEmbed JSON response
     var url = escape('http://vimeo.com/9503416');
-    var api_url = 'http://api.embed.ly/1/oembed?key=:key&url=' + url + '&callback=?';
+    var key = 'insert_your_key';
+    var api_url = 'http://api.embed.ly/1/oembed?key=' + key + '&url=' + url + '&callback=?';
     //jQuery JSON call
     $.getJSON( api_url, function(json) {
         var html = json.html;
