@@ -1,4 +1,4 @@
-.. _auth:
+f.. _auth:
 
 Authentication
 ==============
@@ -73,7 +73,7 @@ is an example of using the `python-oauth2
     # Set up instances of our Token and Consumer. The Consumer.key and 
     # Consumer.secret are given to you by the API provider.
     token = oauth.Token(key="", token="")
-    consumer = oauth.Consumer(key=":key", secret=":secret")
+    consumer = oauth.Consumer(key="key", secret="secret")
     
     params['oauth_consumer_key'] = consumer.key
     
