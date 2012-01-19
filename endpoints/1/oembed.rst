@@ -258,7 +258,7 @@ A short example for using Python and Embedly::
         """
         api_url = 'http://api.embed.ly/1/oembed?'
     
-        params = {'url': url , 'key': ':key' }
+        params = {'url': url , 'key': 'key' } #insert your key.
     
         for key, value in kwargs.items():
             if key not in ACCEPTED_ARGS:

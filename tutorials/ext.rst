@@ -366,7 +366,7 @@ available options::
     // Sets up the parameters we are going to use in the request.
     params = {
       url:url, 
-      key:':key', // replace with your key. 
+      key:'key', // replace with your key. 
       autoplay:true,
       maxwidth:500,
       wmode : 'opaque',
