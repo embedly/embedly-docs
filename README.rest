@@ -1,0 +1,18 @@
+Embedly Docs 2.0
+================
+
+This branch is a major rewrite of the Embedly docs. In addition to content
+changes, the structure of the docs has been updated:
+
+* The Table of Contents on the front page is gone, as are all ``index`` and
+  ``contents`` pages with no other content. Instead, all navigation will live
+  in the sidebar (see below).
+
+* Pages are shorter and finer-grained, for easier editing and better content
+  findability.
+
+The New Sidebar
+---------------
+
+The highlight of the new docs is a search box powered by `Searchify
+<http://www.searchify.com/>`_.
