@@ -1,26 +1,35 @@
-Documentation
-=============
-Embedly is an API for turning links into embeddable content. For example:
+Embedly Docs
+============
 
-* Give us the link to an image on Flickr, and we'll give you a thumbnail
-  version of that image scaled any way you like.
+.. raw:: html
 
-* Give us the link to a YouTube video, and we'll give you the markup to
-  display that video on your page or :doc:`mobile app <endpoints/mobile>`.
+  <div class="columnContainer">
 
-* Give us the link to a tweet, and we'll give you everything you need to show
-  it properly: the tweet itself, a timestamp, and a thumbnail image of the
-  author.
+  <div id="columnWrapper1" class="columnWrapper"><div class="column">
+    <h2>For Authors</h2>
+    <p>
+      Want to turn links into content on your blog or website? Check out our
+      amazing <a href="https://app.embed.ly/anywhere" title="Embedly Anywhere">Embedly Anywhere</a>
+      tool, or try our plugins for <a href="http://wordpress.org/extend/plugins/embedly/" title="Embedly WordPress plugin">WordPress</a>,
+      <a href="http://drupal.org/project/oembed" title="Embedly Drupal plugin">Drupal</a>,
+      and <a href="http://extensions.joomla.org/extensions/social-web/social-channels-display/13556" title="Embedly Joomla plugin">Joomla</a>.
+    </p>
+    <p>
+      Email <a href="mailto:support%40embed.ly">support<span>@</span>embed<span>.</span>ly</a> if you need our help.
+    </p>
+  </div></div>
 
-Plus, if you use our :doc:`Objectify <endpoints/2/objectify>` endpoint, we'll
-give you additional metadata for that link: What are some keywords that
-describe that image? What's the average rating on that video? How many times
-has that tweet been retweeted?
+  <div id="columnWrapper2" class="columnWrapper"><div class="column">
+    <h2>For Developers</h2>
+    <p>
+      Want to learn about our RESTful API for generating previews and metadata
+      from URIs? Head to our
+      <a href="/docs/tutorials/start">Getting Started</a> tutorial. 
+    </p>
+    <p>
+      To report a bug or make a feature request, head to our <a href="http://support.embed.ly/forums" title="Embedly support forum">support forum</a>.
+    </p>
+  </div></div>
 
-To see Embedly in action, plug a link to any of our |num_providers| `providers
-</providers>`_ into our `Explore
-</docs/explore/>`_ page. When you're ready to integrate Embedly
-into your own app, `sign up for an account </pricing>`_ and head to
-:doc:`Getting Started <tutorials/start>`.
+  </div>
 
-.. TODO: I'd like to move the Explore widget onto this page. (TB)
