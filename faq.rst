@@ -124,3 +124,50 @@ Do you support mobile devices?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Yes, we are currently in Beta with mobile support for iOS and Android devices.
 Learn more about `mobile </docs/mobile>`_.
+
+Does Embedly send back the original URL?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We send the original URL (original_url) in our
+`Preview </docs/endpoints/1/preview#response>`_
+and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints. 
+The `oEmbed </docs/endpoints/1/oembed#response>`_  endpoint
+contains the canonical URL for link type.
+
+Troubleshooting
+---------------
+
+Why doesn't the API work?
+^^^^^^^^^^^^^^^^^^^^^^^^^
+This can generally be a number of reasons; ranging from not using a key,
+being over your usage limit, or not having access to an API endpoint.
+
+* Make sure you have `signed up </pricing#plans>`_ for a key.
+* Ensure the URL you are testing is public and working on the web.
+* Check that your `plan </pricing#plans>`_ has the Objectify or
+  Preview endpoints enabled.
+* Log in and check your `usage bucket <https://app.embed.ly>`_.
+
+This description is bad
+^^^^^^^^^^^^^^^^^^^^^^^
+Embedly attempts to pick the best description from the page or header
+tags. There are a few things that can throw us off; bad HTML, dynamically
+generated pages, or invalid encodings.
+
+Why is this Youtube video not working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some Youtube videos do not allow embedding. If you open the
+Youtube video page and click  the Share and then the Embed button it will tell
+you if Embedding is disabled.
+
+Why are Facebook photos broken?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The page's content may be loaded dynamically through Javascript,
+this prevents Embedly from finding images.
+
+Is my key working?
+^^^^^^^^^^^^^^^^^^
+Your key is activated as soon as you sign up.
+
+* Did you set referrer or IP blocking? Check your
+  `dashboard <https://app.embed.ly>`_ .
+* Did you exceed your Free plan? Check your `usage bucket <https://app.embed.ly>`_.
