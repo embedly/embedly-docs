@@ -7,6 +7,7 @@ Embedly Docs
 
   <div id="columnWrapper1" class="columnWrapper"><div class="column">
     <h2>For Authors</h2>
+    <div style="text-align: center; margin-bottom: 1em;"><img src="/static/images/docs/wordpress_logo.png" width="128" height="128" /></div>
     <p>
       Want to turn links into content on your blog or website? Check out our
       amazing <a href="https://app.embed.ly/anywhere" title="Embedly Anywhere">Embedly Anywhere</a>
@@ -21,6 +22,7 @@ Embedly Docs
 
   <div id="columnWrapper2" class="columnWrapper"><div class="column">
     <h2>For Developers</h2>
+  <div style="text-align: center; margin-bottom: 1em;"><img src="/static/images/docs/api_logo.png" width="200" height="128" /></div>
     <p>
       Want to learn about our RESTful API for generating previews and metadata
       from URIs? Head to our
