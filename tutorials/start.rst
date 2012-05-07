@@ -9,8 +9,10 @@ But your friends won't just see a link. They'll also see something like this:
 
 .. raw:: html
 
+    <div class='example-frame' style='width:500px;'>
     <iframe src='http://player.vimeo.com/video/18150336' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    <p style='width:500px; font-size:0.9em; text-align:justify; line-height:1.1; color:#333'>The Need 4 Speed: The Art of Flight A collection of shots from flights made during the 2009-2010 season by the talented group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango rigs and testing several new V-series wingsuit prototypes around Europe. Feel the need. The need for speed!</p>
+    <p style='width:500px; margin:0.5em 0; font-size:0.9em; text-align:justify; line-height:1.1; color:#333'>The Need 4 Speed: The Art of Flight A collection of shots from flights made during the 2009-2010 season by the talented group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango rigs and testing several new V-series wingsuit prototypes around Europe. Feel the need. The need for speed!</p>
+    </div>
 
 That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or `mobile app </docs/mobile>`_
 
