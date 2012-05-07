@@ -41,7 +41,9 @@ it in JSON format. For example, to get the embed for that Vimeo link, you might 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
 `oEmbed endpoint </docs/endpoints/1/oembed>`_.)
 
-This will return the following JSON response::
+This will return the following JSON response:
+
+.. code-block:: json
 
     {
         "provider_url": "http://vimeo.com/", 
