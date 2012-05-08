@@ -4,9 +4,12 @@ Authentication
 To authenticate your requests, include ``key`` as a query parameter,
 like so::
 
-    https://api.embed.ly/<version>/<endpoint>?key=:key&<rest of query parameters>
+    https://api.embed.ly/:version/:endpoint?key=:key&<additional query parameters>
 
-(Replace ``:key`` with the unique API key shown in
+(Choose ``:version`` and ``:endpoint` depending on the part of Embedly's API
+that you want to access, e.g. ``1/oembed`` for the default
+`oEmbed endpoint </docs/endpoints/1/oembed>`_. Replace ``:key`` with the 
+unique API key shown in
 `your dashboard <http://app.embed.ly>`_.)
 
 Notice the use of `https` instead of `http`, which is **strongly recommended**
@@ -45,3 +48,7 @@ OAuth.
 Your account can only be configured to use either key-based authentication or
 OAuth, not both. To switch from one form of authentication to the other, visit
 the **Your API Key** section of `your dashboard <http://app.embed.ly>`_.
+
+.. container:: keywords
+
+   auth, security
