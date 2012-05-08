@@ -6,14 +6,6 @@ Embedly offers 3 different endpoints to choose from: :doc:`oEmbed <1/oembed>`,
 has a different structure and set of use cases. We recommend looking over each
 to see which is best suited for you.
 
-Authentication
---------------
-Embedly requires developers to authenticate their requests to Embedly. There
-are two different methods to authenticate requests: :ref:`key based 
-<key_based>` and :ref:`oAuth <oauth>`. Read more about how to use these methods
-below.
-
-|more| :doc:`Authentication<auth>`
 
 oEmbed
 ------
