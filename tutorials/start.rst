@@ -73,3 +73,7 @@ the ``title``, ``description``, and other metadata.
 
 Ready to add Embedly to your app? `Sign up for an account </pricing>`_, then
 check out our `tutorials </tutorials>`_ and `libraries </libraries>`_.
+
+.. container:: keywords
+
+   start, tutorial
