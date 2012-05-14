@@ -68,7 +68,7 @@ specify a ``maxwidth`` or tell the video to ``autoplay``. To build the request
 URL we need to write a bit of python to deal with the URL encoding. The
 ``urls`` parameter needs special encoding so we will deal with that first.
 
-.. raw:: python
+.. code-block:: python
 
     # Can't get away from urllib
     In [9]: import urllib
