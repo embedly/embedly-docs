@@ -62,12 +62,13 @@ the content into data we can use::
 
 Using Multiple Arguments
 ------------------------
-Embedly has a whole bunch of :ref:`query arguments <arguments>`_ that you can
+Embedly has a whole bunch of :ref:`query arguments <arguments>` that you can
 use to control the output of the API. You can pass in multiple ``urls``,
 specify a ``maxwidth`` or tell the video to ``autoplay``. To build the request
 URL we need to write a bit of python to deal with the URL encoding. The
 ``urls`` parameter needs special encoding so we will deal with that first.
-::
+
+.. raw:: python
 
     # Can't get away from urllib
     In [9]: import urllib
