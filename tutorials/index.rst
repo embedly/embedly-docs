@@ -27,5 +27,5 @@ tutorial is broken down by programming language.
     :hidden:
 
     Getting Started <start>
-    jQuery <simple>
+    jQuery <jquery>
     jquery_preview
