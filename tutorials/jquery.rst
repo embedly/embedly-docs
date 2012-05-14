@@ -1,7 +1,5 @@
-.. _tutorial:
-
-Tutorial
-========
+Embedly jQuery
+==============
 
 This document is meant to walk you through embedding a video into a blog post.
 Embedly's use cases also have many more uses, but this should give you a firm

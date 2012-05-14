@@ -14,7 +14,7 @@ But your friends won't just see a link. They'll also see something like this:
     <p style='width:500px; margin:0.5em 0; font-size:0.9em; text-align:justify; line-height:1.1; color:#333'>The Need 4 Speed: The Art of Flight A collection of shots from flights made during the 2009-2010 season by the talented group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango rigs and testing several new V-series wingsuit prototypes around Europe. Feel the need. The need for speed!</p>
     </div>
 
-That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or `mobile app </docs/mobile>`_
+That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or :doc:`mobile app </mobile>`_
 
 .. Embedly's API will handle any web address, but it yields the best results with queries to our |num_providers| `providers </providers>`_.
 
@@ -34,12 +34,14 @@ API Overview
 ------------
 
 Embedly provides a RESTful API that takes a URL and returns information about
-it in JSON format. For example, to get the embed for that Vimeo link, you might make a GET request to::
+it in JSON format. For example, to get the embed for that Vimeo link, you would make a GET request like::
 
     http://api.embed.ly/1/oembed?url=http%3A%2F%2Fvimeo.com%2F18150336
 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
-`oEmbed endpoint </docs/endpoints/1/oembed>`_.)
+:doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
+``key`` that you would normally use for
+:doc:`authentication </authentication>`.)
 
 This will return the following JSON response:
 
@@ -72,7 +74,8 @@ player that you can add to your page's markup. You can customize the embed with
 the ``title``, ``description``, and other metadata.
 
 Ready to add Embedly to your app? `Sign up for an account </pricing>`_, then
-check out our `tutorials </tutorials>`_ and `libraries </libraries>`_.
+check out our :doc:`tutorials </tutorials/index>` and
+:doc:`libraries </libraries/index>`.
 
 .. container:: keywords
 

@@ -8,7 +8,7 @@ like so::
 
 (Choose ``:version`` and ``:endpoint` depending on the part of Embedly's API
 that you want to access, e.g. ``1/oembed`` for the default
-`oEmbed endpoint </docs/endpoints/1/oembed>`_. Replace ``:key`` with the 
+`oEmbed endpoint :doc:`</endpoints/1/oembed>`_. Replace ``:key`` with the 
 unique API key shown in
 `your dashboard <http://app.embed.ly>`_.)
 

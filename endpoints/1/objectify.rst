@@ -1,5 +1,9 @@
+Objectify (v1)
+==============
 
-Objectify
-=========
+Objectify (v1) has been deprecated. Please use
+:doc:`Objectify (v2) </endpoints/2/objectify>` instead.
 
-This endpoint has been depreciated
+.. container:: keywords
+
+   -nosearch

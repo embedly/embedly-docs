@@ -11,7 +11,7 @@ tutorial is broken down by programming language.
 
 * jQuery
 
-  * :doc:`simple`
+  * :doc:`jquery`
   * :doc:`findpit`
   * :doc:`jquery_preview`
 

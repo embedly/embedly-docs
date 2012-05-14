@@ -14,7 +14,7 @@ Example Calls:
 
 Response Explorer
 -----------------
-:doc:`Embedly Explore <../../explore>` can be used to get a better handle on
+`Embedly Explore </docs/explore>`_ can be used to get a better handle on
 what this API returns. Try these examples:
 
 * `Techcrunch Article <http://embed.ly/docs/explore/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
