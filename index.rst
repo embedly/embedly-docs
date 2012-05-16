@@ -35,3 +35,6 @@ Embedly Docs
 
   </div>
 
+.. container:: keywords
+
+   -nosearch
