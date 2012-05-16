@@ -1,20 +1,40 @@
-Documentation
-=============
-Embedly is the best way to retrieve meta data associated with a URL. We offer
-a full suite of tools that you can tailor to your needs to make embedding
-simple and easy. These docs will help you understand how to get the most out of
-Embedly and how the API works. If you are new to Embedly we suggest reading the
-:doc:`Getting Stared <tutorials/start>` tutorial. It will give you a basic idea
-of how Embedly works and its benefits. 
+Embedly Docs
+============
 
-Embedly provides a few different service levels depending on your usage. While
-the basic usage level is free, we do have a monthly limit in place. Please 
-check out our `pricing </pricing>`_ page to learn more about our service levels.
+.. raw:: html
 
-.. toctree::
-    :maxdepth: 2
+  <div class="columnContainer">
 
-    tutorials/index
-    libraries/contents
-    endpoints/contents
-    faq
+  <div id="columnWrapper1" class="columnWrapper"><div class="column">
+    <h2>For Authors</h2>
+    <div style="text-align: center; margin-bottom: 1em;"><img src="/static/images/docs/wordpress_logo.png" width="128" height="128" /></div>
+    <p>
+      Want to turn links into content on your blog or website? Check out our
+      amazing <a href="https://app.embed.ly/anywhere" title="Embedly Anywhere">Embedly Anywhere</a>
+      tool, or try our plugins for <a href="http://wordpress.org/extend/plugins/embedly/" title="Embedly WordPress plugin">WordPress</a>,
+      <a href="http://drupal.org/project/oembed" title="Embedly Drupal plugin">Drupal</a>,
+      and <a href="http://extensions.joomla.org/extensions/social-web/social-channels-display/13556" title="Embedly Joomla plugin">Joomla</a>.
+    </p>
+    <p>
+      Email <a href="mailto:support%40embed.ly">support<span>@</span>embed<span>.</span>ly</a> if you need our help.
+    </p>
+  </div></div>
+
+  <div id="columnWrapper2" class="columnWrapper"><div class="column">
+    <h2>For Developers</h2>
+  <div style="text-align: center; margin-bottom: 1em;"><img src="/static/images/docs/api_logo.png" width="200" height="128" /></div>
+    <p>
+      Want to learn about our RESTful API for generating previews and metadata
+      from URIs? Head to our
+      <a href="/docs/tutorials/start">Getting Started</a> tutorial. 
+    </p>
+    <p>
+      To report a bug or make a feature request, head to our <a href="http://support.embed.ly/forums" title="Embedly support forum">support forum</a>.
+    </p>
+  </div></div>
+
+  </div>
+
+.. container:: keywords
+
+   -nosearch
