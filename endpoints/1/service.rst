@@ -5,11 +5,11 @@ Service API
 The services method allows you to easily get information on all the providers
 that Embedly supports.
 
-Example Calls:
+Example Calls::
 
-``http://api.embed.ly/1/services?callback=:callback``
+    http://api.embed.ly/1/services?callback=:callback
 
-``http://api.embed.ly/1/services/:lang?callback=:callback``
+    http://api.embed.ly/1/services/:lang?callback=:callback
 
 Query Parameters
 ----------------

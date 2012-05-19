@@ -6,11 +6,11 @@ It is designed to allow users to select from a number of different options to
 build an embed because in the end, the user will have the best insight to an 
 accurate portrayal of the content.
 
-Example Calls:
+Example Calls::
 
-``http://api.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-``http://api.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
 Response Explorer
 -----------------

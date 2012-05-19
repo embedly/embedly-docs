@@ -6,11 +6,11 @@ Embedly's oEmbed API is a single endpoint that allows you to embed content from
 `any` URL -- including short urls. This method follows the `oEmbed 
 <http://oembed.com>`_ standard and returns the JSON format by default.
 
-Example Calls:
+Example Calls::
 
-``http://api.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-``http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
 Response Explorer
 -----------------

@@ -6,11 +6,11 @@ everything we know about a URL out so you can use as you like. If you don't
 need this much information we suggest using :doc:`../1/oembed` or
 :doc:`../1/preview`.
 
-Example Calls
+Example Calls::
 
-``http://api.embed.ly/2/objectify?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/2/objectify?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-``http://api.embed.ly/2/objectify?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback``
+    http://api.embed.ly/2/objectify?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
 Response Explorer
 -----------------
