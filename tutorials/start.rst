@@ -1,6 +1,10 @@
 Getting Started with Embedly
 ============================
 
+.. *This page is a summary of the Embedly API for developers with programming
+   experience. Bloggers and other authors who want to use Embedly without
+   writing code should see :doc:`Embedly for Authors </authors>`.*
+
 Ever shared a link on Facebook or Google+? You might enter this:
 
     check this out: http://vimeo.com/18150336
