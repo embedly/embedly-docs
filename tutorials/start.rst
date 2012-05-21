@@ -1,9 +1,12 @@
 Getting Started with Embedly
 ============================
 
-.. *This page is a summary of the Embedly API for developers with programming
-   experience. Bloggers and other authors who want to use Embedly without
-   writing code should see :doc:`Embedly for Authors </authors>`.*
+.. raw:: html
+
+    <p class="preface">This page is a summary of the Embedly API for developers
+    with programming experience. Bloggers and other authors who want to use
+    Embedly without writing code should see <a href="/docs/authors">Embedly
+    for authors</a>.</p>
 
 Ever shared a link on Facebook or Google+? You might enter this:
 

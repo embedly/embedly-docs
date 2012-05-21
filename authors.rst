@@ -1,10 +1,13 @@
 Embedly for Authors
 ===================
 
-.. *This page is a summary of the tools Embedly provides for bloggers and other
-   authors who want to use Embedly without writing code. Developers who want
-   finer-grained access to the Embedly API should start with the
-   :doc:`Getting Started tutorial </tutorials/start>`.*
+.. raw:: html
+
+    <p class="preface">This page is a summary of the tools Embedly
+    provides for bloggers and other authors who want to use Embedly without
+    writing code. Developers who want finer-grained access to the Embedly API
+    should start with the <a href="/docs/tutorials/start">Getting Started</a>
+    tutorial.</p>
 
 Ever shared a link on Facebook or Google+? You might enter this:
 
