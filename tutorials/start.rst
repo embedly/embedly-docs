@@ -1,42 +1,55 @@
-
 Getting Started with Embedly
 ============================
-Let's crawl before we walk, and then we'll "run".
 
-What is an Embed?
------------------
-An embed is any piece of HTML that can live on any page. Images, videos, and
-rich media are all embeds. Embeds have two main qualities that are
-advantageous for any site:
+.. *This page is a summary of the Embedly API for developers with programming
+   experience. Bloggers and other authors who want to use Embedly without
+   writing code should see :doc:`Embedly for Authors </authors>`.*
 
-* Users will stay on a page 250 percent longer, if an embed is present on the
-  page.
-* Embeds give users a preview of the link, allowing them to make better choices
-  about what sites they visit.
-|
-Facebook taught 500+ million users what to expect when they share a link; a
-preview should be generated. Every site should have this functionality and
-Embedly makes that easy.
+Ever shared a link on Facebook or Google+? You might enter this:
 
-Overview
---------
-Embedly is a RESTful API that takes a URL and returns embeddable metadata.
-Every site on the web does some sort of embedding of videos, images or other
-rich media. Embedly makes it easy by allowing users to just share URLs and not
-worrying about finding or using the embed code.
+    check this out: http://vimeo.com/18150336
 
-For example, if you are sharing a Vimeo video with your friends, you will
-probably grab the link and post "check this out http://vimeo.com/18150336".
+But your friends won't just see a link. They'll also see something like this:
 
-.. image:: ../../../static/images/docs/simple.jpg
+.. raw:: html
 
-It's our job as a web developers to keep the user on the site they are on and
-embed that video inline. To accomplish this, all a developer needs to do is make
-an HTTP request to Embedly to will that url as a query argument::
+    <div class='example-frame' style='width:500px;'>
+    <iframe src='http://player.vimeo.com/video/18150336' width='500' height='281' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <p style='width:500px; margin:0.5em 0; font-size:0.9em; text-align:justify; line-height:1.1; color:#333'>The Need 4 Speed: The Art of Flight A collection of shots from flights made during the 2009-2010 season by the talented group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango rigs and testing several new V-series wingsuit prototypes around Europe. Feel the need. The need for speed!</p>
+    </div>
+
+That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or :doc:`mobile app </mobile>`.
+
+.. Embedly's API will handle any web address, but it yields the best results with queries to our |num_providers| `providers </providers>`_.
+
+Adding embeds to your site provides you and your users with several benefits:
+
+* **Engagement:** Users will stay on your page *250% longer,* on average.
+* **Convenience:** Users can make better choices about what sites they visit.
+* **Security:** If a link is potentially malicious (e.g. a link to a phishing
+  page), users will get a warning.
+
+.. TODO: The engagement claim needs a link to the source of the claim. The security bullet point should have a link to a docs page on the subject.
+
+Plus, it's easy. Once you understand the Embedly API, you'll be able to use it
+from your server or, via JavaScript, from your users' browsers.
+
+API Overview
+------------
+
+Embedly provides a RESTful API that takes a URL and returns information about
+it in JSON format. For example, to get the embed for that Vimeo link, you would make a GET request like::
 
     http://api.embed.ly/1/oembed?url=http%3A%2F%2Fvimeo.com%2F18150336
 
-This will return the following JSON response::
+(The ``/1/oembed`` part of the request tells Embedly that you want to use the
+:doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
+``key`` that you would normally use for
+:doc:`authentication </authentication>`.)
+
+This will return the following JSON response:
+
+.. code-block:: json
 
     {
         "provider_url": "http://vimeo.com/", 
@@ -60,11 +73,14 @@ This will return the following JSON response::
         "author_url": "http://vimeo.com/phoenixfly"
     }
 
-We can now embed that link by appending this html to the post. This creates a
-rich experience for users.
+Right out of the box, the ``html`` property of the response gives you a video
+player that you can add to your page's markup. You can customize the embed with
+the ``title``, ``description``, and other metadata.
 
-.. image:: ../../../static/images/docs/simple_embed.jpg
+Ready to add Embedly to your app? `Sign up for an account </pricing>`_, then
+check out our :doc:`tutorials </tutorials/index>` and
+:doc:`libraries </libraries/index>`.
 
-This is just one example of how one can use Embedly. With over 215 different
-providers and more added weekly; Embedly is your one-stop shop for embedding any
-url.
+.. container:: keywords
+
+   start, tutorial
