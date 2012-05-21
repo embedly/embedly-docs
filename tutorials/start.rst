@@ -48,7 +48,7 @@ it in JSON format. For example, to get the embed for that Vimeo link, you would 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
 :doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
 ``key`` that you would normally use for
-:doc:`authentication </authentication>`.)
+:doc:`authentication </endpoints/auth>`.)
 
 This will return the following JSON response:
 
@@ -82,7 +82,8 @@ the ``title``, ``description``, and other metadata.
 
 Ready to add Embedly to your app? `Sign up for an account </pricing>`_, then
 check out our :doc:`tutorials </tutorials/index>` and
-:doc:`libraries </libraries/index>`.
+:doc:`libraries </libraries/index>`. For detailed API documentation, see
+:doc:`endpoints </endpoints/index>`.
 
 .. container:: keywords
 
