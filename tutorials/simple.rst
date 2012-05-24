@@ -1,23 +1,21 @@
 .. _tutorial:
 
-Tutorial
-========
+Embedly jQuery Tutorial
+=======================
 
-This document is meant to walk you through embedding a video into a blog post.
-Embedly's use cases also have many more uses, but this should give you a firm
-understanding of how to use Embedly with jQuery. We have a few other
-tutorials that we wrote on our blog as well. You can see the full list 
-:ref:`here <tutorial-more>`.
+This tutorial will walk you through embedding a video into a blog post
+using `Embedly jQuery <https://github.com/embedly/embedly-jquery>`_.
+You'll need some familiarity with JavaScript and jQuery.
 
-Make sure you have an API key to begin! You can sign up for a free key at
-`embed.ly/pricing <http://embed.ly/pricing>`_.
-
+Make sure you have an API key before you begin. Just `sign up </pricing>`_ 
+for a free account.
 
 Introduction
 ------------
-Say, for example, you have a blog with various posts, some of which have links 
-in them. In the example below the first blog post has a YouTube link in an 
-article. Exhibit A::
+
+Say, for example, you have a blog post with a link to a YouTube video:
+
+.. code-block:: html
 
   <div class="content">
     <article>
@@ -31,88 +29,78 @@ article. Exhibit A::
     </article>
   </div>
 
-Load jQuery
------------
-The first step in integrating Embedly into your website is to make sure that
-you have the latest version of jQuery loaded. You should include that in the
-<head> of your document.
-::
+You want your blog's readers to be able to watch that video without leaving
+your site. Of course, you could just paste in some embed code from YouTube,
+but using Embedly instead will give you more flexibility and control.
+
+Load JS Libraries
+-----------------
+
+We need to load jQuery (1.3.1+) and the Embedly jQuery plugin. The latest
+Embedly jQuery can be found at
+``http://scripts.embed.ly/jquery.embedly.min.js``. You can add these
+dependencies anywhere in your page, as long as you add them in the right
+order. We'll just put them in the ``<head>``:
+
+.. code-block:: html
 
   <head>
     <title>Page Title</title>
     ...
-    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-  </head>
-
-Load Embedly
-------------
-After jQuery is loaded, we need to load the latest version of Embedly jQuery.
-Embedly jQuery is hosted by us at 
-``http://scripts.embed.ly/jquery.embedly.min.js``. You can find more
-documentation for this plugin on our `GitHub 
-<https://github.com/embedly/embedly-jquery>`_.
-::
-
-  <head>
-    <title>Page Title</title>
-    ...
-    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
   </head>
 
 Call the Script
 ---------------
-Once the Embedly jQuery plugin is loaded, all you have to do is point to the
-urls you want to embed. In this example I'm setting the scope of Embedly to the
-container div (div.content) that holds all of the URLs I have to embed. By
-setting the scope like this I prevent Embedly from trying to embed URLs 
-outside the main content div. With this div selected it will search for all <a>
-tags inside that div and attempt to replace them with an embed. In this example
-that would be the youtube link.
-::
+
+Once the Embedly jQuery plugin is loaded, all you have to do is call
+
+.. code-block:: javascript
+
+    $(selector).embedly({key: your_api_key});
+
+The selector should be a string like ``"div.content"`` that limits the scope
+of Embedly jQuery to the content of your page, preventing embeds from being
+added to your site's navigation elements. Embedly jQuery will search for all 
+``<a>`` tags inside of the selected element(s) and replace those links with
+embeds.
+
+Here's a complete implementation:
+
+.. code-block:: html
 
   <head>
     <title>Page Title</title>
     ...
-    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
     <script type="text/javascript">
       $('document').ready(function(){
-        $('div.content').embedly({key:':your_embedly_api_key'});
+        $('div.content').embedly({key: your_api_key});
       });
     </script>
   </head>
 
-We wrap the call to Embedly inside the $('document').ready() function so that 
-we can be sure the DOM elements have loaded to the point that jQuery can find 
-the <a> tags. If we just had $('div.content').embedly() in the <head> of the
-document it would not return any URLs because the div with class "content" 
-hasn't been written to the DOM yet.
+We wrap the call to Embedly within ``$('document').ready()`` to ensure that
+the page is fully loaded before the ``div.content`` selector runs.
 
 Advanced Options
 ----------------
+
 This is all well and good for basic usage, but you may find that you want to
 customize your embeds a little bit more. This is fairly easy to do with some
 optional parameters you can pass into the Embedly jQuery script. Let's take
-a look at a few of them.
-::
+a look at a few of them:
 
-  <head>
-    <title>Page Title</title>
-    ...
-    <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-    <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
-    <script type="text/javascript">
-      $('document').ready(function(){
-        $('div.content').embedly({
-          maxWidth: 450,
-          wmode: 'transparent',
-          method: 'after',
-          key: 'your_embedly_api_key'
-        });
-      });
-    </script>
-  </head>
+.. code-block:: javascript
+
+    $('div.content').embedly({
+      maxWidth: 450,
+      wmode: 'transparent',
+      method: 'after',
+      key: your_api_key
+    });
 
 By default, Embedly will replace the link with the embed. By changing the 
 ``method`` parameter to ``after`` we're telling Embedly to insert the embed
@@ -125,52 +113,15 @@ important for photo embeds. Try popping a flickr url in your page. Those photos
 are huge, and generally look strange unless you tweak them in to a manageable
 size.
 
-Final Source
-------------
-That is it; here's the final sample in case you want to see it running. Copy
-this code into an HTML file and pop it up in your browser.
+Complete Example
+----------------
 
-::
+If you want to see the final result of this tutorial, copy the code from
+https://gist.github.com/2783280 into an HTML file and open it up in your 
+browser.
 
-  <!DOCTYPE>
-  <html>
-    <head>
-      <title>Page Title</title>
-      <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-      <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
-      <script type="text/javascript">
-        $('document').ready(function(){
-          $('div.content').embedly({
-            maxWidth: 450,
-            wmode: 'transparent',
-            method: 'after',
-            key:':your_embedly_api_key'
-          });
-        });
-      </script>
-    </head>
-    <body>
-      <div class="content">
-        <article>
-          <h2>Title</h2>
-          <p>Lorizzle ma nizzle dolor sit amizzle, brizzle adipiscing elit. </p>
-          <a href="http://www.youtube.com/watch?v=ZbcgyPtYBY0">youtube</a>
-          <p>Maecenizzle owned bow wow wow. Nam eros.</p>
-        </article>
-        <article>
-          <h2>Title 2</h2>
-          <p>Lorizzle ma nizzle dolor sit amizzle, brizzle adipiscing elit. </p>
-          <a href="http://www.flickr.com/photos/churchclothing/2597225382/">flickr</a>
-          <p>Maecenizzle owned bow wow wow. Nam eros.</p>
-        </article>
-      </div>
-    </body>
-  </html>
-
-.. _tutorial-more:
-
-More
-----
+Related Links
+-------------
 
 * `On Integrating Embedly <http://blog.embed.ly/on-integrating-embedly>`_
 * `Building a Twitter Web Client with @Anywhere and Embedly 
@@ -180,4 +131,4 @@ More
   <http://blog.embed.ly/how-to-create-facebooks-status-messages-timel>`_
 * `Findpit.com: Building a Twitter Image Search with Embedly and jQuery. 
   <http://blog.embed.ly/findpitcom-building-a-twitter-image-search-wi>`_
-
+  
