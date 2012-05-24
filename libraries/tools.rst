@@ -1,5 +1,6 @@
-Tools
-=====
+Tools for Authors
+=================
+
 Here is a list of the current set of tools that easily integrate with Embedly:
 
 * `Embedly Wordpress`_
