@@ -24,11 +24,11 @@ Unofficial
 
 Libraries developed and maintained by the community:
 
-* `WebService-Embedly <https://github.com/gregheo/WebService-Embedly>`_ (Perl) by `Greg Heo
+* `Perl <https://github.com/gregheo/WebService-Embedly>`_ by `Greg Heo
   <http://node79.com/>`_
-* `embedly-dotnet <https://github.com/CaptainCodeman/embedly-dotnet>`_ (.Net) by `Simon Green
+* `.NET <https://github.com/CaptainCodeman/embedly-dotnet>`_ by `Simon Green
   <http://www.captaincodeman.com/>`_
-* `OverblogEmbedlyBundle <https://github.com/ebuzzing/OverblogEmbedlyBundle>`_ (Symfony Bundle) by `Laurent
+* `PHP-Symfony <https://github.com/ebuzzing/OverblogEmbedlyBundle>`_ by `Laurent
   Sarrazin <http://www.over-blog.com/>`_
 
 Explore
