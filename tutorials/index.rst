@@ -1,13 +1,21 @@
 Tutorials
 =========
-The best way to learn a tool is though tutorials; we wrote those words for a
-reason. They were created to help you understand Embedly's strengths. You can
-find all the codes needed on `github <http://github.com/embedly>`_. Each
-tutorial is broken down by programming language.
 
-* Getting Started
+This is a list of all tutorials in the docs, broken down by target platform.
 
-  * :doc:`start`
+For Authors
+-----------
+
+If you're new to using Embedly, see :doc:`Embedly for Authors </authors>`.
+
+* Tumblr
+
+  * :doc:`Adding Embeds to Tumblr </tutorials/tumblr>` using `Embedly Anywhere <https://app.embed.ly/anywhere>`_.
+
+For Developers
+--------------
+
+If you're new to developing for Embedly, see :doc:`Getting Started </tutorials/start>`.
 
 * jQuery
 
@@ -15,17 +23,10 @@ tutorial is broken down by programming language.
   * :doc:`findpit`
   * :doc:`jquery_preview`
 
-* Ext
+* Ext JS/Ext Core
 
   * :doc:`Creating URL submission tool with Ext <ext>`
 
 * Python
 
   * :doc:`requests`
-
-.. toctree::
-    :hidden:
-
-    Getting Started <start>
-    jQuery <jquery>
-    jquery_preview

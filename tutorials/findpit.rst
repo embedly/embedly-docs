@@ -1,5 +1,5 @@
-Findpit
-=======
+Findpit Tutorial
+================
 
 This tutorial was adapted from a `post`_ on Embedly's `blog`_.
 
