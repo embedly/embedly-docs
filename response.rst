@@ -107,7 +107,7 @@ with the Safe Browsing API.
 Place
 -----
 The place object gives location data, which is associated with the url. You can find 
-this data in the :doc:`Preview <1/preview>` or :doc:`Objectify <2/objectify>` endpoints. An example ``place`` value
+this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` value
 for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_ venue would be::
 
     {
@@ -162,7 +162,7 @@ for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursqu
 Event
 -----
 The event object gives time and details data, which is associated with the url. You can find 
-this data in the :doc:`Preview <1/preview>` or :doc:`Objectify <2/objectify>` endpoints. An example ``event`` value
+this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``event`` value
 for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be::
 
     {
@@ -199,7 +199,7 @@ Microformats
 ------------
 The microformats object is used to group general html patterns and conventions
 in pages. Represented as a dictionary (key, value pairs) of the below items.
-You can find this data in the :doc:`Objectify <2/objectify>` endpoint.
+You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint.
 
 ``tags``
     A dictionary of tagged links, designated with "rel=tag", these are used
@@ -327,8 +327,8 @@ results when giving them higher scores, but not defaulting them to the first
 image. Note that they will always appear in the results, even if we rank images
 pulled from the page higher.
 
-``images`` only appear in the :doc:`Preview <1/preview>` and
-:doc:`Objectify <2/objectify>` endpoints and you can use ``images`` in a couple
+``images`` only appear in the :doc:`Preview </endpoints/1/preview>` and
+:doc:`Objectify </endpoints/2/objectify>` endpoints and you can use ``images`` in a couple
 ways.
 
     * If there is no user interaction then you can just select the first image

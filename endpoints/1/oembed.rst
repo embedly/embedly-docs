@@ -25,7 +25,7 @@ what this API returns. Try these examples:
 
 Query Arguments
 ----------------
-As specified in the :doc:`Query Arguments documentation<../arguments>`
+As specified in the :doc:`Query Arguments documentation </arguments>`
 
 oEmbed Types
 ------------
