@@ -133,6 +133,16 @@ and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints.
 The `oEmbed </docs/endpoints/1/oembed#response>`_  endpoint
 contains the canonical URL for link type.
 
+Does Embedly have a whitelist?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We have two ways to retrieve a whitelist of Embedly providers:
+
+* Use our `Regular Expression Generator </tools/generator>`_.
+send the original URL (original_url) in our
+* Our `Services API <http://api.embed.ly/1/services>`_ is a REST endpoint
+that can be called and should be cached for a week at a time.
+
+
 Troubleshooting
 ---------------
 
