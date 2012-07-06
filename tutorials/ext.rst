@@ -99,7 +99,9 @@ title
 
     Title of the page. Embedly looks for a title in the API response, the Open
     Graph title tag or the ``<title>`` tag in the head of the doc in that order
-    . For 10k.aneventapart.com we found the title tag::
+    . For 10k.aneventapart.com we found the title tag:
+
+    .. code-block:: html
 
         <title>10K Apart - An Event Apart + Mix Online</title>
 
@@ -152,7 +154,9 @@ description
 images
 
     This is a JSON array of images of possible thumbnails for the user to
-    select. For 10k.aneventapart.com, the JSON array looks like this::
+    select. For 10k.aneventapart.com, the JSON array looks like this:
+
+    .. code-block:: json
 
         [
           {
@@ -198,7 +202,9 @@ provider_url
 
     ``provider_url`` works in conjunction with ``provider_display``. It's the
     URL of the provider. Most of the time you can use it to link to the
-    provider like so::
+    provider like so:
+
+    .. code-block:: html
     
         <a href="{{provider_url}}">{{provider_display}}</a>
 
@@ -210,6 +216,8 @@ object
     . ``video`` and ``rich`` can be treated the same code wise when displaying
     the embed. The ``html`` element can just be set to the innerHTML of the
     feed item. Here is a simple example in js:
+
+    .. code-block:: javascript
     
         if (preview.object.type in {'video':'', 'rich':''}){
            Ext.fly('item').dom.innerHtml = preview.object.html;
@@ -217,7 +225,9 @@ object
     
     The ``photo`` is a little different in that it there is no ``html``
     attribute, but a URL instead. You can very easily use it to build the html
-    though::
+    though:
+
+    .. code-block:: javascript
     
         if (preview.object.type == 'image'){
            Ext.fly('item').dom.innerHtml = '<img src="'+preview.object.url'"/>';
@@ -225,7 +235,9 @@ object
     
     Note that we are *not* using the width and height attributes on the ``img``
     tag. The images that are passed back are all different sizes so, it's best
-    to use the css style ``max-width`` like so::
+    to use the css style ``max-width`` like so:
+
+    .. code-block:: css
     
         #item img {
             max-width:400px;
@@ -241,22 +253,26 @@ long section that describes grabbing metadata from Embedly and allowing the
 user to edit it before submission. Display is much shorter and just goes into
 tips and tricks for displaying the data.
 
-We start off with the following simple form::
+We start off with the following simple form:
 
-    <form action="." method="post">
-        <textarea id="id_status" name="status">
-        </textarea>
-        <input type="submit" value="Save"/>
-    </form>
+    .. code-block:: html
+
+        <form action="." method="post">
+            <textarea id="id_status" name="status">
+            </textarea>
+            <input type="submit" value="Save"/>
+        </form>
 
 And the base for our Preview obj that we will use to wire up all the supporting
 functions. You can use any of the 20 different object declaration patterns in
-JavaScript, ours just happens to look like this::
+JavaScript, ours just happens to look like this:
 
-    var Preview = (function(){
-      var Preview = {};
-      return Preview;
-    })();
+    .. code-block:: javascript
+
+        var Preview = (function(){
+          var Preview = {};
+          return Preview;
+        })();
 
 A user will come to your site in hopes of posting a status of some sort and
 this status may contain a link. There are a few events that we need to listen
@@ -267,13 +283,17 @@ paste
     
     Easily the most common way that users move links around. The event fires
     after anything is pasted into the object you are listening on. In Ext you
-    can listen to the event like so::
+    can listen to the event like so:
+
+    .. code-block:: javascript
     
         Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
     
     The ``paste`` event is a little inconsistent however and at least in Chrome
     actually fires before the ``textarea`` is filled. Because of that it's
-    better to set a short timeout to make sure the pasted value is there::
+    better to set a short timeout to make sure the pasted value is there:
+
+    .. code-block:: javascript
     
         Ext.EventManager.on("id_status", 'paste', function(){
             setTimeout(Preview.fetchMetadata, 250);
@@ -283,7 +303,9 @@ blur
 
     When the the status textarea loses focus we need to check if the user added
     anything to it. While ``keyup`` and ``paste`` will catch 95% of the cases
-    this one is nice to have::
+    this one is nice to have:
+
+    .. code-block:: javascript
     
         Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
 
@@ -294,12 +316,16 @@ keyup
     tricky because if they are manually typing a url they may edit it a few
     times causing repeat calls. While we are not going to worry about that here
     it's just something to think about.
+
+    .. code-block:: javascript
     
         Ext.EventManager.on("id_status", 'blur', Preview.onKeyUp);
     
     The ``onKeyUp`` function has a different set of rules than just
     ``fetchMetadata`` as we have to listen for just the spacebar after a URL
-    has been entered::
+    has been entered:
+
+    .. code-block:: javascript
 
         onKeyUp : function(e,t){
           // Ignore Everything but the spacebar Key event.
@@ -316,7 +342,7 @@ keyup
   
           //Fire the fetch metadata function
           Preview.fetchMetadata();
-        },
+        }, ...
 
     The ``unbind`` is very important here. A user may go back and edit the URL
     a hundred times here. We assume they got it right the first time, otherwise
@@ -324,30 +350,34 @@ keyup
 
 Now that all the events are hooked up we need to pull the URL out of the status
 textarea. While we won't be handing multiple urls, it's fairly easy to pull out
-a single one::
+a single one:
 
-    var status = Ext.fly('id_status').getValue();
+    .. code-block:: javascript
 
-    //Simple regex to make sure the url is valid.
-    var urlexp = /http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+        var status = Ext.fly('id_status').getValue();
 
-    //Match the status against the urlexp
-    var matches = status.match(urlexp);
+        //Simple regex to make sure the url is valid.
+        var urlexp = /http(s?):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
 
-    return matches? matches[0] : null
+        //Match the status against the urlexp
+        var matches = status.match(urlexp);
+
+        return matches? matches[0] : null
 
 This will catch any url as long as the user has entered the ``http`` or
 ``https`` scheme. As we know the scheme is becoming less and less prevalent and
 most users expect it to work if they leave out the ``http://``. For example it
 shouldn't matter if a user enters nyti.ms/qdGs9A or http://nyti.ms/qdGs9A. You
 could be clever here and just update the original regex, but I'm not, so I will
-create a new one.
+create a new one:
 
-    var urlexp = /[-\w]+(\.[a-z]{2,})+(\S+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/g;
-    
-    var matches = status.match(urlexp);
-    
-    return matches? 'http://'+matches[0] : null
+    .. code-block:: javascript
+
+        var urlexp = /[-\w]+(\.[a-z]{2,})+(\S+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/g;
+        
+        var matches = status.match(urlexp);
+        
+        return matches? 'http://'+matches[0] : null
 
 This regex is going to catch a number of false positives here. Users editing
 their statuses may type something like "I love it.seriously ..." which will
@@ -361,25 +391,27 @@ Once you actually have the URL from the status textarea we have to make a JSONP
 request to the Embedly Preview endpoint to get the metadata associated with
 that URL. I used ``jsonp.js`` that was bundled in ``examples/jsonp`` in the Ext
 Core download. Here is the code to get it done, then we will go into all the
-available options::
+available options:
 
-    // Sets up the parameters we are going to use in the request.
-    params = {
-      url:url, 
-      key:'key', // replace with your key. 
-      autoplay:true,
-      maxwidth:500,
-      wmode : 'opaque',
-      words : 30
-    }
+    .. code-block:: javascript
 
-    // Make the request to Embedly. Note we are using the preview endpoint:
-    // http://embed.ly/docs/endpoints/1/preview
-    Ext.ux.JSONP.request('http://api.embed.ly/1/preview', {
-      callbackKey: 'callback',
-      params: params,
-      callback: Preview.metadataCallback
-    });
+        // Sets up the parameters we are going to use in the request.
+        params = {
+          url:url, 
+          key:'key', // replace with your key. 
+          autoplay:true,
+          maxwidth:500,
+          wmode : 'opaque',
+          words : 30
+        }
+
+        // Make the request to Embedly. Note we are using the preview endpoint:
+        // http://embed.ly/docs/endpoints/1/preview
+        Ext.ux.JSONP.request('http://api.embed.ly/1/preview', {
+          callbackKey: 'callback',
+          params: params,
+          callback: Preview.metadataCallback
+        });
 
 When setting up the parameters you have a number of options. We are going to go
 into detail on a number of them here so you know just how each will effect your
@@ -390,6 +422,8 @@ url
     The ``url`` that you want to retrieve metadata for. Ext takes care of
     encoding the URL, but if you aren't using a library you need to escape the
     URL. Something like this works:
+
+    .. code-block:: javascript
 
         var url = encodeURIComponent('http://embed.ly')
 
@@ -405,13 +439,17 @@ maxwidth
     scaling down embeds so they fit into a certain width. If the container for
     an embed is 500px you should pass ``{ maxwidth: 500 }`` in the parameters.
     For example, if you don’t set a ``maxwidth`` for the a Vimeo video Embedly
-    will return the following html::
+    will return the following html:
+
+    .. code-block:: html
 
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
         height="720" frameborder="0"></iframe>
     
     This width may cause the embed to overflow the containing div. If we pass 
-    ``{ maxwidth: 500 }`` the html will be::
+    ``{ maxwidth: 500 }`` the html will be:
+
+    .. code-block:: html
 
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
@@ -485,197 +523,235 @@ Once you make the request we have to deal with the data that we get back from
 Embedly. We discussed the different parts of the object that we are going to
 use earlier, now it's just putting together the pieces. A lot of this is
 actually up to the individual developer, but here are some tips an tricks. We
-declare the ``metadataCallback`` from before as::
+declare the ``metadataCallback`` from before as
 
-    metadataCallback : function(obj){
-      // Deal with the object here.
-    }
+    .. code-block:: javascript
+
+        metadataCallback : function(obj){
+          // Deal with the object here.
+        }
 
 The first thing you need to do is validate the request. Every obj should have a
 ``type``. If it's not there this is a clear sign that something is off. This is
 a basic check to make sure we should proceed. Generally will never happen, but
-it's a nice to have just in case::
+it's a nice to have just in case:
 
-    if (!obj.hasOwnProperty('type')){
-        console.log('Embedly returned an invalid response');
-        return false;
-    }
+    .. code-block:: javascript
+
+        if (!obj.hasOwnProperty('type')){
+            console.log('Embedly returned an invalid response');
+            return false;
+        }
 
 The next thing you need to make sure that there isn't an error. If Embedly
 is sent an invalid URL, the URL returns a 404 or some other error Embedly will
 return an object of type ``error``. In this general case the default workflow
 should occur. Generally you need not alert the user, just proceed as everything
-is happening normally::
+is happening normally:
 
-    if (obj.type == 'error'){
-        console.log('URL ('+obj.url+') returned an error: '+ obj.error_message); 
-        return false;
-    }
+    .. code-block:: javascript
+
+        if (obj.type == 'error'){
+            console.log('URL ('+obj.url+') returned an error: '+ obj.error_message); 
+            return false;
+        }
 
 At this point you have a response that you can work with, but you need to
 filter out types that you do not want to handle. In this case we will only be
 handling ``html`` and ``image`` type responses. Others link ``pdf`` of
-``video`` we can build in another day::
+``video`` we can build in another day:
 
-    if (!(obj.type in {'html':'', 'image':''})){
-        console.log('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
-        return false;
-    }
+    .. code-block:: javascript
+
+        if (!(obj.type in {'html':'', 'image':''})){
+            console.log('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
+            return false;
+        }
 
 To wire up the form to work on POST we need to set all the attributes to hidden
 inputs within the form. When the user is done and hits submit it will send all
 this data back to the server for saving. To do this we iterate over a list of
-elements we want to save::
+elements we want to save:
 
-    Ext.each(Preview.attrs, function(n){
-      Ext.DomHelper.append('preview_form', {
-        tag:'input',
-        name : n,
-        type : 'hidden',
-        id : 'id_'+n,
-        value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
-      });
-    });
+    .. code-block:: javascript
+
+        Ext.each(Preview.attrs, function(n){
+          Ext.DomHelper.append('preview_form', {
+            tag:'input',
+            name : n,
+            type : 'hidden',
+            id : 'id_'+n,
+            value : obj.hasOwnProperty(n) && obj[n] ? encodeURIComponent(obj[n]): ''
+          });
+        });
 
 You can set ``Preview.attrs`` to pretty much anything you want, but in our case
 we use:
 
-    attrs : ['type', 'original_url', 'url', 'title', 'description', 
-            'favicon_url', 'provider_url', 'provider_display', 'safe',
-            'html', 'thumbnail_url'],
+    .. code-block:: javascript
+    
+        attrs: ['type', 'original_url', 'url', 'title', 'description', 
+                'favicon_url', 'provider_url', 'provider_display', 'safe',
+                'html', 'thumbnail_url']
 
 The last part of the ``metadataCallback`` function is handing off the obj to be
 rendered by a ``Display`` object. The ``Display`` object lets us change how the
 link preview is displayed without worrying about how it effects the ``Preview``
-object. It also helped us create multiple versions of the demo::
+object. It also helped us create multiple versions of the demo:
 
-    Preview.Display.render(obj);
+    .. code-block:: javascript
+
+        Preview.Display.render(obj);
 
 Rendering the link form is actually pretty boring. You show read the `code 
 <https://github.com/embedly/embedly-tutorial-ext/blob/master/js/preview.js#L109>`_
 , but at the end of the day, it's going to be up to you. The only
 thing to remember is to to update the hidden inputs with the correct values
 after the user has changed any data. For example we run this after a user has
-updated the title::
+updated the title:
 
-    Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
+    .. code-block:: javascript
+
+        Ext.fly('id_title').dom.value = encodeURIComponent(elem.dom.value);
 
 Now it's all about saving the data. You can do it as a basic ``post``, but why
 make the user wait around for the save to happen? Instead we can write the
 status to the feed and save it asynchronously. This way, to the user, it
 appears as though the save happened instantaneously. First we need to bind a
-callback to the ``submit`` handler of the form.
+callback to the ``submit`` handler of the form:
 
-    Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
+    .. code-block:: javascript
+
+        Ext.EventManager.on("preview_form", "submit", Preview.Feed.submitFeedItem);
 
 The ``Feed`` object is like ``Display`` in that we can switch in and out
 different implementations for various effects. The basic ``Feed`` object holds
-the CRUD functions for a set of data:: 
+the CRUD functions for a set of data:
 
-    var Feed = {
-      createFeedItem : function (data){}},
-      storeFeedItem: function(data){},
-      populateFeed: function(){},
-      submitFeedItem: function(e,t){},
-      deleteFeedItem: function(e,t){}
-    }
+    .. code-block:: javascript
+
+        var Feed = {
+          createFeedItem : function (data){}},
+          storeFeedItem: function(data){},
+          populateFeed: function(){},
+          submitFeedItem: function(e,t){},
+          deleteFeedItem: function(e,t){}
+        }
 
 The ``submitFeedItem`` call back need to pull out all the data out of the form
-like so::
+like so:
 
-    var data = {};
-    // Get the data we need out of the form.
-    Ext.select('#preview_form input').each(function(e){
-      data[e.dom.name] = decodeURIComponent(e.dom.value)
-    });
+    .. code-block:: javascript
 
-    //Create the Feed Item and display it in the feed.
-    Preview.Feed.createFeedItem(data);
-    
-    //Save the Feed Item
-    Preview.Feed.storeFeedItem(data);
+        var data = {};
+        // Get the data we need out of the form.
+        Ext.select('#preview_form input').each(function(e){
+          data[e.dom.name] = decodeURIComponent(e.dom.value)
+        });
+
+        //Create the Feed Item and display it in the feed.
+        Preview.Feed.createFeedItem(data);
+        
+        //Save the Feed Item
+        Preview.Feed.storeFeedItem(data);
 
 Note that when we grab the data out of the form we need to decode it via the
 ``decodeURIComponent`` function. Once that data is out of the form, we can then
 use it to create a feed item on the fly and then save it. The basic structure
-of a feed item for us looks like so::
+of a feed item for us looks like so:
 
-    <div class="item">
-      <a class="favicon" href="{{provider_url}}" title="{{provider_display}}">
-        <img src="{{favicon_url}}">
-      </a>
-      <a class="title" href="{{url}}">{{title}}</a>
-      <div class="thumbnail">
-        <a href="#">
-          <img src="{{thumbnail_url}}">
-        </a>
-      </div>
-      <div class="info">
-        <a class="provider" href="{{provider_url}}">{{provider_display}}</a>
-        <p>{{description}}</p>
-        <a class="close" href="#">x</a>
-      </div>
-    </div>
+    .. code-block:: html
+
+        <div class="item">
+          <a class="favicon" href="{{provider_url}}" title="{{provider_display}}">
+            <img src="{{favicon_url}}">
+          </a>
+          <a class="title" href="{{url}}">{{title}}</a>
+          <div class="thumbnail">
+            <a href="#">
+              <img src="{{thumbnail_url}}">
+            </a>
+          </div>
+          <div class="info">
+            <a class="provider" href="{{provider_url}}">{{provider_display}}</a>
+            <p>{{description}}</p>
+            <a class="close" href="#">x</a>
+          </div>
+        </div>
 
 We build that via a giant JSON object that you can see `here  <https://github.com/embedly/embedly-tutorial-ext/blob/master/js/preview.js#L440>`_
 . The important thing here is to also save the item data into div as data
 properties. The HTML5 spec describes a method for saving off `custom data
 attributes <http://dev.w3.org/html5/spec/Overview.html#custom-data-attribute>`_
 that we will use here. To add these attributes the the outer div ``.item`` we
-can use something like this when building the JSON object::
+can use something like this when building the JSON object:
 
-    Ext.each(Preview.attrs, function(n){
-      elem['data-'+(n == 'html' ? 'embed' : n)] = encodeURIComponent(data[n])
-    });
+    .. code-block:: javascript
+
+        Ext.each(Preview.attrs, function(n){
+          elem['data-'+(n == 'html' ? 'embed' : n)] = encodeURIComponent(data[n])
+        });
 
 We change the ``data-html`` to ``data-embed`` because it appears to be reserved
 by Ext or the browser, but I didn't investigate to deeply. Once this is in
-place we can get the title for any item like so::
+place we can get the title for any item like so:
 
-    elem.dom.dataset.title;
+    .. code-block:: javascript
 
-To be on the safe side of browser bugs we still use::
+        elem.dom.dataset.title
 
-    elem.dom.getAttribute('data-title')
+To be on the safe side of browser bugs we still use:
+
+    .. code-block:: javascript
+
+        elem.dom.getAttribute('data-title')
 
 Using these data attributes we can create an event to autoplay the video when
 a user clicks the thumbnail. In order the accomplish this we need to know that
 the url has a video associated with it. In the ``metadataCallback`` from above
 we actually change the ``type`` of the embed after we do a number of the checks
 to ``video`` or ``rich`` instead of ``html``. We do this by updating the hidden
-inputs to have the correct values::
+inputs to have the correct values:
 
-    if (obj.object && obj.object.type in {'video':'', 'rich':''}){
-      Ext.fly('id_html').dom.value = obj.object.html;
-      Ext.fly('id_type').dom.value = obj.object.type;
-    }
+    .. code-block:: javascript
+
+        if (obj.object && obj.object.type in {'video':'', 'rich':''}){
+          Ext.fly('id_html').dom.value = obj.object.html;
+          Ext.fly('id_type').dom.value = obj.object.type;
+        }
 
 If the type is ``video`` or ``rich`` we change the the thumbnail html to look
-like so::
+like so:
 
-    <a href="#" class="video">
-        <img src="{{thumbnail_url}}">
-        <span class="player_overlay"></span>
-    </a>
+    .. code-block:: html
+
+        <a href="#" class="video">
+            <img src="{{thumbnail_url}}">
+            <span class="player_overlay"></span>
+        </a>
 
 This creates an embed that looks like
 
 .. image:: ../images/ext_rdio_item.png
 
-We can then use Ext to bind the click event to the ``Feed.playVideo`` callback::
+We can then use Ext to bind the click event to the ``Feed.playVideo`` callback:
 
-    Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
+    .. code-block:: javascript
+
+        Ext.getBody().on('click', Preview.Feed.playVideo, null, {delegate: 'a.video'});
 
 When the event is fired we can then replace the contents of the '.item' div
-with the embed html that we saved in custom data attributes::
+with the embed html that we saved in custom data attributes:
 
-    playVideo : function(e,t){
-      e.preventDefault(); 
-      // Get the parent '.item' div
-      var elem = Ext.fly(t).parent('.item');
-      // Set the '.items' content to the 'data-embed' value. 
-      elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
-    },
+    .. code-block:: javascript
+
+        playVideo : function(e,t){
+          e.preventDefault(); 
+          // Get the parent '.item' div
+          var elem = Ext.fly(t).parent('.item');
+          // Set the '.items' content to the 'data-embed' value. 
+          elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
+        }
 
 Once a user clicks the thumbnail, the end result looks like this:
 

@@ -61,43 +61,31 @@ agreed to by offering this information. When the `safe` attribute is set as
 that need to happen. When a url is deemed unsafe there will be two additional
 attributes to the response:
 
-`safe_type`
-    Will either be `phishing` or `malware`. The `phishing` list is from 
+``safe_type``
+    Will either be ``phishing`` or ``malware``. The `phishing` list is from 
     `antiphishing.org <http://www.antiphishing.org/>`_ and the malware list is
     from `stopbadware.org <http://www.stopbadware.org/>`_. Please visit these
     sites for more information.
 
-`safe_message`.   
-    If you are going to display a message to the user notifying them that the
-    url they are about to click on is malicious, you need to use these messages
-    or something slightly modified.
+``safe_message``.   
+    A user-readable message in HTML format explaining that the given url is likely malicious.
     
-    `phishing`::
+    If ``safe_type`` is ``phishing``, the message will be:
+
+    .. code-block:: html
   
-        <b>Warning- Suspected phishing page.</b> This page may be a forgery or 
-        imitation of another website, designed to trick users into sharing 
-        personal or financial information. Entering any personal information on
-        this page may result in identity theft or other abuse. You can find out
-        more about phishing from <a href="http://www.antiphishing.org">
-        www.antiphishing.org</a>. Advisory provided by <a href=
-        "http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory"
-        >Google</a>
+        <b>Warning- Suspected phishing page.</b> This page may be a forgery or imitation of another website, designed to trick users into sharing personal or financial information. Entering any personal information on this page may result in identity theft or other abuse. You can find out more about phishing from <a href="http://www.antiphishing.org">www.antiphishing.org</a>. Advisory provided by <a href="http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory">Google</a>
       
-    `malware`::
+    If ``safe_type`` is ``malware``, the message will be:
+
+    .. code-block:: html
   
-        <b>Warning- Visiting this web site may harm your computer.</b> This
-        page appears to contain malicious code that could be downloaded to your
-        computer without your consent. You can learn more about harmful web 
-        content including viruses and other malicious code and how to protect
-        your computer at <a href="http://www.stopbadware.org">StopBadware.org
-        </a>. Advisory provided by <a href=
-        "http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory"
-        >Google</a>
+        <b>Warning- Visiting this web site may harm your computer.</b> This page appears to contain malicious code that could be downloaded to your computer without your consent. You can learn more about harmful web content including viruses and other malicious code and how to protect your computer at <a href="http://www.stopbadware.org">StopBadware.org</a>. Advisory provided by <a href="http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory">Google</a>
 
 We need to make clear that the page is not known with 100% certainty to be a
 phishing site or a distributor of malware, and the warnings merely
 identify possible risks. Once a url is flagged as malicious you must respect the
-`cache_age` attribute. When `cache_age` expires you must not show the message
+``cache_age`` attribute. When ``cache_age`` expires you must not show the message
 again until you have reevaluated that url with Embedly. We take care of
 updating the list in the background and making sure you are in compliance
 with the Safe Browsing API.
@@ -108,14 +96,16 @@ Place
 -----
 The place object gives location data, which is associated with the url. You can find 
 this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` value
-for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_ venue would be::
+for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_ venue would be:
+
+.. code-block:: json
 
     {
         "title": "Dupont Circle Metro Station", 
         "url": "http://foursquare.com/venue/46205", 
         "region": "DC", 
         "locality": "Washington", 
-        "longitude": -77.043256759643555, 
+        "longitude": 77.043256759643555, 
         "postal_code": "20036", 
         "provider": "Foursquare", 
         "latitude": 38.909669137703268, 
@@ -163,7 +153,9 @@ Event
 -----
 The event object gives time and details data, which is associated with the url. You can find 
 this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``event`` value
-for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be::
+for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be:
+
+.. code-block:: json
 
     {
         "end": 1308263400000,
@@ -208,7 +200,9 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
     value for an `Ecommerce site
     <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
     2Fen%2Fpersonalized-gifts%2Fstatuette-trophy-soccer-player-football.html>`_
-    would be::
+    would be:
+
+    .. code-block:: json
 
         {
             "trophy": "http://www.sunfactory.fr/en/tag/trophy/", 
@@ -221,23 +215,27 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
     <http://gmpg.org/xfn/>`_. ``xfn`` is a dictionary of each tag in which the
     value is a list of title and href dictionaries. Here is an example response
     for a `Google+ profile <http://embed.ly/docs/explore/objectify?url=https%3A
-    %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_::
+    %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_:
+
+    .. code-block:: json
     
-        "xfn": {
-            "me": [
-                {
-                    "href": "http://twitter.com/doki_pen", 
-                    "title": "Twitter"
-                }, 
-                {
-                    "href": "http://twitter.com/kalimbahn", 
-                    "title": "kalimbahn"
-                }, 
-                {
-                    "href": "http://pulse.yahoo.com/_A4SBHEWDD6I4DDC4IDFOLCXJ2I", 
-                    "title": "Robert Corsaro"
-                }
-            ]
+        {
+            "xfn": {
+                "me": [
+                    {
+                        "href": "http://twitter.com/doki_pen", 
+                        "title": "Twitter"
+                    }, 
+                    {
+                        "href": "http://twitter.com/kalimbahn", 
+                        "title": "kalimbahn"
+                    }, 
+                    {
+                        "href": "http://pulse.yahoo.com/_A4SBHEWDD6I4DDC4IDFOLCXJ2I", 
+                        "title": "Robert Corsaro"
+                    }
+                ]
+            }
         }
     
     The possible values of tags are as follows:
@@ -267,14 +265,18 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
     each tag in which each value is a dictionary of the name and href of the
     author. Here is an example response for a `Mashable post <http://embed.ly/d
     ocs/explore/objectify?url=http%3A%2F%2Fmashable.com%2F2011%2F11%2F16%2Fchil
-    l-hulu-livestream-vevo%2F>`_::
+    l-hulu-livestream-vevo%2F>`_:
+
+    .. code-block:: json
     
-        "author": [
-            {
-                "href": "http://mashable.com/author/sarah-kessler/", 
-                "name": "Sarah Kessler"
-            }
-        ]
+        {
+            "author": [
+                {
+                    "href": "http://mashable.com/author/sarah-kessler/", 
+                    "name": "Sarah Kessler"
+                }
+            ]
+        }
 
 
 .. _images:
@@ -282,7 +284,9 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
 Images
 ------
 A list of, at most, 5 images that Embedly found while processing the URL. They
-are in the following format::
+are in the following format:
+
+.. code-block:: json
 
     [
       {
@@ -332,18 +336,22 @@ pulled from the page higher.
 ways.
 
     * If there is no user interaction then you can just select the first image
-      out of the array and display it like so::
+      out of the array and display it like so:
+
+        .. code-block:: javascript
     
-        $('<img />').attr('src', obj.images[0].url);
+            $('<img />').attr('src', obj.images[0].url);
 
     * If you are creating a Facebook type url selector tool then you can
-      display a list of images that a user can select from::
+      display a list of images that a user can select from:
+
+        .. code-block:: javascript
       
-        var ul = $('<ul></ul>');
-        
-        $.each(obj.images, function(i, img){
-            ul.append($('<li></li>').html($('<img>').attr('src', img.url)));
-        )};
+            var ul = $('<ul></ul>');
+            
+            $.each(obj.images, function(i, img){
+                ul.append($('<li></li>').html($('<img>').attr('src', img.url)));
+            )};
 
 You can also filter out images that are too large or too small for your needs
 or any number of different variations. If you want more control of what

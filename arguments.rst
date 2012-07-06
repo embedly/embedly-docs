@@ -24,7 +24,9 @@ An in-depth view of all the query arguments:
 ``urls``
     A comma separated list of urls for Embedly to process. Each URL must be
     escaped, but commas separating URLS must NOT be URL encoded. For example,
-    the request for::
+    the request for
+
+    .. code-block:: javascript
 
         var urls = ['http://google.com', 'http://apple.com', 'http://embed.ly']
 
@@ -32,7 +34,9 @@ An in-depth view of all the query arguments:
 
         http%3A//google.com,http%3A//apple.com,http%3A//embed.ly
 
-    We can obtain this path in Javascript by using::
+    We can obtain this path in Javascript by using:
+
+    .. code-block:: javascript
 
          urls.map(escape).join(',')
 
@@ -45,19 +49,25 @@ An in-depth view of all the query arguments:
     scaling down embeds so they fit into a certain width. If the container for
     an embed is ``500px`` you should pass ``maxwidth=500`` in the query
     parameters. For example, if you don't set a ``maxwidth`` for the a Vimeo
-    `video`_ Embedly will return the following html::
+    `video`_ Embedly will return the following html:
+
+    .. code-block:: html
     
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
          height="720" frameborder="0"></iframe>
     
     This width may cause the embed to overflow the containing ``div``. If we
-    `pass`_ ``maxwidth=500`` the html will be::
+    `pass`_ ``maxwidth=500`` the html will be:
+
+    .. code-block:: html
     
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
 
     Note: For photo or images it is recommended to use CSS styles to scale your image
-    to fit within your page. This can also be applied to ``maxheight``. For example::
+    to fit within your page. This can also be applied to ``maxheight``. For example:
+
+    .. code-block:: html
         
         <img src="http://embed.ly/static/images/squiggle2.png" 
         style="max-width:300px; max-height:200px;"></img>    
