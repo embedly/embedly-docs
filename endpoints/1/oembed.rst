@@ -6,9 +6,11 @@ Embedly's oEmbed API is a single endpoint that allows you to embed content from
 `any` URL -- including short urls. This method follows the `oEmbed 
 <http://oembed.com>`_ standard and returns the JSON format by default.
 
-Example Calls::
+Example call (1 URL)::
 
     http://api.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
+
+Example call (multiple URLs)::
 
     http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
@@ -213,17 +215,19 @@ Some sample usages of the API.
 API Example Calls
 ^^^^^^^^^^^^^^^^^
 
-Vimeo.com video:
+Vimeo.com video::
 
-``http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697``
+    http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697
 
-Plixi.com photo:
+Plixi.com photo::
 
-``http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944``
+    http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944
     
 JavaScript
 ^^^^^^^^^^
-A short example for using jQuery and Embedly::
+A short example for using jQuery and Embedly:
+
+.. code-block:: javascript
 
     // Call API to get a video oEmbed JSON response
     var url = escape('http://vimeo.com/9503416');
@@ -237,7 +241,9 @@ A short example for using jQuery and Embedly::
     
 Python
 ^^^^^^
-A short example for using Python and Embedly::
+A short example for using Python and Embedly:
+
+.. code-block:: python
 
     #!/usr/bin/env python
     import urllib
@@ -249,31 +255,31 @@ A short example for using Python and Embedly::
             import simplejson as json
         except ImportError:
             raise ImportError("Need a json decoder")
-    
+
     ACCEPTED_ARGS = ['maxwidth', 'maxheight', 'format']
-    
+
     def get_oembed(url, **kwargs):
         """
         Example Embedly oEmbed Function
         """
         api_url = 'http://api.embed.ly/1/oembed?'
-    
+
         params = {'url': url , 'key': 'key' } #insert your key.
-    
+
         for key, value in kwargs.items():
             if key not in ACCEPTED_ARGS:
                 raise ValueError("Invalid Argument %s" % key)
             params[key] = value
-    
+
         oembed_call = "%s%s" % (api_url, urllib.urlencode(params))
-    
+
         return json.loads(urllib2.urlopen(oembed_call).read())
-    
+
     if __name__ == "__main__":
         urls = ["http://vimeo.com/9503416",
                 "http://plixi.com/p/12870944"]
-    
+
         for url in urls:
             print "\n\nurl: %s\n" % url
             print get_oembed(url)
-            print "\n\n"
+              print "\n\n"
