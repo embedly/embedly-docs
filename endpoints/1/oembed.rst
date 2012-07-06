@@ -95,8 +95,8 @@ Response
     We support and pass back a description for all oEmbed types.
 
  
-The ``photo`` type
-^^^^^^^^^^^^^^^^^^
+The photo type
+^^^^^^^^^^^^^^
 This type is used for representing static photos. The following parameters are
 defined:
 
@@ -111,8 +111,8 @@ defined:
     The height in pixels of the image specified in the ``url`` parameter.
 
     
-The ``video`` type
-^^^^^^^^^^^^^^^^^^
+The video type
+^^^^^^^^^^^^^^
 This type is used for representing playable videos. The following parameters
 are defined:
 
@@ -132,15 +132,15 @@ are defined:
     container.
 
 
-The ``link`` type
-^^^^^^^^^^^^^^^^^
+The link type
+^^^^^^^^^^^^^
 Responses of this type allow a provider to return any generic embed data (such
 as title and author_name), without providing either the url or html parameters.
 The consumer may then link to the resource, using the URL specified in the 
 original request.
     
-The ``rich`` type
-^^^^^^^^^^^^^^^^^
+The rich type
+^^^^^^^^^^^^^
 This type is used for rich HTML content that does not fall under one of the
 other categories. The following parameters are defined:
 

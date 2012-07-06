@@ -166,8 +166,8 @@ of attributes.
     described below.
 
 
-The ``photo`` type
-^^^^^^^^^^^^^^^^^^
+The photo type
+^^^^^^^^^^^^^^
 This type is used for representing static photos. The following parameters are
 defined:
 
@@ -182,8 +182,8 @@ defined:
     The height in pixels of the image specified in the ``url`` parameter.
 
 
-The ``video`` type
-^^^^^^^^^^^^^^^^^^
+The video type
+^^^^^^^^^^^^^^
 This type is used for representing playable videos. The following parameters
 are defined:
 
@@ -203,8 +203,8 @@ are defined:
     container.
 
 
-The ``rich`` type
-^^^^^^^^^^^^^^^^^
+The rich type
+^^^^^^^^^^^^^
 This type is used for rich HTML content that does not fall under one of the
 other categories. The following parameters are defined:
 
