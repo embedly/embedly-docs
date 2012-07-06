@@ -123,4 +123,4 @@ parallel requests without having to write any additional code.
 Do you support mobile devices?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Yes, we are currently in Beta with mobile support for iOS and Android devices.
-Learn more about `mobile </docs/mobile>`_.
+Learn more about `mobile </docs/endpoints/mobile>`_.
