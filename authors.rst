@@ -41,6 +41,9 @@ Blog/CMS Plugins
 If you're using certain content platforms, you can install a plugin to
 automatically generate embeds in your posts:
 
-.. _Embedly Wordpress: http://wordpress.org/extend/plugins/embedly/
-.. _Drupal oEmbed: http://drupal.org/project/oembed
-.. _Joomla Verge Embedly: http://extensions.joomla.org/extensions/social-web/social-channels-display/13556
+* `Embedly Wordpress <http://wordpress.org/extend/plugins/embedly/>`_
+* `Drupal oEmbed <http://drupal.org/project/oembed>`_
+* `Joomla Verge <Embedly: http://extensions.joomla.org/extensions/social-web/social-channels-display/13556>`_
+
+For information on the capabilities of these plugins, see the
+:doc:`tools </libraries/tools>` page.
