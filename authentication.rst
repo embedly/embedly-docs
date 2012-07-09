@@ -6,11 +6,11 @@ like so::
 
     https://api.embed.ly/:version/:endpoint?key=:key&<additional query parameters>
 
-(Choose ``:version`` and ``:endpoint` depending on the part of Embedly's API
-that you want to access, e.g. ``1/oembed`` for the default
-`oEmbed endpoint :doc:`</endpoints/1/oembed>`. Replace ``:key`` with the 
+Choose ``:version`` and ``:endpoint`` depending on the part of Embedly's API
+that you want to access, e.g. ``1/oembed`` for the
+:doc:`oEmbed endpoint </endpoints/1/oembed>`. Replace ``:key`` with the 
 unique API key shown in
-`your dashboard <http://app.embed.ly>`_.)
+`your dashboard <https://app.embed.ly>`_.
 
 Notice the use of `https` instead of `http`, which is **strongly recommended**
 if you intend to keep your key a secret. Plain HTTP requests are faster, but
@@ -20,8 +20,8 @@ Restricting Access
 ------------------
 
 By default, Embedly allows requests from anywhere. For tighter security, you
-can use the ***Manage  your Referrers*** section of
-`your dashboard <http://app.embed.ly>`_ to create a whitelist of referrers 
+can use the **Manage your Referrers** section of
+`your dashboard <https://app.embed.ly>`_ to create a whitelist of referrers 
 and/or IP addresses that Embedly will accept requests from. All other requests
 will be rejected with a ``403 Forbidden`` response.
 
