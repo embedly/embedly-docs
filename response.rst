@@ -52,22 +52,22 @@ for a given resource. They are as follows:
 
 Safe
 ----
-Safe is an attribute that tells you if the url is on a phishing or malware list.
-Embedly uses Google's `Safe Browsing API 
-<http://code.google.com/apis/safebrowsing/>`_ to obtain a list of malicious
-urls. By using this attribute there are rules that you must obey, which we have
-agreed to by offering this information. When the `safe` attribute is set as
-`true` you can proceed as normal, but when it's `false` there are a few things
-that need to happen. When a url is deemed unsafe there will be two additional
-attributes to the response:
+Safe is an attribute that tells you if the url is on a phishing or malware 
+list. Embedly uses Google's
+`Safe Browsing API <http://code.google.com/apis/safebrowsing/>`_
+to obtain a list of malicious urls. By using this API through our service,
+you agree to its
+`terms of service <https://developers.google.com/safe-browsing/terms>`_.
+
+When the ``safe`` attribute is ``false``, there will be two additional
+attributes in the response:
 
 ``safe_type``
-    Will either be ``phishing`` or ``malware``. The `phishing` list is from 
-    `antiphishing.org <http://www.antiphishing.org/>`_ and the malware list is
-    from `stopbadware.org <http://www.stopbadware.org/>`_. Please visit these
-    sites for more information.
+    Either be ``"phishing"`` or ``"malware"``. The phishing list is from 
+    `antiphishing.org <http://www.antiphishing.org/>`_, and the malware
+    list is from `stopbadware.org <http://www.stopbadware.org/>`_.
 
-``safe_message``.   
+``safe_message``
     A user-readable message in HTML format explaining that the given url is likely malicious.
     
     If ``safe_type`` is ``phishing``, the message will be:
@@ -82,21 +82,22 @@ attributes to the response:
   
         <b>Warning- Visiting this web site may harm your computer.</b> This page appears to contain malicious code that could be downloaded to your computer without your consent. You can learn more about harmful web content including viruses and other malicious code and how to protect your computer at <a href="http://www.stopbadware.org">StopBadware.org</a>. Advisory provided by <a href="http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory">Google</a>
 
-We need to make clear that the page is not known with 100% certainty to be a
-phishing site or a distributor of malware, and the warnings merely
-identify possible risks. Once a url is flagged as malicious you must respect the
-``cache_age`` attribute. When ``cache_age`` expires you must not show the message
-again until you have reevaluated that url with Embedly. We take care of
-updating the list in the background and making sure you are in compliance
-with the Safe Browsing API.
+Once a url is flagged as malicious, you must respect the ``cache_age``
+attribute. When ``cache_age`` expires, you must **not** show the message
+again until you have reevaluated that url with Embedly. This helps to mitigate
+false positives and ensure compliance with the
+`terms <https://developers.google.com/safe-browsing/terms>`_
+of Google's Safe Browsing API.
 
 .. _place:
 
 Place
 -----
-The place object gives location data, which is associated with the url. You can find 
-this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` value
-for a `Foursquare <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_ venue would be:
+The ``place`` object gives location data associated with the url. You can 
+find this data in the :doc:`Preview </endpoints/1/preview>` and
+:doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` 
+for a `Foursquare venue <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_  
+would be:
 
 .. code-block:: json
 
@@ -184,23 +185,23 @@ for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011
     
 ``id``
     Unique identifier for the ``event`` by the ``provider``.
- 
- .. _microformats:
+
+.. _microformats:
 
 Microformats
 ------------
-The microformats object is used to group general html patterns and conventions
-in pages. Represented as a dictionary (key, value pairs) of the below items.
-You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint.
+The microformats object is used to extract semantic metadata contained in
+a page's markup. This data is only available from the
+:doc:`Objectify </endpoints/2/objectify>` endpoint.
 
 ``tags``
-    A dictionary of tagged links, designated with "rel=tag", these are used
-    to indicate keyword/subject of content in a page.  See `microformats.org
-    <http://microformats.org/wiki/rel-tag>`_ for more info. An example **tags**
-    value for an `Ecommerce site
+    A dictionary of tagged links, designated with ``"rel=tag"``, used
+    to indicate keywords for the page.  See `microformats.org
+    <http://microformats.org/wiki/rel-tag>`_ for more info. An example
+    ``tags`` value for an `e-commerce site
     <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
     2Fen%2Fpersonalized-gifts%2Fstatuette-trophy-soccer-player-football.html>`_
-    would be:
+    is:
 
     .. code-block:: json
 
@@ -211,10 +212,13 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
         }
 
 ``xfn``
-    A dictionary of tagged links as specified by the `Xhtml Friends Network
-    <http://gmpg.org/xfn/>`_. ``xfn`` is a dictionary of each tag in which the
-    value is a list of title and href dictionaries. Here is an example response
-    for a `Google+ profile <http://embed.ly/docs/explore/objectify?url=https%3A
+    A dictionary of tagged links describing relationships, as defined by the
+    `XHTML Friends Network <http://gmpg.org/xfn/>`_. ``xfn`` is a dictionary
+    of each tag, in which the value is a list of objects with a ``title``
+    and an ``href``.
+
+    Here is an example response for a
+    `Google+ profile <http://embed.ly/docs/explore/objectify?url=https%3A
     %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_:
 
     .. code-block:: json
@@ -238,26 +242,9 @@ You can find this data in the :doc:`Objectify </endpoints/2/objectify>` endpoint
             }
         }
     
-    The possible values of tags are as follows:
-
-    * acquaintance
-    * friend
-    * met
-    * co-worker
-    * colleage
-    * co-resident
-    * neighbor
-    * child
-    * parent
-    * sibling
-    * kin
-    * spouse
-    * muse
-    * crush
-    * date
-    * sweetheart
-    * me
-    * contact
+    ``me`` is just one of many xfn tags, which describe relationships. Others
+    include ``parent``, ``friend``, and ``sweetheart``. See
+    `the xfn spec <http://gmpg.org/xfn/11>`_ for many more.
 
 ``author``
     A list of tagged links as specified by the `rel author microformat
@@ -332,17 +319,17 @@ image. Note that they will always appear in the results, even if we rank images
 pulled from the page higher.
 
 ``images`` only appear in the :doc:`Preview </endpoints/1/preview>` and
-:doc:`Objectify </endpoints/2/objectify>` endpoints and you can use ``images`` in a couple
-ways.
+:doc:`Objectify </endpoints/2/objectify>` endpoints, and you can use
+``images`` in a couple of ways:
 
-    * If there is no user interaction then you can just select the first image
+    * If there is no user interaction, you can just select the first image
       out of the array and display it like so:
 
         .. code-block:: javascript
     
             $('<img />').attr('src', obj.images[0].url);
 
-    * If you are creating a Facebook type url selector tool then you can
+    * If you're creating a Facebook-like URL selector tool, then you can
       display a list of images that a user can select from:
 
         .. code-block:: javascript
@@ -352,8 +339,3 @@ ways.
             $.each(obj.images, function(i, img){
                 ul.append($('<li></li>').html($('<img>').attr('src', img.url)));
             )};
-
-You can also filter out images that are too large or too small for your needs
-or any number of different variations. If you want more control of what
-thumbnail to show, ``images`` is the best way to go.
-
