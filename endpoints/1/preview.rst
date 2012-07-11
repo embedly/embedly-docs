@@ -1,82 +1,86 @@
 Preview API
 ===========
 
-This endpoint provides a simple, yet powerful solution for previewing a link.
-It is designed to allow users to select from a number of different options to
-build an embed because in the end, the user will have the best insight to an 
-accurate portrayal of the content.
+The Preview endpoint is designed to provide users with a number of different 
+options to build an embed with. For instance, whereas the
+:doc:`oEmbed endpoint </endpoints/1/oembed>` only provides what Embedly thinks
+is the best thumbnail image for a page, Preview potentially returns several.
 
-Example Calls::
+Example call (1 URL)::
 
     http://api.embed.ly/1/preview?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
+Example call (multiple URLs)::
+
     http://api.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-Response Explorer
------------------
-:doc:`Embedly Explore <../../explore>` can be used to get a better handle on
-what this API returns. Try these examples:
+Examples
+--------
+`Embedly Explore </docs/explore/preview>`_ can be used to get a better handle 
+on what this API returns. Try these:
 
 * `Techcrunch Article <http://embed.ly/docs/explore/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
 * `Deadspin Post <http://embed.ly/docs/explore/preview/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
 * `Embedly blog <http://embed.ly/docs/explore/preview/?url=http://blog.embed.ly/31814817>`_
 
-Query Arguments
+Arguments
 ----------------
-As specified in the :doc:`Query Arguments documentation<../arguments>`
-
-Example Response::
-
-    {
-        'original_url': 'http://bit.ly/detr0',
-        'url': 'http://www.youtube.com/watch?v=B-m6JDYRFvk'
-        'type': 'html',
-        
-        'cache_age' : 86400,
-        'safe' : true,
-
-        'provider_url': 'http://www.youtube.com/',
-        'provider_display': 'www.youtube.com',
-        'provider_name': 'YouTube',
-        'favicon_url': 'http://s.ytimg.com/yt/favicon-vflZlzSbU.ico',
- 
-        'title': 'Coder Girl',
-        'description': 'An ode to female programmers.\r\n\r\nEP Available on iTunes!\r\n
-                        http://bit.ly/4sebjr\r\n
-                        Find more great music @ http://dalechase.com  http://twitter.com/daleochase\r\n
-                        Song lyrics here: http://bit.ly/7eOilA',
-        
-        'author_name': 'dalechase',
-        'author_url': 'http://www.youtube.com/user/dalechase',
-        
-        'content': null,
-        
-        'embeds': [],
-         
-        'images': [{'height': 360,
-                     'url': 'http://i3.ytimg.com/vi/B-m6JDYRFvk/hqdefault.jpg',
-                     'width': 480}],
-        'object': {'height': 360,
-                    'html': '<object width="640" height="360">
-                               <param name="movie" value="http://www.youtube.com/v/B-m6JDYRFvk?fs=1">
-                               <param name="allowFullScreen" value="true">
-                               <param name="allowscriptaccess" value="always">
-                               <embed src="http://www.youtube.com/v/B-m6JDYRFvk?fs=1" 
-                                      type="application/x-shockwave-flash" 
-                                      width="640" height="360" allowscriptaccess="always" 
-                                      allowfullscreen="true"></embed>
-                            </object>',
-                    'type': 'video',
-                    'width': 640},
-         
-        'place': {},
-        
-        'event': {}
-    }
-
+See the :doc:`Query Arguments </arguments>` documentation.
 
 Response
 --------
+
+Example response:
+
+.. code-block:: json
+
+    {
+        "original_url": "http://bit.ly/detr0",
+        "url": "http://www.youtube.com/watch?v=B-m6JDYRFvk",
+        "type": "html",
+        
+        "cache_age" : 86400,
+        "safe" : true,
+
+        "provider_url": "http://www.youtube.com/",
+        "provider_display": "www.youtube.com",
+        "provider_name": "YouTube",
+        "favicon_url": "http://s.ytimg.com/yt/favicon-vflZlzSbU.ico",
+ 
+        "title": "Coder Girl",
+        "description": "An ode to female programmers.\r\n\r\nEP Available on iTunes!\r\n
+                        http://bit.ly/4sebjr\r\n
+                        Find more great music @ http://dalechase.com  http://twitter.com/daleochase\r\n
+                        Song lyrics here: http://bit.ly/7eOilA",
+        
+        "author_name": "dalechase",
+        "author_url": "http://www.youtube.com/user/dalechase",
+        
+        "content": null,
+        
+        "embeds": [],
+         
+        "images": [{"height": 360,
+                     "url": "http://i3.ytimg.com/vi/B-m6JDYRFvk/hqdefault.jpg",
+                     "width": 480}],
+        "object": {"height": 360,
+                    "html": "<object width='640' height='360'>
+                               <param name='movie' value='http://www.youtube.com/v/B-m6JDYRFvk?fs=1'>
+                               <param name='allowFullScreen' value='true'>
+                               <param name='allowscriptaccess' value='always'>
+                               <embed src='http://www.youtube.com/v/B-m6JDYRFvk?fs=1' 
+                                      type='application/x-shockwave-flash' 
+                                      width='640' height='360' allowscriptaccess='always' 
+                                      allowfullscreen='true'></embed>
+                            </object>",
+                    "type": "video",
+                    "width": 640},
+         
+        "place": {},
+        
+        "event": {}
+    }
+
 ``original_url``
     The url that was passed into Embedly. This will be something like a bit.ly
     shortened link or if there is no redirect it will be the same as the
@@ -269,20 +273,3 @@ Format
 Error Response
     ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message": 
     "HTTP 404: Not Found", "type": "error"})``
-
-Preview Examples
-----------------
-Some sample usages of the API.
-    
-API Example Calls
-^^^^^^^^^^^^^^^^^
-
-Article w/ images:
-
-``http://api.embed.ly/1/preview?key=:key&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1``
-
-Article w/ video and images:
-
-``http://api.embed.ly/1/preview?key=:key&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/``    
-
-

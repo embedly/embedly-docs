@@ -21,113 +21,116 @@ be::
 You will notice that there are only 9 providers. Yes, we can do more, but
 Twitter only lets our query be 140 characters long. So, we leave out
 Photobucket, Phodriod, and a few others with long urls. To actually make the
-call we use jQuery's $.ajax method::
+call we use jQuery's $.ajax method:
 
-    function searchTwitter(q){
-      q += " twitpic OR yfrog OR flic.kr OR tweetphoto OR twitgoo OR post.ly OR
-      tumblr.com OR moby.to OR imgur filter:links";
-      $.ajax({url : "http://search.twitter.com/search.json?q="+escape(q)+"&rpp=20&callback=?",
-        success : function(data){
-          alert('Got Results');
+    .. code-block:: javascript
+
+        function searchTwitter(q){
+          q += " twitpic OR yfrog OR flic.kr OR tweetphoto OR twitgoo OR post.ly OR
+          tumblr.com OR moby.to OR imgur filter:links";
+          $.ajax({url : "http://search.twitter.com/search.json?q="+escape(q)+"&rpp=20&callback=?",
+            success : function(data){
+              alert('Got Results');
+            }
+          });
         }
-      });
-    }
 
 Now that we have the results, we can filter out the links from the tweets like
-so::
+so:
 
-    var urls = [];
-    $.each(data.results, function(index, obj){
-      //Find a url in the status
-      var p = obj.text.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-      if (p != null){
-        var u = p[0].replace(' ', '');
-        urls.push(u);
-      }
-    });
+    .. code-block:: javascript
+
+        var urls = [];
+        $.each(data.results, function(index, obj){
+          //Find a url in the status
+          var p = obj.text.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+          if (p != null){
+            var u = p[0].replace(' ', '');
+            urls.push(u);
+          }
+        });
 
 Once we have those urls, we can send them to Embedly all at once to speed up the
-overall response time::
+overall response time:
 
-    $.embedly(urls, {maxWidth:500}, function(oembed){
-      //Make sure it's a photo and add it to the list.				
-      if (oembed != null && oembed.type == "photo")
-        $("UL").append('<li>'+oembed.code+'</li>');
-    });
+    .. code-block:: javascript
+
+        $.embedly(urls, {maxWidth:500}, function(oembed){
+          //Make sure it's a photo and add it to the list.				
+          if (oembed != null && oembed.type == "photo")
+            $("UL").append('<li>'+oembed.code+'</li>');
+        });
 
 That's it for the coding, the rest stands in the html. All we need is a simple
-form and binding the submit function to the ``searchTwitter`` function like so::
+form and binding the submit function to the ``searchTwitter`` function like so:
 
-    <form action="" method="get">
-      <input type="text" name="q"/>
-      <input type="submit" name="q" value="Search"/>
-    </form>
+    .. code-block:: html
 
-    <script>
-      $(document).ready(function() {
-        $("form").bind("submit", function(e){
-          e.preventDefault();
-          searchTwitter($(this).children("INPUT[name=q]").val())
-          });
-      });
-    </script>
-
-
-When we put that all together, we get findpit.com. Here is a simple version::
-
-    <html>
-      <head>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://scripts.embed.ly/jquery.embedly.js"></script>
-      </head>
-      <body>
         <form action="" method="get">
           <input type="text" name="q"/>
           <input type="submit" name="q" value="Search"/>
         </form>
-        <ul></ul>
+
         <script>
-        function searchTwitter(q){
-          //Force twitter to only search image providers
-          q += " twitpic OR yfrog OR flic.kr OR tweetphoto OR twitgoo OR post.ly OR tumblr.com OR moby.to OR imgur filter:links"
-          $.ajax({url : "http://search.twitter.com/search.json?q="+escape(q)+"&rpp=20&callback=?",
-          success : function(data){
-            var urls = [];
-            $.each(data.results, function(index, obj){
-              //Find a url in the status
-              var p = obj.text.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
-              if (p != null){
-                var u = p[0].replace(' ', '');
-                urls.push(u);
-              }
+          $(document).ready(function() {
+            $("form").bind("submit", function(e){
+              e.preventDefault();
+              searchTwitter($(this).children("INPUT[name=q]").val())
+              });
+          });
+        </script>
+
+When we put that all together, we get findpit.com. Here is a simple version:
+
+    .. code-block:: html
+
+        <html>
+          <head>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+            <script type="text/javascript" src="http://scripts.embed.ly/jquery.embedly.js"></script>
+          </head>
+          <body>
+            <form action="" method="get">
+              <input type="text" name="q"/>
+              <input type="submit" name="q" value="Search"/>
+            </form>
+            <ul></ul>
+            <script>
+            function searchTwitter(q){
+              //Force twitter to only search image providers
+              q += " twitpic OR yfrog OR flic.kr OR tweetphoto OR twitgoo OR post.ly OR tumblr.com OR moby.to OR imgur filter:links"
+              $.ajax({url : "http://search.twitter.com/search.json?q="+escape(q)+"&rpp=20&callback=?",
+              success : function(data){
+                var urls = [];
+                $.each(data.results, function(index, obj){
+                  //Find a url in the status
+                  var p = obj.text.match(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig);
+                  if (p != null){
+                    var u = p[0].replace(' ', '');
+                    urls.push(u);
+                  }
+                });
+            
+                $.embedly(urls, {maxWidth:500}, function(oembed){
+                  //Make sure it's a photo and add it to the list.				
+                  if (oembed != null && oembed.type == "photo")
+                    $("UL").append('<li>'+oembed.code+'</li>');
+                });
+              },
+              dataType: "json"});
+            }
+            $(document).ready(function() {
+              $("form").bind("submit", function(e){
+                e.preventDefault();
+                $("UL").html('');
+                searchTwitter($(this).children("INPUT[name=q]").val())});
             });
-        
-            $.embedly(urls, {maxWidth:500}, function(oembed){
-              //Make sure it's a photo and add it to the list.				
-              if (oembed != null && oembed.type == "photo")
-                $("UL").append('<li>'+oembed.code+'</li>');
-            });
-          },
-          dataType: "json"});
-        }
-        $(document).ready(function() {
-          $("form").bind("submit", function(e){
-            e.preventDefault();
-            $("UL").html('');
-            searchTwitter($(this).children("INPUT[name=q]").val())});
-        });
-      </script>
-      </body>
-    </html>
+          </script>
+          </body>
+        </html>
 
-
-Findpit doesn't do anything amazing, it doesn't: remove duplicates, do its own
-filters, trends, or personalization. That's the hard stuff that the Twitter
-development community and Twitter itself is working on. Therefore, developers
-leave the embedding to Embedly and make your life easier.
-
-Findpit.com has some extra features to make it pretty and you can find the
-source on `github <https://github.com/embedly/findpit>`_.
+You can find the source for this tutorial at
+`https://github.com/embedly/findpit <https://github.com/embedly/findpit>`_.
 
 
 .. _post: http://blog.embed.ly/findpitcom-building-a-twitter-image-search-wi

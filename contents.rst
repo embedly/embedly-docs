@@ -1,14 +1,6 @@
-.. _contents:
-
-Embedly Documentation Contents
-==============================
+.. This file exists purely to suppress Sphinx warnings
 
 .. toctree::
-    :maxdepth: 2
+   :glob:
 
-    tutorials/index
-    libraries/index
-    endpoints/index
-    demo/index
-    faq
-    pricing
+   **

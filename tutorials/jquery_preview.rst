@@ -1,22 +1,19 @@
-.. _jquery_preview:
-
-JQuery Preview
+jQuery Preview
 ==============
-jQuery Preview is a plugin by `Embedly <http://embed.ly>`_ that allows
-developers to create tools that enable users to share links with rich previews
-attached. This method of letting users select thumbnails, edit title and
-description has been adopted as the norm across the web. This plugin allows
-developers to easily implement this functionality without building the entire
-infrastructure themselves. Instead relying on on Embedly to generate the
-metadata.
+
+Embedly's jQuery Preview is a jQuery plugin that allows a site's users to 
+share links with rich, customized previews attached.
+
+Unlike the standard :doc:`Embedly jQuery <jquery>` plugin, which generates 
+previews in a preset format, jQuery Preview allows users to select a thumbnail 
+image and edit the title and description. Additionally, jQuery Preview takes
+advantage of the :doc:`Preview endpoint </endpoints/1/preview>`, which provides
+precise control over how embeds are displayed on the page.
 
 .. image:: ../images/jquery_preview.png
 
-We have made this plugin overly verbose and infinitely customizable. Our goal
-is not to dictate design, merely give a set of tools to make it easy to create
-a custom experience. There are 5 different demos that you should take a look at
-before getting started. It will give you a quick overview of what you should be
-able to build.
+Demos
+-----
 
 * `Link <http://embedly.github.com/jquery-preview/demo/link.html>`_
 * `Status <http://embedly.github.com/jquery-preview/demo/status.html>`_
@@ -31,7 +28,9 @@ To get started you need to put `jQuery <http://jquery.com/>`_,
 <https://github.com/embedly/jquery-preview/blob/master/jquery.preview.full.js>`_
 and `preview.css
 <https://github.com/embedly/jquery-preview/blob/master/css/preview.css>`_. into
-the ``head`` of your page::
+the ``head`` of your page:
+
+.. code-block:: html
 
     <head>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -43,7 +42,9 @@ jquery.preview.full.js bundles `Underscore.js
 <http://documentcloud.github.com/underscore/>`_ and `Mustache.js
 <https://github.com/janl/mustache.js/>`_ in with jquery.preview.js. If you
 already have or use these two libs you can see up the ``head`` of the document
-like so::
+like so:
+
+.. code-block:: html
 
     <head>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -53,13 +54,17 @@ like so::
       <link rel="stylesheet" href="http://scripts.embed.ly/p/0.1/css/preview.css" />
     </head>
 
-Next set up a simple form that allows a user to input link::
+Next set up a simple form that allows a user to input link:
+
+.. code-block:: html
 
     <form action="/update" method="POST">
         <input id="url" type="text" name="url"/>
     </form>
 
-You then need to tell preview what field to listen to::
+You then need to tell preview what field to listen to:
+
+.. code-block:: html
 
     <script>
         $('#url').preview({key:'your_embedly_key'})

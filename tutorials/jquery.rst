@@ -1,5 +1,3 @@
-.. _tutorial:
-
 Embedly jQuery Tutorial
 =======================
 

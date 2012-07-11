@@ -1,19 +1,11 @@
 Endpoints
 =========
 
-Embedly offers 3 different endpoints to choose from: :doc:`oEmbed <1/oembed>`,
-:doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each endpoint
-has a different structure and set of use cases. We recommend looking over each
-to see which is best suited for you.
+Embedly offers 3 different API endpoints: :doc:`oEmbed <1/oembed>`,
+:doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each provides different data about the given URL.
 
-Authentication
---------------
-Embedly requires developers to authenticate their requests to Embedly. There
-are two different methods to authenticate requests: :ref:`key based 
-<key_based>` and :ref:`oAuth <oauth>`. Read more about how to use these methods
-below.
-
-|more| :doc:`Authentication<auth>`
+All endpoints accept a similar set of :doc:`query arguments </arguments>`
+and return similar :doc:`response objects </response>`.
 
 oEmbed
 ------
@@ -42,17 +34,3 @@ previous endpoints and it is only available to supplement those with desires
 that we could not imagine. Enjoy!
 
 |more| Read the :doc:`2/objectify`
-
-Query Arguments
----------------
-Each endpoint responds to the same set of query arguments. These allow you to
-fine tune the service to your needs.
-
-|more| :doc:`arguments`
-
-Response Objects
-----------------
-There are some common response objects that are passed back in each endpoint.
-We have aggregated these into one documents.
-
-|more| :doc:`response`

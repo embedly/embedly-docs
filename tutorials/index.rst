@@ -19,14 +19,14 @@ If you're new to developing for Embedly, see :doc:`Getting Started </tutorials/s
 
 * jQuery
 
-  * :doc:`simple`
+  * :doc:`jquery`
   * :doc:`findpit`
   * :doc:`jquery_preview`
 
 * Ext JS/Ext Core
 
-  * :doc:`Creating URL submission tool with Ext <ext>`
+  * :doc:`Creating a URL Submission Tool with Ext <ext>`
 
 * Python
 
-  * :doc:`requests`
+  * :doc:`python_requests`

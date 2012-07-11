@@ -48,7 +48,7 @@ it in JSON format. For example, to get the embed for that Vimeo link, you would 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
 :doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
 ``key`` that you would normally use for
-:doc:`authentication </endpoints/auth>`.)
+:doc:`authentication </authentication>`.)
 
 This will return the following JSON response:
 
