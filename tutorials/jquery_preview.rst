@@ -28,7 +28,9 @@ To get started you need to put `jQuery <http://jquery.com/>`_,
 <https://github.com/embedly/jquery-preview/blob/master/jquery.preview.full.js>`_
 and `preview.css
 <https://github.com/embedly/jquery-preview/blob/master/css/preview.css>`_. into
-the ``head`` of your page::
+the ``head`` of your page:
+
+.. code-block:: html
 
     <head>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -40,7 +42,9 @@ jquery.preview.full.js bundles `Underscore.js
 <http://documentcloud.github.com/underscore/>`_ and `Mustache.js
 <https://github.com/janl/mustache.js/>`_ in with jquery.preview.js. If you
 already have or use these two libs you can see up the ``head`` of the document
-like so::
+like so:
+
+.. code-block:: html
 
     <head>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -50,13 +54,17 @@ like so::
       <link rel="stylesheet" href="http://scripts.embed.ly/p/0.1/css/preview.css" />
     </head>
 
-Next set up a simple form that allows a user to input link::
+Next set up a simple form that allows a user to input link:
+
+.. code-block:: html
 
     <form action="/update" method="POST">
         <input id="url" type="text" name="url"/>
     </form>
 
-You then need to tell preview what field to listen to::
+You then need to tell preview what field to listen to:
+
+.. code-block:: html
 
     <script>
         $('#url').preview({key:'your_embedly_key'})
