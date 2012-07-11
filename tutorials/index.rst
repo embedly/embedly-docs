@@ -29,4 +29,4 @@ If you're new to developing for Embedly, see :doc:`Getting Started </tutorials/s
 
 * Python
 
-  * :doc:`requests`
+  * :doc:`python_requests`

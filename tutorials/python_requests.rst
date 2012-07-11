@@ -23,7 +23,9 @@ Basic Operations
 ----------------
 You can now fire up an IPython shell and play around a bit with the
 :ref:`oEmbed API <oembed_1>`.
-::
+:
+
+.. code-block:: python
 
     #Import requests
     In [1]: import requests
@@ -42,7 +44,9 @@ You can now fire up an IPython shell and play around a bit with the
     2009-2010 season by the talented group of wingsuit basejumpers, ...}'
     
 It's as simple as that. We can then use the built in ``json`` library to parse
-the content into data we can use::
+the content into data we can use:
+
+.. code-block:: python
 
     In [5]: import json
     
@@ -105,7 +109,9 @@ query? I really messes up ',' for us. For example::
 In this case we have no way of telling if the ``,`` is part of the ``url`` or
 splits up a list of ``urls``. Definitely use the custom urlencode instead of
 ``urllib``. We can then get the data from the preview endpoint by using
-``Requests`` again.::
+``Requests`` again.:
+
+.. code-block:: python
 
     # Make the request
     In [17]: r = requests.get(fetch_url)
@@ -161,9 +167,13 @@ using endpoints your account doesn't have access to.
     In [26]: r.content
     Out[26]: u'<html><title>404: Not Found - HTTP 404: Not Foun ...'
 
-Done
-----
-While Embedly has a `python library
+Conclusion
+----------
+While Embedly has a `Python library
 <https://github.com/embedly/embedly-python>`_ that abstracts a number of these
 issues away, Requests is a get way to get a basic understanding of how the API
 works.
+
+.. container:: keywords
+
+   python
