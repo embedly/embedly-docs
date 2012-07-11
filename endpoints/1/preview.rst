@@ -1,10 +1,10 @@
 Preview API
 ===========
 
-This endpoint provides a simple, yet powerful solution for previewing a link.
-It is designed to allow users to select from a number of different options to
-build an embed because in the end, the user will have the best insight to an 
-accurate portrayal of the content.
+The Preview endpoint is designed to provide users with a number of different 
+options to build an embed with. For instance, whereas the
+:doc:`oEmbed endpoint </endpoints/1/oembed>` only provides what Embedly thinks
+is the best thumbnail image for a page, Preview potentially returns several.
 
 Example call (1 URL)::
 
