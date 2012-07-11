@@ -3,7 +3,7 @@ Objectify API
 
 This endpoint is the kitchen sink of Embedly's offerings. It pretty much dumps
 everything we know about a URL out so you can use as you like. If you don't
-need this much information, we suggest using :doc:`../1/oembed` or
+need this much information, we suggest using the :doc:`../1/oembed` or
 :doc:`../1/preview`.
 
 Example call (1 URL)::
@@ -14,23 +14,21 @@ Example call (multiple URLs)::
 
     http://api.embed.ly/2/objectify?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-Response Explorer
------------------
-`Embedly Explore </docs/explore>`_ can be used to get a better handle on
-what this API returns. Try these examples:
+Examples
+--------
+`Embedly Explore </docs/explore/objectify>`_ can be used to get a better 
+handle on what the Objectify API returns. Try these:
 
 * `Foursquare <http://embed.ly/docs/explore/objectify/?url=http://foursquare.com/venue/49547>`_
 * `Tumblr <http://embed.ly/docs/explore/objectify/?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
 * `YouTube <http://embed.ly/docs/explore/objectify/?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
 
-Query Arguments
-----------------
-As specified in the :doc:`Query Arguments documentation </arguments>`
+Arguments
+---------
+See the :doc:`Query Arguments </arguments>` documentation.
 
 Response
 --------
-
-For an example response, see: http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DB-m6JDYRFvk.
 
 ``original_url``
     The url that was passed into Embedly. This will be something like a bit.ly
@@ -188,19 +186,3 @@ JSON Requests
 
 503 Service Unavailable
     ``Note``: This happens if our service is down, please contact us immediately: support@embed.ly.
-
-
-Objectify Examples
-------------------
-Some sample usages of the API.
-
-API Example Calls
-^^^^^^^^^^^^^^^^^
-
-Foursquare Venue::
-
-    http://api.embed.ly/2/objectify?key=:key&url=http://foursquare.com/venue/49547
-
-Posterous blog post::
-
-    http://api.embed.ly/2/objectify?key=:key&url=http://sachin.posterous.com/writing-rails-code-makes-me-miss-writing-in-o

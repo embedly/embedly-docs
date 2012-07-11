@@ -14,18 +14,18 @@ Example call (multiple URLs)::
 
     http://api.embed.ly/1/preview?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-Response Explorer
------------------
-`Embedly Explore </docs/explore>`_ can be used to get a better handle on
-what this API returns. Try these examples:
+Examples
+--------
+`Embedly Explore </docs/explore/preview>`_ can be used to get a better handle 
+on what this API returns. Try these:
 
 * `Techcrunch Article <http://embed.ly/docs/explore/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
 * `Deadspin Post <http://embed.ly/docs/explore/preview/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
 * `Embedly blog <http://embed.ly/docs/explore/preview/?url=http://blog.embed.ly/31814817>`_
 
-Query Arguments
+Arguments
 ----------------
-As specified in the :doc:`Query Arguments documentation </arguments>`
+See the :doc:`Query Arguments </arguments>` documentation.
 
 Response
 --------
@@ -273,20 +273,3 @@ Format
 Error Response
     ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message": 
     "HTTP 404: Not Found", "type": "error"})``
-
-Preview Examples
-----------------
-Some sample usages of the API.
-    
-API Example Calls
-^^^^^^^^^^^^^^^^^
-
-Article w/ images::
-
-    http://api.embed.ly/1/preview?key=:key&url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1
-
-Article w/ video and images::
-
-    http://api.embed.ly/1/preview?key=:key&url=http://techcrunch.com/2010/11/18/mark-zuckerberg/
-
-

@@ -2,9 +2,9 @@
 
 oEmbed API
 ==========
-Embedly's oEmbed API is a single endpoint that allows you to embed content from
-`any` URL -- including short urls. This method follows the `oEmbed 
-<http://oembed.com>`_ standard and returns the JSON format by default.
+oEmbed is Embedly's basic offering, providing a simple API for embedding
+content from any URL. This method follows the `oEmbed <http://oembed.com>`_ 
+standard.
 
 Example call (1 URL)::
 
@@ -14,10 +14,10 @@ Example call (multiple URLs)::
 
     http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
-Response Explorer
------------------
-`Embedly Explore </docs/explore>`_ can be used to get a better handle on
-what this API returns. Try these examples:
+Examples
+--------
+`Embedly Explore </docs/explore/oembed>`_ can be used to get a better handle 
+on what the oEmbed API returns. Try these:
 
 * `YFrog <http://embed.ly/docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
 * `Twitter <http://embed.ly/docs/explore/oembed/?url=http://twitter.com/embedly/status/29481593334>`_
@@ -25,9 +25,9 @@ what this API returns. Try these examples:
 * `SoundCloud <http://embed.ly/docs/explore/oembed/?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
 * `YouTube (bitly short link) <http://embed.ly/docs/explore/oembed/?url=http://bit.ly/cXVifg>`_
 
-Query Arguments
-----------------
-As specified in the :doc:`Query Arguments documentation </arguments>`
+Arguments
+---------
+See the :doc:`Query Arguments </arguments>` documentation.
 
 oEmbed Types
 ------------
@@ -206,80 +206,3 @@ Format
 Error Response
     ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message": 
     "HTTP 404: Not Found", "type": "error"})``
-
-
-oEmbed Examples
----------------
-Some sample usages of the API.
-
-API Example Calls
-^^^^^^^^^^^^^^^^^
-
-Vimeo.com video::
-
-    http://api.embed.ly/1/oembed?key=:key&url=http://vimeo.com/10179697
-
-Plixi.com photo::
-
-    http://api.embed.ly/1/oembed?key=:key&url=http://plixi.com/p/12870944
-    
-JavaScript
-^^^^^^^^^^
-A short example for using jQuery and Embedly:
-
-.. code-block:: javascript
-
-    // Call API to get a video oEmbed JSON response
-    var url = escape('http://vimeo.com/9503416');
-    var key = 'insert_your_key';
-    var api_url = 'http://api.embed.ly/1/oembed?key=' + key + '&url=' + url + '&callback=?';
-    //jQuery JSON call
-    $.getJSON( api_url, function(json) {
-        var html = json.html;
-        $('#videodiv').html(html);
-    });
-    
-Python
-^^^^^^
-A short example for using Python and Embedly:
-
-.. code-block:: python
-
-    #!/usr/bin/env python
-    import urllib
-    import urllib2
-    try:
-        import json
-    except ImportError:
-        try:
-            import simplejson as json
-        except ImportError:
-            raise ImportError("Need a json decoder")
-
-    ACCEPTED_ARGS = ['maxwidth', 'maxheight', 'format']
-
-    def get_oembed(url, **kwargs):
-        """
-        Example Embedly oEmbed Function
-        """
-        api_url = 'http://api.embed.ly/1/oembed?'
-
-        params = {'url': url , 'key': 'key' } #insert your key.
-
-        for key, value in kwargs.items():
-            if key not in ACCEPTED_ARGS:
-                raise ValueError("Invalid Argument %s" % key)
-            params[key] = value
-
-        oembed_call = "%s%s" % (api_url, urllib.urlencode(params))
-
-        return json.loads(urllib2.urlopen(oembed_call).read())
-
-    if __name__ == "__main__":
-        urls = ["http://vimeo.com/9503416",
-                "http://plixi.com/p/12870944"]
-
-        for url in urls:
-            print "\n\nurl: %s\n" % url
-            print get_oembed(url)
-              print "\n\n"
