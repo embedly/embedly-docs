@@ -79,7 +79,7 @@ guys need to fix it." There are a number of things that could have gone wrong
 when we process a URL. Sometimes it's our fault, sometimes there is nothing we
 can do about it. Here are some steps to follow:
 
-* Try the URL through our `response explorer <http://explore.embed.ly>`_ .
+* Try the URL through our `response explorer </docs/explore>`_ .
   If it works there, but not in your code, you might be doing something wrong.
 * If it's a YouTube video, make sure embedding has been enabled for that URL.
   You can check by going to the video's page and clicking **Share**,
