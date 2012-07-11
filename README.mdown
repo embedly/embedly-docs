@@ -1,0 +1,21 @@
+# Embedly Docs
+
+This repository contains the markup behind the documentation at
+http://embed.ly/docs. If there's anything you'd like to see added or fixed,
+just create an issue or send a pull request.
+
+## Building
+
+We use [reStructuredText](http://docutils.sourceforge.net/rst.html) for our
+docs and build it with [Sphinx](http://sphinx.pocoo.org/). To build it locally,
+install the latest `Sphinx` and `Pygments` packages, then run
+
+    sphinx-build . _build
+
+That'll convert the RST files to HTML and put them in the `_build` directory.
+
+## Thanks!
+
+We hope that you'll help us grow our documentation by contributing more
+tutorials and examples. If you have any questions about the docs, just
+[create an issue](https://github.com/embedly/embedly-docs/issues/new).
