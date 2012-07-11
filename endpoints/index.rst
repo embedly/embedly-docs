@@ -2,10 +2,10 @@ Endpoints
 =========
 
 Embedly offers 3 different API endpoints: :doc:`oEmbed <1/oembed>`,
-:doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. All endpoints
-accept a similar set of :doc:`query arguments </arguments>` and return similar
-:doc:`response objects </response>`, each provides different data about the
-given URL.
+:doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each provides different data about the given URL.
+
+All endpoints accept a similar set of :doc:`query arguments </arguments>`
+and return similar :doc:`response objects </response>`.
 
 oEmbed
 ------
