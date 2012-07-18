@@ -40,7 +40,7 @@ An in-depth view of all the query arguments:
 
          urls.map(escape).join(',')
 
-    ``urls`` accepts a maximum of 20 urls at a time. Embedly processes these
+    ``urls`` accepts a maximum of 10 urls at a time. Embedly processes these
     urls in parallel, therefore, it's much quicker to use ``urls`` for batched
     processing.
 
