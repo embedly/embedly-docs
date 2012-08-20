@@ -152,6 +152,9 @@ Response
 ``embeds``
     A list of embeds that Embedly found in the document.
 
+``payload``
+    A JSON formatted API response from provider, if available.
+
 Error Codes
 -----------
 
