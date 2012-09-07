@@ -1,17 +1,17 @@
 Mirage
 ======
 
-Mirage is an image proxying service that allows you to:
+Mirage is an image proxying service that allows:
 
- * Proxy images over HTTPS.
- * Specify a fall back image if an image fails to fetch.
- * Manipulate images to fit the needs of your website, including cropping,
+ * Proxying images over HTTPS.
+ * Specifying a fall back image if an image fails.
+ * Manipulating images to fit the needs of your website, including cropping,
    resizing and filling images.
- * Integrate with the Embedly API.
+ * Integration with the Embedly API.
 
-Mirage offers 4 different API endpoints: :doc:`Image <endpoints/1/image>`,
+Mirage offers four different API endpoints: :doc:`Image <endpoints/1/image/index>`,
 :doc:`Resize <endpoints/1/image/resize>`, :doc:`Crop <endpoints/1/image/crop>`
-and :doc: `Fill <endpoints/1/image/fill>`.
+and :doc:`Fill <endpoints/1/image/fill>`.
 
 Image
 -----
@@ -20,7 +20,7 @@ Image is a simple proxy that allows you to embed unsecure images into secure
 pages and use a fall back image for images not found. The image endpoint
 doesn't manipulate the image in anyway.
 
-|more| Read the :doc:`endpoints/1/image`
+|more| Read the :doc:`endpoints/1/image/index`
 
 Resize
 ------
