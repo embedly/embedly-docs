@@ -1,8 +1,9 @@
 Mirage Image Resize API
 =======================
-Resize images to to width or height. Aspect ratio will always be perserved, so
-you shouldn't expect to receive an image with the specified dimensions. If
-width and height are omitted, then we will simply proxy the image.
+Resize images to a specified width or height. Aspect ratio will always be
+preserved, so you shouldn't expect to receive an image with the exact specified
+dimensions. If width and height are omitted, then the image will simply be
+proxied.
 
 Example call (1 URL)::
 
@@ -31,7 +32,7 @@ Arguments
         http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
 
 ``errorUrl``
-    The URL of the fallback image to use when ``url`` fails. The URL must be
+    The URL of the fall back image to use when ``url`` fails. The URL must be
     urlencoded to insure that Embedly retrieves the correct link. For example,
     this Embedly URL::
 
@@ -49,8 +50,8 @@ Arguments
 
 ``grow``
     Set to `true` if growing the image is allowed. Otherwise it will never expand
-    beyond it's original size, making width and height behave like maxwidth and
-    maxheight.
+    beyond it's original size, making width and height behave like max width and
+    max height.
 
 Response
 --------
