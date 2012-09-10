@@ -1,16 +1,15 @@
-Mirage Image Fill API
-=====================
-The image will be resized and centered on the canvas so that the entire image
-fits within the width and height bounds. Any extra space will be filled with
-the specified color.
+Image API
+=========
+Image is a simple proxy that allows you to embed unsecure images into
+secure pages without warning and use a fall back image for images not found.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/fill?key=:key&url=:url1&errorUrl=:url2&height=:height&width=:width&color=:color
+    https://i.embed.ly/1/image?key=:key&url=:url1&errorUrl=:url2
 
 Example
 --------
-* `<https://i.embed.ly/1/image/fill?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx&height=200&width=200&color=fff>`_
+* `<https://i.embed.ly/1/image?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx>`_
 
 Arguments
 ---------
@@ -40,18 +39,6 @@ Arguments
     Should be sent as::
 
         http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
-
-``width`` (required)
-    The width that the image should fill.
-
-``height`` (required)
-    The height that the image should fill.
-
-``color`` (required)
-    The css color to fill with. Colors should be 3 or 6 hexadecimal characters.
-    Some examples of valid colors:
-      * 000
-      * 4f2a55
 
 Response
 --------

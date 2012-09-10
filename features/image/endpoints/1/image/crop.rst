@@ -1,5 +1,5 @@
-Mirage Image Crop API
-=====================
+Image Crop API
+==============
 Resize to width and height, cropping any excess image. The image's center is
 always preserved.
 

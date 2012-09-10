@@ -1,15 +1,17 @@
-Mirage Image API
+Image Resize API
 ================
-Image is a simple proxy that allows you to embed unsecure images into
-secure pages without warning and use a fall back image for images not found.
+Resize images to a specified width or height. Aspect ratio will always be
+preserved, so you shouldn't expect to receive an image with the exact specified
+dimensions. If width and height are omitted, then the image will simply be
+proxied.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image?key=:key&url=:url1&errorUrl=:url2
+    https://i.embed.ly/1/image/resize?key=:key&url=:url1&errorUrl=:url2&height=:height&grow=:bool
 
 Example
 --------
-* `<https://i.embed.ly/1/image?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx>`_
+* `<https://i.embed.ly/1/image/resize?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx&height=400&grow=true>`_
 
 Arguments
 ---------
@@ -39,6 +41,17 @@ Arguments
     Should be sent as::
 
         http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
+
+``width``
+    The width that the image should fill.
+
+``height``
+    The height that the image should fill.
+
+``grow``
+    Set to `true` if growing the image is allowed. Otherwise it will never expand
+    beyond it's original size, making width and height behave like max width and
+    max height.
 
 Response
 --------

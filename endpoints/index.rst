@@ -8,9 +8,6 @@ different data about the given URL.
 All endpoints accept a similar set of :doc:`query arguments </arguments>`
 and return similar :doc:`response objects </response>`.
 
-Embedly also offer the :doc:`Mirage API <mirage/index>` for image proxying and
-manipulation.
-
 oEmbed
 ------
 The oEmbed endpoint follows the `oEmbed Spec <http://oembed.com>`_ and is the
@@ -39,11 +36,3 @@ that we could not imagine. Enjoy!
 
 |more| Read the :doc:`2/objectify`
 
-Mirage
----------
-The mirage endpoints was built to make embedding images on your site simpler.
-This group of endpoints allow fetching images over HTTPS, specifying fall back
-images for fetch failure, and image manipulation to make images fit in to your
-site.
-
-|more| Read the :doc:`Mirage API <mirage/index>`

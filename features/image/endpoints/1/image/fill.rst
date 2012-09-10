@@ -1,17 +1,16 @@
-Mirage Image Resize API
-=======================
-Resize images to a specified width or height. Aspect ratio will always be
-preserved, so you shouldn't expect to receive an image with the exact specified
-dimensions. If width and height are omitted, then the image will simply be
-proxied.
+Image Fill API
+==============
+The image will be resized and centered on the canvas so that the entire image
+fits within the width and height bounds. Any extra space will be filled with
+the specified color.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/resize?key=:key&url=:url1&errorUrl=:url2&height=:height&grow=:bool
+    https://i.embed.ly/1/image/fill?key=:key&url=:url1&errorUrl=:url2&height=:height&width=:width&color=:color
 
 Example
 --------
-* `<https://i.embed.ly/1/image/resize?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx&height=400&grow=true>`_
+* `<https://i.embed.ly/1/image/fill?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx&height=200&width=200&color=fff>`_
 
 Arguments
 ---------
@@ -42,16 +41,17 @@ Arguments
 
         http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
 
-``width``
+``width`` (required)
     The width that the image should fill.
 
-``height``
+``height`` (required)
     The height that the image should fill.
 
-``grow``
-    Set to `true` if growing the image is allowed. Otherwise it will never expand
-    beyond it's original size, making width and height behave like max width and
-    max height.
+``color`` (required)
+    The css color to fill with. Colors should be 3 or 6 hexadecimal characters.
+    Some examples of valid colors:
+      * 000
+      * 4f2a55
 
 Response
 --------
