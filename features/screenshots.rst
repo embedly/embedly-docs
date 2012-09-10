@@ -23,7 +23,7 @@ freely link to::
 
 Note that the creation of the screenshot can take upwards of 5-20 seconds, and
 the API call will usually return before the screenshot is available. A
-placeholder image will be returned until the screenshot is actually available.
+placeholder image will be served until the screenshot is actually available.
 
 Sizing
 ------
