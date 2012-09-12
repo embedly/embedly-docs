@@ -151,7 +151,7 @@ Arguments
   The width that the image should fill.
 
 ``image_height`` (required)
-  The width that the image should fill.
+  The height that the image should fill.
 
 ``image_grow``
   Set to `true` if growing the image is allowed. Otherwise it will never expand

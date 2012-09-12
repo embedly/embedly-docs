@@ -1,7 +1,10 @@
 Image Crop API
 ==============
-Resize to width and height, cropping any excess image. The image's center is
-always preserved.
+Crop an image to fill the given dimensions. The image will first be resized to it's
+smallest possible size that will fill the entire given dimensions, preserving
+it's aspect ratio.  The image is then centered and any part of the image that
+doesn't fit within the given dimensions is removed. The same amount is trimmed
+from opposite sides of the cropped dimension.
 
 Example call (1 URL)::
 
