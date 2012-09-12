@@ -50,24 +50,25 @@ Arguments
 ``color`` (required)
     The css color to fill with. Colors should be 3 or 6 hexadecimal characters.
     Some examples of valid colors:
-      * 000
-      * 4f2a55
+
+    * 000
+    * 4f2a55
 
 Response
 --------
 
 200 OK
-  Image returned successfully.
+    Image returned successfully.
 
 400 Bad Request
-  * The resource found was either not an image or not publicly accessible and
-    no ``errorUrl`` was specified.
-  * An invalid ``key`` was passed.
-  * A required parameter was not specified.
+    * The resource found was either not an image or not publicly accessible and
+      no ``errorUrl`` was specified.
+    * An invalid ``key`` was passed.
+    * A required parameter was not specified.
 
 404 Not Found
-  Resource not found.
+    Resource not found.
 
 500 Server Error
-  i.embed.ly is having trouble with the image. Please try again or contact us,
-  support@embed.ly
+    i.embed.ly is having trouble with the image. Please try again or contact us,
+    support@embed.ly

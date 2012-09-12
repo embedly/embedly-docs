@@ -2,8 +2,8 @@ Features
 ========
 
 Features are add-on's to Embedly's existing functionality. There are all
-currently in Beta and require the Embedly team to turn on the functionality.
-You can read more about our Beta Program :ref:`here <beta>`.
+currently in :ref:`Beta <beta>` and require the Embedly team to turn on the
+functionality. You can read more about our Beta Program :ref:`here <beta>`.
 
 Overview
 --------

@@ -46,7 +46,7 @@ Examples
 --------
 Here are a few examples of what Embedly returns via the Article feature:
 
-* http://embed.ly/docs/explore/article?url=http%3A%2F%2Finfluencehacks.com%2Fthe-stunning-hypocrisy-of-venturebeats-assault-on-y-combinator
+* http://embed.ly/docs/explore/article?url=http%3A%2F%2Frdegges.com%2Fmy-heroku-book-is-finished
 * http://embed.ly/docs/explore/article?url=http%3A%2F%2Fwww.nytimes.com%2F2012%2F09%2F11%2Feducation%2Fteacher-strike-begins-in-chicago-amid-signs-that-deal-isnt-close.html%3Fsmid%3Dtw-nytimes%26seid%3Dauto
 * http://embed.ly/docs/explore/article?url=http%3A%2F%2Fwww.economist.com%2Fnode%2F21562226
 
