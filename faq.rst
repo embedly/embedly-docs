@@ -10,8 +10,8 @@ General
 
 What is Embedly?
 ^^^^^^^^^^^^^^^^
-Embedly is a solution that automatically converts posted links into 
-embedded media on the fly. With its set of APIs, tools, and libraries, 
+Embedly is a solution that automatically converts posted links into
+embedded media on the fly. With its set of APIs, tools, and libraries,
 you can create unique visual experiences by embedding videos,
 images, rich media, RSS entries, and article previews.
 
@@ -27,24 +27,24 @@ previews for any URL on the web.
 
 Here's a quote from James Patterson, the Platform Lead at Yammer:
 
-  If we weren't using Embedly we'd have had to spend probably around a week of 
-  an engineer's time to build something that gets the basic job done. It 
-  wouldn't be nearly as good, we'd have to deal with constant bug fixes and 
-  we'd be paying Amazon $200-$300 a month to host it anyway. Using Embedly is 
+  If we weren't using Embedly we'd have had to spend probably around a week of
+  an engineer's time to build something that gets the basic job done. It
+  wouldn't be nearly as good, we'd have to deal with constant bug fixes and
+  we'd be paying Amazon $200-$300 a month to host it anyway. Using Embedly is
   a no-brainer.
 
 See our `customers </customers>`_ page for more testimonials.
 
 We take care of every step of the embedding process: retrieving information
-about a URL, checking it against malware registries, extracting content, 
+about a URL, checking it against malware registries, extracting content,
 making additional API calls to providers that support them, parsing RSS
 feeds, and performing validation. We save you time so that you can focus
 on making your app great.
 
 Am I paying for content?
 ^^^^^^^^^^^^^^^^^^^^^^^^
-No, you're paying for the use of Embedly's processing engine. You're 
-responsible for any copyright implications that may come from embedding 
+No, you're paying for the use of Embedly's processing engine. You're
+responsible for any copyright implications that may come from embedding
 third-party content in your site or app.
 
 How fast is Embedly?
@@ -52,12 +52,12 @@ How fast is Embedly?
 Fast. Embedly uses several techniques to accelerate the embedding process:
 
 * **Caching**: The first time we see a URL, we store its contents in our
-cache so that repeated requests can be processed immediately. We invalidate 
+cache so that repeated requests can be processed immediately. We invalidate
 the cache at least once every 24 hours, depending on the response headers
 we receive.
 * **Parallel processing**: Once we've resolved the initial URL, we perform
 the API calls, image parsing, and malware detection in parallel.
-* **Batch processing**: Send up to 20 URLs at a time to Embedly, and we'll 
+* **Batch processing**: Send up to 20 URLs at a time to Embedly, and we'll
 process them all in parallel.
 
 Where can I find a demo of Embedly in action?
@@ -114,7 +114,7 @@ client library for your language via support@embed.ly.
 Should I use the url parameter, or the urls parameter?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using ``urls`` will generally be faster than sending one request per URL.
-The downside is that the response will only be as fast as the 
+The downside is that the response will only be as fast as the
 slowest URL in the list.
 
 Do you support mobile devices?
@@ -127,7 +127,7 @@ Does Embedly send back the original URL?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We send the original URL (as ``original_url``) from our
 `Preview </docs/endpoints/1/preview#response>`_
-and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints. 
+and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints.
 The `oEmbed </docs/endpoints/1/oembed#response>`_  endpoint
 sends the canonical URL for link type.
 
@@ -144,7 +144,7 @@ Troubleshooting
 Why isn't the API working for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Usually this is caused by forgetting to provide a key (see
-:doc:`Authentication` </authentication>`), by exceeding your usage limit,
+:doc:`Authentication </authentication>`), by exceeding your usage limit,
 or by trying to use an API endpoint that your current plan doesn't qualify
 you for. To debug:
 

@@ -11,7 +11,24 @@ Example call (1 URL)::
 
 Example
 --------
-* `<https://i.embed.ly/1/image/resize?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx&height=400&grow=true>`_
+::
+
+  http://i.embed.ly/1/image/resize?height=200&width=200&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+
+.. image:: http://i.embed.ly/1/image/resize?url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=4b7b2208db3d410bb0033f5253e0da2e&height=200&width=200
+  :class: exampleimg
+  :width: 200
+  :height: 149
+
+::
+
+    http://i.embed.ly/1/image/resize?height=200&width=400&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+
+.. image:: http://i.embed.ly/1/image/resize?url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=4b7b2208db3d410bb0033f5253e0da2e&height=200&width=400
+  :class: exampleimg
+  :width: 268
+  :height: 200
+
 
 Arguments
 ---------
