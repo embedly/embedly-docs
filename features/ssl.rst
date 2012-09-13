@@ -3,37 +3,125 @@ SSL
 
 This feature is currently in :ref:`Beta <beta>`.
 
-SSL is used on many sites and social networks across the web.
-It is important for users to feel safe in your site and we wanted to find
-the best way to support SSL with any content on the web. Using Embedly with
-SSL mitigates most of what we like to call the "red X" errors in web browsers. 
-It is helpful to understand how Embedly provided SSL will work with images,
-videos, and rich media embeds.
+If your site runs via SSL it can often be hard to obtain the level of richness
+you desire. 3rd party assets are very rarely served via HTTPS so you often have
+to download all the images yourself and limit the number of providers you
+support. Embedly changes this by proxying images over SSL and serving all
+embeds within a secure iframe.
+
+Using Embedly with SSL mitigates all of what we like to call the "red X" errors
+in web browsers. You know the ones, the mixed content errors that scare users
+off your site. It is helpful to understand how Embedly provided SSL will work
+with images, videos, and rich media embeds.
 
 Enabling SSL
 ------------
-Simply add "secure=true" to your API requests to Embedly. You will need to have
-this feature turned on in your Account, please email support@embed.ly.
+Add the query parameter ``secure=true`` to any API call::
+
+  http://api.embed.ly/1/oembed?secure=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
+
+The response will look like this:
+
+.. code-block:: json
+
+  {
+    "provider_url": "http://vimeo.com/",
+    "description": "The Need 4 Speed: ....",
+    "title": "Wingsuit Basejumping - The Need 4 Speed: The Art of Flight",
+    "html": "<iframe src=\"https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281\" width=\"500\" height=\"281\" border=\"0\" scrolling=\"no\" frameborder=\"0\"></iframe>",
+    "author_name": "Phoenix Fly",
+    "height": 281,
+    "width": 500,
+    "thumbnail_url": "https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>",
+    "thumbnail_width": 1280,
+    "version": "1.0",
+    "provider_name": "Vimeo",
+    "type": "video",
+    "thumbnail_height": 720,
+    "author_url": "http://vimeo.com/phoenixfly"
+  }
 
 Images
 ------
-All image fields (thumbnail_url, open_graph.image, etc.) passed back from our
-API endpoints we will now be served from an SSL enabled domain (https://i.embed.ly)
-hosted by Embedly.
+You'll notice in the above ``thumbnail_url`` has changed from::
+
+  ``http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg``
+
+to::
+
+  ``https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>``
+
+Secure utilizes Embedly's :doc:`Image Proxy <image/index>` to serve the image
+content over HTTPS. Note that Embedly respects the cache time of the upstream
+image, so we will cache it locally for that period of time. This works for all
+image fields (thumbnail_url, open_graph.image, etc.) passed back from our
+:doc:`API endpoints </endpoints/index>`.
 
 Video and Rich Media Embeds
 ---------------------------
-All video and rich embed fields (oembed.html, obj.html, etc.) passed back from
-our API endpoints will now be wrapped within an IFRAME with the source
-coming from a SSL enabled Embedly domain (https://media.embed.ly). 
-API :ref:`arguments <arguments>` for sizing and autoplay will still function
-properly via the secure IFRAME.
+Secure will also modify all video and rich embed fields (oembed.html,
+object.html, etc.) passed back from our :doc:`API endpoints
+</endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
 
-The Embedly IFRAME detects the web browser you are in and adjusts the content
-to ensure major content errors are not received. If the provider supports SSL,
-the content inside it is secure as well. If the content is not secure, you will 
-receive minor warnings on Firefox, Safari, and Chrome. For IE, we switch 
-out the embed with a variation of it that is secure.
+  <iframe src="https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281"
+  width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>
+
+Secure utilizes Embedly's :doc:`XSS Protection <frame>` to accomplish this.
+There are a few things to note here when dealing with HTTPS embeds as the
+implementation depends on the provider and the browser.
+
+Secure Providers
+^^^^^^^^^^^^^^^^
+There are only a few sites that serve embeds over HTTPS, they are as follows:
+
+  * `YouTube <http://youtube.com>`_
+  * `Vimeo <http://vimeo.com>`_
+  * `SoundCloud <http://soundcloud.com/>`_
+
+For these embeds you will not set any mixed content warms and they will show as
+embedded media in IE. We are actively working on adding more secure providers.
+
+Insecure Providers
+^^^^^^^^^^^^^^^^^^
+Every other `provider <http://embed.ly/providers>`_ falls in this category. In
+order to have the best of both worlds Embedly will still serve the insecure
+content within a secure iframe. This will case the mild security warning that
+you see on most HTTPS sites that serve embeds, like Twitter.
+
+.. image:: ../images/twitter_insecure.png
+  :class: exampleimg
+
+This works for Chrome, Firefox and Safari. If you wish to avoid these warnings,
+use only the providers listed above.
+
+Internet Explorer
+^^^^^^^^^^^^^^^^^
+IE has the strictest warning when dealing with HTTPS content, if you haven't
+seen it it looks like this:
+
+.. image:: ../images/https_warning_in_IE.jpg
+  :class: exampleimg
+
+The user must click 'yes' before proceeding to the site. To get around this,
+Embedly will switch out the embed with a secure representation. It looks like
+this:
+
+.. image:: ../images/ie_insecure_embed.png
+  :class: exampleimg
+
+When the user clicks that giant play button, they are taken to the embed's URL.
+If you would like to see what any one embed looks like in IE mode you can add
+``browser=Explorer`` to any media.embed.ly URL like so::
+
+  https://media.embed.ly/1/frame?browser=Explorer
+  &url=http%3A%2F%2Fwww.rdio.com%2Fartist%2FBon_Iver%2Falbum%2FBon_Iver%2F
+  &width=500&secure=true&key=internal&height=250
+
+Script Tags
+^^^^^^^^^^^
+Like :doc:`XSS Protection <frame>`, Secure will not embed content that is
+generated via script tags. It's impossible to size and insure that everything
+is served over HTTPs.
 
 Examples
 --------

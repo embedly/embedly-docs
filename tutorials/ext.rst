@@ -21,7 +21,7 @@ The final demo is hosted at `embedly.github.com/embedly-tutorial-ext
 <http://embedly.github.com/embedly-tutorial-ext/>`_. You can submit a URL and
 see how all the interactions work. The demo is optimized for modern browsers
 and relies heavily on ``localStorage`` to display the Feed, so older browsers
-will fail hard. The source code is available at 
+will fail hard. The source code is available at
 `github.com/embedly/embedly-tutorial-ext
 <https://github.com/embedly/embedly-tutorial-ext>`_. We encourage you to clone
 it and follow along.
@@ -32,7 +32,7 @@ Overview
 What we are trying to build here is a fairly common design pattern that allows
 users to preview the metadata for a link before submitting it to their feed. If
 you have used Facebook, Google+, Yammer or any number of services you have seen
-this before. Below are a few screenshots from various different services. 
+this before. Below are a few screenshots from various different services.
 
 Facebook
 
@@ -77,7 +77,7 @@ invariable end up coming across that we will look at as well.
 Preview Endpoint
 ----------------
 
-One of Embedly's API endpoints was specifically made for this task. The 
+One of Embedly's API endpoints was specifically made for this task. The
 `preview endpoint <http://embed.ly/docs/endpoints/1/preview>`_ expands on
 oEmbed and passes back an array of images, content, place information, event
 details as well as the normal oEmbed html data. It holds a lot of information,
@@ -86,10 +86,10 @@ detail here because I think it's import that you know where the data is coming
 from and how to use it.
 
 type
-    
+
     The type of the response that we got back from the server. 90% of the time
     you will get back a ``type`` of ``html``, but another very common one is
-    ``image``. There is a whole list of `response types 
+    ``image``. There is a whole list of `response types
     <http://embed.ly/docs/endpoints/response#response-types>`_, but generally
     most people code for ``html`` and ``image`` and give up on the other types.
     Later we will go through what that actually means.
@@ -114,28 +114,28 @@ description
     to find a good excerpt from the page. It does this by looking for common
     clues like a string of p tags, divs with lots of text at a similar depths
     and a whole slue of other factors.
-   
+
     Going back to the Facebook, Google+ and Yammer examples above here are the
     descriptions that each give back
-   
-    Facebook:: 
-    
+
+    Facebook::
+
         ''
 
-    Google +:: 
-     
+    Google +::
+
         10k Apart Responsive Edition. Inspire the Web with Just 10k. Read the
         Rules Submit an Entry. The Gallery. 1-1 of 1. Launch Details. Colorrrs.
         Colorrrs. Dave Rupert. Enter Now. Enter Now. The Rules (FA...
 
     Yammer (Embedly)::
-   
+
         Total file size including images, scripts & markup can't be over 10k
         zipped. Details Use the approved list of libraries without it counting
         against your 10K. Details We encourage HTML5, and apps must work
         equally well in IE10 PP2, Firefox & a Webkit browser. Details
         Applications need to be responsive.
-        
+
     As you can see Facebook gave up and was unable to pull a description.
     Google found the best first line, but quickly degrades to a bunch of
     nonsense. Embedly found the largest body of text and tried to use that.
@@ -144,7 +144,7 @@ description
     page, none of this text is initially viewable to the user. It's in divs
     that are hidden by css, and therefore we have no way of knowing if they are
     displayed or not.
-    
+
     A user could easily intervene here and edit the description to something
     that made a little more sense. As a side note, it's very easy to pull text
     out of a page, it's hard to pull a good excerpt and it's even harder to
@@ -159,18 +159,18 @@ images
 
         [
           {
-            "url": "http://10k.aneventapart.com/Uploads/501/Thumbnail1.jpg", 
-            "width": 600, 
+            "url": "http://10k.aneventapart.com/Uploads/501/Thumbnail1.jpg",
+            "width": 600,
             "height": 400
           },
           {
-            "url": "http://10k.aneventapart.com/Content/img/enter_now.jpg", 
-            "width": 600, 
+            "url": "http://10k.aneventapart.com/Content/img/enter_now.jpg",
+            "width": 600,
             "height": 400
-          }, 
+          },
           {
-            "url": "http://10k.aneventapart.com/Content/img/10k_logo.png", 
-            "width": 235, 
+            "url": "http://10k.aneventapart.com/Content/img/10k_logo.png",
+            "width": 235,
             "height": 144
           }
         ]
@@ -194,7 +194,7 @@ provider_display
     ``provider_display`` is different from oEmbed's ``provider_name``. It is a
     very easy way to get the domain of the provider. For example,
     ``http://www.bbc.co.uk/news/science-environment-14391929`` has a
-    ``provider_display``` of ``www.bbc.co.uk`. This allows you to show a user
+    ``provider_display`` of ``www.bbc.co.uk``. This allows you to show a user
     what domain they will be visiting.
 
 provider_url
@@ -204,7 +204,7 @@ provider_url
     provider like so:
 
     .. code-block:: html
-    
+
         <a href="{{provider_url}}">{{provider_display}}</a>
 
 object
@@ -217,31 +217,31 @@ object
     feed item. Here is a simple example in js:
 
     .. code-block:: javascript
-    
+
         if (preview.object.type in {'video':'', 'rich':''}){
            Ext.fly('item').dom.innerHtml = preview.object.html;
         }
-    
+
     The ``photo`` is a little different in that it there is no ``html``
     attribute, but a URL instead. You can very easily use it to build the html
     though:
 
     .. code-block:: javascript
-    
+
         if (preview.object.type == 'image'){
            Ext.fly('item').dom.innerHtml = '<img src="'+preview.object.url'"/>';
         }
-    
+
     Note that we are *not* using the width and height attributes on the ``img``
     tag. The images that are passed back are all different sizes so, it's best
     to use the css style ``max-width`` like so:
 
     .. code-block:: css
-    
+
         #item img {
             max-width:400px;
         }
-    
+
     Don't bother messing with the height. People know how to scroll, so designs
     that are tolerant to different heights of images are the best.
 
@@ -279,21 +279,21 @@ to here in order to create the desired effect: ``paste``, ``blur`` and
 ``keyup``.
 
 paste
-    
+
     Easily the most common way that users move links around. The event fires
     after anything is pasted into the object you are listening on. In Ext you
     can listen to the event like so:
 
     .. code-block:: javascript
-    
+
         Ext.EventManager.on("id_status", 'paste', Preview.fetchMetadata);
-    
+
     The ``paste`` event is a little inconsistent however and at least in Chrome
     actually fires before the ``textarea`` is filled. Because of that it's
     better to set a short timeout to make sure the pasted value is there:
 
     .. code-block:: javascript
-    
+
         Ext.EventManager.on("id_status", 'paste', function(){
             setTimeout(Preview.fetchMetadata, 250);
         });
@@ -305,7 +305,7 @@ blur
     this one is nice to have:
 
     .. code-block:: javascript
-    
+
         Ext.EventManager.on("id_status", 'blur', Preview.fetchMetadata);
 
 keyup
@@ -317,9 +317,9 @@ keyup
     it's just something to think about.
 
     .. code-block:: javascript
-    
+
         Ext.EventManager.on("id_status", 'blur', Preview.onKeyUp);
-    
+
     The ``onKeyUp`` function has a different set of rules than just
     ``fetchMetadata`` as we have to listen for just the spacebar after a URL
     has been entered:
@@ -333,12 +333,12 @@ keyup
           //See if there is a url in the status textarea
           var url = Preview.getStatusUrl();
           if (url == null) return null;
-  
+
           // If there is a url, then we need to unbind the event so it doesn't
           // fire again. This is very common for all status updaters as
           // otherwise it would create a ton of unwanted requests.
           Ext.EventManager.un("id_status", 'keyup', Preview.onKeyUp);
-  
+
           //Fire the fetch metadata function
           Preview.fetchMetadata();
         }, ...
@@ -373,9 +373,9 @@ create a new one:
     .. code-block:: javascript
 
         var urlexp = /[-\w]+(\.[a-z]{2,})+(\S+)?(\/|\/[\w#!:.?+=&%@!\-\/])?/g;
-        
+
         var matches = status.match(urlexp);
-        
+
         return matches? 'http://'+matches[0] : null
 
 This regex is going to catch a number of false positives here. Users editing
@@ -396,8 +396,8 @@ available options:
 
         // Sets up the parameters we are going to use in the request.
         params = {
-          url:url, 
-          key:'key', // replace with your key. 
+          url:url,
+          key:'key', // replace with your key.
           autoplay:true,
           maxwidth:500,
           wmode : 'opaque',
@@ -444,15 +444,15 @@ maxwidth
 
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
         height="720" frameborder="0"></iframe>
-    
-    This width may cause the embed to overflow the containing div. If we pass 
+
+    This width may cause the embed to overflow the containing div. If we pass
     ``{ maxwidth: 500 }`` the html will be:
 
     .. code-block:: html
 
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
-    
+
     It is highly recommended that developers pass a ``maxwidth`` to Embedly.
 
 width
@@ -462,7 +462,7 @@ width
     scaled up and embeds larger than this width will be scaled down. During the
     scaling process the embed may become distorted, so if you can, it's best to
     use the ``maxwidth`` parameter.
-    
+
     Width is however really useful if you are working with a small set of
     providers that you know scale really well. It will scale up embeds to give
     a nice constant feel of every embed in your application.
@@ -499,19 +499,19 @@ words
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec vitae justo ligula, id luctus ligula.
-    
+
     This is actually only 19 words, but we split at the closest sentence. Words
     is really useful for controlling how long the descriptive text for each URL
     is. In this case we are going to use 30 words to not overwhelm the page
     with text.
-    
+
 chars
-    
+
     ``chars`` is like ``words``, but instead of truncating to the nearest
-    sentence, Embedly will blindly truncate a description to the number of 
-    characters you specify adding ... at the end when needed. For the above 
+    sentence, Embedly will blindly truncate a description to the number of
+    characters you specify adding ... at the end when needed. For the above
     description, if we set ``{ chars : 100 }`` it will return::
-    
+
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
         dapibus auctor aliquam. Donec ...
 
@@ -551,7 +551,7 @@ is happening normally:
     .. code-block:: javascript
 
         if (obj.type == 'error'){
-            console.log('URL ('+obj.url+') returned an error: '+ obj.error_message); 
+            console.log('URL ('+obj.url+') returned an error: '+ obj.error_message);
             return false;
         }
 
@@ -563,7 +563,7 @@ handling ``html`` and ``image`` type responses. Others link ``pdf`` of
     .. code-block:: javascript
 
         if (!(obj.type in {'html':'', 'image':''})){
-            console.log('URL ('+obj.url+') returned a type ('+obj.type+') not handled'); 
+            console.log('URL ('+obj.url+') returned a type ('+obj.type+') not handled');
             return false;
         }
 
@@ -588,8 +588,8 @@ You can set ``Preview.attrs`` to pretty much anything you want, but in our case
 we use:
 
     .. code-block:: javascript
-    
-        attrs: ['type', 'original_url', 'url', 'title', 'description', 
+
+        attrs: ['type', 'original_url', 'url', 'title', 'description',
                 'favicon_url', 'provider_url', 'provider_display', 'safe',
                 'html', 'thumbnail_url']
 
@@ -602,7 +602,7 @@ object. It also helped us create multiple versions of the demo:
 
         Preview.Display.render(obj);
 
-Rendering the link form is actually pretty boring. You show read the `code 
+Rendering the link form is actually pretty boring. You show read the `code
 <https://github.com/embedly/embedly-tutorial-ext/blob/master/js/preview.js#L109>`_
 , but at the end of the day, it's going to be up to you. The only
 thing to remember is to to update the hidden inputs with the correct values
@@ -650,7 +650,7 @@ like so:
 
         //Create the Feed Item and display it in the feed.
         Preview.Feed.createFeedItem(data);
-        
+
         //Save the Feed Item
         Preview.Feed.storeFeedItem(data);
 
@@ -745,10 +745,10 @@ with the embed html that we saved in custom data attributes:
     .. code-block:: javascript
 
         playVideo : function(e,t){
-          e.preventDefault(); 
+          e.preventDefault();
           // Get the parent '.item' div
           var elem = Ext.fly(t).parent('.item');
-          // Set the '.items' content to the 'data-embed' value. 
+          // Set the '.items' content to the 'data-embed' value.
           elem.dom.innerHTML = decodeURIComponent(elem.dom.getAttribute('data-embed'));
         }
 
@@ -759,13 +759,13 @@ Once a user clicks the thumbnail, the end result looks like this:
 While we could add a few other features here, we have chosen to keep it simple.
 Hopefully you have a good understanding of how all the parts fit together and
 can build on additional features. Definitely check out the `demo
-<http://embedly.github.com/embedly-tutorial-ext>`_ and the `source code 
+<http://embedly.github.com/embedly-tutorial-ext>`_ and the `source code
 <https://github.com/embedly/embedly-tutorial-ext>`_ for this project. It's
 heavily documented and deals with some of the little things like loading
 notifications.
 
 If you have any questions or comments you can send us a note to
-support@embed.ly or submit an `issue 
+support@embed.ly or submit an `issue
 <https://github.com/embedly/embedly-tutorial-ext/issues>`_.
 
 

@@ -14,7 +14,7 @@ Example
 
   http://i.embed.ly/1/image/fill?height=200&width=200&color=000&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
-.. image:: http://i.embed.ly/1/image/fill?url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=4b7b2208db3d410bb0033f5253e0da2e&height=200&width=200&color=000
+.. image:: /images/fill_1.png
   :class: exampleimg
   :width: 200
   :height: 200
@@ -23,7 +23,7 @@ Example
 
     http://i.embed.ly/1/image/fill?height=200&width=400&color=ddd&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
-.. image:: http://i.embed.ly/1/image/fill?url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=4b7b2208db3d410bb0033f5253e0da2e&height=200&width=400&color=ddd
+.. image:: /images/fill_2.png
   :class: exampleimg
   :width: 400
   :height: 200

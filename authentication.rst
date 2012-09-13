@@ -8,9 +8,9 @@ like so::
 
 Choose ``:version`` and ``:endpoint`` depending on the part of Embedly's API
 that you want to access, e.g. ``1/oembed`` for the
-:doc:`oEmbed endpoint </endpoints/1/oembed>`. Replace ``:key`` with the 
+:doc:`oEmbed endpoint </endpoints/1/oembed>`. Replace ``:key`` with the
 unique API key shown in
-`your dashboard <https://app.embed.ly>`_.
+`your dashboard`_.
 
 Notice the use of `https` instead of `http`, which is **strongly recommended**
 if you intend to keep your key a secret. Plain HTTP requests are faster, but
@@ -21,15 +21,15 @@ Restricting Access
 
 By default, Embedly allows requests from anywhere. For tighter security, you
 can use the **Manage your Referrers** section of
-`your dashboard <https://app.embed.ly>`_ to create a whitelist of referrers 
+`your dashboard`_ to create a whitelist of referrers
 and/or IP addresses that Embedly will accept requests from. All other requests
 will be rejected with a ``403 Forbidden`` response.
 
-We use a simple "globbing" syntax for referrers, where ``*`` is a wildcard 
+We use a simple "globbing" syntax for referrers, where ``*`` is a wildcard
 that will match any number of characters. To allow all traffic from
 ``yourdomain.com`` (but not its subdomains), you would enter
 ``yourdomain.com*``. To allow subdomains as well, you would make it
-``*yourdomain.com*``. Take note of the wildcard at the end, which means that 
+``*yourdomain.com*``. Take note of the wildcard at the end, which means that
 requests that indicate a path as well as a host (e.g. ``yourdomain.com/foo``)
 will be accepted.
 

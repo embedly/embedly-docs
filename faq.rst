@@ -52,13 +52,13 @@ How fast is Embedly?
 Fast. Embedly uses several techniques to accelerate the embedding process:
 
 * **Caching**: The first time we see a URL, we store its contents in our
-cache so that repeated requests can be processed immediately. We invalidate
-the cache at least once every 24 hours, depending on the response headers
-we receive.
+  cache so that repeated requests can be processed immediately. We invalidate
+  the cache at least once every 24 hours, depending on the response headers
+  we receive.
 * **Parallel processing**: Once we've resolved the initial URL, we perform
-the API calls, image parsing, and malware detection in parallel.
+  the API calls, image parsing, and malware detection in parallel.
 * **Batch processing**: Send up to 20 URLs at a time to Embedly, and we'll
-process them all in parallel.
+  process them all in parallel.
 
 Where can I find a demo of Embedly in action?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
