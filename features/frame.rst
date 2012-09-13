@@ -5,9 +5,9 @@ XSS Protection
 
 This feature is currently in :ref:`Beta <beta>`.
 
-XSS Protection is really as simple as putting every embed in an iframe.
-Everything in the child frame has no access to the above frame, so your site
-is protected from malicious embeds.
+Cross-site scripting (XSS) protection is really as simple as putting every 
+embed in an iframe. Nothing in the child frame has access to the containing
+frame, so your site is protected from malicious embeds.
 
 There is a disclaimer here, that Embedly hand curates the list of sites that
 we allow embeds from. We have tested them all and one can assume that they are
@@ -35,11 +35,11 @@ parent page.
 
 Script Tags
 -----------
-The one problem with serving an iframe from within an embed is that we must no
-the exact size of the embed. Otherwise there will be weird whitespace around
-object or it will be cut off, creating a terrible experience. Because of this
-we do not allow script tag embeds unless we know the exact size of the embed
-after it's rendered.
+The one problem with serving an iframe from within an embed is that we must 
+know the exact size of the embed. Otherwise there will be weird whitespace
+around the object, or it will be cut off, creating a terrible user experience.
+Because of this, we do not allow script tag embeds unless we know the exact
+size of the embed after it's rendered.
 
 For example, we will not render Twitter embeds when ``frame=true`` is added.
 

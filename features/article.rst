@@ -135,7 +135,7 @@ Response
     > d.toString();
     "Fri Aug 24 2012 00:00:00 GMT-0400 (EDT)"
 
-  Now say the Embedly parse comes across this HTML::
+  Now say the Embedly parser comes across this HTML::
 
     <time datetime="2012-08-28T10:37:00+02:00" pubdate>Aug 28th, 2012</time>
 
@@ -160,7 +160,7 @@ Response
     "Tue Aug 28 2012 04:37:00 GMT-0400 (EDT)"
 
   If you want the date in the timezone in which it was published you can add
-  your local offset and the article ``offset`` to the ``published`` time.
+  your local offset and the article ``offset`` to the ``published`` time::
 
     > var local = new Date();
     // Convert minutes to milliseconds here.
@@ -200,7 +200,7 @@ Response
 
 ``content``
 
-  This is the html that we pulled from the URL. It's been sanitize, so it will
+  This is the html that we pulled from the URL. It's been sanitized, so it will
   only contain the following tags::
 
     'a', 'abbr', 'acronym', 'b', 'big', 'blockquote', 'br', 'cite', 'code',
@@ -209,8 +209,8 @@ Response
     'var', 'p', 'div', 'a', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'ol', 'ul',
     'li'
 
-  All tag attributes have been removed as well, so the only valid attributes
-  are:
+  All tag attributes have been removed as well. The only effective 
+  attributes are:
 
-    * ``href`` on ``a`` tag
-    * ``src`` on ``img`` tag
+    * ``href`` on an ``a`` tag
+    * ``src`` on an ``img`` tag
