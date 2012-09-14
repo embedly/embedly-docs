@@ -26,13 +26,13 @@ link to::
 Sizing
 ------
 The default screenshot is about 1024 pixels wide, but there are a few different
-standard sizes that Embedly offers. You can change the size by replacing
-``screenshot=<size>`` with either ``original``, ``large``, ``medium`` or
-``small``. The other option is to manually replace the trailing ``_o`` in the
-screenshot URL with a valid suffix:
+standard sizes that Embedly offers. You can change the size by replacing the 
+query argument value ``screenshot=<size>`` with either ``original``,
+``large``, ``medium`` or ``small``. The other option is to manually replace
+the trailing ``_o`` in the screenshot URL with a valid suffix:
 
 +------------------------+---------+-----------------------------------------+-------------+
-|Query Argument          |Suffix   |Size                                     |Example      |
+|Query Argument Value    |Suffix   |Size                                     |Example      |
 +========================+=========+=========================================+=============+
 | ``original``           | _o      | 1024 x natural page height              | `original`_ |
 +------------------------+---------+-----------------------------------------+-------------+
@@ -68,7 +68,7 @@ Image:
 
 Processing Time
 ---------------
-Note that in order for Embedly to take a screenshot we must first load it in
+Note that in order for Embedly to take a screenshot we must first render it in
 a headless browser. This means downloading all the external resources like
 javascript, css and images. We then must take a rather large screenshot and
 move those files around. The creation can take upwards of 5-20 seconds, and

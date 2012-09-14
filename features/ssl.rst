@@ -11,7 +11,7 @@ embeds within a secure iframe.
 
 Using Embedly with SSL mitigates all of what we like to call the "red X" errors
 in web browsers. You know the ones, the mixed content errors that scare users
-off your site. It is helpful to understand how Embedly provided SSL will work
+off your site. It is helpful to understand how Embedly-provided SSL will work
 with images, videos, and rich media embeds.
 
 Enabling SSL
@@ -45,11 +45,11 @@ Images
 ------
 You'll notice in the above ``thumbnail_url`` has changed from::
 
-  ``http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg``
+  http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg
 
 to::
 
-  ``https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>``
+  https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
 
 Secure utilizes Embedly's :doc:`Image Proxy <image/index>` to serve the image
 content over HTTPS. Note that Embedly respects the cache time of the upstream
@@ -67,7 +67,7 @@ object.html, etc.) passed back from our :doc:`API endpoints
   width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>
 
 Secure utilizes Embedly's :doc:`XSS Protection <frame>` to accomplish this.
-There are a few things to note here when dealing with HTTPS embeds as the
+There are a few things to note here when dealing with HTTPS embeds, as the
 implementation depends on the provider and the browser.
 
 Secure Providers
@@ -78,21 +78,22 @@ There are only a few sites that serve embeds over HTTPS, they are as follows:
   * `Vimeo <http://vimeo.com>`_
   * `SoundCloud <http://soundcloud.com/>`_
 
-For these embeds you will not set any mixed content warms and they will show as
-embedded media in IE. We are actively working on adding more secure providers.
+For these embeds you will not see any mixed content warnings, and they will
+show as embedded media in IE. We are actively working on adding more
+secure providers.
 
 Insecure Providers
 ^^^^^^^^^^^^^^^^^^
 Every other `provider <http://embed.ly/providers>`_ falls in this category. In
-order to have the best of both worlds Embedly will still serve the insecure
-content within a secure iframe. This will case the mild security warning that
+order to have the best of both worlds, Embedly will still serve the insecure
+content within a secure iframe. This will cause the mild security warning that
 you see on most HTTPS sites that serve embeds, like Twitter.
 
 .. image:: ../images/twitter_insecure.png
   :class: exampleimg
 
 This works for Chrome, Firefox and Safari. If you wish to avoid these warnings,
-use only the providers listed above.
+use only the providers listed in the secure providers section.
 
 Internet Explorer
 ^^^^^^^^^^^^^^^^^
@@ -120,14 +121,15 @@ If you would like to see what any one embed looks like in IE mode you can add
 Script Tags
 ^^^^^^^^^^^
 Like :doc:`XSS Protection <frame>`, Secure will not embed content that is
-generated via script tags. It's impossible to size and insure that everything
-is served over HTTPs.
+generated via script tags. It's impossible to determine the embed dimensions
+and ensure that everything is served over HTTPs.
 
 Examples
 --------
-Here are a few API calls that return the SSL feature:
+Here are a few API calls that return the SSL feature::
 
-* http://api.embed.ly/1/oembed?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
-* http://api.embed.ly/1/oembed?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
+  http://api.embed.ly/1/oembed?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
+  
+  http://api.embed.ly/1/oembed?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
 
 NOTE: You will need to add your key and have SSL enabled to test.
