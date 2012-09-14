@@ -7,7 +7,7 @@ proxied.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/resize?key=:key&url=:url1&errorUrl=:url2&height=:height&grow=:bool
+    https://i.embed.ly/1/image/resize?key=<key>&url=<url1>&errorUrl=<url2>&height=<height>&grow=<true|false>
 
 Example
 --------
@@ -38,7 +38,7 @@ Arguments
     not currently supported.
 
 ``url`` (required)
-    The URL of the image to proxy. The URL must be urlencoded to insure that
+    The URL of the image to proxy. The URL must be url-encoded to ensure that
     Embedly retrieves the correct link. For example, this Embedly
     URL::
 
@@ -50,7 +50,7 @@ Arguments
 
 ``errorUrl``
     The URL of the fall back image to use when ``url`` fails. The URL must be
-    urlencoded to insure that Embedly retrieves the correct link. For example,
+    url-encoded to ensure that Embedly retrieves the correct link. For example,
     this Embedly URL::
 
         http://embed.ly/static/images/squiggle2.png?v=1
@@ -66,9 +66,9 @@ Arguments
     The height that the image should fill.
 
 ``grow``
-    Set to `true` if growing the image is allowed. Otherwise it will never expand
-    beyond it's original size, making width and height behave like max width and
-    max height.
+    Set to `true` if growing the image is allowed. Otherwise the image will 
+    never expand beyond it's original dimensions, making width and height
+    behave like max width and max height.
 
 Response
 --------
@@ -83,7 +83,7 @@ Response
   * A required parameter was not specified.
 
 404 Not Found
-  Resource not found.
+  No image was found at the given url.
 
 500 Server Error
   i.embed.ly is having trouble with the image. Please try again or contact us,

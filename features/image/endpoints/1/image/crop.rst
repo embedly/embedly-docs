@@ -2,13 +2,13 @@ Image Crop API
 ==============
 Crop an image to fill the given dimensions. The image will first be resized to it's
 smallest possible size that will fill the entire given dimensions, preserving
-it's aspect ratio.  The image is then centered and any part of the image that
-doesn't fit within the given dimensions is removed. The same amount is trimmed
-from opposite sides of the cropped dimension.
+it's aspect ratio.  The image is then centered within the given dimensions, 
+and any part of the image that doesn't fit is removed. The same amount is
+trimmed from each side of the image in the cropping dimension.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/crop?key=:key&url=:url1&errorurl=:url2&height=:height&width=:width
+    https://i.embed.ly/1/image/crop?key=<key>&url=<url1>&errorurl=<url2>&height=<height>&width=<width>
 
 Example
 --------
@@ -40,7 +40,7 @@ Arguments
     not currently supported.
 
 ``url`` (required)
-    The URL of the image to proxy. The URL must be urlencoded to insure that
+    The URL of the image to proxy. The URL must be url-encoded to ensure that
     Embedly retrieves the correct link. For example, this Embedly
     URL::
 
@@ -52,7 +52,7 @@ Arguments
 
 ``errorurl``
     The URL of the fall back image to use when ``url`` fails. The URL must be
-    urlencoded to insure that Embedly retrieves the correct link. For example,
+    url-encoded to ensure that Embedly retrieves the correct link. For example,
     this Embedly URL::
 
         http://embed.ly/static/images/squiggle2.png?v=1
@@ -80,7 +80,7 @@ Response
   * A required parameter was not specified.
 
 404 Not Found
-  Resource not found.
+  No image was found at the given url.
 
 500 Server Error
   i.embed.ly is having trouble with the image. Please try again or contact us,

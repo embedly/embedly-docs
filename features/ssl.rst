@@ -129,7 +129,6 @@ Examples
 Here are a few API calls that return the SSL feature::
 
   http://api.embed.ly/1/oembed?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
-  
   http://api.embed.ly/1/oembed?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
 
 NOTE: You will need to add your key and have SSL enabled to test.

@@ -35,18 +35,17 @@ i.embed.ly offers four different API endpoints:
 Image
 ^^^^^
 
-Image is a simple proxy that allows you to embed unsecure images into secure
+Image is a simple proxy that allows you to embed insecure images into secure
 pages and use a fall back image for images not found. The image endpoint
-doesn't manipulate the image in anyway.
+doesn't manipulate the image in any way.
 
 |more| Read the :doc:`endpoints/1/image/index`
 
 Resize
 ^^^^^^
 
-Resize is a specialized version of image that allows simple resizing of the
-image. Aspect ratio is always preserved, which means it's hard to predict the
-exact dimensions of the image ahead of time.
+Resize is a specialized version of the image endpoint that allows simple
+resizing of the image. Aspect ratio is always preserved.
 
 |more| Read the :doc:`endpoints/1/image/resize`
 
@@ -54,7 +53,7 @@ Crop
 ^^^^
 
 Like resize, crop allows you to resize images to your needs, but offers precise
-control over the resulting images dimensions by cropping any excess image.
+control over the resulting images dimensions by cropping the resized image.
 
 |more| Read the :doc:`endpoints/1/image/crop`
 
@@ -75,12 +74,12 @@ API Query Arguments
 Like the other features, it's possible to invoke the Image Proxy through the
 API. These arguments allow you to apply a uniform ``image_width`` and
 ``image_height`` to every image that Embedly passes back through the API
-response. Again, if you need different thumbnail and photo sizes you should use
+response. If you need different sizes for different images, you should use
 :ref:`i.embed.ly <i_embed_ly>` directly.
 
 Example
 ^^^^^^^
-Using the following query arguments, will manipulate every image that is passed
+Using the following query arguments will manipulate every image that is passed
 back in the Embedly response. Here is an example call::
 
   http://api.embed.ly/1/preview?url=http%3A%2F%2Fwww.geek.com%2Farticles%2Fmobile%2Fjournalist-goes-undercover-making-the-iphone-5-at-foxconn-20120912%2F&image_height=100&image_method=fill&image_error_url=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg&image_width=100&key=key
@@ -156,7 +155,7 @@ Arguments
 ``image_grow``
   Set to `true` if growing the image is allowed. Otherwise it will never expand
   beyond it's original size, making width and height behave like max width and
-  max height. This is only a valid option for the `resize` ``image_method``.
+  max height. This is only a valid option when ``image_method=resize``.
 
 ``image_color``
   The css color to fill with. Colors should be 3 or 6 hexadecimal characters.
@@ -165,13 +164,13 @@ Arguments
   * 000
   * 4f2a55
 
-  This is only a valid option for the `fill` ``image_method``. The default
+  This is only a valid option for the ``image_method=fill``. The default
   color is ``000``.
 
 ``image_error_url``
-  The URL of the fall back image to use when ``url`` fails. The URL must be
-  urlencoded to insure that Embedly retrieves the correct link. For example,
-  this Embedly URL::
+  The URL of the fall back image to use when the image at ``url`` can't be
+  processed (or doesn't exist). The URL must be url-encoded to ensure that
+  Embedly retrieves the correct link. For example, this Embedly URL::
 
     http://embed.ly/static/images/squiggle2.png?v=1
 

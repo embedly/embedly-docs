@@ -6,7 +6,7 @@ the specified color.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/fill?key=:key&url=:url1&errorurl=:url2&height=:height&width=:width&color=:color
+    https://i.embed.ly/1/image/fill?key=<key>&url=<url1>&errorurl=<url2>&height=<height>&width=<width>&color=<color>
 
 Example
 --------
@@ -37,7 +37,7 @@ Arguments
   not currently supported.
 
 ``url`` (required)
-  The URL of the image to proxy. The URL must be urlencoded to insure that
+  The URL of the image to proxy. The URL must be url-encoded to ensure that
   Embedly retrieves the correct link. For example, this Embedly
   URL::
 
@@ -50,7 +50,7 @@ Arguments
 
 ``errorurl``
   The URL of the fall back image to use when ``url`` fails. The URL must be
-  urlencoded to insure that Embedly retrieves the correct link. For example,
+  url-encoded to ensure that Embedly retrieves the correct link. For example,
   this Embedly URL::
 
     http://embed.ly/static/images/squiggle2.png?v=1
@@ -79,14 +79,13 @@ Response
   Image returned successfully.
 
 400 Bad Request
-
   * The resource found was either not an image or not publicly accessible and
     no ``errorurl`` was specified.
   * An invalid ``key`` was passed.
   * A required parameter was not specified.
 
 404 Not Found
-  Resource not found.
+  No image was found at the given url.
 
 500 Server Error
   i.embed.ly is having trouble with the image. Please try again or contact us,
