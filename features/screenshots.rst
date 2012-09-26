@@ -51,7 +51,7 @@ the trailing ``_o`` in the screenshot URL with a valid suffix:
 
 Here is an example query selected the ``small`` screenshot::
 
-  http://api.embed.ly/2/oembed?screenshot=small&url=http%3A%2F%2Farstechnica.com&key=<key>
+  http://api.embed.ly/1/oembed?screenshot=small&url=http%3A%2F%2Farstechnica.com&key=<key>
 
 Result::
 
