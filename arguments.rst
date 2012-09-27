@@ -52,15 +52,15 @@ An in-depth view of all the query arguments:
     `video`_ Embedly will return the following html:
 
     .. code-block:: html
-    
+
         <iframe src="http://player.vimeo.com/video/18150336" width="1280"
          height="720" frameborder="0"></iframe>
-    
+
     This width may cause the embed to overflow the containing ``div``. If we
     `pass`_ ``maxwidth=500`` the html will be:
 
     .. code-block:: html
-    
+
         <iframe src="http://player.vimeo.com/video/18150336" width="500"
         height="281" frameborder="0"></iframe>
 
@@ -68,10 +68,10 @@ An in-depth view of all the query arguments:
     to fit within your page. This can also be applied to ``maxheight``. For example:
 
     .. code-block:: html
-        
-        <img src="http://embed.ly/static/images/squiggle2.png" 
-        style="max-width:300px; max-height:200px;"></img>    
-    
+
+        <img src="http://embed.ly/static/images/squiggle2.png"
+        style="max-width:300px; max-height:200px;"></img>
+
     It is highly recommended that developers pass a ``maxwidth`` to Embedly.
 
 ``maxheight`` (optional)
@@ -87,13 +87,13 @@ An in-depth view of all the query arguments:
 
 ``format`` (optional)
     The response format -- Accepted values: ``(xml, json)``
- 
+
 ``callback`` (optional)
-    Returns a ``(jsonp)`` response format. The callback is the name of the 
+    Returns a ``(jsonp)`` response format. The callback is the name of the
     javascript function to execute.
 
 ``wmode`` (optional)
-    Will append the wmode value to the flash object. Possible values include 
+    Will append the wmode value to the flash object. Possible values include
     ``window``, ``opaque`` and ``transparent``. For more information view
     Adobe's
     `documentation <http://kb2.adobe.com/cps/127/tn_12701.html>`_.
