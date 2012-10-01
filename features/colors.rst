@@ -14,15 +14,17 @@ Image Entropy
 Image entropy can be roughly thought of as how "busy" an image is. For
 example:
 
-.. image:: /static/images/logo.png
+.. image:: ../images/colors_logo.png
+  :class: exampleimg
 
 The relatively simple Embedly logo has a fairly low entropy of about 1.73.
-embed.ly/static/images/logo.png low entropy 1.73
+http://embed.ly/static/images/docs/colors_logo.png low entropy 1.73
 
-.. image:: /static/images/office/DSC_0107.JPG
+.. image:: ../images/colors_office.png
+  :class: exampleimg
 
 This picture of a wall in the Embedly office has a entropy of 6.08.
-embed.ly/static/images/office/DSC_0107.JPG higher entropy 6.08
+http://embed.ly/static/images/docs/colors_office.png higher entropy 6.08
 
 Image entropy can be useful in programmatically choosing the type of image
 to display. For instance, if an API user wants to display photographic type
@@ -34,7 +36,8 @@ Dominant Colors
 The dominant colors of an image are those colors that make up the majority of
 an image. For example:
 
-.. image:: /static/images/office/logo.png
+.. image:: ../images/colors_logo.png
+  :class: exampleimg
 
 The Embedly logo is made up of black from the text, white from
 the background, and two different blues as a result of the lighting.
@@ -44,7 +47,9 @@ the background, and two different blues as a result of the lighting.
 [7, 9, 10] 07090A
 [247, 251, 252] F7FBFC
 
-.. image:: /static/images/office/DSC_0107.JPG
+.. image:: ../images/colors_office.png
+  :class: exampleimg
+
 
 This picture of a wall in the Embedly office has a more varied palette, from
 the cardboard color of the coasters-turned-pinboard, to the white of the
@@ -56,11 +61,11 @@ papers pinned to the pinboard, to the gray of the wall.
 [106, 96, 84] 6A6054
 [116, 84, 33] 745421
 
-Images with more diversity (and often, more entropy) are more difficult to 
-break down in to a few dominant colors. Currently, the Embedly API won't 
+Images with more diversity (and often, more entropy) are more difficult to
+break down in to a few dominant colors. Currently, the Embedly API won't
 return any more than 5 dominant colors for an image.
 
-An API user might use the dominant colors to select certain images that fit 
+An API user might use the dominant colors to select certain images that fit
 a color scheme to provide a more consistent and inviting user experience.
 
 Usage
@@ -69,4 +74,4 @@ Usage
 To enable this feature, simply add the API query parameter ``colors=true`` to
 a normal Embedly API call. For example::
 
-    http://api.embed.ly/1/preview?key=<key>&urls=embed.ly/jobs&colors=true
+    http://api.embed.ly/1/preview?key=<key>&urls=http%3A%2F%2Fembed.ly%2Fjobs&colors=true
