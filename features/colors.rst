@@ -1,5 +1,5 @@
 Dominant Colors
-===========
+===============
 
 This feature is currently in :ref:`Beta <beta>`.
 
@@ -9,7 +9,7 @@ normally returned by the API, a measure of image entropy and a list of
 dominant RGB color values from each image are also returned.
 
 Image Entropy
-^^
+^^^^^^^^^^^^^
 
 Image entropy can be roughly thought of as how "busy" an image is. For
 example:
@@ -29,7 +29,7 @@ to display. For instance, if an API user wants to display photographic type
 images, but not logos, they can ignore images with lower entropy.
 
 Dominant Colors
-^^
+^^^^^^^^^^^^^^^
 
 The dominant colors of an image are those colors that make up the majority of
 an image. For example:
@@ -64,7 +64,7 @@ An API user might use the dominant colors to select certain images that fit
 a color scheme to provide a more consistent and inviting user experience.
 
 Usage
-^^
+^^^^^
 
 To enable this feature, simply add the API query parameter ``colors=true`` to
 a normal Embedly API call. For example::
