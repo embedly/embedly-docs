@@ -43,9 +43,13 @@ The Embedly logo is made up of black from the text, white from
 the background, and two different blues as a result of the lighting.
 
 [47, 68, 78] 2F444E
+.. image:: ../images/2f444e-swatch.png
 [28, 170, 228] 1CAAE4
+.. image:: ../images/1caae4-swatch.png
 [7, 9, 10] 07090A
+.. image:: ../images/07090a-swatch.png
 [247, 251, 252] F7FBFC
+.. image:: ../images/f7fbfc-swatch.png
 
 .. image:: ../images/colors_office.png
   :class: exampleimg
@@ -56,10 +60,15 @@ the cardboard color of the coasters-turned-pinboard, to the white of the
 papers pinned to the pinboard, to the gray of the wall.
 
 [228, 221, 231] E4DDE7
+.. image:: ../images/e4dde7-swatch.png
 [72, 52, 37] 483425
+.. image:: ../images/483425-swatch.png
 [161, 150, 124] A1967C
+.. image:: ../images/a1967c-swatch.png
 [106, 96, 84] 6A6054
+.. image:: ../images/6a6054-swatch.png
 [116, 84, 33] 745421
+.. image:: ../images/745421-swatch.png
 
 Images with more diversity (and often, more entropy) are more difficult to
 break down in to a few dominant colors. Currently, the Embedly API won't
