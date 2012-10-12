@@ -198,6 +198,14 @@ Response
     Text 2
     Text 3
 
+``lead``
+
+  Often there is a lead paragraph that is a brief summary of the rest of the
+  article. Embedly tries to pull this lead paragraph out for a better reading
+  experience. It is always a ``p`` tag, i.e.::
+
+    "lead": "<p>This is a summary of the below article</p>"
+
 ``content``
 
   This is the html that we pulled from the URL. It's been sanitized, so it will
@@ -209,7 +217,7 @@ Response
     'var', 'p', 'div', 'a', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'ol', 'ul',
     'li'
 
-  All tag attributes have been removed as well. The only effective 
+  All tag attributes have been removed as well. The only effective
   attributes are:
 
     * ``href`` on an ``a`` tag
