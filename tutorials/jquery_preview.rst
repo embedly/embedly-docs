@@ -19,7 +19,7 @@ Demos
 * `Status <http://embedly.github.com/jquery-preview/demo/status.html>`_
 * `Large Embeds <http://embedly.github.com/jquery-preview/demo/large.html>`_
 * `Rich Embeds <http://embedly.github.com/jquery-preview/demo/rich.html>`_
-* `Multipe Inputs <http://embedly.github.com/jquery-preview/demo/multi.html>`_
+* `Multiple Inputs <http://embedly.github.com/jquery-preview/demo/multi.html>`_
 
 Basic Setup
 -----------
