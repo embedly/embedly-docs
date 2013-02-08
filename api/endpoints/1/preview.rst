@@ -1,9 +1,9 @@
 Preview API
 ===========
 
-The Preview endpoint is designed to provide users with a number of different 
+The Preview endpoint is designed to provide users with a number of different
 options to build an embed with. For instance, whereas the
-:doc:`oEmbed endpoint </endpoints/1/oembed>` only provides what Embedly thinks
+:doc:`oEmbed endpoint </api/endpoints/1/oembed>` only provides what Embedly thinks
 is the best thumbnail image for a page, Preview potentially returns several.
 
 Example call (1 URL)::
@@ -16,7 +16,7 @@ Example call (multiple URLs)::
 
 Examples
 --------
-`Embedly Explore </docs/explore/preview>`_ can be used to get a better handle 
+`Embedly Explore </docs/explore/preview>`_ can be used to get a better handle
 on what this API returns. Try these:
 
 * `Techcrunch Article <http://embed.ly/docs/explore/preview/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
@@ -25,7 +25,7 @@ on what this API returns. Try these:
 
 Arguments
 ----------------
-See the :doc:`Query Arguments </arguments>` documentation.
+See the :doc:`Query Arguments </api/arguments>` documentation.
 
 Response
 --------
@@ -38,7 +38,7 @@ Example response:
         "original_url": "http://bit.ly/detr0",
         "url": "http://www.youtube.com/watch?v=B-m6JDYRFvk",
         "type": "html",
-        
+
         "cache_age" : 86400,
         "safe" : true,
 
@@ -46,20 +46,20 @@ Example response:
         "provider_display": "www.youtube.com",
         "provider_name": "YouTube",
         "favicon_url": "http://s.ytimg.com/yt/favicon-vflZlzSbU.ico",
- 
+
         "title": "Coder Girl",
         "description": "An ode to female programmers.\r\n\r\nEP Available on iTunes!\r\n
                         http://bit.ly/4sebjr\r\n
                         Find more great music @ http://dalechase.com  http://twitter.com/daleochase\r\n
                         Song lyrics here: http://bit.ly/7eOilA",
-        
+
         "author_name": "dalechase",
         "author_url": "http://www.youtube.com/user/dalechase",
-        
+
         "content": null,
-        
+
         "embeds": [],
-         
+
         "images": [{"height": 360,
                      "url": "http://i3.ytimg.com/vi/B-m6JDYRFvk/hqdefault.jpg",
                      "width": 480}],
@@ -68,16 +68,16 @@ Example response:
                                <param name='movie' value='http://www.youtube.com/v/B-m6JDYRFvk?fs=1'>
                                <param name='allowFullScreen' value='true'>
                                <param name='allowscriptaccess' value='always'>
-                               <embed src='http://www.youtube.com/v/B-m6JDYRFvk?fs=1' 
-                                      type='application/x-shockwave-flash' 
-                                      width='640' height='360' allowscriptaccess='always' 
+                               <embed src='http://www.youtube.com/v/B-m6JDYRFvk?fs=1'
+                                      type='application/x-shockwave-flash'
+                                      width='640' height='360' allowscriptaccess='always'
                                       allowfullscreen='true'></embed>
                             </object>",
                     "type": "video",
                     "width": 640},
-         
+
         "place": {},
-        
+
         "event": {}
     }
 
@@ -92,7 +92,7 @@ Example response:
 
 ``type``
     See :ref:`response-types`.
-    
+
 ``cache_age``
     How long Embedly is going to cache the response for? Generally, this is for
     a day, unless some external factor tells us to reevaluate the resource.
@@ -124,13 +124,13 @@ Example response:
 
 ``description``
     The description of the resource. It's picked in the following order:
-    
+
     * The rss entry's summary
     * The oEmbed description
     * The open graph description
     * The ``meta`` description tag
     * An excerpt pulled programmaticly by Embedly
- 
+
 ``author_name``
     The name of the author/owner of the resource.
 
@@ -138,13 +138,13 @@ Example response:
     A URL for the author/owner of the resource.
 
 ``object``
-    See :ref:`object` 
+    See :ref:`object`
 
 ``images``
     See :ref:`images`
 
 ``content``
-    The content of the rss entry. 
+    The content of the rss entry.
 
 ``place``
     See :ref:`place`
@@ -153,7 +153,7 @@ Example response:
     See :ref:`event`
 
 ``embeds``
-    A list of embeds that Embedly found on the page. They follow the 
+    A list of embeds that Embedly found on the page. They follow the
     :ref:`object` format.
 
 
@@ -250,7 +250,7 @@ JSON Requests
   * This service requires an embedly key parameter, contact: support@embed.ly or sign up: http://embed.ly/signup.
   * Invalid IP provided: <ip>, contact: support@embed.ly.
   * Invalid referrer provided: <referrer>, contact: support@embed.ly.
-    
+
 404 Not Found
   URL Not Found, we will log this and determine if usable.
 
@@ -267,9 +267,9 @@ JSONP Requests
 ^^^^^^^^^^^^^^
 
 Format
-    ``callbackFunction({"url": "url with error", "error_code": "error code", 
+    ``callbackFunction({"url": "url with error", "error_code": "error code",
     "error_message": "error message", "type": "error"})``
- 
+
 Error Response
-    ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message": 
+    ``jsonp1273162787542({"url": "http://flickr.com/embedly", "error_code": 404, "error_message":
     "HTTP 404: Not Found", "type": "error"})``

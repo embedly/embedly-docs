@@ -21,7 +21,7 @@ But your friends won't just see a link. They'll also see something like this:
     <p style='width:500px; margin:0.5em 0; font-size:0.9em; text-align:justify; line-height:1.1; color:#333'>The Need 4 Speed: The Art of Flight A collection of shots from flights made during the 2009-2010 season by the talented group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango rigs and testing several new V-series wingsuit prototypes around Europe. Feel the need. The need for speed!</p>
     </div>
 
-That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or :doc:`mobile app </mobile>`.
+That rich HTML preview is called an **embed.** Embeds can contain any combination of text, images, audio, and video. With Embedly's API, you can add embeds to any web page or :doc:`mobile app </features/mobile>`.
 
 .. Embedly's API will handle any web address, but it yields the best results with queries to our |num_providers| `providers </providers>`_.
 
@@ -46,33 +46,33 @@ it in JSON format. For example, to get the embed for that Vimeo link, you would 
     http://api.embed.ly/1/oembed?url=http%3A%2F%2Fvimeo.com%2F18150336
 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
-:doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
+:doc:`oEmbed endpoint </api/endpoints/1/oembed>`. For brevity, we've omitted the
 ``key`` that you would normally use for
-:doc:`authentication </authentication>`.)
+:doc:`authentication </api/authentication>`.)
 
 This will return the following JSON response:
 
 .. code-block:: json
 
     {
-        "provider_url": "http://vimeo.com/", 
+        "provider_url": "http://vimeo.com/",
         "description": "The Need 4 Speed: The Art of Flight A collection of
         shots from flights made during the 2009-2010 season by the talented
         group of wingsuit basejumpers, while flying the V3, Hybrid LD2/Trango
         rigs and testing several new V-series wingsuit prototypes around
-        Europe. Feel the need. The need for speed!", 
+        Europe. Feel the need. The need for speed!",
         "title": "Wingsuit Basejumping - The Need 4 Speed: The Art of Flight",
         "author_name": "Phoenix Fly",
         "height": 720,
-        "width": 1280, 
+        "width": 1280,
         "html": "<iframe src=\"http://player.vimeo.com/video/18150336\"
-        width=\"1280\" height=\"720\" frameborder=\"0\"></iframe>", 
-        "thumbnail_width": 1280, 
-        "version": "1.0", 
-        "provider_name": "Vimeo", 
+        width=\"1280\" height=\"720\" frameborder=\"0\"></iframe>",
+        "thumbnail_width": 1280,
+        "version": "1.0",
+        "provider_name": "Vimeo",
         "thumbnail_url": "http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg",
-        "type": "video", 
-        "thumbnail_height": 720, 
+        "type": "video",
+        "thumbnail_height": 720,
         "author_url": "http://vimeo.com/phoenixfly"
     }
 
@@ -83,7 +83,7 @@ the ``title``, ``description``, and other metadata.
 Ready to add Embedly to your app? `Sign up for an account </pricing>`_, then
 check out our :doc:`tutorials </tutorials/index>` and
 :doc:`libraries </libraries/index>`. For detailed API documentation, see
-:doc:`endpoints </endpoints/index>`.
+:doc:`endpoints </api/endpoints/index>`.
 
 .. container:: keywords
 

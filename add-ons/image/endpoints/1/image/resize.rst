@@ -34,7 +34,7 @@ Arguments
 ---------
 
 ``key`` (required)
-    The :doc:`API key </authentication>` for your registered account. OAuth is
+    The :doc:`API key </api/authentication>` for your registered account. OAuth is
     not currently supported.
 
 ``url`` (required)
@@ -66,7 +66,7 @@ Arguments
     The height that the image should fill.
 
 ``grow``
-    Set to `true` if growing the image is allowed. Otherwise the image will 
+    Set to `true` if growing the image is allowed. Otherwise the image will
     never expand beyond it's original dimensions, making width and height
     behave like max width and max height.
 

@@ -8,9 +8,9 @@ This feature is in beta. We hope you'll try it out and send us your feedback.
 
 Endpoints
 ---------
-All API :doc:`endpoints </endpoints/index>` are supported. Use them just as you
+All API :doc:`endpoints </api/endpoints/index>` are supported. Use them just as you
 would from a desktop device. However, they may behave slightly differently. For
-instance, if you don't set ``maxwidth`` or ``maxheight`` parameters, the 
+instance, if you don't set ``maxwidth`` or ``maxheight`` parameters, the
 defaults are 100% of the mobile device's screen size.
 
 Responses
