@@ -55,7 +55,7 @@ Supported Streaming Devices
 ---------------------------
 These are the devices that will support video and audio streaming embeds:
 
-* iOS (3.0 - 4.3)
+* iOS (3.0 and up)
 
   * iPad
   * iPhone
