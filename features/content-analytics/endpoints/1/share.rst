@@ -12,11 +12,11 @@ Example call ::
 
 Example
 -------
-::
+Call ::
 
-https://api.embed.ly/1/share?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx&url=www.google.com&via="twitter"
+    https://api.embed.ly/1/share?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx&url=www.google.com&via="twitter"
 
-::
+Response ::
 
     {
       "error": 0,

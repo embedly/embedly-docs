@@ -11,11 +11,11 @@ Example call ::
 
 Example
 -------
-::
+Call ::
 
     https://api.embed.ly/1/trending?key=xxxxxxxxxxxxxxxxxxxxxx
 
-::
+Reponse ::
 
     [{
       "url": "http://gawker.com/5985051/seattle-news-station-gets-three-people-super-high-puts-them-behind-the-wheel-to-see-how-well-they-drive",

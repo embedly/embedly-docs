@@ -12,23 +12,23 @@ Example call ::
 
 Example
 -------
-::
+Call ::
 
-https://api.embed.ly/1/missed?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx
+    https://api.embed.ly/1/missed?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx
 
-::
+Response ::
 
-[{
-  "url": "http://gigaom.com/2013/02/18/how-switching-to-android-helped-me-deal-with-my-addiction-to-connectedness/"
-}, {
-  "url": "http://gizmodo.com/5976573/free-voice-calling-rolls-out-on-facebook-messenger-for-ios"
-}, {
-  "url": "http://mashable.com/2013/02/18/most-expensive-starbucks/"
-}, {
-  "url": "http://www.whosay.com/coco/photos/293343"
-}, {
-  "url": "http://www.theregister.co.uk/2013/02/19/3doodler_3d_pen/"
-}]
+    [{
+      "url": "http://gigaom.com/2013/02/18/how-switching-to-android-helped-me-deal-with-my-addiction-to-connectedness/"
+    }, {
+      "url": "http://gizmodo.com/5976573/free-voice-calling-rolls-out-on-facebook-messenger-for-ios"
+    }, {
+      "url": "http://mashable.com/2013/02/18/most-expensive-starbucks/"
+    }, {
+      "url": "http://www.whosay.com/coco/photos/293343"
+    }, {
+      "url": "http://www.theregister.co.uk/2013/02/19/3doodler_3d_pen/"
+    }]
 
 Arguments
 ---------

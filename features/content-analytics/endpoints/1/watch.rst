@@ -19,11 +19,11 @@ Example call ::
 
 Example
 -------
-::
+Call ::
     https://api.embed.ly/1/watch?key=xxxxxxxxxxxxxxxxxxxxxx&uid=ec9876f768814afb9000729d81d95f05&url=http://www.youtube.com/watch?v=lTx3G6h2xyA&sid=220fhi2fhf23r&duration=1
 
 
-::
+Response ::
 
     {
       "error": 0

@@ -13,12 +13,12 @@ Example call ::
 
 Example
 -------
-::
+Call ::
 
     https://api.embed.ly/1/identify?cid=siteuserx&uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx
 
 
-::
+Response ::
 
 {
   "error": 0,
