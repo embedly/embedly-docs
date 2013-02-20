@@ -26,19 +26,19 @@ Click indicates that a user has visited a link.
 
 View
 ^^^^
-Measures how long a user has viewed an article.  This API is called while a user
+View measures how long a user has viewed an article.  This API is called while a user
 is viewing an article.
 
 Watch
 ^^^^^
-Measures how long a video is being viewed.
+Watch measures how long a video is being viewed.
 
 Share
 ^^^^^
 Share measures when a user shares a url, and is generalizable to media actions
 such as "Liking".  Includes a freeform parameter that can
-be used to log which site the media is shared on, or specify that the action is
-a "Like".
+be used to log which site the media is shared on i.e. "facebook", "twitter", or specify that the action is
+a "like".
 
 
 Activity
@@ -47,17 +47,16 @@ Embedly Activity endpoint showcases a weeks worth of activity on your site from 
 
 Recommend
 ^^^^^^^^^
-Embedly Recommend endpoint takes a look at your user or group of users most recent activity, including clicks, views and other interactions with your site. Then it uses them to recommend URLs in response to their specific activity.
+Embedly Recommend endpoint recommends URLs to a user or group given their most recent activity, including clicks, views and other interactions with your site.
 
 
-Trending
+Popular
 ^^^^^^^^
-Embedly Popularity endpoint will use a specific client key to create a list of popular topics amongst your users and your site overall. Popularity doesn’t necessarily mean that these URLs are being accessed more often than not, but rather are steadily popular topics amongst your users.
+Embedly Popular endpoint returns a list of popular URLs among all users of your site.
 
 Missed
 ^^^^^^
-Embedly Missed endpoint chooses the most popular URLs on your site which have not been viewed yet by a specific user. It then sends a list of these “missed” URLs to the user for them catch up on.
-
+Embedly Missed endpoint returns the most popular URLs on your site which have not been viewed yet by a specific user.
 
 Indentify
 ^^^^^^^^^
