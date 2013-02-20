@@ -18,27 +18,27 @@ Example
     https://api.embed.ly/1/activity?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx
 
 ::
-[{
-  "action": "view",
-  "timestamp": 1361283003,
-  "duration": 20,
-  "url": "http://www.nytimes.com/2013/02/19/technology/chinas-army-is-seen-as-tied-to-hacking-against-us.html?pagewanted=all"
-}, {
-  "action": "view",
-  "timestamp": 1361283055,
-  "duration": 20,
-  "url": "http://techcrunch.com/2013/02/19/yandex-the-google-of-russia-beats-estimates-on-sales-of-290m-as-search-volume-grows-but-domestic-share-stagnates-at-60-5/"
-}, {
-  "action": "view",
-  "timestamp": 1361284084,
-  "duration": 20,
-  "url": "http://www.entrepreneur.com/article/225795"
-}, {
-  "action": "view",
-  "timestamp": 1361289583,
-  "duration": 20,
-  "url": "http://thenextweb.com/insider/2013/02/19/fifa-confirms-goal-line-technology-will-be-used-at-the-2014-world-cup-in-brazil/"
-}]
+    [{
+      "action": "view",
+      "timestamp": 1361283003,
+      "duration": 20,
+      "url": "http://www.nytimes.com/2013/02/19/technology/chinas-army-is-seen-as-tied-to-hacking-against-us.html?pagewanted=all"
+    }, {
+      "action": "view",
+      "timestamp": 1361283055,
+      "duration": 20,
+      "url": "http://techcrunch.com/2013/02/19/yandex-the-google-of-russia-beats-estimates-on-sales-of-290m-as-search-volume-grows-but-domestic-share-stagnates-at-60-5/"
+    }, {
+      "action": "view",
+      "timestamp": 1361284084,
+      "duration": 20,
+      "url": "http://www.entrepreneur.com/article/225795"
+    }, {
+      "action": "view",
+      "timestamp": 1361289583,
+      "duration": 20,
+      "url": "http://thenextweb.com/insider/2013/02/19/fifa-confirms-goal-line-technology-will-be-used-at-the-2014-world-cup-in-brazil/"
+    }]
 
 
 Arguments
