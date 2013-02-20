@@ -56,7 +56,7 @@ Error Codes
 -----------
 
 400 Bad Request
-  * A required parameter was not specified.
+  A required parameter was not specified.
 
 500 Server Error
   api.embed.ly is having trouble with the request. Please try again or contact us,

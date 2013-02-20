@@ -13,7 +13,7 @@ Example
 -------
 Call ::
 
-    https://api.embed.ly/1/trending?key=xxxxxxxxxxxxxxxxxxxxxx
+    https://api.embed.ly/1/popular?key=xxxxxxxxxxxxxxxxxxxxxx
 
 Reponse ::
 
@@ -47,7 +47,7 @@ Response
   Response returned successfully.
 
 400 Bad Request
-  * A required parameter was not specified.
+  A required parameter was not specified.
 
 500 Server Error
   api.embed.ly is having trouble with the request. Please try again or contact us,
