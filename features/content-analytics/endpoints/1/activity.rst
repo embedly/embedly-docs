@@ -18,6 +18,7 @@ Example
     https://api.embed.ly/1/activity?uid=ec9876f768814afb9000729d81d95f05&key=xxxxxxxxxxxxxxxxxxxxxx
 
 ::
+
     [{
       "action": "view",
       "timestamp": 1361283003,
