@@ -2,10 +2,7 @@
 
 XSS Protection
 ==============
-
-This feature is currently in :ref:`Beta <beta>`.
-
-Cross-site scripting (XSS) protection is really as simple as putting every 
+Cross-site scripting (XSS) protection is really as simple as putting every
 embed in an iframe. Nothing in the child frame has access to the containing
 frame, so your site is protected from malicious embeds.
 
@@ -35,7 +32,7 @@ parent page.
 
 Script Tags
 -----------
-The one problem with serving an iframe from within an embed is that we must 
+The one problem with serving an iframe from within an embed is that we must
 know the exact size of the embed. Otherwise there will be weird whitespace
 around the object, or it will be cut off, creating a terrible user experience.
 Because of this, we do not allow script tag embeds unless we know the exact

@@ -183,7 +183,7 @@ Response
   This is much like the ``excerpt`` of the article, but with a few changes that
   make it better to use in an index view of the articles. The length of the
   description is controlled by the ``words`` :doc:`query argument
-  <../arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
+  </api/arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
   breaks added. For example, imagine the following article ``content``::
 
     <div>

@@ -5,7 +5,7 @@ Query Arguments
 An in-depth view of all the query arguments:
 
 ``key``
-    The :doc:`API key </authentication>` for your registered account.
+    The :doc:`API key </api/authentication>` for your registered account.
 
 ``url``
     The URL is to retrieve embedding information. This URL must be escaped to

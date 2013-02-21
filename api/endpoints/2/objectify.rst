@@ -16,7 +16,7 @@ Example call (multiple URLs)::
 
 Examples
 --------
-`Embedly Explore </docs/explore/objectify>`_ can be used to get a better 
+`Embedly Explore </docs/explore/objectify>`_ can be used to get a better
 handle on what the Objectify API returns. Try these:
 
 * `Foursquare <http://embed.ly/docs/explore/objectify/?url=http://foursquare.com/venue/49547>`_
@@ -25,7 +25,7 @@ handle on what the Objectify API returns. Try these:
 
 Arguments
 ---------
-See the :doc:`Query Arguments </arguments>` documentation.
+See the :doc:`Query Arguments </api/arguments>` documentation.
 
 Response
 --------
@@ -40,7 +40,7 @@ Response
     redirects.
 
 ``type``
-    See :ref:`response-types` 
+    See :ref:`response-types`
 
 ``safe``
     See :ref:`safebrowse`.
@@ -69,7 +69,7 @@ Response
 
 ``description``
     The description of the resource. It's picked in the following order:
-    
+
     * The RSS entry's summary
     * The oEmbed description
     * The open graph description
@@ -78,10 +78,10 @@ Response
 
 ``oembed``
     The oEmbed response for a url. More information on the :doc:`../1/oembed`.
-    
+
 ``meta``
     The meta attributes of the document. Possible attributes include:
-    
+
     * ``content_type``
     * ``author``
     * ``title``
@@ -112,7 +112,7 @@ Response
 
 ``open_graph``
     The Open Graph attributes of the document. Possible attributes include:
- 
+
     * ``title``
     * ``type``
     * ``site_name``
@@ -142,10 +142,10 @@ Response
 
 ``place``
     See :ref:`place`
-    
+
 ``event``
     See :ref:`event`
-    
+
 ``microformats``
     See :ref:`microformats`
 
@@ -177,7 +177,7 @@ JSON Requests
     * This service requires an embedly key parameter, contact: support@embed.ly or sign up here: http://embed.ly/signup.
     * Invalid IP provided: <ip>, contact: support@embed.ly.
     * Invalid referrer provided: <referrer>, contact: support@embed.ly.
-  
+
 404 Not Found
     URL Not Found, we will log this and determine if usable.
 

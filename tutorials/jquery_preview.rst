@@ -1,13 +1,13 @@
 jQuery Preview
 ==============
 
-Embedly's jQuery Preview is a jQuery plugin that allows a site's users to 
+Embedly's jQuery Preview is a jQuery plugin that allows a site's users to
 share links with rich, customized previews attached.
 
-Unlike the standard :doc:`Embedly jQuery <jquery>` plugin, which generates 
-previews in a preset format, jQuery Preview allows users to select a thumbnail 
+Unlike the standard :doc:`Embedly jQuery <jquery>` plugin, which generates
+previews in a preset format, jQuery Preview allows users to select a thumbnail
 image and edit the title and description. Additionally, jQuery Preview takes
-advantage of the :doc:`Preview endpoint </endpoints/1/preview>`, which provides
+advantage of the :doc:`Preview endpoint </api/endpoints/1/preview>`, which provides
 precise control over how embeds are displayed on the page.
 
 .. image:: ../images/jquery_preview.png

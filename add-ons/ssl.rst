@@ -55,13 +55,13 @@ Secure utilizes Embedly's :doc:`Image Proxy <image/index>` to serve the image
 content over HTTPS. Note that Embedly respects the cache time of the upstream
 image, so we will cache it locally for that period of time. This works for all
 image fields (thumbnail_url, open_graph.image, etc.) passed back from our
-:doc:`API endpoints </endpoints/index>`.
+:doc:`API endpoints </api/endpoints/index>`.
 
 Video and Rich Media Embeds
 ---------------------------
 Secure will also modify all video and rich embed fields (oembed.html,
 object.html, etc.) passed back from our :doc:`API endpoints
-</endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
+</api/endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
 
   <iframe src="https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281"
   width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>

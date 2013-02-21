@@ -45,14 +45,14 @@ for a given resource. They are as follows:
 
 ``error``
     When accessing multiple urls at once Embedly will not throw HTTP errors as
-    normal. Instead, it will return an ``error`` type response that includes the 
+    normal. Instead, it will return an ``error`` type response that includes the
     ``url``, ``error_message`` and ``error_code``.
 
 .. _safebrowse:
 
 Safe
 ----
-Safe is an attribute that tells you if the url is on a phishing or malware 
+Safe is an attribute that tells you if the url is on a phishing or malware
 list. Embedly uses Google's
 `Safe Browsing API <http://code.google.com/apis/safebrowsing/>`_
 to obtain a list of malicious urls. By using this API through our service,
@@ -63,23 +63,23 @@ When the ``safe`` attribute is ``false``, there will be two additional
 attributes in the response:
 
 ``safe_type``
-    Either be ``"phishing"`` or ``"malware"``. The phishing list is from 
+    Either be ``"phishing"`` or ``"malware"``. The phishing list is from
     `antiphishing.org <http://www.antiphishing.org/>`_, and the malware
     list is from `stopbadware.org <http://www.stopbadware.org/>`_.
 
 ``safe_message``
     A user-readable message in HTML format explaining that the given url is likely malicious.
-    
+
     If ``safe_type`` is ``phishing``, the message will be:
 
     .. code-block:: html
-  
+
         <b>Warning- Suspected phishing page.</b> This page may be a forgery or imitation of another website, designed to trick users into sharing personal or financial information. Entering any personal information on this page may result in identity theft or other abuse. You can find out more about phishing from <a href="http://www.antiphishing.org">www.antiphishing.org</a>. Advisory provided by <a href="http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory">Google</a>
-      
+
     If ``safe_type`` is ``malware``, the message will be:
 
     .. code-block:: html
-  
+
         <b>Warning- Visiting this web site may harm your computer.</b> This page appears to contain malicious code that could be downloaded to your computer without your consent. You can learn more about harmful web content including viruses and other malicious code and how to protect your computer at <a href="http://www.stopbadware.org">StopBadware.org</a>. Advisory provided by <a href="http://code.google.com/apis/safebrowsing/safebrowsing_faq.html#whyAdvisory">Google</a>
 
 Once a url is flagged as malicious, you must respect the ``cache_age``
@@ -93,24 +93,24 @@ of Google's Safe Browsing API.
 
 Place
 -----
-The ``place`` object gives location data associated with the url. You can 
-find this data in the :doc:`Preview </endpoints/1/preview>` and
-:doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` 
-for a `Foursquare venue <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_  
+The ``place`` object gives location data associated with the url. You can
+find this data in the :doc:`Preview </api/endpoints/1/preview>` and
+:doc:`Objectify </api/endpoints/2/objectify>` endpoints. An example ``place``
+for a `Foursquare venue <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_
 would be:
 
 .. code-block:: json
 
     {
-        "title": "Dupont Circle Metro Station", 
-        "url": "http://foursquare.com/venue/46205", 
-        "region": "DC", 
-        "locality": "Washington", 
-        "longitude": 77.043256759643555, 
-        "postal_code": "20036", 
-        "provider": "Foursquare", 
-        "latitude": 38.909669137703268, 
-        "id": "46205", 
+        "title": "Dupont Circle Metro Station",
+        "url": "http://foursquare.com/venue/46205",
+        "region": "DC",
+        "locality": "Washington",
+        "longitude": 77.043256759643555,
+        "postal_code": "20036",
+        "provider": "Foursquare",
+        "latitude": 38.909669137703268,
+        "id": "46205",
         "street_address": "1525 20th St NW"
     }
 
@@ -119,13 +119,13 @@ would be:
 
 ``url``
     Resource associated with the ``place``
- 
+
 ``id``
     Unique identifier for the ``place`` by the ``provider``
 
 ``provider``
     Provider name
-    
+
 ``street_address``
     Street Address
 
@@ -152,8 +152,8 @@ would be:
 
 Event
 -----
-The event object gives time and details data, which is associated with the url. You can find 
-this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``event`` value
+The event object gives time and details data, which is associated with the url. You can find
+this data in the :doc:`Preview </api/endpoints/1/preview>` or :doc:`Objectify </api/endpoints/2/objectify>` endpoints. An example ``event`` value
 for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be:
 
 .. code-block:: json
@@ -170,7 +170,7 @@ for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011
 
 ``title``
     Title of the event.
-    
+
 ``description``
     Description of the ``event``. The word count controlled by words and chars.
 
@@ -182,7 +182,7 @@ for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011
 
 ``offset``
     UTC offset in milliseconds. Allows you to localize the time to the user's time zone.
-    
+
 ``id``
     Unique identifier for the ``event`` by the ``provider``.
 
@@ -192,7 +192,7 @@ Microformats
 ------------
 The microformats object is used to extract semantic metadata contained in
 a page's markup. This data is only available from the
-:doc:`Objectify </endpoints/2/objectify>` endpoint.
+:doc:`Objectify </api/endpoints/2/objectify>` endpoint.
 
 ``tags``
     A dictionary of tagged links, designated with ``"rel=tag"``, used
@@ -206,8 +206,8 @@ a page's markup. This data is only available from the
     .. code-block:: json
 
         {
-            "trophy": "http://www.sunfactory.fr/en/tag/trophy/", 
-            "soccer": "http://www.sunfactory.fr/en/tag/soccer/", 
+            "trophy": "http://www.sunfactory.fr/en/tag/trophy/",
+            "soccer": "http://www.sunfactory.fr/en/tag/soccer/",
             "statuette": "http://www.sunfactory.fr/en/tag/statuette/"
         }
 
@@ -222,26 +222,26 @@ a page's markup. This data is only available from the
     %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_:
 
     .. code-block:: json
-    
+
         {
             "xfn": {
                 "me": [
                     {
-                        "href": "http://twitter.com/doki_pen", 
+                        "href": "http://twitter.com/doki_pen",
                         "title": "Twitter"
-                    }, 
+                    },
                     {
-                        "href": "http://twitter.com/kalimbahn", 
+                        "href": "http://twitter.com/kalimbahn",
                         "title": "kalimbahn"
-                    }, 
+                    },
                     {
-                        "href": "http://pulse.yahoo.com/_A4SBHEWDD6I4DDC4IDFOLCXJ2I", 
+                        "href": "http://pulse.yahoo.com/_A4SBHEWDD6I4DDC4IDFOLCXJ2I",
                         "title": "Robert Corsaro"
                     }
                 ]
             }
         }
-    
+
     ``me`` is just one of many xfn tags, which describe relationships. Others
     include ``parent``, ``friend``, and ``sweetheart``. See
     `the xfn spec <http://gmpg.org/xfn/11>`_ for many more.
@@ -255,11 +255,11 @@ a page's markup. This data is only available from the
     l-hulu-livestream-vevo%2F>`_:
 
     .. code-block:: json
-    
+
         {
             "author": [
                 {
-                    "href": "http://mashable.com/author/sarah-kessler/", 
+                    "href": "http://mashable.com/author/sarah-kessler/",
                     "name": "Sarah Kessler"
                 }
             ]
@@ -301,7 +301,7 @@ are in the following format:
 
 Embedly looks at the following attributes of the page and then ranks and scores
 the images.
-    
+
     * If the oEmbed type is ``photo`` the url of the oEmbed object
     * The ``thumbnail_url`` of the oEmbed object if the oEmbed type is not
       ``photo``
@@ -318,24 +318,24 @@ results when giving them higher scores, but not defaulting them to the first
 image. Note that they will always appear in the results, even if we rank images
 pulled from the page higher.
 
-``images`` only appear in the :doc:`Preview </endpoints/1/preview>` and
-:doc:`Objectify </endpoints/2/objectify>` endpoints, and you can use
+``images`` only appear in the :doc:`Preview </api/endpoints/1/preview>` and
+:doc:`Objectify </api/endpoints/2/objectify>` endpoints, and you can use
 ``images`` in a couple of ways:
 
     * If there is no user interaction, you can just select the first image
       out of the array and display it like so:
 
         .. code-block:: javascript
-    
+
             $('<img />').attr('src', obj.images[0].url);
 
     * If you're creating a Facebook-like URL selector tool, then you can
       display a list of images that a user can select from:
 
         .. code-block:: javascript
-      
+
             var ul = $('<ul></ul>');
-            
+
             $.each(obj.images, function(i, img){
                 ul.append($('<li></li>').html($('<img>').attr('src', img.url)));
             )};

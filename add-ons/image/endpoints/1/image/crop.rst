@@ -1,21 +1,42 @@
-Image API
-=========
-Image is a simple proxy that allows you to embed insecure images into
-secure pages without warning and use a fall back image for images not found.
+Image Crop API
+==============
+Crop an image to fill the given dimensions. The image will first be resized to it's
+smallest possible size that will fill the entire given dimensions, preserving
+it's aspect ratio.  The image is then centered within the given dimensions,
+and any part of the image that doesn't fit is removed. The same amount is
+trimmed from each side of the image in the cropping dimension.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image?key=<key>&url=<url1>&errorurl=<url2>
+    https://i.embed.ly/1/image/crop?key=<key>&url=<url1>&errorurl=<url2>&height=<height>&width=<width>
 
 Example
 --------
-* `<https://i.embed.ly/1/image?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx>`_
+::
+
+  http://i.embed.ly/1/image/crop?height=200&width=200&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+
+.. image:: /images/crop_1.png
+  :class: exampleimg
+  :width: 200
+  :height: 200
+
+::
+
+    http://i.embed.ly/1/image/crop?height=200&width=400&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+
+.. image:: /images/crop_2.png
+  :class: exampleimg
+  :width: 400
+  :height: 200
+
+
 
 Arguments
 ---------
 
 ``key`` (required)
-    The :doc:`API key </authentication>` for your registered account. OAuth is
+    The :doc:`API key </api/authentication>` for your registered account. OAuth is
     not currently supported.
 
 ``url`` (required)
@@ -39,6 +60,12 @@ Arguments
     Should be sent as::
 
         http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
+
+``width`` (required)
+    The width that the image should fill.
+
+``height`` (required)
+    The height that the image should fill.
 
 Response
 --------
