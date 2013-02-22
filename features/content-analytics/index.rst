@@ -16,7 +16,7 @@ You can integrate content analytics by including API calls to specific media
 actions, including view, click, and share.
 
 api.embed.ly/1/
---------------
+---------------
 The features for Content Analytics are available on the following endpoints for api.embedl.ly
 
 Click
