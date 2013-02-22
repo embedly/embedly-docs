@@ -1,14 +1,14 @@
-Features
-========
+Add-Ons
+=======
 
-Features are add-on's to Embedly's existing functionality. They are all
-currently in :ref:`Beta <beta>` and must be enabled for your account manually
-by the Embedly team . You can read more about our Beta Program
-:ref:`here <beta>`.
+Add-Ons exist for all Products and help provide you with functionality
+that help improve security, performance, and overall design in your
+application. You can add any or all of the Add-ons by updating your 
+`Account <http://app.embed.ly>`_.
 
 Overview
 --------
-Here is a brief overview of the current features in Beta.
+Here is a brief overview of the current Add-Ons:
 
 :doc:`XSS Protection <frame>`
 
@@ -44,33 +44,3 @@ Here is a brief overview of the current features in Beta.
   security concerns increase. Very few sites, however, serve images or embeds
   over SSL. Embedly has built a solution to serve embedded content over a
   secure HTTPS connection. :doc:`Learn more <ssl>`
-
-
-.. _beta:
-
-Beta
-----
-Beta features are generally the product of common, recurring requests from a
-large number of developers using Embedly. We like to release them early and
-often to get feedback. There are a few things that we would like to add as a
-word of caution.
-
-Bugs
-
-  There will be some, it's just in the nature of beta features. We ask that you
-  report everything to `support@embed.ly <mailto:support@embed.ly>`_.
-
-Pricing
-
-  We generally haven't figure this out yet. It's hard to know what something
-  costs us before we see what traffic patterns look like in the wild. When they
-  graduate to first class features, we will notify users of the pricing
-  structure.
-
-If you would like to try any of these features they need to be manually turned
-on by one of our support staff. You can send a brief email to `support@embed.ly
-<mailto:support@embed.ly>`_ with your username and the feature you would like
-added.
-
-We also require that you are on some sort of paid plan, as these features will
-not be added to the free tier.
