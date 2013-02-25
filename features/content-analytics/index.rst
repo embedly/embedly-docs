@@ -3,7 +3,7 @@ Content Analytics
 
 Content Analytics is the traditional web analytics as applied to internet
 media.  For any URL on your site we track stats like the number of clicks,
-number of page views, the number of video plays, and the amount of time spent
+number of page views, number of video plays, and the amount of time spent
 on specific articles, images, or videos.  Instead of having coarser page-level
 analytics, you can drill down and identify the most engaging media on your
 page, and tailor your content to your audience.  This data can be explored on
