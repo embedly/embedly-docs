@@ -19,7 +19,7 @@ Display
 ~~~~~~~
 This is our simplest product that lets you take URLs and display them inline.
 If you run a blog or site that would like to automatically convert URLs to
-media,this is the plan for you.
+media, this is the plan for you.
 
 Display uses the oEmbed standard to pass back information about a URL.
 To get started, you can get a more detailed overview of the features,
@@ -56,4 +56,4 @@ Add-Ons
 -------
 Add-Ons allow developers to enhance their Embedly experience via a set
 of APIs that are separate from the core features. These include an Image API,
-SSL and Screenshots. For a full list check out our of Add-Ons page.
+SSL and Screenshots. For a full list check out our Add-Ons page.
