@@ -1,7 +1,7 @@
-Endpoints
-=========
+API Endpoints
+=============
 
-Embedly offers 3 different API endpoints: :doc:`oEmbed <1/oembed>`,
+Embedly offers 3 different REST API endpoints: :doc:`oEmbed <1/oembed>`,
 :doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each provides
 different data about the given URL.
 
