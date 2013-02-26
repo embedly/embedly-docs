@@ -4,9 +4,9 @@ User View API
 Use the Watch API to measure how long a user watched a video.  Trigger it when a
 user begins watching a video.  url.  Since this API measures the time a video is
 viewed, it must be triggered multiple times.  The best practice for using this
-API is to call it when a video is first clicked , setting duration=0 and
+API is to call it when a video is first clicked, setting duration=0 and
 setting a timer.  Update the time by calling the API, and submitting the new
-elapsed time in duration=<elapsed time>.  Finally upon close, submit the final
+elapsed time in duration=<elapsed time>.  Finally, upon close, submit the final
 elapsed time.  During the intermediate polling, it is best to double the period
 of calls, i.e. 1 second, 2 seconds, 4 seconds, 8 seconds.  Each unique watch must have a
 unique SID.
