@@ -11,7 +11,7 @@ embeds within a secure iframe.
 
 Using Embedly with SSL mitigates all of what we like to call the "red X" errors
 in web browsers. You know the ones, the mixed content errors that scare users
-off your site. It is helpful to understand how Embedly-provided SSL will work
+off your site. It's helpful to understand how Embedly-provided SSL will work
 with images, videos, and rich media embeds.
 
 Enabling SSL
