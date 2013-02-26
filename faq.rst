@@ -3,7 +3,7 @@
 Frequently Asked Questions
 ==========================
 Great minds think alike. If none of these answer your question(s),
-submit a ticket at `<http://support.embed.ly>`_
+check out our FAQ Forum at `<http://support.embed.ly>`_
 
 General
 -------
