@@ -12,7 +12,7 @@ explore on your own.
 
 Products
 --------
-Embedly has Three major products that are designed for different use cases on
+Embedly has three major products that are designed for different use cases on
 the web.
 
 Display
@@ -23,7 +23,7 @@ media, this is the plan for you.
 
 Display uses the oEmbed standard to pass back information about a URL.
 To get started, you can get a more detailed overview of the features,
-or checkout the tutorials for what you are trying to build.
+or checkout the tutorials for whatever you're trying to build.
 
 Share
 ~~~~~
@@ -32,12 +32,12 @@ We pass back more information via the Preview endpoint and have a
 very powerful Content Analytics feature that allows you to understand
 how your users are consuming content on your site.
 
-To get started, view some of the tutorials on using the the
+To get started, view some of the tutorials on using the
 Share plan or look through the documentation.
 
 Discover
 ~~~~~~~~
-Allow users to dive into the content on your site and beyond.
+Allows users to dive into the content on your site and beyond.
 In this plan we allow developers to recommend articles to users
 based on their browsing history.
 
@@ -49,11 +49,11 @@ Features
 --------
 Every product has their own set of features that come along for the ride.
 It's an individual piece of functionality that has it's own place in the world.
-For a full list of features, checkout see our Feature Reference.
+For a full list of features, checkout our Feature Reference.
 
 
 Add-Ons
 -------
 Add-Ons allow developers to enhance their Embedly experience via a set
 of APIs that are separate from the core features. These include an Image API,
-SSL and Screenshots. For a full list check out our Add-Ons page.
+SSL and Screenshots. For a full list see our Add-Ons page.
