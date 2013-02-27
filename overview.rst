@@ -21,9 +21,10 @@ This is our simplest product that lets you take URLs and display them inline.
 If you run a blog or site that would like to automatically convert URLs to
 media, this is the plan for you.
 
-Display uses the oEmbed standard to pass back information about a URL.
-To get started, you can get a more detailed overview of the features,
-or checkout the tutorials for whatever you're trying to build.
+Display uses the :doc:`oEmbed </endpoints/1/oembed>` standard to
+pass back information about a URL. To get started, you can get a
+more detailed overview of the features, or checkout the tutorials
+for whatever you're trying to build.
 
 Share
 ~~~~~
@@ -41,19 +42,19 @@ Allows users to dive into the content on your site and beyond.
 In this plan we allow developers to recommend articles to users
 based on their browsing history.
 
-To get started, try out a few links in our API Explorer or
-run through some of the features list to get a handle on all
+To get started, try out a few links in our :doc:`Explorer </explore/objectify>`
+or run through some of the features list to get a handle on all
 the information you have available.
 
 Features
 --------
 Every product has their own set of features that come along for the ride.
 It's an individual piece of functionality that has it's own place in the world.
-For a full list of features, checkout our Feature Reference.
+For a full list of features, checkout our :doc:`Feature </features>` Reference.
 
 
 Add-Ons
 -------
 Add-Ons allow developers to enhance their Embedly experience via a set
 of APIs that are separate from the core features. These include an Image API,
-SSL and Screenshots. For a full list see our Add-Ons page.
+SSL and Screenshots. For a full list see our :doc:`Add-Ons </addons>` page.
