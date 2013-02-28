@@ -1,8 +1,8 @@
 Entities
 ========
-The entities object gives you a list of propers nouns
-(persons, places, and things) extracted from an article
-or blog text. Along with each entity name, Embedly counts
+The ``entities`` object gives you a list of propers nouns
+(persons, places, and things) extracted from the article
+or blog text of a URL. Along with each entity name, Embedly counts
 the number of times it appears in the text. You can find
 his data in the
 :doc:`Objectify </api/endpoints/2/objectify>` endpoint.
