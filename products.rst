@@ -1,14 +1,10 @@
-.. _overview:
+.. _products:
 
-Overview
+Products
 ========
-The Embedly Platform is the easiest way to embed media, display images 
-and create the best user experience in an application or site.
-We allow developers to make deep apps with related articles, 
-trending content and recommendations for individual users.
-With our Add-Ons Embedly makes it easy to display content on any site.
-
-We will try to outline the different Products of the Platform here and let you
+The Embedly Platform has 3 different products created to handle
+different frontend and user experience use cases. We will try 
+to outline the different Products here and let you
 explore on your own.
 
 Embed
@@ -30,11 +26,11 @@ entities/topics, keywords, related content, and all the metadata
 you will need.
 
 To get started, try out a few links in our `Explorer </docs/explore/article>`_
-or jump straight into the :doc:`Read's API documentation <read/api/index>`.
+or jump straight into the :doc:`Read API documentation <read/api/index>`.
 
 Display
 -------
 Display is made for dealing with any image on the web. With this product
 you can resize, crop, fill, and even securely proxy images on your site.
 
-To get started, check out the :doc:`Display's API  <display/api/index>`.
+To get started, check out the :doc:`Display API  <display/api/index>`.
