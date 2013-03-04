@@ -13,7 +13,7 @@ The Article endpoint was built to allow users to retrieve more information about
 articles and blog posts, this includes full text, images, related articles, keywords,
 and topics.
 
-|more| Check out the :doc:`1/article`
+|more| Check out the :doc:`endpoints/1/article`
 
 Arguments
 ---------

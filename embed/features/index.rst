@@ -1,7 +1,7 @@
 Features
 ========
 
-These are the features of the ``Read`` product and its API endpoints.
+These are the features of the ``Embed`` product and its API endpoints.
 
 Overview
 --------
@@ -18,21 +18,28 @@ Overview
 :doc:`Mobile <providers>`
 
   Many content providers have added support for mobile embeds, with using the
-  ``Read`` product, our API will automatically switch in/out the correct
+  ``Embed`` product, our API will automatically switch in/out the correct
   embed code based on your mobile or web user agent.
   :doc:`Learn more <mobile>`
+
+
+
+Security and Extra
+------------------
+
+These security features are available at an extra cost with the ``Embed`` product.
 
 :doc:`Frame <frame>`
 
   For sites that require XSS protection, by adding a query argument to your API calls
-  the ``Read`` API endpoints will wrap all embeds in a hosted IFrame for any
+  the ``Embed`` API endpoints will wrap all embeds in a hosted IFrame for any
   embed. 
   :doc:`Learn more <ssl>`
 
 :doc:`SSL <ssl>`
 
   For sites that require SSL, by adding a query argument to your API calls
-  the ``Read`` API endpoints will send back an SSL hosted IFrame for any
+  the ``Embed`` API endpoints will send back an SSL hosted IFrame for any
   embed.
   :doc:`Learn more <ssl>`
 

@@ -9,19 +9,19 @@ like to automatically convert URLs to media, this is for you.
 API
 ---
 You can access the ``Embed`` product through our
-:doc:`oEmbed API <api/1/oembed>` endpoint.
+:doc:`oEmbed API <api/endpoints/1/oembed>` endpoint.
 
 
 |more| Check out the :doc:`API overview <api/index>`
 
 Features
 --------
-The Embedly ``Embed`` product comes with many features that allow
-you to extract keywords, entities/topics, images, microformats
-from a URL.
+The ``Embed`` product comes with 250+ providers
+and mobile support allowing you to embed on any blog or
+application.
 
 
-|more| Check out the :doc:`api/features`
+|more| Check out the :doc:`features/index`
 
 
 Tutorials

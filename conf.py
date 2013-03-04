@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Embedly Docs documentation build configuration file, created by
-# sphinx-quickstart on Mon May 23 08:16:01 2011.
+# sphinx-quickstart on Mon May 23 08:16:01 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -41,7 +41,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Embedly Docs'
-copyright = u'2011, Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'
+copyright = u'2013, Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -180,7 +180,7 @@ htmlhelp_basename = 'EmbedlyDocsdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'EmbedlyDocs.tex', u'Embedly Docs Documentation',
-   u'Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro', 'manual'),
+   u'Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -213,7 +213,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'embedlydocs', u'Embedly Docs Documentation',
-     [u'Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'], 1)
+     [u'Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro'], 1)
 ]
 
 
@@ -221,9 +221,9 @@ man_pages = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'Embedly Docs'
-epub_author = u'Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'
-epub_publisher = u'Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'
-epub_copyright = u'2011, Sean Creeley, Arthur Gibson, Tom Boetig, Bob Corsaro'
+epub_author = u'Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro'
+epub_publisher = u'Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro'
+epub_copyright = u'2013, Sean Creeley, Arthur Gibson, Kawandeep Virdee, John Emhoff, Andy Pellett, Bob Corsaro'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

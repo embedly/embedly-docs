@@ -3,7 +3,7 @@ Version 1
 =========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     article
    

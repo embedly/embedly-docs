@@ -1,6 +1,6 @@
 Embed - API
 ===========
-``Embed`` offers a REST API endpoint: :doc:`oEmbed <1/oembed>`,
+``Embed`` offers a REST API endpoint: :doc:`oEmbed <endpoints/1/oembed>`,
 that takes in a URL and passes back data about it. 
 
 The Endpoint accepts a set of :doc:`query arguments <arguments>`.
@@ -13,7 +13,7 @@ thumbnail, and embed code for any URL. If you are automating embedding URLs,
 then this endpoint is for you. Embedly already does the work of picking the
 correct information for you and your users.
 
-|more| Read the :doc:`1/oembed`
+|more| Read the :doc:`endpoints/1/oembed`
 
 Arguments
 ---------

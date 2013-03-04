@@ -1,8 +1,6 @@
 SSL
 ===
 
-This feature is currently in :ref:`Beta <beta>`.
-
 If your site runs via SSL it can often be hard to obtain the level of richness
 you desire. 3rd party assets are very rarely served via HTTPS so you often have
 to download all the images yourself and limit the number of providers you
@@ -51,17 +49,17 @@ to::
 
   https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
 
-Secure utilizes Embedly's :doc:`Image Proxy <image/index>` to serve the image
+Secure utilizes the :doc:`Display <../../display/index>` product to serve the image
 content over HTTPS. Note that Embedly respects the cache time of the upstream
 image, so we will cache it locally for that period of time. This works for all
-image fields (thumbnail_url, open_graph.image, etc.) passed back from our
-:doc:`API endpoints </api/endpoints/index>`.
+image fields (thumbnail_url, open_graph.image, etc.) passed back from the
+:doc:`Embed API endpoints <../api/endpoints/index>`.
 
 Video and Rich Media Embeds
 ---------------------------
 Secure will also modify all video and rich embed fields (oembed.html,
-object.html, etc.) passed back from our :doc:`API endpoints
-</api/endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
+object.html, etc.) passed back from the :doc:`Embed API endpoints
+<../api/endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
 
   <iframe src="https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281"
   width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>

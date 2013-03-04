@@ -154,7 +154,7 @@ Example response:
 Object
 ------
 An object is the primary piece of media that is associated with a ``url``. It
-follows the general pattern of the :doc:`/embed/api/1/oembed`, but with only a limited set
+follows the general pattern of the :doc:`/embed/api/endpoints/1/oembed`, but with only a limited set
 of attributes.
 
 ``type``

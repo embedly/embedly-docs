@@ -2,8 +2,8 @@
 
 Products
 ========
-The Embedly Platform has 3 different products created to handle
-different frontend and user experience use cases. We will try 
+The Embedly Platform has 3 different products built to handle
+frontend and user experience use cases. We will try 
 to outline the different Products here and let you
 explore on your own.
 
@@ -13,7 +13,7 @@ This is our simplest product that lets you take URLs and display them inline.
 If you run a blog or site that would like to automatically convert URLs to
 media, this is for you.
 
-Embed uses the :doc:`oEmbed <embed/api/1/oembed>` standard to
+Embed uses the :doc:`oEmbed <embed/api/endpoints/1/oembed>` standard to
 pass back information about a URL. To get started, you can get a
 more detailed overview of the features, or checkout the tutorials
 for whatever you're trying to build.

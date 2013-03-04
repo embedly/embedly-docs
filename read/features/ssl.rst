@@ -1,8 +1,6 @@
 SSL
 ===
 
-This feature is currently in :ref:`Beta <beta>`.
-
 If your site runs via SSL it can often be hard to obtain the level of richness
 you desire. 3rd party assets are very rarely served via HTTPS so you often have
 to download all the images yourself and limit the number of providers you
@@ -18,7 +16,7 @@ Enabling SSL
 ------------
 Add the query parameter ``secure=true`` to any API call::
 
-  http://api.embed.ly/1/oembed?secure=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
+  http://api.embed.ly/1/article?secure=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
 
 The response will look like this:
 
@@ -51,17 +49,17 @@ to::
 
   https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
 
-Secure utilizes Embedly's :doc:`Image Proxy <image/index>` to serve the image
+Secure utilizes the :doc:`Display <../../display/index>` product to serve the image
 content over HTTPS. Note that Embedly respects the cache time of the upstream
 image, so we will cache it locally for that period of time. This works for all
 image fields (thumbnail_url, open_graph.image, etc.) passed back from our
-:doc:`API endpoints </api/endpoints/index>`.
+:doc:`Read API endpoints <../api/endpoints/index>`.
 
 Video and Rich Media Embeds
 ---------------------------
-Secure will also modify all video and rich embed fields (oembed.html,
-object.html, etc.) passed back from our :doc:`API endpoints
-</api/endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
+Secure will also modify all video and rich embed fields (article.html,
+object.html, etc.) passed back from our :doc:`Read API endpoints
+<../api/endpoints/index>`. Each embed will now be wrapped in an HTTPS iframe::
 
   <iframe src="https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281"
   width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>
@@ -128,7 +126,7 @@ Examples
 --------
 Here are a few API calls that return the SSL feature::
 
-  http://api.embed.ly/1/oembed?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
-  http://api.embed.ly/1/oembed?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
+  http://api.embed.ly/1/article?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
+  http://api.embed.ly/1/article?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
 
 NOTE: You will need to add your key and have SSL enabled to test.

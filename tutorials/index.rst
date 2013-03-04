@@ -1,32 +1,23 @@
 Tutorials
 =========
 
-This is a list of all tutorials in the docs, broken down by target platform.
+A few tutorials to get you familar with the :doc:`Embedly Products <../products>`.
 
-For Authors
------------
+Embed
+-----
+Here are some great ways to use :doc:`../embed/index`.
 
-If you're new to using Embedly, see :doc:`Embedly for Authors </authors>`.
+ * :doc:`Adding Inline Embeds </tutorials/inline>` using JQuery.
+ * Presenting embeds in :doc:`Modal Views </tutorials/inline>`.
 
-* Tumblr
+Read
+----
+Try some tutorials with :doc:`../read/index`.
 
-  * :doc:`Adding Embeds to Tumblr </tutorials/tumblr>` using `Embedly Anywhere <https://app.embed.ly/anywhere>`_.
+ * :doc:`Extracting Dominant Colors </tutorials/colors>` for image links.
 
-For Developers
---------------
+Display
+-------
+Walk through some examples of :doc:`../display/index` in action.
 
-If you're new to developing for Embedly, see :doc:`Getting Started </tutorials/start>`.
-
-* jQuery
-
-  * :doc:`jquery`
-  * :doc:`findpit`
-  * :doc:`jquery_preview`
-
-* Ext JS/Ext Core
-
-  * :doc:`Creating a URL Submission Tool with Ext <ext>`
-
-* Python
-
-  * :doc:`python_requests`
+ * :doc:`Extracting Dominant Colors </tutorials/colors>` for image links.
