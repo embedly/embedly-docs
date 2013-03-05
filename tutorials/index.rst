@@ -14,7 +14,7 @@ Read
 ----
 Try some tutorials with :doc:`../read/index`.
 
- * :doc:`Extracting Dominant Colors </tutorials/colors>` for image links.
+ * Test out :doc:`Article parsing </tutorials/article>` for any link.
 
 Display
 -------

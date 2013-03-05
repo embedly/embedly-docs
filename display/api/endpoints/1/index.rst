@@ -1,7 +1,7 @@
 Image API
 =========
 Image is a simple proxy that allows you to embed insecure images into
-secure pages without warning and use a fall back image for images not found.
+secure pages without warning and uses a fall back image for images not found.
 
 Example call (1 URL)::
 

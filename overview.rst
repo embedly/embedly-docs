@@ -7,35 +7,40 @@ and create the best user experience in an application or site.
 We allow developers to make deep apps with related articles, 
 trending content and recommendations for individual users.
 
-We will try to outline the different Products of the Platform here and let you
-explore on your own.
+We will give a brief summary of the different Products, Tutorials,
+Libraries and APIs that make up Embedly.
 
-Start
------
-All of our products start with a simple link and allow you to d
-Our products allow you to embed 
-This is our simplest product that lets you take URLs and display them inline.
-If you run a blog or site that would like to automatically convert URLs to
-media, this is for you.
+Products
+--------
+All of our Products start with a simple link whether it be to
+a video, photo, article, blog post, or even a PDF document.
+Each product has a set of unique features that allow it to 
+handle many aspects of working with 3rd party media and displaying
+it perfectly within your site or application.
 
-Embed uses the :doc:`oEmbed <embed/api/endpoints/1/oembed>` standard to
-pass back information about a URL. To get started, you can get a
-more detailed overview of the features, or checkout the tutorials
-for whatever you're trying to build.
+|more| Read through the :doc:`products`.
 
-Read
+Tutorials
+---------
+Each of our tutorials were made to give either a quick demonstration
+or potential use case for a Product's API or features.
+
+|more| Read through the :doc:`tutorials/index`.
+
+APIs
 ----
-Our Read product allows you to extract all the important information
-from Articles, Blogs, and Stories this includes full article text,
-entities/topics, keywords, related content, and all the metadata
-you will need.
+Every Product includes API endpoints that give you access
+to powerful features such as parsing full articles, embedding videos,
+and even image manipulation.
 
-To get started, try out a few links in our `Explorer </docs/explore/article>`_
-or jump straight into the :doc:`Read's API documentation <read/api/index>`.
+|more| Read through the :doc:`api/index`.
 
-Display
--------
-Display is made for dealing with any image on the web. With this product
-you can resize, crop, fill, and even securely proxy images on your site.
+Libraries
+---------
+We have built out many libraries to get you started with our Products.
+The libraries allow integrations from either client-side or server-side,
+and range a breadth of languages including Python, JQuery, Closure,
+or Java. We accept pull requests on all of them
+via `Github <http://github.com/embedly>`_.
 
-To get started, check out the :doc:`Display's API  <display/api/index>`.
+|more| Read through the :doc:`libraries/index`.
