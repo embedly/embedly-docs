@@ -1,7 +1,7 @@
 Features
 ========
 
-These are the features of the ``Read`` product and its API endpoints.
+These are the features of the ``Extract`` product and its API endpoints.
 
 Overview
 --------
@@ -43,7 +43,7 @@ Overview
 :doc:`Related Articles <related>`
 
   There are many related articles and blog posts written on the web each day.
-  With ``Read``we do all the work to send back a list of articles that relate
+  With ``Extract``we do all the work to send back a list of articles that relate
   to the story link you send to the API.
 
   :doc:`Learn more <related>`
@@ -52,18 +52,18 @@ Overview
 Security and Extra
 ------------------
 
-These security features are available at an extra cost with the ``Read`` product.
+These security features are available at an extra cost with the ``Extract`` product.
 
 :doc:`Frame <frame>`
 
   For sites that require XSS protection, by adding a query argument to your API calls
-  the ``Read`` API endpoints will wrap all embeds in a hosted IFrame for any
+  the ``Extract`` API endpoints will wrap all embeds in a hosted IFrame for any
   embed. 
   :doc:`Learn more <ssl>`
 
 :doc:`SSL <ssl>`
 
   For sites that require SSL, by adding a query argument to your API calls
-  the ``Read`` API endpoints will send back an SSL hosted IFrame for any
+  the ``Extract`` API endpoints will send back an SSL hosted IFrame for any
   embed.
   :doc:`Learn more <ssl>`

@@ -18,15 +18,15 @@ pass back information about a URL. To get started, you can get a
 more detailed overview of the features, or checkout the tutorials
 for whatever you're trying to build.
 
-Read
-----
-Our Read product allows you to extract all the important information
+Extract
+-------
+Our Extract product allows you to extract all the important information
 from Articles, Blogs, and Stories this includes full article text,
 entities/topics, keywords, related content, and all the metadata
 you will need.
 
 To get started, try out a few links in our `Explorer </docs/explore/article>`_
-or jump straight into the :doc:`Read API documentation <read/api/index>`.
+or jump straight into the :doc:`Extract API documentation <extract/api/index>`.
 
 Display
 -------

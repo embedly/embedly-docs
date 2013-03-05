@@ -1,14 +1,14 @@
-Read
-====
+Extract
+=======
 
-``Read`` allows users to dive into the content on your site and beyond.
+``Extract`` allows users to dive into the content on your site and beyond.
 In this product we allow developers to extract article text, topics,
 and retrieve more meta-data about articles, blog posts, and stories.
 
 
 API
 ---
-You can access the ``Read`` product through our
+You can access the ``Extract`` product through our
 :doc:`Article API <api/endpoints/1/article>` endpoint.
 
 
@@ -16,8 +16,8 @@ You can access the ``Read`` product through our
 
 Features
 --------
-The Embedly ``Read`` product comes with many features that allow
-you to extract keywords, entities/topics, images, microformats
+The Embedly ``Extract`` product comes with many features that allow
+to parse keywords, entities/topics, images, microformats
 from a URL.
 
 
@@ -26,7 +26,7 @@ from a URL.
 
 Tutorials
 ---------
-Check out some of our tutorials on using ``Read`` in
+Check out some of our tutorials on using ``Extract`` in
 your social networking site, search engine, 
 or mobile application.
 

@@ -26,7 +26,7 @@ Integration
 -----------
 We offer a way to directly integrate ``Display``
 with both our :doc:`../embed/index`
-and :doc:`../read/index` products.
+and :doc:`../extract/index` products.
 
 |more| Read about the :doc:`api/integration`
 

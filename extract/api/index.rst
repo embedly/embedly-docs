@@ -1,6 +1,6 @@
-Read - API
-==========
-``Read`` offers a REST API endpoint: :doc:`Article <1/article>`,
+Extract - API
+=============
+``Extract`` offers a REST API endpoint: :doc:`Article <endpoints/1/article>`,
 that takes in a URL and passes back extracted text, keywords,
 and topics data.
 
@@ -17,7 +17,7 @@ and topics.
 
 Arguments
 ---------
-There are many query arguments that allow you to customize the ``Read`` API responses.
+There are many query arguments that allow you to customize the ``Extract`` API responses.
 This includes arguments to resize embed or even adjust the number words in a
 description field.
 

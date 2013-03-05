@@ -1,5 +1,5 @@
-Read Endpoints
-==============
+Extract Endpoints
+=================
 
 Version 1
 ---------

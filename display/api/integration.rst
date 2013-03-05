@@ -2,13 +2,13 @@ Integration
 ===========
 
 ``Display`` can be integrated with our :doc:`../../embed/index`
-and :doc:`../../read/index` products to resize and proxy images for any
+and :doc:`../../extract/index` products to resize and proxy images for any
 URL.
 
 API Query Arguments
 -------------------
 It is possible to invoke the ``Display`` image proxy through both the
-:doc:`../../embed/api/endpoints/1/oembed` and :doc:`../../read/api/endpoints/1/article`
+:doc:`../../embed/api/endpoints/1/oembed` and :doc:`../../extract/api/endpoints/1/article`
 API endpoints. These arguments allow you to apply a uniform ``image_width`` and
 ``image_height`` to every image that Embedly passes back through the API
 response. 

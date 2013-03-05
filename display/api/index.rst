@@ -57,7 +57,7 @@ surrounding space will be filled in with a specified color.
 Integration
 -----------
 We have made it easy to integrate ``Display`` direct with our 
-:doc:`../../embed/index` or :doc:`../../read/index` by passing
+:doc:`../../embed/index` or :doc:`../../extract/index` by passing
 query arguments passed to each product's API.
 
 |more| Read about the :doc:`integration`
