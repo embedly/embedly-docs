@@ -260,6 +260,6 @@ rst_prolog = """
 .. |num_providers| replace:: 216
 .. |more| raw:: html
 
-   <span class="more"></span>
+   <i class="icon-arrow-right"></i>
 
 """
