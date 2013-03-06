@@ -1,25 +1,25 @@
-Article API
+Extract API
 ===========
 
-The Article endpoint is designed to provide users with as much content as possible,
+The Extract endpoint is designed to provide users with as much content as possible,
 this includes the article text, keywords, related links, and much more.
 
 Example call (1 URL)::
 
-    http://api.embed.ly/1/article?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
+    http://api.embed.ly/1/extract?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
 Example call (multiple URLs)::
 
-    http://api.embed.ly/1/article?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
+    http://api.embed.ly/1/extract?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
 
 Examples
 --------
-`Embedly Explore </docs/explore/article>`_ can be used to get a better handle
+`Embedly Explore </docs/explore/extract>`_ can be used to get a better handle
 on what this API returns. Try these:
 
-* `Techcrunch Article <http://embed.ly/docs/explore/article/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
-* `Deadspin Post <http://embed.ly/docs/explore/article/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
-* `Embedly blog <http://embed.ly/docs/explore/article/?url=http://blog.embed.ly/31814817>`_
+* `Techcrunch Article </docs/explore/extract/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
+* `Deadspin Post <http://embed.ly/docs/explore/extract/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
+* `Embedly blog <http://embed.ly/docs/explore/extract/?url=http://blog.embed.ly/31814817>`_
 
 Arguments
 ----------------

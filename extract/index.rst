@@ -9,7 +9,7 @@ and retrieve more meta-data about articles, blog posts, and stories.
 API
 ---
 You can access the ``Extract`` product through our
-:doc:`Article API <api/endpoints/1/article>` endpoint.
+:doc:`Extract API <api/endpoints/1/extract>` endpoint.
 
 
 |more| Check out the :doc:`API overview <api/index>`

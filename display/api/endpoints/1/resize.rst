@@ -7,13 +7,13 @@ proxied.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/resize?key=<key>&url=<url1>&errorUrl=<url2>&height=<height>&grow=<true|false>
+    https://i.embed.ly/1/display/resize?key=<key>&url=<url1>&errorUrl=<url2>&height=<height>&grow=<true|false>
 
 Example
 --------
 ::
 
-  http://i.embed.ly/1/image/resize?height=200&width=200&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+  http://i.embed.ly/1/display/resize?height=200&width=200&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
 .. image:: /images/resize_1.png
   :class: exampleimg
@@ -22,7 +22,7 @@ Example
 
 ::
 
-    http://i.embed.ly/1/image/resize?height=200&width=400&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+    http://i.embed.ly/1/display/resize?height=200&width=400&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
 .. image:: /images/resize_2.png
   :class: exampleimg

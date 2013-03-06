@@ -6,13 +6,13 @@ the specified color.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image/fill?key=<key>&url=<url1>&errorurl=<url2>&height=<height>&width=<width>&color=<color>
+    https://i.embed.ly/1/display/fill?key=<key>&url=<url1>&errorurl=<url2>&height=<height>&width=<width>&color=<color>
 
 Example
 --------
 ::
 
-  http://i.embed.ly/1/image/fill?height=200&width=200&color=000&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+  http://i.embed.ly/1/display/fill?height=200&width=200&color=000&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
 .. image:: /images/fill_1.png
   :class: exampleimg
@@ -21,7 +21,7 @@ Example
 
 ::
 
-    http://i.embed.ly/1/image/fill?height=200&width=400&color=ddd&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
+    http://i.embed.ly/1/display/fill?height=200&width=400&color=ddd&url=http%3A%2F%2Ffarm8.staticflickr.com%2F7196%2F7070072209_d1f393c797_b.jpg&key=xxxxx
 
 .. image:: /images/fill_2.png
   :class: exampleimg

@@ -19,8 +19,8 @@ You can create the image URLs yourself via :ref:`i.embed.ly <i_embed_ly>`.
 If you need different image sizes on different parts of your application,
 we suggest using :ref:`i.embed.ly <i_embed_ly>`.
 
-Image
-^^^^^
+Display
+^^^^^^^
 
 Image is a simple proxy that allows you to embed insecure images into secure
 pages and use a fall back image for images not found. The image endpoint

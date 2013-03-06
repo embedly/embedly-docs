@@ -8,8 +8,8 @@ URL.
 API Query Arguments
 -------------------
 It is possible to invoke the ``Display`` image proxy through both the
-:doc:`../../embed/api/endpoints/1/oembed` and :doc:`../../extract/api/endpoints/1/article`
-API endpoints. These arguments allow you to apply a uniform ``image_width`` and
+:doc:`../../embed/api/endpoints/1/oembed` and :doc:`../../extract/api/endpoints/1/extract`
+endpoints. These arguments allow you to apply a uniform ``image_width`` and
 ``image_height`` to every image that Embedly passes back through the API
 response. 
 
@@ -21,7 +21,7 @@ Example
 Using the following query arguments will manipulate every image that is passed
 back in the Embedly response. Here is an example call::
 
-  http://api.embed.ly/1/preview?url=http%3A%2F%2Fwww.geek.com%2Farticles%2Fmobile%2Fjournalist-goes-undercover-making-the-iphone-5-at-foxconn-20120912%2F&image_height=100&image_method=fill&image_error_url=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg&image_width=100&key=key
+  http://api.embed.ly/1/extract?url=http%3A%2F%2Fwww.geek.com%2Farticles%2Fmobile%2Fjournalist-goes-undercover-making-the-iphone-5-at-foxconn-20120912%2F&image_height=100&image_method=fill&image_error_url=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg&image_width=100&key=key
 
 Response::
 
@@ -33,22 +33,22 @@ Response::
     "url": "http://www.geek.com/articles/mobile/journalist-goes-undercover-making-the-iphone-5-at-foxconn-20120912/",
     "images": [
       {
-        "url": "http://i.embed.ly/1/image/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_01.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
+        "url": "http://i.embed.ly/1/display/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_01.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
         "width": 550,
         "size": 116348,
         "height": 415
       }, {
-        "url": "http://i.embed.ly/1/image/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_03.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
+        "url": "http://i.embed.ly/1/display/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_03.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
         "width": 550,
         "size": 30626,
         "height": 366
       }, {
-        "url": "http://i.embed.ly/1/image/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_02.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
+        "url": "http://i.embed.ly/1/display/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fuploads%2F2012%2F09%2Ffoxconn_undercover_02.jpg&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
         "width": 550,
         "size": 63698,
         "height": 366
       }, {
-        "url": "http://i.embed.ly/1/image/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fthemes%2Fgeek6%2Fimages%2FGeek-site-logo.png&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
+        "url": "http://i.embed.ly/1/display/fill?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fthemes%2Fgeek6%2Fimages%2FGeek-site-logo.png&key=7ddc31df2ff94c4a45337966a69fa27e&color=000&width=100&height=100&errorurl=http%3A%2F%2Fmedia.tumblr.com%2Ftumblr_m9e0vfpA7K1qkbsaa.jpg",
         "width": 235,
         "size": 11186,
         "height": 107
@@ -59,7 +59,7 @@ Response::
     "author_name": null,
     "author_url": null,
     "content": null,
-    "favicon_url": "http://i.embed.ly/1/image?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fthemes%2Fgeek6%2Ffavicon.ico&key=7ddc31df2ff94c4a45337966a69fa27e",
+    "favicon_url": "http://i.embed.ly/1/display?url=http%3A%2F%2Fwww.geek.com%2Fwp-content%2Fthemes%2Fgeek6%2Ffavicon.ico&key=7ddc31df2ff94c4a45337966a69fa27e",
     "place": {},
     "embeds": [],
     "title": "Journalist goes undercover making the iPhone 5 at Foxconn - Cell Phones & Mobile Device Technology News & Updates | Geek.com",
@@ -77,11 +77,11 @@ Arguments
   Defines what method Embedly will use to resize the image. Valid values are:
 
     ``resize``
-      :doc:`i.embed.ly resize <1/image/crop>`
+      :doc:`i.embed.ly resize <1/display/crop>`
     ``crop``
-      :doc:`i.embed.ly crop <1/image/crop>`
+      :doc:`i.embed.ly crop <1/display/crop>`
     ``fill``
-      :doc:`i.embed.ly fill <1/image/crop>`
+      :doc:`i.embed.ly fill <1/display/crop>`
 
   The default value is ``resize``.
 

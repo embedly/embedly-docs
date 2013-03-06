@@ -1,15 +1,15 @@
-Image API
-=========
-Image is a simple proxy that allows you to embed insecure images into
+Display Proxy
+=============
+The Display endpoint is a simple proxy that allows you to embed insecure images into
 secure pages without warning and uses a fall back image for images not found.
 
 Example call (1 URL)::
 
-    https://i.embed.ly/1/image?key=<key>&url=<url1>&errorurl=<url2>
+    https://i.embed.ly/1/display?key=<key>&url=<url1>&errorurl=<url2>
 
 Example
 --------
-* `<https://i.embed.ly/1/image?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx>`_
+* `<https://i.embed.ly/1/display?url=http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png&key=xxxxx>`_
 
 Arguments
 ---------

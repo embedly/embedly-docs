@@ -2,9 +2,10 @@
 
 Overview
 ========
-The Embedly Platform is the easiest way to embed media, display images 
-and create the best user experience in an application or site.
-We allow developers to make deep apps with related articles, 
+The Embedly Platform is the simplest way to create a better
+user experience in your application or site.
+We allow developers to embed media, display images,
+and make deep apps with related articles, 
 trending content and recommendations for individual users.
 
 We will give a brief summary of the different Products, Tutorials,
@@ -33,7 +34,7 @@ Every Product includes API endpoints that give you access
 to powerful features such as parsing full articles, embedding videos,
 and even image manipulation.
 
-|more| Read through the :doc:`api/index`.
+|more| Read through the :doc:`apis`.
 
 Libraries
 ---------

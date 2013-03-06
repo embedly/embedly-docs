@@ -16,7 +16,7 @@ Enabling SSL
 ------------
 Add the query parameter ``secure=true`` to any API call::
 
-  http://api.embed.ly/1/article?secure=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
+  http://api.embed.ly/1/extract?secure=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
 
 The response will look like this:
 
@@ -30,7 +30,7 @@ The response will look like this:
     "author_name": "Phoenix Fly",
     "height": 281,
     "width": 500,
-    "thumbnail_url": "https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>",
+    "thumbnail_url": "https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>",
     "thumbnail_width": 1280,
     "version": "1.0",
     "provider_name": "Vimeo",
@@ -47,7 +47,7 @@ You'll notice in the above ``thumbnail_url`` has changed from::
 
 to::
 
-  https://i.embed.ly/1/image?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
+  https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
 
 Secure utilizes the :doc:`Display <../../display/index>` product to serve the image
 content over HTTPS. Note that Embedly respects the cache time of the upstream
@@ -126,7 +126,7 @@ Examples
 --------
 Here are a few API calls that return the SSL feature::
 
-  http://api.embed.ly/1/article?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
-  http://api.embed.ly/1/article?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
+  http://api.embed.ly/1/extract?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
+  http://api.embed.ly/1/extract?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
 
 NOTE: You will need to add your key and have SSL enabled to test.
