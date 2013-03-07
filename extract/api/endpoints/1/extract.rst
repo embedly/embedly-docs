@@ -194,7 +194,7 @@ are defined:
     container.
 
 ``height``
-    The height in pixels required to display the HTML. If not supplied
+    The height in pixels required to display the HTML. If not supplied,
     the HTML returned will expand vertically to the size of its parent
     container.
 
