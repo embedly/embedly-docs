@@ -172,7 +172,7 @@ Example response
 }
 
 Response Attributes
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^ 
 
 ``original_url``
     The url that was passed into Embedly. This will be something like a bit.ly
@@ -206,35 +206,88 @@ Response Attributes
 ``favicon_url``
     The url of the favicon.
 
-``title``
-    The title of the resource. It's picked in the following order:
+``authors``
 
-    * The rss entry's title
-    * The oEmbed title
-    * The open graph title
-    * The ``meta`` title tag
-    * The ``title`` attribute in the ``head`` element
+  A list of all the authors that are associated with this article. Each author
+  has a ``url`` and ``name``. Here is an example response::
 
-``description``
-    The description of the resource. It's picked in the following order:
+    [{
+      "name": "Sean Creeley"
+      "url": "http://blog.embed.ly/screeley"
+    }]
 
-    * The rss entry's summary
-    * The oEmbed description
-    * The open graph description
-    * The ``meta`` description tag
-    * An excerpt pulled programmaticly by Embedly
-
-``author_name``
-    The name of the author/owner of the resource.
-
-``author_url``
-    A URL for the author/owner of the resource.
+  Most articles have only one author, but ``authors`` makes it flexible enough
+  to add more if necessary.
 
 ``oembed``
-    The oEmbed response for a url. More information on the :doc:`../1/oembed`.
+    The oEmbed response for a url. Contains title, description, embed code,
+    thumbnail images, and more.
+    More information on the :doc:`oEmbed Response <../../../../embed/api/endpoints/1/oembed>`.
 
-``article``
-    See :doc:`../../../features/article`
+``published``
+
+  A representation of the date which the article was published in milliseconds.
+  If an ``offset`` is present, then there was timezone data present, otherwise
+  we assume the Date is in UTC. Like all dates, this is a little confusing, so
+  we will explain. Say the Embedly parser came across the following HTML::
+
+    <span class="pubdate">Aug 24, 2012</span>
+
+  Because there is no timezone information, Embedly will not return an
+  ``offset`` and the ``published`` attribute will be in UTC. We will return the
+  following response::
+
+    "published": 1345766400000
+
+``offset``
+
+  The UTC offset of the date in milliseconds. See the above section for more
+  information about ``offset`` and how to use it with the ``published`` time.
+
+``description``
+
+  This is much like the ``excerpt`` of the article, but with a few changes that
+  make it better to use in an index view of the articles. The length of the
+  description is controlled by the ``words`` :doc:`query argument
+  <../api/arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
+  breaks added. For example, imagine the following article ``content``::
+
+    <div>
+      <p>Text 1</p>
+      <p>Text 2</p>
+      <p>Text 3</p>
+    </div>
+
+  The description for the above would be::
+
+    Text 1
+    Text 2
+    Text 3
+
+``lead``
+
+  Often there is a lead paragraph that is a brief summary of the rest of the
+  article. Embedly tries to pull this lead paragraph out for a better reading
+  experience. It is always a ``p`` tag, i.e.::
+
+    "lead": "<p>This is a summary of the below article</p>"
+
+``content``
+
+  This is the html that we pulled from the URL. It's been sanitized, so it will
+  only contain the following tags::
+
+    'a', 'abbr', 'acronym', 'b', 'big', 'blockquote', 'br', 'cite', 'code',
+    'del', 'dfn', 'em', 'i', 'ins', 'kbd', 'mark', 'pre', 'q', 's', 'samp',
+    'small', 'span', 'strike', 'strong', 'sub', 'sup', 'time', 'tt', 'u',
+    'var', 'p', 'div', 'a', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'ol', 'ul',
+    'li'
+
+  All tag attributes have been removed as well. The only effective
+  attributes are:
+
+    * ``href`` on an ``a`` tag
+    * ``src`` on an ``img`` tag
 
 ``keywords``
     See :doc:`../../../features/keywords`
@@ -242,152 +295,8 @@ Response Attributes
 ``entities``
     See :doc:`../../../features/entities`
 
-``object``
-    See :ref:`object`
-
 ``images``
     See :ref:`images`
-
-``embeds``
-    A list of embeds that Embedly found on the page. They follow the
-    :ref:`object` format.
-
-``original_url``
-    The url that was passed into Embedly. This will be something like a bit.ly
-    shortened link or if there is no redirect it will be the same as the
-    ``url`` attribute.
-
-``url``
-    The effective url of the request. Whatever Embedly found at the end of any
-    redirects.
-
-``meta``
-    The meta attributes of the document. Possible attributes include:
-    
-    * ``content_type``
-    * ``author``
-    * ``title``
-    * ``keywords``
-    * ``description``
-    * ``rss``
-    * ``oembeds``
-    * ``open_search``
-    * ``shortcut_icon``
-    * ``icon``
-    * ``apple_touch_icon``
-    * ``generator``
-    * ``shortlink``
-    * ``canonical``
-    * ``medium``
-    * ``video_src``
-    * ``video_height``
-    * ``video_width``
-    * ``video_type``
-    * ``image_src``
-    * ``image_height``
-    * ``image_width``
-    * ``audio_src``
-    * ``audio_type``
-    * ``audio_title``
-    * ``audio_artist``
-    * ``audio_album``
-
-``open_graph``
-    The Open Graph attributes of the document. Possible attributes include:
- 
-    * ``title``
-    * ``type``
-    * ``site_name``
-    * ``description``
-    * ``url``
-    * ``image``
-    * ``image_width``
-    * ``image_height``
-    * ``latitude``
-    * ``longitude``
-    * ``street_address``
-    * ``locality``
-    * ``region``
-    * ``postal_code``
-    * ``country_name``
-    * ``email``
-    * ``phone_number``
-    * ``fax_number``
-    * ``upc``
-    * ``isbn``
-
-``microformats``
-    See :ref:`microformats`
-
-.. _object:
-
-Object
-------
-An object is the primary piece of media that is associated with a ``url``. It
-follows the general pattern of the :doc:`/embed/api/endpoints/1/oembed`, but with only a limited set
-of attributes.
-
-``type``
-    The resource type. Valid values, along with value-specific parameters, are
-    described below.
-
-
-The photo type
-^^^^^^^^^^^^^^
-This type is used for representing static photos. The following parameters are
-defined:
-
-``url``
-    The source URL of the image. Consumers should be able to insert this URL
-    into an``<img>``element. Only HTTP and HTTPS URLs are valid.
-
-``width``
-    The width in pixels of the image specified in the ``url`` parameter.
-
-``height``
-    The height in pixels of the image specified in the ``url`` parameter.
-
-
-The video type
-^^^^^^^^^^^^^^
-This type is used for representing playable videos. The following parameters
-are defined:
-
-``html``
-    The HTML required to embed a video player. The HTML should have no padding
-    or margins. Consumers may wish to load the HTML in an off-domain iframe to
-    avoid XSS vulnerabilities.
-
-``width``
-    The width in pixels required to display the HTML. If not supplied
-    the HTML returned will expand horizontally to the size of its parent
-    container.
-
-``height``
-    The height in pixels required to display the HTML. If not supplied,
-    the HTML returned will expand vertically to the size of its parent
-    container.
-
-
-The rich type
-^^^^^^^^^^^^^
-This type is used for rich HTML content that does not fall under one of the
-other categories. The following parameters are defined:
-
-``html`` (required)
-    The HTML required to display the resource. The HTML should have no padding
-    or margins. Consumers may wish to load the HTML in an off-domain iframe to
-    avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.
-
-``width`` (required)
-    The width in pixels required to display the HTML. If not supplied
-    the HTML returned will expand horizontally to the size of its parent
-    container.
-
-``height`` (required)
-    The height in pixels required to display the HTML. If not supplied
-    the HTML returned will expand vertically to the size of its parent
-    container.
 
 
 Error Codes

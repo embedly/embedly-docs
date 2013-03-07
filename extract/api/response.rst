@@ -56,10 +56,6 @@ See the :doc:`Safe Browse </features/safe>` feature documentation.
 
 .. _microformats:
 
-Microformats
-------------
-See the :doc:`Microformats </features/places>` feature documentation.
-
 .. _images:
 
 Images
