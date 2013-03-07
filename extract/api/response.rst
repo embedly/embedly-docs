@@ -7,7 +7,7 @@ A list of common response objects across endpoints.
 
 Response Types
 --------------
-Response types are different then oEmbed types. They closely follow the mimetype
+Response types are different than oEmbed types. They closely follow the mimetype
 for a given resource. They are as follows:
 
 ``html``
