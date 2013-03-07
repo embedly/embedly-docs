@@ -3,7 +3,7 @@
 Products
 ========
 The Embedly Platform has 3 different products built to handle
-frontend and user experience use cases. We will try 
+frontend and user experience use cases. We'll try 
 to outline the different Products here and let you
 explore on your own.
 
