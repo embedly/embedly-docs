@@ -15,7 +15,7 @@ When Embedly first sees a URL we break it into a set of features, this is then
 thrown against a trained classifier to decide whether it's an article or not.
 Even if there is a lot of text on a page, we may choose not to classify it as
 an article. For example an index page of articles has a lot of text, but makes
-for a horrible article. Unlike a site like Instapaper where users are mostly
+for a horrible article. Unlike a site such as Instapaper where users are mostly
 saving articles, Embedly's URL base is much larger and therefore we need to
 decide what type of page it is before running an extraction.
 
