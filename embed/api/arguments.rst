@@ -2,7 +2,7 @@
 
 Query Arguments
 ===============
-An in-depth view of all the query arguments:
+An in-depth view of all the `oEmbed` API query arguments:
 
 ``key``
     The :doc:`API key </authentication>` for your registered account.

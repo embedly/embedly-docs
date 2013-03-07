@@ -18,6 +18,8 @@ pass back information about a URL. To get started, you can get a
 more detailed overview of the :doc:`features <embed/features/index>`, or 
 checkout the :doc:`tutorials <tutorials/index>` for whatever you're trying to build.
 
+|more| Read through the overview on :doc:`embed/index`.
+
 Extract
 -------
 Our ``Extract`` product allows you to extract all the important information
@@ -25,12 +27,14 @@ from Articles, Blogs, and Stories this includes full article text,
 entities/topics, keywords, related content, and all the metadata
 you will need.
 
-To get started, try out a few links in our `Explorer </docs/explore/extract>`_
+You can try out a few links in our `Explorer </docs/explore/extract>`_
 or jump straight into the :doc:`Extract API documentation <extract/api/index>`.
+
+|more| Read through the overview on  :doc:`extract/index`.
 
 Display
 -------
 ``Display`` is made for dealing with any image on the web. With this product
-you can resize, crop, fill, and even securely proxy images on your site.
+you can resize, crop, fill, and even securely proxy images on your site. 
 
-To get started, check out the :doc:`Display API  <display/api/index>`.
+|more| Read through the overview on  :doc:`display/index`.

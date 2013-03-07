@@ -33,7 +33,7 @@ Overview
 
 :doc:`Microformats <microformats>`
 
-  There are many microformats available to help provide a better understanding
+  Microformats are available to help provide a better understanding
   of the underlying page. We try to provide a list of the most widely-used specs
   such as rel=author and rel=tags.
 
@@ -47,6 +47,14 @@ Overview
   to the story link you send to the API.
 
   :doc:`Learn more <related>`
+
+
+:doc:`Colors <colors>`
+
+  We provide a list of dominant RGB colors and entropy for any
+  image parsed through the API.
+
+  :doc:`Learn more <colors>`  
 
 
 Security and Extra
