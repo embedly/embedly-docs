@@ -8,7 +8,7 @@ frame, so your site is protected from malicious embeds.
 
 There is a disclaimer here, that Embedly hand curates the list of sites that
 we allow embeds from. We have tested them all and one can assume that they are
-trusted sources. This only protects you if something on the providers side goes
+trusted sources. This only protects you if something on the provider's side goes
 wrong. They may get "hacked", have a bad push or any number of things that
 could effect their embed. We have never had a report of this in the past, but
 developers should sleep better with this in place.
