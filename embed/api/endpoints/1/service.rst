@@ -17,7 +17,7 @@ Query Parameters
 ----------------
 
 ``lang`` (optional)
-    Format the regex for specific langage. accepted values are ``php``,
+    Format the regex for specific langage. Accepted values are ``php``,
     ``python``, ``ruby`` or ``javascript``. An example call would be
     ``http://api.embed.ly/1/services/python``
     Note: if language not specified, default will be generic oEmbed url scheme.
