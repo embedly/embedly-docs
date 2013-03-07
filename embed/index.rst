@@ -26,7 +26,7 @@ application.
 
 Tutorials
 ---------
-Take a look some of our tutorials on using ``Embed`` in
+Take a look at some of our tutorials on using ``Embed`` in
 your blog and social or mobile application.
 
 |more| Walk through the `Tutorials </docs/tutorials>`_

@@ -111,7 +111,7 @@ An in-depth view of all the `Extract` API query arguments:
     Foursquare, and Formspring. These all have ``<style>`` elements and inline
     styles associated with them that make the embeds look good. If you wish to
     style these embeds yourself, you can add ``nostyle=true`` and Embedly will
-    remove the style elements. Note this is global change, therefore, you must
+    remove the style elements. Note this is a global change, therefore, you must
     account for all embeds with styles or only use a subset.
 
 ``autoplay`` (optional)
@@ -122,8 +122,8 @@ An in-depth view of all the `Extract` API query arguments:
     Either ``true`` Embedly will use the ``video_src`` meta or Open Graph tag to
     create a video object to embed. While Embedly uses the ``video_src`` tag to
     create embeds for supported providers, it can create unexpected behavior
-    when it's used in a broader context. Videos will autoplay or my contain
-    malicious content. Only enable this feature if you know what you are doing.
+    when it's used in a broader context. Videos will autoplay or may contain
+    malicious content. Only enable this feature if you know what you're doing.
     Accepted values: ``(true, false)`` Default: ``false``
 
 ``words`` (optional)
