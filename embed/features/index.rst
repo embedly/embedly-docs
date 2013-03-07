@@ -18,7 +18,7 @@ Overview
 
 :doc:`Mobile <providers>`
 
-  Many content providers have added support for mobile embeds, with using the
+  Many content providers have added support for mobile embeds, by using the
   ``Embed`` product, our API will automatically switch in/out the correct
   embed code based on your mobile or web user agent.
   
