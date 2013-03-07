@@ -27,7 +27,7 @@ on what the oEmbed API returns. Try these:
 
 Arguments
 ---------
-See the :doc:`Query Arguments <../arguments>` documentation.
+See the :doc:`Query Arguments <../../arguments>` documentation.
 
 oEmbed Types
 ------------
