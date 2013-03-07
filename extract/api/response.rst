@@ -54,22 +54,6 @@ Safe Browse
 -----------
 See the :doc:`Safe Browse </features/safe>` feature documentation.
 
-.. _place:
-
-Safe Browse
------------
-See the :doc:`Safe Browse </features/safe>` feature documentation.
-
-Place
------
-See the :doc:`Places </features/places>` feature documentation.
-
-.. _event:
-
-Event
------
-See the :doc:`Events </features/places>` feature documentation.
-
 .. _microformats:
 
 Microformats

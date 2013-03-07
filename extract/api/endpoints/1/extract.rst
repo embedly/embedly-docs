@@ -28,56 +28,151 @@ See the :doc:`Query Arguments <../arguments>` documentation.
 Response
 --------
 
-Example response:
+Example response
+^^^^^^^^^^^^^^^^
 
 .. code-block:: json
 
-    {
-        "original_url": "http://bit.ly/detr0",
-        "url": "http://www.youtube.com/watch?v=B-m6JDYRFvk",
-        "type": "html",
+{
+  "provider_url": "http://blog.embed.ly",
+  "lead": null,
+  "language": "English",
+  "original_url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
+  "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
+  
+  "entities": [{"count": 4,
+  "name": "Aaron"}, {"count": 1,
+  "name": "Vinh"}, {"count": 1,
+  "name": "Reddit"}, {"count": 1,
+  "name": "Kyle Nichols"}, {"count": 1,
+  "name": "Kawan"}, {"count": 1,
+  "name": "Samuel"}, {"count": 1,
+  "name": "Thom Nichols"}, {"count": 1,
+  "name": "Tumblr"}, {"count": 1,
+  "name": "Giles"}, {"count": 1,
+  "name": "Andy"}, {"count": 1,
+  "name": "Gabe"}, {"count": 1,
+  "name": "Graham"}, {"count": 1,
+  "name": "Liz Neu"}, {"count": 1,
+  "name": "Ryan Laughlin"}],
 
-        "cache_age" : 86400,
-        "safe" : true,
+  "safe": true,
+  "provider_display": "blog.embed.ly",
+  "related": [],
 
-        "provider_url": "http://www.youtube.com/",
-        "provider_display": "www.youtube.com",
-        "provider_name": "YouTube",
-        "favicon_url": "http://s.ytimg.com/yt/favicon-vflZlzSbU.ico",
+  "keywords": [{"score": 31,
+  "name": "api"}, {"score": 28,
+  "name": "embed"}, {"score": 21,
+  "name": "aaron"}, {"score": 14,
+  "name": "best"}, {"score": 13,
+  "name": "nichols"}, {"score": 11,
+  "name": "solo"}, {"score": 11,
+  "name": "meet"}, {"score": 10,
+  "name": "kawan"}, {"score": 10,
+  "name": "thumbwar"}, {"score": 10,
+  "name": "friends"}],
 
-        "title": "Coder Girl",
-        "description": "An ode to female programmers.\r\n\r\nEP Available on iTunes!\r\n
-                        http://bit.ly/4sebjr\r\n
-                        Find more great music @ http://dalechase.com  http://twitter.com/daleochase\r\n
-                        Song lyrics here: http://bit.ly/7eOilA",
+  "content": "<div>\n<strong>We provided our API for the event and some prizes
+  for best use of our API as a solo participant and as a group, we were pleased
+  with the outcome! </strong> <p><strong>Best use of our API:  </strong>
+  <strong>Cheer Me \u00dcp, a service which allows you to send a friendly
+  and uplifting message to someone having a tough time. They'll receive it with
+  cat gifs and all, embedded from sites like Tumblr and Reddit using the
+  Embedly API. </strong></p>\n<strong>Best Solo: Thom Nichols for
+  <a href=\"https://github.com/tomstrummer\">Xirq.us </a>, they used Embedly
+  to embed photos and media within curated tweets by the location they're
+  near to let you know in one convenient spot what exactly is going on in
+  an area. </strong> <strong>Best Design: Aaron and Aaron created Meet, a
+  dating app that won't allow you to talk to your match before meeting up
+  with them, it cuts to the chase by only providing the option to meet
+  your match. </strong> <strong>Best Team: Ryan Laughlin, Liz Neu, and
+  Kyle Nichols for <a href=\"http://thumbwar.me/\">Thumbwar </a>, which
+  allows users to sync up with a friend over mobile, tablet or laptop connection
+  to play a bundle of mini games with each other to pass the time or to unleash
+  that competitive side if only for a few seconds. </strong> <strong><br>
+  The bottom line is, we had a blast! The four of us, Art, Andy, Kawan
+  and myself enjoyed an engaging and often silly weekend with some new
+  friends and replenished our creativity tanks. Shout out to
+  <a href=\"https://github.com/GabeLoins\">Gabe </a>,
+  <a href=\"https://github.com/gilesvangruisen\">Giles </a>,
+  <a href=\"https://github.com/SDooman\">Samuel </a>,
+  <a href=\"https://github.com/gbc1230\">Graham </a>and
+  <a href=\"https://github.com/vtran008\">Vinh</a> 
+  </strong><strong>of Cheer Me \u00dcp </strong><strong>and
+  <a href=\"https://github.com/LtCmdDudefellah\">Aaron </a>and
+  <a href=\"https://github.com/aesnyder\">Aaron </a>for Meet.
+  We're looking forward to seeing the real thing and will
+  definitely be sending some pleasant messages to some
+  unsuspecting mopes.
+  <img src=\"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-
+  SxnRd3sFn-XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nh
+  udlkwsZp7-CNCqihX1zalDbQ\"></strong> <p> </p>\n</div>",
+  "favicon_url": "http://blog.embed.ly/images/favicon.png",
+  "authors": [{"url": "http://posterous.com/users/iHySgjJhRuY0q",
+  "name": "Nina Stepanov"}],
 
-        "author_name": "dalechase",
-        "author_url": "http://www.youtube.com/user/dalechase",
 
-        "content": null,
+  "oembed": {"provider_url": "http://blog.embed.ly",
+  "description": "We provided our API for the event and some prizes for
+  best use of our API as a solo participant and as a group, we were pleased
+  with the outcome! Best use of our API: Cheer Me \u00dcp, a service which
+  allows you to send a friendly and uplifting message to someone having a
+  tough time.",
+  "title": "DowncityJS Hackathon Recap - Embedly",
+  "dominant_colors": [{"color": [26, 12, 27],
+  "weight": 0.497314453125}, {"color": [98, 54, 45],
+  "weight": 0.16064453125}, {"color": [135, 91, 76],
+  "weight": 0.09033203125}, {"color": [80, 65, 83],
+  "weight": 0.0849609375}, {"color": [191, 193, 184],
+  "weight": 0.059326171875}],
+  "author_name": "Nina Stepanov",
+  "thumbnail_width": 100,
+  "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
+  "thumbnail_url": "http://getfile8.posterous.com/getfile/files.posterous.com/
+  temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/
+  kawan.JPG.thumb100.jpg",
+  "entropy": 6.27898780616,
+  "author_url": "http://posterous.com/users/iHySgjJhRuY0q",
+  "provider_name": "Embed",
+  "type": "link",
+  "thumbnail_height": 100},
 
-        "embeds": [],
+  "offset": null,
+  "published": 1360022400000,
 
-        "images": [{"height": 360,
-                     "url": "http://i3.ytimg.com/vi/B-m6JDYRFvk/hqdefault.jpg",
-                     "width": 480}],
-        "object": {"height": 360,
-                    "html": "<object width='640' height='360'>
-                               <param name='movie' value='http://www.youtube.com/v/B-m6JDYRFvk?fs=1'>
-                               <param name='allowFullScreen' value='true'>
-                               <param name='allowscriptaccess' value='always'>
-                               <embed src='http://www.youtube.com/v/B-m6JDYRFvk?fs=1'
-                                      type='application/x-shockwave-flash'
-                                      width='640' height='360' allowscriptaccess='always'
-                                      allowfullscreen='true'></embed>
-                            </object>",
-                    "type": "video",
-                    "width": 640},
+  "images": [{"url": "https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-
+  XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-CNCqihX1zalDbQ",
+  "width": 1024,
+  "size": 228025,
+  "caption": null,
+  "height": 768}, {"url": "http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05
+  /EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb100.jpg",
+  "width": 100,
+  "size": 4768,
+  "caption": null,
+  "height": 100}, {"url": "http://getfile3.posterous.com/getfile/files.posterous.com/temp-2013-02-05
+  /GgnkkkteuCubCfIrtEooDcnsaHJBqlxuDlJpiswlAvxfHfABzxstGfkFIvka/hack1.JPG.thumb.jpg",
+  "width": 36,
+  "size": 13735,
+  "caption": null,
+  "height": 36}, {"url": "http://getfile9.posterous.com/getfile/files.posterous.com/temp-2013-02-05
+  /EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb.jpg",
+  "width": 36,
+  "size": 1227,
+  "caption": null,
+  "height": 36}, {"url": "http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05
+  /kFtyfIkbuAuHHmGllFkIhHlApCFHDaiivqtCkgkkDtDJxlFdFBghfuAoEHHC/hack2.JPG.thumb.jpg",
+  "width": 36,
+  "size": 1181,
+  "caption": null,
+  "height": 36}],
+  "provider_name": "Embed",
+  "cache_age": 86301,
+  "type": "html"
+}
 
-        "place": {},
-
-        "event": {}
-    }
+Response Attributes
+^^^^^^^^^^^^^^^^^^^
 
 ``original_url``
     The url that was passed into Embedly. This will be something like a bit.ly
@@ -96,7 +191,7 @@ Example response:
     a day, unless some external factor tells us to reevaluate the resource.
 
 ``safe``
-    See :ref:`safebrowse`.
+        See :doc:`../../../features/safe`
 
 ``provider_name``
     The name of the resource provider.
@@ -135,19 +230,94 @@ Example response:
 ``author_url``
     A URL for the author/owner of the resource.
 
+``oembed``
+    The oEmbed response for a url. More information on the :doc:`../1/oembed`.
+
+``article``
+    See :doc:`../../../features/article`
+
+``keywords``
+    See :doc:`../../../features/keywords`
+
+``entities``
+    See :doc:`../../../features/entities`
+
 ``object``
     See :ref:`object`
 
 ``images``
     See :ref:`images`
 
-``content``
-    The content of the rss entry.
-
 ``embeds``
     A list of embeds that Embedly found on the page. They follow the
     :ref:`object` format.
 
+``original_url``
+    The url that was passed into Embedly. This will be something like a bit.ly
+    shortened link or if there is no redirect it will be the same as the
+    ``url`` attribute.
+
+``url``
+    The effective url of the request. Whatever Embedly found at the end of any
+    redirects.
+
+``meta``
+    The meta attributes of the document. Possible attributes include:
+    
+    * ``content_type``
+    * ``author``
+    * ``title``
+    * ``keywords``
+    * ``description``
+    * ``rss``
+    * ``oembeds``
+    * ``open_search``
+    * ``shortcut_icon``
+    * ``icon``
+    * ``apple_touch_icon``
+    * ``generator``
+    * ``shortlink``
+    * ``canonical``
+    * ``medium``
+    * ``video_src``
+    * ``video_height``
+    * ``video_width``
+    * ``video_type``
+    * ``image_src``
+    * ``image_height``
+    * ``image_width``
+    * ``audio_src``
+    * ``audio_type``
+    * ``audio_title``
+    * ``audio_artist``
+    * ``audio_album``
+
+``open_graph``
+    The Open Graph attributes of the document. Possible attributes include:
+ 
+    * ``title``
+    * ``type``
+    * ``site_name``
+    * ``description``
+    * ``url``
+    * ``image``
+    * ``image_width``
+    * ``image_height``
+    * ``latitude``
+    * ``longitude``
+    * ``street_address``
+    * ``locality``
+    * ``region``
+    * ``postal_code``
+    * ``country_name``
+    * ``email``
+    * ``phone_number``
+    * ``fax_number``
+    * ``upc``
+    * ``isbn``
+
+``microformats``
+    See :ref:`microformats`
 
 .. _object:
 
