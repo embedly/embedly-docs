@@ -1,8 +1,9 @@
 Extract API
 ===========
 
-The Extract endpoint is designed to provide users with as much content as possible,
-this includes the article text, keywords, related links, and much more.
+The Extract endpoint is designed to provide users with important
+information from each link. This endpoint includes the article text,
+keywords, related links, and even video embeds.
 
 Example call (1 URL)::
 
@@ -288,6 +289,8 @@ Response Attributes
 
     * ``href`` on an ``a`` tag
     * ``src`` on an ``img`` tag
+
+  More information on :doc:`Article extraction <../../../features/article>`.
 
 ``keywords``
     See :doc:`../../../features/keywords`

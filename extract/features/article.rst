@@ -51,6 +51,9 @@ Here are a few examples of what Embedly returns via the Article feature:
 Response
 --------
 
+These are some of the Article extraction attributes found
+in the :doc:`../api/endpoints/1/extract`.
+
 ``authors``
 
   A list of all the authors that are associated with this article. Each author
