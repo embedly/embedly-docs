@@ -9,7 +9,7 @@ You can find this data in the
 Example
 -------
 An example ``related`` value
-for an `Article <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Farstechnica.com%2Ftech-policy%2F2013%2F02%2Fjudge-upholds-facetime-patent-verdict-against-apple-orders-royalties-to-boot%2F>`_ would be:
+for an `Article <http://embed.ly/docs/explore/extract?url=http%3A%2F%2Farstechnica.com%2Ftech-policy%2F2013%2F02%2Fjudge-upholds-facetime-patent-verdict-against-apple-orders-royalties-to-boot%2F>`_ would be:
 
 .. code-block:: json
 
