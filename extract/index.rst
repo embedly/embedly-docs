@@ -17,7 +17,7 @@ You can access the ``Extract`` product through our
 Features
 --------
 The Embedly ``Extract`` product comes with many features that allow
-to parse keywords, entities/topics, images, microformats
+you to parse keywords, entities/topics, images, and much more
 from a URL.
 
 

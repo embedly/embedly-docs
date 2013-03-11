@@ -169,10 +169,4 @@ An in-depth view of all the `Extract` API query arguments:
 
 .. _pass: http://api.embed.ly/1/oembed?maxwidth=500&url=http%3A//vimeo.com/18150336
 .. _video: http://api.embed.ly/1/oembed?url=http%3A//vimeo.com/18150336
-
-``colors`` (optional)
-    ``colors`` will send back dominant RGB colors and entropy with any image
-    parsed through the ``Extract`` API. Read more about
-    :doc:`../features/colors` -- Accepted values: ``(true, false)``
-    Default: ``false``
     
