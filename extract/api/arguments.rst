@@ -1,7 +1,7 @@
 .. _arguments:
 
-Query Arguments
-===============
+Extract - Query Arguments
+=========================
 An in-depth view of all the `Extract` API query arguments:
 
 ``key``

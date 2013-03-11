@@ -1,6 +1,6 @@
-Response Objects
-================
-A list of common response objects across endpoints.
+Extract - Response Objects
+==========================
+A list of some Extract response objects.
 
 
 .. _response-types:
@@ -52,7 +52,7 @@ for a given resource. They are as follows:
 
 Safe Browse
 -----------
-See the :doc:`Safe Browse </features/safe>` feature documentation.
+See the :doc:`Safe Browse <../features/safe>` feature documentation.
 
 .. _microformats:
 
@@ -61,8 +61,8 @@ See the :doc:`Safe Browse </features/safe>` feature documentation.
 Images
 ------
 A list of, at most, 5 images that Embedly found while processing the URL.
-For a more detailed breakddown, read the :doc:`Images </features/images>`
-feature documentation.
+For a more detailed breakddown, read through the
+:doc:`Images <../features/images>` feature documentation.
 
 They are in the following format:
 
@@ -70,49 +70,31 @@ They are in the following format:
 
     [
       {
-        "caption":null,
-        "url":"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-CNCqihX1zalDbQ",
+        "caption":"The winners of the Embedly Hackathon.",
+        "url":"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-
+        XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-
+        CNCqihX1zalDbQ",
         "height":768,
         "width":1024,
         "colors":[
           {
-            "color":[
-              14,
-              16,
-              18
-            ],
+            "color":[14, 16, 18],
             "weight":0.311767578125
           },
           {
-            "color":[
-              238,
-              232,
-              203
-            ],
+            "color":[238, 232, 203],
             "weight":0.131103515625
           },
           {
-            "color":[
-              213,
-              193,
-              160
-            ],
+            "color":[213, 193, 160],
             "weight":0.103759765625
           },
           {
-            "color":[
-              44,
-              54,
-              61
-            ],
+            "color":[44, 54, 61],
             "weight":0.0810546875
           },
           {
-            "color":[
-              138,
-              157,
-              168
-            ],
+            "color":[138, 157, 168],
             "weight":0.07470703125
           }
         ],
@@ -121,195 +103,34 @@ They are in the following format:
       },
       {
         "caption":null,
-        "url":"http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb100.jpg",
+        "url":"http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05/
+        EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb100.jpg",
         "height":100,
         "width":100,
         "colors":[
           {
-            "color":[
-              25,
-              11,
-              26
-            ],
+            "color":[25, 11, 26],
             "weight":0.466064453125
           },
           {
-            "color":[
-              81,
-              48,
-              53
-            ],
+            "color":[81, 48, 53],
             "weight":0.23046875
           },
           {
-            "color":[
-              128,
-              83,
-              71
-            ],
+            "color":[128, 83, 71],
             "weight":0.13720703125
           },
           {
-            "color":[
-              187,
-              188,
-              180
-            ],
+            "color":[187, 188, 180],
             "weight":0.060546875
           },
           {
-            "color":[
-              159,
-              121,
-              101
-            ],
+            "color":[159, 121, 101],
             "weight":0.06005859375
           }
         ],
         "entropy":6.24755345469,
         "size":4768
-      },
-      {
-        "caption":null,
-        "url":"http://getfile0.posterous.com/getfile/files.posterous.com/temp-2013-02-05/ophGCAqnjrzbmtemFIvckEmmEvpEzckbgsrDBawtJzJhcFyHIenHzskpuHCE/art.JPG.thumb.jpg",
-        "height":36,
-        "width":36,
-        "colors":[
-          {
-            "color":[
-              52,
-              43,
-              46
-            ],
-            "weight":0.105712890625
-          },
-          {
-            "color":[
-              180,
-              207,
-              248
-            ],
-            "weight":0.083984375
-          },
-          {
-            "color":[
-              108,
-              82,
-              87
-            ],
-            "weight":0.0791015625
-          },
-          {
-            "color":[
-              147,
-              137,
-              155
-            ],
-            "weight":0.047607421875
-          }
-        ],
-        "entropy":5.740462170574066,
-        "size":1122
-      },
-      {
-        "caption":null,
-        "url":"http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05/kFtyfIkbuAuHHmGllFkIhHlApCFHDaiivqtCkgkkDtDJxlFdFBghfuAoEHHC/hack2.JPG.thumb.jpg",
-        "height":36,
-        "width":36,
-        "colors":[
-          {
-            "color":[
-              33,
-              26,
-              23
-            ],
-            "weight":0.095458984375
-          },
-          {
-            "color":[
-              99,
-              83,
-              81
-            ],
-            "weight":0.050537109375
-          },
-          {
-            "color":[
-              151,
-              117,
-              106
-            ],
-            "weight":0.048583984375
-          },
-          {
-            "color":[
-              77,
-              56,
-              54
-            ],
-            "weight":0.04541015625
-          },
-          {
-            "color":[
-              186,
-              157,
-              146
-            ],
-            "weight":0.04443359375
-          }
-        ],
-        "entropy":6.167043848281419,
-        "size":1181
-      },
-      {
-        "caption":null,
-        "url":"http://getfile9.posterous.com/getfile/files.posterous.com/temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb.jpg",
-        "height":36,
-        "width":36,
-        "colors":[
-          {
-            "color":[
-              28,
-              13,
-              26
-            ],
-            "weight":0.147705078125
-          },
-          {
-            "color":[
-              112,
-              72,
-              65
-            ],
-            "weight":0.04736328125
-          },
-          {
-            "color":[
-              79,
-              48,
-              54
-            ],
-            "weight":0.04443359375
-          },
-          {
-            "color":[
-              146,
-              101,
-              84
-            ],
-            "weight":0.027099609375
-          },
-          {
-            "color":[
-              240,
-              243,
-              244
-            ],
-            "weight":0.021728515625
-          }
-        ],
-        "entropy":5.8080626620279245,
-        "size":1227
       }
     ]
 
@@ -332,8 +153,7 @@ results when giving them higher scores, but not defaulting them to the first
 image. Note that they will always appear in the results, even if we rank images
 pulled from the page higher.
 
-``images`` only appear in the :doc:`Extract </api/endpoints/1/extract>`
-endpoint, and you can use ``images`` in a couple of ways:
+You can use ``images`` in a couple of ways:
 
     * If there is no user interaction, you can just select the first image
       out of the array and display it like so:

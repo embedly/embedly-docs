@@ -1,10 +1,10 @@
 Extract - API
 =============
-``Extract`` offers a :doc:`REST API endpoint <endpoints/1/extract>`,
+``Extract`` offers the REST :doc:`endpoints/1/extract`,
 that takes in a URL and passes back article text, keywords,
 and topics data.
 
-The Endpoint accepts a set of :doc:`arguments`.
+The Endpoint accepts a set of :doc:`query arguments <arguments>`.
 
 
 Extract

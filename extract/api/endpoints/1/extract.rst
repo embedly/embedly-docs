@@ -120,12 +120,6 @@ Example response
   allows you to send a friendly and uplifting message to someone having a
   tough time.",
   "title": "DowncityJS Hackathon Recap - Embedly",
-  "dominant_colors": [{"color": [26, 12, 27],
-  "weight": 0.497314453125}, {"color": [98, 54, 45],
-  "weight": 0.16064453125}, {"color": [135, 91, 76],
-  "weight": 0.09033203125}, {"color": [80, 65, 83],
-  "weight": 0.0849609375}, {"color": [191, 193, 184],
-  "weight": 0.059326171875}],
   "author_name": "Nina Stepanov",
   "thumbnail_width": 100,
   "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
@@ -141,32 +135,25 @@ Example response
   "offset": null,
   "published": 1360022400000,
 
-  "images": [{"url": "https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-
-  XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-CNCqihX1zalDbQ",
-  "width": 1024,
-  "size": 228025,
-  "caption": null,
-  "height": 768}, {"url": "http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05
-  /EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb100.jpg",
-  "width": 100,
-  "size": 4768,
-  "caption": null,
-  "height": 100}, {"url": "http://getfile3.posterous.com/getfile/files.posterous.com/temp-2013-02-05
-  /GgnkkkteuCubCfIrtEooDcnsaHJBqlxuDlJpiswlAvxfHfABzxstGfkFIvka/hack1.JPG.thumb.jpg",
-  "width": 36,
-  "size": 13735,
-  "caption": null,
-  "height": 36}, {"url": "http://getfile9.posterous.com/getfile/files.posterous.com/temp-2013-02-05
-  /EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/kawan.JPG.thumb.jpg",
-  "width": 36,
-  "size": 1227,
-  "caption": null,
-  "height": 36}, {"url": "http://getfile8.posterous.com/getfile/files.posterous.com/temp-2013-02-05
-  /kFtyfIkbuAuHHmGllFkIhHlApCFHDaiivqtCkgkkDtDJxlFdFBghfuAoEHHC/hack2.JPG.thumb.jpg",
-  "width": 36,
-  "size": 1181,
-  "caption": null,
-  "height": 36}],
+  "images": [ {
+    "caption":null,
+    "url":"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-XNKy92XLXo-
+    R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-CNCqihX1zalDbQ",
+    "height":768,
+    "width":1024,
+    "colors":[
+      {
+        "color":[ 14, 16, 18],
+        "weight":0.311767578125
+      },
+      {
+        "color":[238, 232, 203],
+        "weight":0.131103515625
+      },
+    ],
+    "entropy":6.568857137759403,
+    "size":228025 
+  }],
   "provider_name": "Embed",
   "cache_age": 86301,
   "type": "html"

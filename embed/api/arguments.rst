@@ -1,7 +1,7 @@
 .. _arguments:
 
-Query Arguments
-===============
+Embed - Query Arguments
+=======================
 An in-depth view of all the `oEmbed` API query arguments:
 
 ``key``

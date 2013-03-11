@@ -1,15 +1,15 @@
-Images
-======
+Images and Dominant Colors
+==========================
 
-The ``Images`` object contains a list of, at most, 
+The ``images`` object contains a list of, at most, 
 5 images that Embedly found while processing the URL.
-Along with the list of images we are able to pull various
+Along with the list of images we pull various
 pieces of information about each image including dimensions, 
-dominant colors, entropy, captions, or size.
+dominant colors, entropy, captions, and size.
 
 Image Dimensions
 ^^^^^^^^^^^^^^^^
-The ``width`` and ``height`` of each image passed
+The pixel ``width`` and ``height`` of each image passed
 back to use for sorting or selection.
 
 Image Size
