@@ -1,9 +1,10 @@
 Preview API
 ===========
+This is a ``Legacy Endpoint``, it's not going away anytime soon. :doc:`Learn more </endpoints/index>`.
 
 The Preview endpoint is designed to provide users with a number of different 
 options to build an embed with. For instance, whereas the
-:doc:`oEmbed endpoint </endpoints/1/oembed>` only provides what Embedly thinks
+:doc:`oEmbed endpoint </embed/api/endpoints/1/oembed>` only provides what Embedly thinks
 is the best thumbnail image for a page, Preview potentially returns several.
 
 Example call (1 URL)::

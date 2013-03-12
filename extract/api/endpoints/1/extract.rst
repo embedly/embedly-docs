@@ -210,7 +210,7 @@ Response Attributes
 ``oembed``
     The oEmbed response for a url. Contains title, description, embed code,
     thumbnail images, and more.
-    More information on the :doc:`oEmbed Response <../../../../embed/api/endpoints/1/oembed>`.
+    More information on the :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`.
 
 ``published``
 

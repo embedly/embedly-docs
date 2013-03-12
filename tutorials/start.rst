@@ -46,7 +46,7 @@ it in JSON format. For example, to get the embed for that Vimeo link, you would 
     http://api.embed.ly/1/oembed?url=http%3A%2F%2Fvimeo.com%2F18150336
 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
-:doc:`oEmbed endpoint </endpoints/1/oembed>`. For brevity, we've omitted the
+:doc:`oEmbed endpoint </embed/api/endpoints/1/oembed>`. For brevity, we've omitted the
 ``key`` that you would normally use for
 :doc:`authentication </authentication>`.)
 

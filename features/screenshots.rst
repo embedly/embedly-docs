@@ -1,9 +1,9 @@
 Screenshots
 ===========
 
-This feature is currently in :ref:`Beta <beta>`.
+This Product is coming soon. Contact us, support@embed.ly for early access.
 
-This feature allows you to create a screenshot of any URL and use it to create
+This allows you to create a screenshot of any URL and use it to create
 previews, navigation grids or anything else you can think of. This document
 will give you an overview of how to utilize Screenshots.
 
@@ -11,7 +11,7 @@ Taking a Screenshot
 -------------------
 Add the query parameter ``screenshot=true`` to any API call:
 
-  http://api.embed.ly/2/objectify?screenshot=true&url=http%3A%2F%2Farstechnica.com&key=<key>
+  http://api.embed.ly/1/extract?screenshot=true&url=http%3A%2F%2Farstechnica.com&key=<key>
 
 The response will include a ``screenshot_url`` parameter, which you can freely
 link to::

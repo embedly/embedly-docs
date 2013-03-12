@@ -1,9 +1,10 @@
 Objectify API
 =============
+This is a ``Legacy Endpoint``, it's not going away anytime soon. :doc:`Learn more </endpoints/index>`.
 
 This endpoint is the kitchen sink of Embedly's offerings. It pretty much dumps
 everything we know about a URL out so you can use as you like. If you don't
-need this much information, we suggest using the :doc:`../1/oembed` or
+need this much information, we suggest using the :doc:`/embed/api/endpoints/1/oembed` or
 :doc:`../1/preview`.
 
 Example call (1 URL)::

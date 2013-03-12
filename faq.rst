@@ -128,7 +128,7 @@ Does Embedly send back the original URL?
 We send the original URL (as ``original_url``) from our
 `Preview </docs/endpoints/1/preview#response>`_
 and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints.
-The `oEmbed </docs/endpoints/1/oembed#response>`_  endpoint
+The `oEmbed </docs/embed/api/endpoints/1/oembed#response>`_  endpoint
 sends the canonical URL for link type.
 
 Does Embedly have a whitelist?

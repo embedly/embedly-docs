@@ -1,22 +1,15 @@
-Endpoints
-=========
+Legacy Endpoints
+================
 
-Embedly offers 3 different API endpoints: :doc:`oEmbed <1/oembed>`,
-:doc:`Preview <1/preview>` and :doc:`Objectify <2/objectify>`. Each provides
-different data about the given URL.
+These endpoints are part of our Starter, Basic, Core, and Plus plans and will remain 
+entact and usable for users on these plans. As a user of these APIs you will still
+get new providers, support, and any core extraction algorithm updates. 
+There will however, be no additions to the response attributes or major version
+updates to the endpoint. If you are interested in checking out some of the latest
+and greatest APIs, read about :doc:`../products`.
 
 All endpoints accept a similar set of :doc:`query arguments </arguments>`
 and return similar :doc:`response objects </response>`.
-
-oEmbed
-------
-The oEmbed endpoint follows the `oEmbed Spec <http://oembed.com>`_ and is the
-easiest endpoint to integrate into any site. It returns the title, description,
-thumbnail, and embed code for any URL. If you are automating embedding URLs,
-then this endpoint is for you. Embedly already does the work of picking the
-correct information for you and your users.
-
-|more| Read the :doc:`1/oembed`
 
 Preview
 -------
@@ -35,4 +28,3 @@ previous endpoints and it is only available to supplement those with desires
 that we could not imagine. Enjoy!
 
 |more| Read the :doc:`2/objectify`
-
