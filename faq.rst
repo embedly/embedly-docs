@@ -121,7 +121,7 @@ Do you support mobile devices?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Yes, we are currently in Beta with mobile support for iOS and Android devices.
 
-Learn more from our :doc:`Mobile </features/mobile>` documentation.
+Learn more from our :doc:`Mobile </embed/features/mobile>` documentation.
 
 Does Embedly send back the original URL?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
