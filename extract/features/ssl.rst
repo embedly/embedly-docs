@@ -4,8 +4,7 @@ SSL
 If your site runs via SSL it can often be hard to obtain the level of richness
 you desire. 3rd party assets are very rarely served via HTTPS so you often have
 to download all the images yourself and limit the number of providers you
-support. Embedly changes this by proxying images over SSL and serving all
-embeds within a secure iframe.
+support. Embedly changes this by serving all embeds within a secure iframe.
 
 Using Embedly with SSL mitigates all of what we like to call the "red X" errors
 in web browsers. You know the ones, the mixed content errors that scare users
@@ -87,7 +86,7 @@ order to have the best of both worlds, Embedly will still serve the insecure
 content within a secure iframe. This will cause the mild security warning that
 you see on most HTTPS sites that serve embeds, like Twitter.
 
-.. image:: ../images/twitter_insecure.png
+.. image:: /images/twitter_insecure.png
   :class: exampleimg
 
 This works for Chrome, Firefox and Safari. If you wish to avoid these warnings,
@@ -98,14 +97,14 @@ Internet Explorer
 IE has the strictest warning when dealing with HTTPS content, if you haven't
 seen it it looks like this:
 
-.. image:: ../images/https_warning_in_IE.jpg
+.. image:: /images/https_warning_in_IE.jpg
   :class: exampleimg
 
 The user must click 'yes' before proceeding to the site. To get around this,
 Embedly will switch out the embed with a secure representation. It looks like
 this:
 
-.. image:: ../images/ie_insecure_embed.png
+.. image:: /images/ie_insecure_embed.png
   :class: exampleimg
 
 When the user clicks that giant play button, they are taken to the embed's URL.
