@@ -54,6 +54,13 @@ surrounding space will be filled in with a specified color.
 |more| Read the :doc:`endpoints/1/fill`
 
 
+Authentication
+--------------
+All endpoints offer a key-based authentication.
+
+|more| Check out the :doc:`authentication`
+
+
 Integration
 -----------
 We have made it easy to integrate ``Display`` direct with our 
