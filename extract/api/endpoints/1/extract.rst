@@ -18,9 +18,9 @@ Examples
 `Embedly Explore </docs/explore/extract>`_ can be used to get a better handle
 on what this API returns. Try these:
 
-* `Techcrunch Article </docs/explore/extract/?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
-* `Deadspin Post <http://embed.ly/docs/explore/extract/?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
-* `Embedly blog <http://embed.ly/docs/explore/extract/?url=http://blog.embed.ly/31814817>`_
+* `Techcrunch Article </docs/explore/extract?url=http://techcrunch.com/2010/11/18/mark-zuckerberg/>`_
+* `Deadspin Post </docs/explore/extract?url=http://deadspin.com/5690535/the-bottom-100-the-worst-players-in-nfl-history-part-1>`_
+* `Embedly blog </docs/explore/extract?url=http://blog.embed.ly/31814817>`_
 
 Arguments
 ----------------

@@ -15,7 +15,7 @@ Tags/Keywords
     to indicate keywords for the page.  See `microformats.org
     <http://microformats.org/wiki/rel-tag>`_ for more info. An example
     ``tags`` value for an `e-commerce site
-    <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
+    </docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
     2Fen%2Fpersonalized-gifts%2Fstatuette-trophy-soccer-player-football.html>`_
     is:
 
@@ -36,7 +36,7 @@ XHTML Friends Network
     and an ``href``.
 
     Here is an example response for a
-    `Google+ profile <http://embed.ly/docs/explore/objectify?url=https%3A
+    `Google+ profile </docs/explore/objectify?url=https%3A
     %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_:
 
     .. code-block:: json

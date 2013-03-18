@@ -19,11 +19,11 @@ Examples
 `Embedly Explore </docs/explore/oembed>`_ can be used to get a better handle
 on what the oEmbed API returns. Try these:
 
-* `YFrog <http://embed.ly/docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
-* `Twitter <http://embed.ly/docs/explore/oembed/?url=http://twitter.com/embedly/status/29481593334>`_
-* `Embedly blog <http://embed.ly/docs/explore/oembed/?url=http://blog.embed.ly/31814817>`_
-* `SoundCloud <http://embed.ly/docs/explore/oembed/?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
-* `YouTube (bitly short link) <http://embed.ly/docs/explore/oembed/?url=http://bit.ly/cXVifg>`_
+* `YFrog </docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
+* `Twitter </docs/explore/oembed?url=http://twitter.com/embedly/status/29481593334>`_
+* `Embedly blog </docs/explore/oembed?url=http://blog.embed.ly/31814817>`_
+* `SoundCloud </docs/explore/oembed?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
+* `YouTube (bitly short link) </docs/explore/oembed?url=http://bit.ly/cXVifg>`_
 
 Arguments
 ---------

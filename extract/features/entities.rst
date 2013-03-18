@@ -10,7 +10,7 @@ this data in the
 Example
 -------
 An example ``entities`` value
-for an `Article <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fusnews.nbcnews.com%2F_news%2F2013%2F02%2F26%2F17107343-florida-man-shot-by-his-dog-police-say%3Flite&maxwidth=500>`_ would be:
+for an `Article </docs/explore/objectify?url=http%3A%2F%2Fusnews.nbcnews.com%2F_news%2F2013%2F02%2F26%2F17107343-florida-man-shot-by-his-dog-police-say%3Flite&maxwidth=500>`_ would be:
 
 .. code-block:: json
 

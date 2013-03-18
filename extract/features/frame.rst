@@ -40,8 +40,8 @@ size of the embed after it's rendered.
 
 For example, we will not render Twitter embeds when ``frame=true`` is added.
 
-* `With Frame <http://embed.ly/docs/explore/extract?url=https%3A%2F%2Ftwitter
+* `With Frame </docs/explore/extract?url=https%3A%2F%2Ftwitter
   .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500&frame=true>`_
-* `Without Frame <http://embed.ly/docs/explore/oembed?url=https%3A%2F%2Ftwitter
+* `Without Frame </docs/explore/oembed?url=https%3A%2F%2Ftwitter
   .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500>`_
 

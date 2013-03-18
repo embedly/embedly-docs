@@ -20,9 +20,9 @@ Examples
 `Embedly Explore </docs/explore/objectify>`_ can be used to get a better 
 handle on what the Objectify API returns. Try these:
 
-* `Foursquare <http://embed.ly/docs/explore/objectify/?url=http://foursquare.com/venue/49547>`_
-* `Tumblr <http://embed.ly/docs/explore/objectify/?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
-* `YouTube <http://embed.ly/docs/explore/objectify/?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
+* `Foursquare </docs/explore/objectify?url=http://foursquare.com/venue/49547>`_
+* `Tumblr </docs/explore/objectify?url=http://doctorswithoutborders.tumblr.com/post/820310165/tune-in-tonight-starved-for-attention-on-pbs-need-to>`_
+* `YouTube </docs/explore/objectify?url=http://www.youtube.com/watch%3Fv%3D-oElH6M_5i4>`_
 
 Arguments
 ---------

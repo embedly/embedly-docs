@@ -96,7 +96,7 @@ Place
 The ``place`` object gives location data associated with the url. You can 
 find this data in the :doc:`Preview </endpoints/1/preview>` and
 :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``place`` 
-for a `Foursquare venue <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_  
+for a `Foursquare venue </docs/explore/preview?url=http%3A%2F%2Ffoursquare.com%2Fvenue%2F46205>`_  
 would be:
 
 .. code-block:: json
@@ -154,7 +154,7 @@ Event
 -----
 The event object gives time and details data, which is associated with the url. You can find 
 this data in the :doc:`Preview </endpoints/1/preview>` or :doc:`Objectify </endpoints/2/objectify>` endpoints. An example ``event`` value
-for `Eventbrite <http://embed.ly/docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be:
+for `Eventbrite </docs/explore/preview?url=http%3A%2F%2Fxsite2011.eventbrite.com%2F>`_ would be:
 
 .. code-block:: json
 
@@ -199,7 +199,7 @@ a page's markup. This data is only available from the
     to indicate keywords for the page.  See `microformats.org
     <http://microformats.org/wiki/rel-tag>`_ for more info. An example
     ``tags`` value for an `e-commerce site
-    <http://embed.ly/docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
+    </docs/explore/objectify?url=http%3A%2F%2Fwww.sunfactory.fr%
     2Fen%2Fpersonalized-gifts%2Fstatuette-trophy-soccer-player-football.html>`_
     is:
 
@@ -218,7 +218,7 @@ a page's markup. This data is only available from the
     and an ``href``.
 
     Here is an example response for a
-    `Google+ profile <http://embed.ly/docs/explore/objectify?url=https%3A
+    `Google+ profile </docs/explore/objectify?url=https%3A
     %2F%2Fplus.google.com%2Fu%2F0%2F101327394875436414046>`_:
 
     .. code-block:: json
