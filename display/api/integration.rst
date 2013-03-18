@@ -3,7 +3,7 @@ Integration
 
 ``Display`` can be integrated with our :doc:`../../embed/index`
 and :doc:`../../extract/index` products to resize and proxy images for any
-URL.
+URL. This integration also includes proxying all images over SSL.
 
 API Query Arguments
 -------------------
@@ -117,3 +117,18 @@ Arguments
 
     http%3A%2F%2Fembed.ly%2Fstatic%2Fimages%2Fsquiggle2.png%3Fv%3D1
 
+``secure``
+  Set to `true` to SSL proxy all images passed back through our 
+  :doc:`../../embed/api/index` or :doc:`../../extract/api/index` endpoints.
+
+  You'll notice that any image field such as `thumbnail_url` has changed from::
+
+    http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg
+
+  to::
+
+    https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
+
+  Note that ``Display`` respects the cache time of the upstream
+  image, so we will cache it locally for that period of time. This works for all
+  image fields (thumbnail_url, open_graph.image, etc.) passed back.

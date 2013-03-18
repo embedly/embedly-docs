@@ -6,12 +6,17 @@ resize, crop, fill, or secure proxy it on your site or application.
 
 API
 ---
-You can access the ``Display`` product through a few different endpoints
-:doc:`api/endpoints/1/index`, :doc:`api/endpoints/1/resize`,
-:doc:`api/endpoints/1/crop` or :doc:`api/endpoints/1/fill`.
-
+You can access the ``Display`` product through a few different
+endpoints.
 
 |more| Check out the :doc:`API overview <api/index>`
+
+Features
+--------
+``Display`` comes with many features that allow
+you to resize, fill, crop, or secure proxy any image.
+
+|more| Check out the :doc:`features/index`
 
 
 Tutorials

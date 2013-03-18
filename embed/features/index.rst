@@ -37,7 +37,7 @@ These security features are available at an extra cost with the ``Embed`` produc
   the ``Embed`` API endpoints will wrap all embeds in a hosted IFrame for any
   embed. 
   
-  |more| :doc:`Learn more <ssl>`
+  |more| :doc:`Learn more <frame>`
 
 :doc:`SSL <ssl>`
 

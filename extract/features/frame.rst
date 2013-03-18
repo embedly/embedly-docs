@@ -18,13 +18,13 @@ Adding this Feature
 To add this protection you are going to add one new query param to your
 requests: ``frame=true``. Your requests will look like this::
 
-  http://api.embed.ly/1/oembed?key=key&frame=true&maxwidth=500&url=http%3A%2F%2
+  http://api.embed.ly/1/extract?key=<key>&frame=true&maxwidth=500&url=http%3A%2F%2
   Fwww.twitch.tv%2Fhaxxeren%2Fb%2F330565930
 
 This will return an iframe that look like this::
 
   <iframe src="http://media.embed.ly/1/frame?url=http%3A%2F%2Fda.twitch.tv%2Fha
-  xxeren%2Fb%2F330565930&width=400&key=key&height=300"
+  xxeren%2Fb%2F330565930&width=400&key=<key>&height=300"
   width="400" height="300" border="0" scrolling="no" frameborder="0"></iframe>
 
 The embed now lives within the media.embed.ly domain and has no access to the
@@ -40,7 +40,7 @@ size of the embed after it's rendered.
 
 For example, we will not render Twitter embeds when ``frame=true`` is added.
 
-* `With Frame <http://embed.ly/docs/explore/oembed?url=https%3A%2F%2Ftwitter
+* `With Frame <http://embed.ly/docs/explore/extract?url=https%3A%2F%2Ftwitter
   .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500&frame=true>`_
 * `Without Frame <http://embed.ly/docs/explore/oembed?url=https%3A%2F%2Ftwitter
   .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500>`_

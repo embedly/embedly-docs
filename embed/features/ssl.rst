@@ -4,12 +4,16 @@ SSL
 If your site runs via SSL it can often be hard to obtain the level of richness
 you desire. 3rd party assets are very rarely served via HTTPS so you often have
 to download all the images yourself and limit the number of providers you
-support. Embedly changes this by serving all embeds within a secure iframe.
+support. 
 
-Using Embedly with SSL mitigates all of what we like to call the "red X" errors
+``Embed`` solves this problem by serving all embeds within a secure iframe. 
+Using ``Embed`` with SSL mitigates all of what we like to call the "red X" errors
 in web browsers. You know the ones, the mixed content errors that scare users
-off your site. It's helpful to understand how Embedly-provided SSL will work
-with images, videos, and rich media embeds.
+off your site.
+
+Add the :doc:`Display <../../display/index>` product and you can even proxy all
+images via SSL, read about the
+:doc:`integration <../../display/api/integration>`.
 
 Enabling SSL
 ------------
@@ -40,19 +44,11 @@ The response will look like this:
 
 Images
 ------
-You'll notice in the above ``thumbnail_url`` has changed from::
+For proxying images over SSL you will need to have
+:doc:`Display <../../display/index>`. You can add it
+easily through `your dashboard <https://app.embed.ly>`_.
 
-  http://b.vimeocdn.com/ts/117/311/117311910_1280.jpg
-
-to::
-
-  https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>
-
-Secure utilizes the :doc:`Display <../../display/index>` product to serve the image
-content over HTTPS. Note that Embedly respects the cache time of the upstream
-image, so we will cache it locally for that period of time. This works for all
-image fields (thumbnail_url, open_graph.image, etc.) passed back from the
-:doc:`Embed API endpoints <../api/endpoints/index>`.
+|more| Read the :doc:`Display integration <../../display/api/integration>`.
 
 Video and Rich Media Embeds
 ---------------------------

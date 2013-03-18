@@ -305,7 +305,8 @@ JSON Requests
 
 401 Unauthorized
   * Invalid key or oauth_consumer_key provided: <key>, contact: support@embed.ly.
-  * The provided key does not support this endpoint: <key>, contact: support@embed.ly. More details: http://embed.ly/pricing#starter.
+  * The provided key does not support this endpoint: <key>, contact: support@embed.ly.
+  * URL is private or restricted.
 
 403 Forbidden
   * This service requires an embedly key parameter, contact: support@embed.ly or sign up: http://embed.ly/signup.
