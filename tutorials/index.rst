@@ -9,7 +9,7 @@ Here are some great ways to use :doc:`../embed/index`.
 
  * `Adding Inline Embeds </docs/tutorials/inline>`_  using JQuery.
  * Presenting embeds in `Modal Views </docs/tutorials/modal>`_.
- * Embedding videos and photos in your `Comments section <d/docs/tutorials/comments>`_.
+ * Embedding videos and photos in your `Comments section </docs/tutorials/comments>`_.
  * Using `Tooltips </docs/tutorials/tooltips>`_ to display information about links.
 
 Extract

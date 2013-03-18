@@ -7,7 +7,7 @@ resize, crop, fill, or secure proxy it on your site or application.
 API
 ---
 You can access the ``Display`` product through a few different
-endpoints.
+sizing and proxy endpoints.
 
 |more| Check out the :doc:`API overview <api/index>`
 
