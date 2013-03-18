@@ -141,7 +141,7 @@ Response Attributes
     a day, unless some external factor tells us to reevaluate the resource.
 
 ``safe``
-        See :doc:`../../../features/safe`
+   See :doc:`../../../features/safe`
 
 ``provider_name``
     The name of the resource provider.
@@ -170,8 +170,8 @@ Response Attributes
 
 ``oembed``
     The oEmbed response for a url. Contains title, description, embed code,
-    thumbnail images, and more.
-    More information on the :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`.
+    thumbnail images, and more. More information on the
+    :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`.
 
 ``published``
     A representation of the date which the article was published in milliseconds.
