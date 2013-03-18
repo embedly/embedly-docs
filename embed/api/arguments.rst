@@ -1,4 +1,4 @@
-.. _arguments:
+.. _embed-arguments:
 
 Embed - Query Arguments
 =======================

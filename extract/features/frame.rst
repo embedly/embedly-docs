@@ -1,4 +1,4 @@
-.. _frame:
+.. _extract_frame:
 
 XSS Protection
 ==============

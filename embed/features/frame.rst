@@ -1,4 +1,4 @@
-.. _frame:
+.. _embed_frame:
 
 XSS Protection
 ==============

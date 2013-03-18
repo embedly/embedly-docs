@@ -1,14 +1,14 @@
 Integration
 ===========
 
-``Display`` can be integrated with our :doc:`../../embed/index`
-and :doc:`../../extract/index` products to resize and proxy images for any
+``Display`` can be integrated with our :doc:`/embed/index`
+and :doc:`/extract/index` products to resize and proxy images for any
 URL. This integration also includes proxying all images over SSL.
 
 API Query Arguments
 -------------------
 It is possible to invoke the ``Display`` image proxy through both the
-:doc:`../../embed/api/endpoints/1/oembed` and :doc:`../../extract/api/endpoints/1/extract`
+:doc:`/embed/api/endpoints/1/oembed` and :doc:`/extract/api/endpoints/1/extract`
 endpoints. These arguments allow you to apply a uniform ``image_width`` and
 ``image_height`` to every image that Embedly passes back through the API
 response. 
@@ -77,11 +77,11 @@ Arguments
   Defines what method Embedly will use to resize the image. Valid values are:
 
     ``resize``
-      :doc:`i.embed.ly resize <1/display/crop>`
+      :doc:`i.embed.ly resize <endpoints/1/crop>`
     ``crop``
-      :doc:`i.embed.ly crop <1/display/crop>`
+      :doc:`i.embed.ly crop <endpoints/1/crop>`
     ``fill``
-      :doc:`i.embed.ly fill <1/display/crop>`
+      :doc:`i.embed.ly fill <endpoints/1/crop>`
 
   The default value is ``resize``.
 

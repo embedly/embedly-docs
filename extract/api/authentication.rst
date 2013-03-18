@@ -7,8 +7,8 @@ like so::
     https://api.embed.ly/:version/:endpoint?key=:key&<additional query parameters>
 
 Choose ``:version`` and ``:endpoint`` depending on the part of Embedly's API
-that you want to access, e.g. ``endpoints/1/oembed`` for the
-:doc:`oEmbed endpoint </api/endpoints/1/oembed>`. Replace ``:key`` with the
+that you want to access, e.g. ``endpoints/1/extract`` for the
+:doc:`oEmbed endpoint <endpoints/1/extract>`. Replace ``:key`` with the
 unique API key shown in
 `your dashboard`_.
 

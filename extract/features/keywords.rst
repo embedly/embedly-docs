@@ -5,7 +5,7 @@ extracted from the article or blog text of a URL.
 This is different from the meta keywords defined by the page.
 Embedly uses its own ranking system to determine 
 which keywords are the most relevant. You can find this data in the
-:doc:`Objectify </api/endpoints/2/objectify>` endpoint.
+:doc:`Extract <../api/endpoints/1/extract>` endpoint.
 
 Example
 -------

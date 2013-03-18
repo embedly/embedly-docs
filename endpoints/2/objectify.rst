@@ -78,7 +78,7 @@ Response
     * An excerpt pulled programmaticly by Embedly
 
 ``oembed``
-    The oEmbed response for a url. More information on the :doc:`../1/oembed`.
+    The oEmbed response for a url. More information on the :doc:`/embed/api/endpoints/1/oembed`.
     
 ``meta``
     The meta attributes of the document. Possible attributes include:

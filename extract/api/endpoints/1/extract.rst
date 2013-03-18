@@ -34,130 +34,92 @@ Example response
 
 .. code-block:: json
 
-{
-  "provider_url": "http://blog.embed.ly",
-  "lead": null,
-  "language": "English",
-  "original_url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
-  "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
-  
-  "entities": [{"count": 4,
-  "name": "Aaron"}, {"count": 1,
-  "name": "Vinh"}, {"count": 1,
-  "name": "Reddit"}, {"count": 1,
-  "name": "Kyle Nichols"}, {"count": 1,
-  "name": "Kawan"}, {"count": 1,
-  "name": "Samuel"}, {"count": 1,
-  "name": "Thom Nichols"}, {"count": 1,
-  "name": "Tumblr"}, {"count": 1,
-  "name": "Giles"}, {"count": 1,
-  "name": "Andy"}, {"count": 1,
-  "name": "Gabe"}, {"count": 1,
-  "name": "Graham"}, {"count": 1,
-  "name": "Liz Neu"}, {"count": 1,
-  "name": "Ryan Laughlin"}],
+  {
+    "provider_url": "http://blog.embed.ly",
+    "lead": null,
+    "language": "English",
+    "original_url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
+    "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
 
-  "safe": true,
-  "provider_display": "blog.embed.ly",
-  "related": [],
+    "entities": [
+    {"count": 4, "name": "Aaron"},
+    {"count": 1, "name": "Vinh"},
+    {"count": 1, "name": "Reddit"},
+    {"count": 1, "name": "Kyle Nichols"},
+    {"count": 1, "name": "Kawan"}],
 
-  "keywords": [{"score": 31,
-  "name": "api"}, {"score": 28,
-  "name": "embed"}, {"score": 21,
-  "name": "aaron"}, {"score": 14,
-  "name": "best"}, {"score": 13,
-  "name": "nichols"}, {"score": 11,
-  "name": "solo"}, {"score": 11,
-  "name": "meet"}, {"score": 10,
-  "name": "kawan"}, {"score": 10,
-  "name": "thumbwar"}, {"score": 10,
-  "name": "friends"}],
+    "safe": true,
+    "provider_display": "blog.embed.ly",
+    "related": [],
 
-  "content": "<div>\n<strong>We provided our API for the event and some prizes
-  for best use of our API as a solo participant and as a group, we were pleased
-  with the outcome! </strong> <p><strong>Best use of our API:  </strong>
-  <strong>Cheer Me \u00dcp, a service which allows you to send a friendly
-  and uplifting message to someone having a tough time. They'll receive it with
-  cat gifs and all, embedded from sites like Tumblr and Reddit using the
-  Embedly API. </strong></p>\n<strong>Best Solo: Thom Nichols for
-  <a href=\"https://github.com/tomstrummer\">Xirq.us </a>, they used Embedly
-  to embed photos and media within curated tweets by the location they're
-  near to let you know in one convenient spot what exactly is going on in
-  an area. </strong> <strong>Best Design: Aaron and Aaron created Meet, a
-  dating app that won't allow you to talk to your match before meeting up
-  with them, it cuts to the chase by only providing the option to meet
-  your match. </strong> <strong>Best Team: Ryan Laughlin, Liz Neu, and
-  Kyle Nichols for <a href=\"http://thumbwar.me/\">Thumbwar </a>, which
-  allows users to sync up with a friend over mobile, tablet or laptop connection
-  to play a bundle of mini games with each other to pass the time or to unleash
-  that competitive side if only for a few seconds. </strong> <strong><br>
-  The bottom line is, we had a blast! The four of us, Art, Andy, Kawan
-  and myself enjoyed an engaging and often silly weekend with some new
-  friends and replenished our creativity tanks. Shout out to
-  <a href=\"https://github.com/GabeLoins\">Gabe </a>,
-  <a href=\"https://github.com/gilesvangruisen\">Giles </a>,
-  <a href=\"https://github.com/SDooman\">Samuel </a>,
-  <a href=\"https://github.com/gbc1230\">Graham </a>and
-  <a href=\"https://github.com/vtran008\">Vinh</a> 
-  </strong><strong>of Cheer Me \u00dcp </strong><strong>and
-  <a href=\"https://github.com/LtCmdDudefellah\">Aaron </a>and
-  <a href=\"https://github.com/aesnyder\">Aaron </a>for Meet.
-  We're looking forward to seeing the real thing and will
-  definitely be sending some pleasant messages to some
-  unsuspecting mopes.
-  <img src=\"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-
-  SxnRd3sFn-XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nh
-  udlkwsZp7-CNCqihX1zalDbQ\"></strong> <p> </p>\n</div>",
-  "favicon_url": "http://blog.embed.ly/images/favicon.png",
-  "authors": [{"url": "http://posterous.com/users/iHySgjJhRuY0q",
-  "name": "Nina Stepanov"}],
+    "keywords": [
+    {"score": 31, "name": "api"},
+    {"score": 28, "name": "embed"},
+    {"score": 21, "name": "aaron"},
+    {"score": 14, "name": "best"},
+    {"score": 10, "name": "thumbwar"},
+    {"score": 10,"name": "friends"}],
 
+    "content": "<div>\n<strong>We provided our API for the event and some prizes
+    for best use of our API as a solo participant and as a group, we were pleased
+    with the outcome! </strong> <p><strong>Best use of our API:  </strong>
+    <strong>Cheer Me \u00dcp, a service which allows you to send a friendly
+    and uplifting message to someone having a tough time. They'll receive it with
+    cat gifs and all, embedded from sites like Tumblr and Reddit using the
+    Embedly API. </strong></p>\n<strong>Best Solo: Thom Nichols for
+    <a href=\"https://github.com/tomstrummer\">Xirq.us </a>, they used Embedly
+    to embed photos and media.....
+    We're looking forward to seeing the real thing and will
+    definitely be sending some pleasant messages to some
+    unsuspecting mopes.
+    <img src=\"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-
+    SxnRd3sFn-XNKy92XLXo-R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nh
+    udlkwsZp7-CNCqihX1zalDbQ\"></strong> <p> </p>\n</div>",
+    "favicon_url": "http://blog.embed.ly/images/favicon.png",
+    "authors": [{"url": "http://posterous.com/users/iHySgjJhRuY0q",
+    "name": "Nina Stepanov"}],
 
-  "oembed": {"provider_url": "http://blog.embed.ly",
-  "description": "We provided our API for the event and some prizes for
-  best use of our API as a solo participant and as a group, we were pleased
-  with the outcome! Best use of our API: Cheer Me \u00dcp, a service which
-  allows you to send a friendly and uplifting message to someone having a
-  tough time.",
-  "title": "DowncityJS Hackathon Recap - Embedly",
-  "author_name": "Nina Stepanov",
-  "thumbnail_width": 100,
-  "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
-  "thumbnail_url": "http://getfile8.posterous.com/getfile/files.posterous.com/
-  temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/
-  kawan.JPG.thumb100.jpg",
-  "entropy": 6.27898780616,
-  "author_url": "http://posterous.com/users/iHySgjJhRuY0q",
-  "provider_name": "Embed",
-  "type": "link",
-  "thumbnail_height": 100},
+    "oembed": {
+    "provider_url": "http://blog.embed.ly",
+    "description": "We provided our API for the event and some prizes for
+    best use of our API as a solo participant.......",
+    "title": "DowncityJS Hackathon Recap - Embedly",
+    "author_name": "Nina Stepanov",
+    "thumbnail_width": 100,
+    "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
+    "thumbnail_url": "http://getfile8.posterous.com/getfile/files.posterous.com/
+    temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/
+    kawan.JPG.thumb100.jpg",
+    "author_url": "http://posterous.com/users/iHySgjJhRuY0q",
+    "provider_name": "Embed",
+    "type": "link",
+    "thumbnail_height": 100},
 
-  "offset": null,
-  "published": 1360022400000,
+    "offset": null,
+    "published": 1360022400000,
 
-  "images": [ {
+    "images": [ {
     "caption":null,
     "url":"https://lh3.googleusercontent.com/MaaMmP0N4psfPqQOUqegiz3q-SxnRd3sFn-XNKy92XLXo-
     R6dZIcFv7PkvgleeCqynGsUj4s9GUTnL__W77OpjmaTcBgis98nhudlkwsZp7-CNCqihX1zalDbQ",
     "height":768,
     "width":1024,
     "colors":[
-      {
-        "color":[ 14, 16, 18],
-        "weight":0.311767578125
-      },
-      {
-        "color":[238, 232, 203],
-        "weight":0.131103515625
-      },
-    ],
+    {
+    "color":[ 14, 16, 18],
+    "weight":0.311767578125
+    },
+    {
+    "color":[238, 232, 203],
+    "weight":0.131103515625
+    }],
     "entropy":6.568857137759403,
     "size":228025 
-  }],
-  "provider_name": "Embed",
-  "cache_age": 86301,
-  "type": "html"
-}
+    }],
+    "provider_name": "Embed",
+    "cache_age": 86301,
+    "type": "html"
+  }
 
 Response Attributes
 ^^^^^^^^^^^^^^^^^^^ 
@@ -172,7 +134,7 @@ Response Attributes
     redirects.
 
 ``type``
-    See :ref:`response-types`.
+    See :ref:`extract-response-types`.
 
 ``cache_age``
     How long Embedly is going to cache the response for? Generally, this is for
@@ -195,17 +157,16 @@ Response Attributes
     The url of the favicon.
 
 ``authors``
-
-  A list of all the authors that are associated with this article. Each author
-  has a ``url`` and ``name``. Here is an example response::
+    A list of all the authors that are associated with this article. Each author
+    has a ``url`` and ``name``. Here is an example response::
 
     [{
       "name": "Sean Creeley"
       "url": "http://blog.embed.ly/screeley"
     }]
 
-  Most articles have only one author, but ``authors`` makes it flexible enough
-  to add more if necessary.
+    Most articles have only one author, but ``authors`` makes it flexible enough
+    to add more if necessary.
 
 ``oembed``
     The oEmbed response for a url. Contains title, description, embed code,
@@ -213,71 +174,66 @@ Response Attributes
     More information on the :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`.
 
 ``published``
+    A representation of the date which the article was published in milliseconds.
+    If an ``offset`` is present, then there was timezone data present, otherwise
+    we assume the Date is in UTC. Like all dates, this is a little confusing, so
+    we will explain. Say the Embedly parser came across the following HTML::
 
-  A representation of the date which the article was published in milliseconds.
-  If an ``offset`` is present, then there was timezone data present, otherwise
-  we assume the Date is in UTC. Like all dates, this is a little confusing, so
-  we will explain. Say the Embedly parser came across the following HTML::
+      <span class="pubdate">Aug 24, 2012</span>
 
-    <span class="pubdate">Aug 24, 2012</span>
+    Because there is no timezone information, Embedly will not return an
+    ``offset`` and the ``published`` attribute will be in UTC. We will return the
+    following response::
 
-  Because there is no timezone information, Embedly will not return an
-  ``offset`` and the ``published`` attribute will be in UTC. We will return the
-  following response::
-
-    "published": 1345766400000
+      "published": 1345766400000
 
 ``offset``
-
-  The UTC offset of the date in milliseconds. See the above section for more
-  information about ``offset`` and how to use it with the ``published`` time.
+    The UTC offset of the date in milliseconds. See the above section for more
+    information about ``offset`` and how to use it with the ``published`` time.
 
 ``description``
+    This is much like the ``excerpt`` of the article, but with a few changes that
+    make it better to use in an index view of the articles. The length of the
+    description is controlled by the ``words`` :doc:`query argument
+    <../../arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
+    breaks added. For example, imagine the following article ``content``::
 
-  This is much like the ``excerpt`` of the article, but with a few changes that
-  make it better to use in an index view of the articles. The length of the
-  description is controlled by the ``words`` :doc:`query argument
-  <../api/arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
-  breaks added. For example, imagine the following article ``content``::
+      <div>
+        <p>Text 1</p>
+        <p>Text 2</p>
+        <p>Text 3</p>
+      </div>
 
-    <div>
-      <p>Text 1</p>
-      <p>Text 2</p>
-      <p>Text 3</p>
-    </div>
+    The description for the above would be::
 
-  The description for the above would be::
-
-    Text 1
-    Text 2
-    Text 3
+      Text 1
+      Text 2
+      Text 3
 
 ``lead``
+    Often there is a lead paragraph that is a brief summary of the rest of the
+    article. Embedly tries to pull this lead paragraph out for a better reading
+    experience. It is always a ``p`` tag, i.e.::
 
-  Often there is a lead paragraph that is a brief summary of the rest of the
-  article. Embedly tries to pull this lead paragraph out for a better reading
-  experience. It is always a ``p`` tag, i.e.::
-
-    "lead": "<p>This is a summary of the below article</p>"
+      "lead": "<p>This is a summary of the below article</p>"
 
 ``content``
+    This is the html that we pulled from the URL. It's been sanitized, so it will
+    only contain the following tags::
 
-  This is the html that we pulled from the URL. It's been sanitized, so it will
-  only contain the following tags::
+      'a', 'abbr', 'acronym', 'b', 'big', 'blockquote', 'br', 'cite', 'code',
+      'del', 'dfn', 'em', 'i', 'ins', 'kbd', 'mark', 'pre', 'q', 's', 'samp',
+      'small', 'span', 'strike', 'strong', 'sub', 'sup', 'time', 'tt', 'u',
+      'var', 'p', 'div', 'a', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'ol', 'ul',
+      'li'
 
-    'a', 'abbr', 'acronym', 'b', 'big', 'blockquote', 'br', 'cite', 'code',
-    'del', 'dfn', 'em', 'i', 'ins', 'kbd', 'mark', 'pre', 'q', 's', 'samp',
-    'small', 'span', 'strike', 'strong', 'sub', 'sup', 'time', 'tt', 'u',
-    'var', 'p', 'div', 'a', 'h2', 'h3', 'h4', 'h5', 'h6', 'img', 'ol', 'ul',
-    'li'
+    All tag attributes have been removed as well. The only effective
+    attributes are:
 
-  All tag attributes have been removed as well. The only effective
-  attributes are:
+      * ``href`` on an ``a`` tag
+      * ``src`` on an ``img`` tag
 
-    * ``href`` on an ``a`` tag
-    * ``src`` on an ``img`` tag
-
-  More information on :doc:`Article extraction <../../../features/article>`.
+    More information on :doc:`Article extraction <../../../features/article>`.
 
 ``keywords``
     See :doc:`../../../features/keywords`
@@ -286,7 +242,7 @@ Response Attributes
     See :doc:`../../../features/entities`
 
 ``images``
-    See :ref:`images`
+    See :ref:`extract-images`
 
 
 Error Codes

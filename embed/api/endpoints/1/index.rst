@@ -6,5 +6,3 @@ Version 1
     :maxdepth: 2
 
     oembed
-    
-    service

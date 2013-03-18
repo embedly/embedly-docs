@@ -1,4 +1,4 @@
-.. _arguments:
+.. _extract-arguments:
 
 Extract - Query Arguments
 =========================

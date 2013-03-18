@@ -4,7 +4,7 @@ The ``related`` object provides a list of related stories, blogs, or articles fo
 a URL. Embedly aggregates related media based on a few different
 factors including similar topics, popularity, and time. 
 You can find this data in the
-:doc:`Objectify </api/endpoints/2/objectify>` endpoint.
+:doc:`Extract <../api/endpoints/1/extract>` endpoint.
 
 Example
 -------

@@ -64,7 +64,7 @@ Where can I find a demo of Embedly in action?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Try `Parrotfish plugin <http://labs.embed.ly>`_, which provides an enhanced
 Twitter experience under Google Chrome. It was built using our
-:doc:`Preview API </api/endpoints/1/preview>`.
+:doc:`Preview API <endpoints/1/preview>`.
 
 You should also check out what our `customers </customers>`_ have been
 building.
@@ -144,7 +144,7 @@ Troubleshooting
 Why isn't the API working for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Usually this is caused by forgetting to provide a key (see
-:doc:`Authentication </api/authentication>`), by exceeding your usage limit,
+:doc:`Authentication <authentication>`), by exceeding your usage limit,
 or by trying to use an API endpoint that your current plan doesn't qualify
 you for. To debug:
 

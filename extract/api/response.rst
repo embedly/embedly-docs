@@ -3,7 +3,7 @@ Extract - Response Objects
 A list of some Extract response objects.
 
 
-.. _response-types:
+.. _extract-response-types:
 
 Response Types
 --------------
@@ -48,15 +48,13 @@ for a given resource. They are as follows:
     normal. Instead, it will return an ``error`` type response that includes the
     ``url``, ``error_message`` and ``error_code``.
 
-.. _safebrowse:
+.. _extract-safebrowse:
 
 Safe Browse
 -----------
 See the :doc:`Safe Browse <../features/safe>` feature documentation.
 
-.. _microformats:
-
-.. _images:
+.. _extract-images:
 
 Images
 ------

@@ -15,9 +15,9 @@ The image proxying service allows:
 
 Endpoints
 ---------
-You can create the image URLs yourself via :ref:`i.embed.ly <i_embed_ly>`.
+You can create the image URLs yourself via ``i.embed.ly``.
 If you need different image sizes on different parts of your application,
-we suggest using :ref:`i.embed.ly <i_embed_ly>`.
+we suggest using ``i.embed.ly``.
 
 Display
 ^^^^^^^
