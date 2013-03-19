@@ -1,5 +1,5 @@
-Embedly for Bloggers
-====================
+Embedly for Authors
+===================
 
 .. raw:: html
 
