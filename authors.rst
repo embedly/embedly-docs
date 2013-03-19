@@ -1,5 +1,5 @@
-Embedly for Authors
-===================
+Embedly for Bloggers
+====================
 
 .. raw:: html
 
@@ -26,14 +26,6 @@ That rich HTML preview is called an **embed.** Embeds can contain any combinatio
 
 Embedly makes it easy to add embeds to your blog posts and web pages, giving
 your readers a more engaging experience.
-
-Embedly Anywhere
-----------------
-
-Our flagship tool for authors is `Embedly Anywhere
-<https://app.embed.ly/anywhere>`_. It's an interactive tool: Just plug in
-a web address and tell it where you want embeds to appear. You'll get a
-`<script>` tag that you can add to your site to enable the embeds.
 
 Blog/CMS Plugins
 ----------------
