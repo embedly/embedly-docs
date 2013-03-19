@@ -26,3 +26,5 @@ Display
 -------
 Walk through some examples of :doc:`../display/index` in action.
 
+ * Crop a set of Flickr images into an `awesome quilt </docs/tutorials/crop>`_.
+

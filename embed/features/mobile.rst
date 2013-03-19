@@ -1,10 +1,8 @@
-Mobile (Beta)
-=============
+Mobile
+======
 Embedly is now offering support for mobile apps, allowing you to embed rich
 previews of documents, videos, and audio clips on the most popular smartphones
 and tablets.
-
-This feature is in beta. We hope you'll try it out and send us your feedback.
 
 Endpoints
 ---------
