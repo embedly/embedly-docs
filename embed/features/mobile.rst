@@ -6,10 +6,11 @@ and tablets.
 
 Endpoints
 ---------
-All ``Embed`` :doc:`endpoints <../api/index>` are supported. Use them just as you
-would from a desktop device. However, they may behave slightly differently. For
-instance, if you don't set ``maxwidth`` or ``maxheight`` parameters, the
-defaults are 100% of the mobile device's screen size.
+All :doc:`Embed <../api/index>` endpoints are supported.
+Use them just as you would from a desktop device. 
+However, they may behave slightly differently. For
+instance, if you don't set ``maxwidth`` or ``maxheight`` 
+parameters, the defaults are 100% of the mobile device's screen size.
 
 Responses
 ---------
