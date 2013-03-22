@@ -20,3 +20,10 @@ so we will cache it locally for that period of time.
 
 
 NOTE: You will need to add your key and have SSL enabled to test.
+
+Integration
+-----------
+
+``Display`` SSL can be integrated with our ``Embed`` or ``Extract`` products.
+
+|more| Read about the :doc:`../api/integration`
