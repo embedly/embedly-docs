@@ -105,8 +105,27 @@ able to move back to your old plan.
 
 Why can't I just have both a plan and products?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mostly it would be a billing support nightmare
+Mostly, it would be a billing support nightmare
 to manage both on one account. The products were
 built to allow the services to scale and become a
-better offering. If you are perplexed
-and want to try it out, just create a new account.
+better offering. If you are perplexed and want to
+try it out, feel free to create a new account.
+
+Can I still use the beta features?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you were part of the beta for our 
+SSL, Image proxy, Colors features you will have 
+60 days to move up to our products. 
+Check out :doc:`features` to see which products you will need.
+
+What are the legacy endpoints?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Preview and Objectify endpoints are becoming legacy endpoints,
+they will still exist for current users. Read about them
+here :doc:`endpoints/index`.
+
+Will the legacy endpoints work after I upgrade to a product?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Yes, if you currently have access to Preview and/or Objectify endpoints
+and upgrade to the `Extract <http://embed.ly/extract>`_ product.
+
