@@ -72,98 +72,41 @@ building.
 API
 ---
 
-Why doesn't this URL work?
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-About 80% of the support tickets read "This URL _________ doesn't work, you
-guys need to fix it." There are a number of things that could have gone wrong
-when we process a URL. Sometimes it's our fault, sometimes there is nothing we
-can do about it. Here are some steps to follow:
-
-* Try the URL through our `response explorer </docs/explore>`_ .
-  If it works there, but not in your code, you might be doing something wrong.
-* If it's a YouTube video, make sure embedding has been enabled for that URL.
-  You can check by going to the video's page and clicking **Share**,
-  then **Embed**.
-* If it's a Facebook object, make sure that the object is public and that
-  you're using its public URL.
-* The page might have 404'd or timed out temporarily. Try your query again
-  with ``force=true`` to ensure that Embedly revisits the URL.
-
-If none of those things work, either file a ticket through your app dashboard
-or send an email to support@embed.ly.
-
-Should all photo embeds have a thumbnail?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-No, not all photo embeds provide a thumbnail.
-
-Where can I find example code for calling the Embedly API?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We have created some example apps using the Embedly API that can be used for
-instructive purposes. The source for these apps can always be found on
-`our github page <https://github.com/embedly>`_.  We usually accompany our
-example apps with a post on our `blog <http://blog.embed.ly>`_.
-
-Embedly libraries for various programming languages are provided on `our github
-page <https://github.com/embedly>`_ in the form of Embedly-$lang.  Each of the
-Embedly libraries contain example code snippets in their documentation.  The
-library documentation is either contained or referenced in the projects README
-file.  If you don't see your language of choice, then feel free to request a
-client library for your language via support@embed.ly.
+Most of our common API questions can be found in our
+`Support Forum <http://support.embed.ly>`_.
+If you don't see an answer, post a question.
 
 
-Should I use the url parameter, or the urls parameter?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Using ``urls`` will generally be faster than sending one request per URL.
-The downside is that the response will only be as fast as the
-slowest URL in the list.
+Upgrade to Products
+-------------------
 
-Do you support mobile devices?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Yes, we are currently in Beta with mobile support for iOS and Android devices.
+If you are currently on a Free, Starter, Basic, Core, or Plus plan
+you have the option to keep your plan or move to our new products.
 
-Learn more from our :doc:`Mobile </embed/features/mobile>` documentation.
+Why products?
+^^^^^^^^^^^^^
+We've realized that many users have specific use cases with Embedlys'
+services. This includes a range of embedding, 
+aggregating articles and stories, or building visually engaging applications.
+The products allow us to group each of these unique functions into easily
+understood, documented, and supported offerings.
 
-Does Embedly send back the original URL?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We send the original URL (as ``original_url``) from our
-`Preview </docs/endpoints/1/preview#response>`_
-and `Objectify </docs/endpoints/2/objectify#response>`_ endpoints.
-The `oEmbed </docs/embed/api/endpoints/1/oembed#response>`_  endpoint
-sends the canonical URL for link type.
+Can I keep my existing plan?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Yes, if you are currently on a Free, Starter, Basic, Core, or Plus plan
+you have the option to keep your plan. You will however not be able
+to move up or down to a different plan.
 
-Does Embedly have a whitelist?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Yes. There are two ways to retrieve our provider whitelist:
+What happens when I add a new product?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding a new product will remove your existing plan and adjust
+your account to the product usage and pricing offered. You will not be
+able to move back to your old plan.
 
-* Take a look at the `Regular Expression Generator </tools/generator>`_ page.
-* Make a request to our `Services Endpoint <http://api.embed.ly/1/services>`_.
-
-Troubleshooting
----------------
-
-Why isn't the API working for me?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Usually this is caused by forgetting to provide a key (see
-:doc:`Authentication <authentication>`), by exceeding your usage limit,
-or by trying to use an API endpoint that your current plan doesn't qualify
-you for. To debug:
-
-* Make sure you have `signed up </pricing#plans>`_ for a key.
-* Ensure the URL you are testing is public.
-* Check that your `plan </pricing#plans>`_ enables the endpoint you're using.
-* Check the usage bucket on `your dashboard <https://app.embed.ly>`_.
-
-This description is bad
-^^^^^^^^^^^^^^^^^^^^^^^
-Embedly attempts to pick the best description from the page or header
-tags, but that's harder for some pages than for others. We're always working
-to improve our algorithms.
-
-Why isn't my key working?
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Your key is activated as soon as you sign up. Some things to check:
-
-* Did you set referrer or IP blocking? Visit "Manage your Referrers/IPs"
-  from `your dashboard <https://app.embed.ly>`_ .
-* Did you exceed your usage limit? Check the usage bucket on
-  `your dashboard <https://app.embed.ly>`_.
+Why can't I just have both a plan and products?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mostly it would be a billing support nightmare
+to manage both on one account. The products were
+built to allow the services to scale and become a
+better offering. If you are perplexed
+and want to try it out, just create a new account.
