@@ -10,10 +10,11 @@ General
 
 What is Embedly?
 ^^^^^^^^^^^^^^^^
-Embedly is a solution that automatically converts posted links into
-embedded media on the fly. With its set of APIs, tools, and libraries,
-you can create unique visual experiences by embedding videos,
-images, rich media, RSS entries, and article previews.
+Embedly is a set of front-end tools that help web and app developers
+create better user experiences. We believe the best tools are simple,
+easy to use, and perfectly suited to their task. You’ll find that
+embodied in Embed, Extract, and Display—tools that provide ultra-fast
+ways to present richer content more effectively.
 
 For more information, see our introductions
 :doc:`for authors </authors>` or
@@ -21,9 +22,9 @@ For more information, see our introductions
 
 Why Embedly?
 ^^^^^^^^^^^^
-Because it's the easiest way to embed content. In less then 10
-minutes, you can embed content from hundreds of providers and generate rich
-previews for any URL on the web.
+Because it's the easiest way to present rich content and create user experiences.
+In less then 10 minutes, you can embed content from hundreds of providers and
+generate rich previews for any URL on the web.
 
 Here's a quote from James Patterson, the Platform Lead at Yammer:
 
@@ -35,7 +36,7 @@ Here's a quote from James Patterson, the Platform Lead at Yammer:
 
 See our `customers </customers>`_ page for more testimonials.
 
-We take care of every step of the embedding process: retrieving information
+We take care of every step of the process: retrieving information
 about a URL, checking it against malware registries, extracting content,
 making additional API calls to providers that support them, parsing RSS
 feeds, and performing validation. We save you time so that you can focus
