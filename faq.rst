@@ -116,8 +116,8 @@ Can I still use the beta features?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you were part of the beta for our 
 SSL, Image proxy, Colors features you will have 
-60 days to move up to our products. 
-Check out :doc:`features` to see which products you will need.
+until June 1, 2013 to move up to our products. 
+Check out :doc:`/features/index` to see which products you will need.
 
 What are the legacy endpoints?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
