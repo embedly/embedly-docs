@@ -86,7 +86,7 @@ you have the option to keep your plan or move to our new products.
 
 Why products?
 ^^^^^^^^^^^^^
-We've realized that many users have specific use cases with Embedlys'
+We've realized that many users have specific use cases with Embedly's
 services. This includes a range of embedding, 
 aggregating articles and stories, or building visually engaging applications.
 The products allow us to group each of these unique functions into easily
