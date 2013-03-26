@@ -95,8 +95,9 @@ understood, documented, and supported offerings.
 Can I keep my existing plan?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Yes, if you are currently on a Free, Starter, Basic, Core, or Plus plan
-you have the option to keep your plan. You will however not be able
-to move up or down to a different plan.
+you have the option to keep your plan. There will no changes to the
+pricing or usage. You will however not be able to move up or down to a
+different plan.
 
 What happens when I add a new product?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
