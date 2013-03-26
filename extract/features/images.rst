@@ -1,11 +1,11 @@
 Images and Dominant Colors
 ==========================
 
-The ``images`` object contains a list of, at most, 
-5 images that Embedly found while processing the URL.
-Along with the list of images we pull various
-pieces of information about each image including dimensions, 
-dominant colors, entropy, captions, and size.
+The ``Extract`` response contains the ``images`` object 
+which is a list of, at most, 5 images that Embedly found
+while processing the URL. Along with the list of images we
+pull various pieces of information about each image including
+dimensions, dominant colors, entropy, captions, and size.
 
 Image Dimensions
 ^^^^^^^^^^^^^^^^
