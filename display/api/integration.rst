@@ -77,11 +77,11 @@ Arguments
   Defines what method Embedly will use to resize the image. Valid values are:
 
     ``resize``
-      :doc:`i.embed.ly resize <endpoints/1/crop>`
+      :doc:`i.embed.ly resize <endpoints/1/display/crop>`
     ``crop``
-      :doc:`i.embed.ly crop <endpoints/1/crop>`
+      :doc:`i.embed.ly crop <endpoints/1/display/crop>`
     ``fill``
-      :doc:`i.embed.ly fill <endpoints/1/crop>`
+      :doc:`i.embed.ly fill <endpoints/1/display/fill>`
 
   The default value is ``resize``.
 
