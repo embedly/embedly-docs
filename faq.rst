@@ -122,11 +122,11 @@ Check out :doc:`/features/index` to see which products you will need.
 What are the legacy endpoints?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Preview and Objectify endpoints are becoming legacy endpoints,
-they will still exist for current users. Read about them
-here :doc:`endpoints/index`.
+they will still exist for users with Starter, Basic, Core, or Plus plans.
+Read more about the :doc:`endpoints/index`.
 
 Will the legacy endpoints work after I upgrade to a product?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Yes, if you currently have access to Preview and/or Objectify endpoints
-and upgrade to the `Extract <http://embed.ly/extract>`_ product.
+Yes, if you your old plan has access to the Preview and/or Objectify endpoints
+and you upgrade to the `Extract <http://embed.ly/extract>`_ product.
 
