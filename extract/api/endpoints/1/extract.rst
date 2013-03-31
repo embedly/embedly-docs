@@ -60,6 +60,10 @@ Example response
     {"score": 10, "name": "thumbwar"},
     {"score": 10,"name": "friends"}],
 
+    "title": "DowncityJS Hackathon Recap - Embedly",
+    "description": "We provided our API for the event and some prizes for
+    best use of our API as a solo participant.......",
+
     "content": "<div>\n<strong>We provided our API for the event and some prizes
     for best use of our API as a solo participant and as a group, we were pleased
     with the outcome! </strong> <p><strong>Best use of our API:  </strong>
@@ -79,21 +83,7 @@ Example response
     "authors": [{"url": "http://posterous.com/users/iHySgjJhRuY0q",
     "name": "Nina Stepanov"}],
 
-    "oembed": {
-    "provider_url": "http://blog.embed.ly",
-    "description": "We provided our API for the event and some prizes for
-    best use of our API as a solo participant.......",
-    "title": "DowncityJS Hackathon Recap - Embedly",
-    "author_name": "Nina Stepanov",
-    "thumbnail_width": 100,
-    "url": "http://blog.embed.ly/javascript-hackathon-downcityjs-betaspring",
-    "thumbnail_url": "http://getfile8.posterous.com/getfile/files.posterous.com/
-    temp-2013-02-05/EDhdHbCefGlloIfwtzggzsppinpxHGhtsIDugJFBbhEzzBzdjohzFDIJfAaH/
-    kawan.JPG.thumb100.jpg",
-    "author_url": "http://posterous.com/users/iHySgjJhRuY0q",
-    "provider_name": "Embed",
-    "type": "link",
-    "thumbnail_height": 100},
+    "media": {},
 
     "offset": null,
     "published": 1360022400000,
@@ -114,7 +104,7 @@ Example response
     "weight":0.131103515625
     }],
     "entropy":6.568857137759403,
-    "size":228025 
+    "size":228025
     }],
     "provider_name": "Embed",
     "cache_age": 86301,
@@ -122,7 +112,7 @@ Example response
   }
 
 Response Attributes
-^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^
 
 ``original_url``
     The url that was passed into Embedly. This will be something like a bit.ly
@@ -156,6 +146,24 @@ Response Attributes
 ``favicon_url``
     The url of the favicon.
 
+``title``
+    The title of the resource. It's picked in the following order:
+
+    * The rss entry's title
+    * The oEmbed title
+    * The open graph title
+    * The ``meta`` title tag
+    * The ``title`` attribute in the ``head`` element
+
+``description``
+    The description of the resource. It's picked in the following order:
+
+    * The rss entry's summary
+    * The oEmbed description
+    * The open graph description
+    * The ``meta`` description tag
+    * An excerpt pulled programmaticly by Embedly
+
 ``authors``
     A list of all the authors that are associated with this article. Each author
     has a ``url`` and ``name``. Here is an example response::
@@ -168,10 +176,8 @@ Response Attributes
     Most articles have only one author, but ``authors`` makes it flexible enough
     to add more if necessary.
 
-``oembed``
-    The oEmbed response for a url. Contains title, description, embed code,
-    thumbnail images, and more. More information on the
-    :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`.
+``media``
+    See :ref:`media`
 
 ``published``
     A representation of the date which the article was published in milliseconds.
@@ -243,6 +249,78 @@ Response Attributes
 
 ``images``
     See :ref:`extract-images`
+
+
+.. _media:
+
+Media
+-----
+An object is the primary piece of media that is associated with a ``url``. It
+follows the general pattern of the
+:doc:`oEmbed Response </embed/api/endpoints/1/oembed>`, but with only a limited
+set of attributes.
+
+``type``
+    The resource type. Valid values, along with value-specific parameters, are
+    described below.
+
+
+The photo type
+^^^^^^^^^^^^^^
+This type is used for representing static photos. The following parameters are
+defined:
+
+``url``
+    The source URL of the image. Consumers should be able to insert this URL
+    into an``<img>``element. Only HTTP and HTTPS URLs are valid.
+
+``width``
+    The width in pixels of the image specified in the ``url`` parameter.
+
+``height``
+    The height in pixels of the image specified in the ``url`` parameter.
+
+
+The video type
+^^^^^^^^^^^^^^
+This type is used for representing playable videos. The following parameters
+are defined:
+
+``html``
+    The HTML required to embed a video player. The HTML should have no padding
+    or margins. Consumers may wish to load the HTML in an off-domain iframe to
+    avoid XSS vulnerabilities.
+
+``width``
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
+
+``height``
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
+
+
+The rich type
+^^^^^^^^^^^^^
+This type is used for rich HTML content that does not fall under one of the
+other categories. The following parameters are defined:
+
+``html`` (required)
+    The HTML required to display the resource. The HTML should have no padding
+    or margins. Consumers may wish to load the HTML in an off-domain iframe to
+    avoid XSS vulnerabilities. The markup should be valid XHTML 1.0 Basic.
+
+``width`` (required)
+    The width in pixels required to display the HTML. If not supplied
+    the HTML returned will expand horizontally to the size of its parent
+    container.
+
+``height`` (required)
+    The height in pixels required to display the HTML. If not supplied
+    the HTML returned will expand vertically to the size of its parent
+    container.
 
 
 Error Codes
