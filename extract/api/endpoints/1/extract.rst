@@ -168,10 +168,10 @@ Response Attributes
     A list of all the authors that are associated with this article. Each author
     has a ``url`` and ``name``. Here is an example response::
 
-    [{
-      "name": "Sean Creeley"
-      "url": "http://blog.embed.ly/screeley"
-    }]
+        [{
+          "name": "Sean Creeley"
+          "url": "http://blog.embed.ly/screeley"
+        }]
 
     Most articles have only one author, but ``authors`` makes it flexible enough
     to add more if necessary.
@@ -248,7 +248,7 @@ Response Attributes
     See :doc:`../../../features/entities`
 
 ``images``
-    See :ref:`extract-images`
+    See :ref:`Images and Dominant Colors <extract-images>`
 
 
 .. _media:

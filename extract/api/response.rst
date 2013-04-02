@@ -60,7 +60,7 @@ Images
 ------
 A list of, at most, 5 images that Embedly found while processing the URL.
 For a more detailed breakddown, read through the
-:doc:`Images <../features/images>` feature documentation.
+:doc:`Images and Dominant Colors <../features/images>` feature documentation.
 
 They are in the following format:
 

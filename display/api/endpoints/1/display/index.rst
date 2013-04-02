@@ -15,7 +15,7 @@ Arguments
 ---------
 
 ``key`` (required)
-    The :doc:`API key <../../authentication>` for your registered account. OAuth is
+    The :doc:`API key <../../../authentication>` for your registered account. OAuth is
     not currently supported.
 
 ``url`` (required)
