@@ -169,3 +169,21 @@ An in-depth view of all the `oEmbed` API query arguments:
 
 .. _pass: http://api.embed.ly/1/oembed?maxwidth=500&url=http%3A//vimeo.com/18150336
 .. _video: http://api.embed.ly/1/oembed?url=http%3A//vimeo.com/18150336
+
+``frame`` (optional)
+    ``frame`` will wrap all embeds in an iFrame. This feature helps prevent XSS attacks
+    and can also be used with the ``secure`` argument for SSL embeds. You can enable
+    this by adding ``frame=true``. 
+
+    Read more about :doc:`SSL <../features/ssl>` and
+    :doc:`XSS <../features/frame>` support.  Available with paid product.
+
+``secure`` (optional)
+    ``secure`` allows you to serve embeds with a SSL connection. You can also
+    serve images over SSL with our :doc:`Display </display/index>` product.
+    You can enable this by adding ``secure=true``. Use in conjunction with
+    ``frame=true`` to wrap all embeds in a SSL hosted iFrame.
+
+    Read more about :doc:`SSL <../features/ssl>` support and the
+    :doc:`Display Integration </display/api/integration>`.
+    Available with paid product.
