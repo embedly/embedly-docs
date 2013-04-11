@@ -46,7 +46,7 @@ order. We'll just put them in the ``<head>``:
     <title>Page Title</title>
     ...
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
+    <script src="http://cdn.embed.ly/jquery.embedly-3.0.5.min.js"></script>
   </head>
 
 Call the Script
@@ -72,7 +72,7 @@ Here's a complete implementation:
     <title>Page Title</title>
     ...
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://scripts.embed.ly/jquery.embedly.min.js"></script>
+    <script src="http://cdn.embed.ly/jquery.embedly-3.0.5.min.js"></script>
     <script type="text/javascript">
       $('document').ready(function(){
         $('div.content').embedly({key: your_api_key});
@@ -94,8 +94,7 @@ a look at a few of them:
 .. code-block:: javascript
 
     $('div.content').embedly({
-      maxWidth: 450,
-      wmode: 'transparent',
+      query: { maxwidth: 450, wmode: 'transparent' },
       method: 'after',
       key: your_api_key
     });
@@ -105,7 +104,7 @@ By default, Embedly will replace the link with the embed. By changing the
 after the link. This way the URL is still visible and the embed shows up as
 well. Additionally, I set the wmode to "transparent." This is important for
 flash video in case you have any fancy JavaScript popups.  I also set the
-MaxWidth to 450 pixels.  This will shrink any larger embeds to fit within our
+``maxwidth`` to 450 pixels.  This will shrink any larger embeds to fit within our
 column but leave any smaller ones at their original size. This is particularly
 important for photo embeds. Try popping a flickr url in your page. Those photos
 are huge, and generally look strange unless you tweak them in to a manageable
@@ -115,7 +114,7 @@ Complete Example
 ----------------
 
 If you want to see the final result of this tutorial, copy the code from
-https://gist.github.com/2783280 into an HTML file and open it up in your 
+https://gist.github.com/5131044 into an HTML file and open it up in your 
 browser.
 
 Related Links
