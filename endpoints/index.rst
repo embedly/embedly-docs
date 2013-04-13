@@ -1,7 +1,7 @@
 Legacy Endpoints
 ================
 
-These endpoints are part of our Starter, Basic, Core, and Plus plans and will remain 
+These endpoints are part of our original plans: Starter, Basic, Core, and Plus. They will remain 
 entact and usable for users on these plans. As a user of these APIs you will still
 get new providers, support, and any core extraction algorithm updates. 
 There will however, be no additions to the response attributes or major version
