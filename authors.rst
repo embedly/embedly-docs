@@ -35,7 +35,6 @@ automatically generate embeds in your posts:
 
 * `Embedly Wordpress <http://wordpress.org/extend/plugins/embedly/>`_
 * `Drupal oEmbed <http://drupal.org/project/oembed>`_
-* `Joomla Verge <Embedly: http://extensions.joomla.org/extensions/social-web/social-channels-display/13556>`_
 
 For information on the capabilities of these plugins, see the
 :doc:`tools </libraries/tools>` page.
