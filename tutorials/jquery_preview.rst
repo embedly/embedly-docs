@@ -7,7 +7,7 @@ share links with rich, customized previews attached.
 Unlike the standard :doc:`Embedly jQuery <jquery>` plugin, which generates 
 previews in a preset format, jQuery Preview allows users to select a thumbnail 
 image and edit the title and description. Additionally, jQuery Preview takes
-advantage of the :doc:`Preview endpoint </endpoints/1/preview>`, which provides
+advantage of the :doc:`Extract endpoint </extract/api/endpoints/1/extract>`, which provides
 precise control over how embeds are displayed on the page.
 
 .. image:: ../images/jquery_preview.png
@@ -34,8 +34,8 @@ the ``head`` of your page:
 
     <head>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
-      <script src="http://scripts.embed.ly/p/0.1/jquery.preview.full.min.js" type="text/javascript"></script>
-      <link rel="stylesheet" href="http://scripts.embed.ly/p/0.1/css/preview.css" />
+      <script src="http://cdn.embed.ly/jquery.preview-0.3.2.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="http://cdn.embed.ly/jquery.preview-0.3.2.css" />
     </head>
 
 jquery.preview.full.js bundles `Underscore.js
@@ -50,8 +50,8 @@ like so:
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
       <script src="lib/mustache.js" type="text/javascript"></script>
       <script src="lib/underscore.js" type="text/javascript"></script>
-      <script src="http://scripts.embed.ly/p/0.1/jquery.preview.min.js" type="text/javascript"></script>
-      <link rel="stylesheet" href="http://scripts.embed.ly/p/0.1/css/preview.css" />
+      <script src="http://cdn.embed.ly/jquery.preview-0.3.2.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="http://cdn.embed.ly/jquery.preview-0.3.2.css" />
     </head>
 
 Next set up a simple form that allows a user to input link:
@@ -72,9 +72,7 @@ You then need to tell preview what field to listen to:
 
 And you are done setting up the front end solution for jQuery Preview!
 
-Note that the `Preview <http://embed.ly/docs/endpoints/1/preview>`_ endpoint is
-only available to Embedly developers with a Starter plan or above. You can sign
-up for a Starter plan at `embed.ly/pricing <http://embed.ly/pricing>`_.
+You can sign up or get more information for Extract at `embed.ly/extract <http://embed.ly/extract>`_.
 
 The full demo and documentation for jQuery Preview can be found at
 `github.com/embedly/jquery-preview
