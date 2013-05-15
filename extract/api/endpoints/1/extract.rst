@@ -255,10 +255,11 @@ Response Attributes
 
 Media
 -----
-An object is the primary piece of media that is associated with a ``url``. It
-follows the general pattern of the
+The media is primary type of content (video, photo, etc.) that is
+associated with a ``url``. It follows the general pattern of the
 :doc:`oEmbed Response </embed/api/endpoints/1/oembed>`, but with only a limited
-set of attributes.
+set of attributes. Note: It is optional and only available if we can classify it
+as such type.
 
 ``type``
     The resource type. Valid values, along with value-specific parameters, are
