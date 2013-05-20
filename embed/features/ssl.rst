@@ -19,7 +19,7 @@ Enabling SSL
 ------------
 Add the query parameters ``secure=true`` and ``frame=true`` to any API call::
 
-  http://api.embed.ly/1/oembed?secure=true&frame=trueurl=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
+  http://api.embed.ly/1/oembed?secure=true&frame=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
 
 The response will look like this:
 
