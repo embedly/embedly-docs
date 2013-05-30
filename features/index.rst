@@ -40,11 +40,13 @@ SSL
 ^^^
 
   SSL support can now be used with all our new
-  :doc:`/products`.
+  :doc:`/products`. Specifically, :doc:`Display </extract/index>` for images,
+  :doc:`Embed </embed/index>` for SSL on oEmbed video and rich types, and
+  :doc:`Extract </extract/index>` for video and rich media extracted from pages.
 
 
-Article Extaction
-^^^^^^^^^^^^^^^^^
+Article Extraction
+^^^^^^^^^^^^^^^^^^
 
   Our brand new ``Extract`` product will provide an API to parse article
   text, entities/topics, ranked keywords, and much more.
