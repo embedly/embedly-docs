@@ -13,7 +13,7 @@ Step 1: Anywhere Configuration
 ------------------------------
 
 Click **Get Started** from https://app.embed.ly/anywhere. (If you don't have 
-an Embedly account, you'll have to `sign up </pricing>`_ for one.) Put your
+an Embedly account, you'll have to `sign up </embed>`_ for one.) Put your
 tumblelog's address in the box on the left, then hit tab and wait until you
 see a preview of your site.
 
