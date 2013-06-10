@@ -33,7 +33,6 @@ or audio returned will be compatible with all the devices we support:
 * `Big Think  <http://bigthink.com>`_
 * `Socialcam  <http://socialcam.com>`_
 * `Dipdive  <http://dipdive.com>`_
-* `Jardenberg  <http://video.jardenberg.com>`_
 * `The White House  <http://whitehouse.gov>`_
 * `Funny or Die  <http://funnyordie.com>`_
 * `Vimeo  <http://vimeo.com>`_
@@ -49,6 +48,7 @@ or audio returned will be compatible with all the devices we support:
 * `CNN  <http://cnn.com>`_
 * `CNN Edition  <http://edition.cnn.com>`_
 * `CNN Money  <http://money.cnn.com>`_
+* `MTV  <http://mtv.com>`_
 
 Supported Streaming Devices
 ---------------------------
