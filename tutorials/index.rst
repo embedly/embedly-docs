@@ -4,7 +4,6 @@ Tutorials
 A few tutorials to get you familar with the :doc:`Embedly Products <../products>`.
 
 If you are just getting started, take a look `at this tutorial </docs/tutorials/start>`_.
-
 For our wordpress users, you can get started with `a few simple steps <http://embed.ly/wordpress>`_.
 
 Embed
