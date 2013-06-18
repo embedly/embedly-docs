@@ -27,7 +27,7 @@ expect.
 
 We then flatten the markup structure and get rid of common patterns like
 "Related Articles", "Print this Page" or "Share This". The output is added to
-the ``article.content`` attribute in the response.
+the ``content`` attribute in the :doc:`../api/endpoints/1/extract` response.
 
 Once we have confirmed that the extractor can pull an article we will try to
 find an Author and Published date. We use a number of microformats to
