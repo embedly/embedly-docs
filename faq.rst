@@ -131,3 +131,8 @@ Will the legacy endpoints work after I upgrade to a product?
 Yes, if you your old plan has access to the Preview and/or Objectify endpoints
 and you upgrade to the `Extract <http://embed.ly/extract>`_ product.
 
+Will my API key change after the upgrade to products?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Your API key will stay the same after the upgrade.
+You may regenerate your key at anytime through the Account tab.
+
