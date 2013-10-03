@@ -25,13 +25,19 @@ Query Parameters
 ``callback`` (optional)
     Returns ``(jsonp)`` response format. The callback is the name of the
     javascript function to execute.
-    
+
+``mobile`` (optional)
+    Format the regex to reflect ios or android support. accepted values are ``ios``
+     or ``android``. An example call would be
+    ``http://api.embed.ly/1/services/ios``
+    Note: if mobile is not specified, default will be generic oEmbed url scheme.
+
 
 Response
 --------
 List of provider entries:
 
-``type`` 
+``type``
     Type of embed. photo, video, product, audio, or rich.
 ``regex``
     A list of the regexs for the provider.
@@ -49,7 +55,7 @@ List of provider entries:
     Description of the provider.
 ``favicon``
     Favicon of the provider.
-    
+
 Response Format
 ---------------
 

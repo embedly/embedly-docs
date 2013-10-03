@@ -87,7 +87,7 @@ you have the option to keep your plan or move to our new products.
 Why products?
 ^^^^^^^^^^^^^
 We've realized that many users have specific use cases with Embedly's
-services. This includes a range of embedding, 
+services. This includes a range of embedding,
 aggregating articles and stories, or building visually engaging applications.
 The products allow us to group each of these unique functions into easily
 understood, documented, and supported offerings.
@@ -115,9 +115,9 @@ try it out, feel free to create a new account.
 
 Can I still use the beta features?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you were part of the beta for our 
-SSL, Image proxy, and Colors features you will have 
-until June 1, 2013 to move up to our products. 
+If you were part of the beta for our
+SSL, Image proxy, and Colors features you will have
+until June 1, 2013 to move up to our products.
 Check out :doc:`/features/index` to see which products you will need.
 
 What are the legacy endpoints?
@@ -130,4 +130,11 @@ Will the legacy endpoints work after I upgrade to a product?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Yes, if you your old plan has access to the Preview and/or Objectify endpoints
 and you upgrade to the `Extract <http://embed.ly/extract>`_ product.
+
+Where can I find contractors to integrate Embedly for me?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We offer several libraries to help integrate Embedly, so developers with experience
+in web development or mobile app development should be able to help you integrate Embedly.
+There is also `a listing of developers who can help <http://embed.ly/odesk>`_
+provided by odesk.
 
