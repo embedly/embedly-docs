@@ -131,10 +131,16 @@ Will the legacy endpoints work after I upgrade to a product?
 Yes, if you your old plan has access to the Preview and/or Objectify endpoints
 and you upgrade to the `Extract <http://embed.ly/extract>`_ product.
 
+Will my API key change after the upgrade to products?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Your API key will stay the same after the upgrade.
+You may regenerate your key at anytime through the Account tab.
+
 Where can I find contractors to integrate Embedly for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We offer several libraries to help integrate Embedly, so developers with experience
 in web development or mobile app development should be able to help you integrate Embedly.
 There is also `a listing of developers who can help <http://embed.ly/odesk>`_
 provided by odesk.
+
 

@@ -131,11 +131,13 @@ implementation depends on the provider and the browser.
 
 Secure Providers
 ^^^^^^^^^^^^^^^^
-There are only a few sites that serve embeds over HTTPS, they are as follows:
+There are a few sites that serve embeds over HTTPS, they are as follows:
 
   * `YouTube <http://youtube.com>`_
   * `Vimeo <http://vimeo.com>`_
   * `SoundCloud <http://soundcloud.com/>`_
+  * `Wistia  <http://wistia.com>`_
+  * `Slideshare  <http://slideshare.com>`_
 
 For these embeds you will not see any mixed content warnings, and they will
 show as embedded media in IE. We are actively working on adding more

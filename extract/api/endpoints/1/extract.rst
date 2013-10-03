@@ -155,15 +155,6 @@ Response Attributes
     * The ``meta`` title tag
     * The ``title`` attribute in the ``head`` element
 
-``description``
-    The description of the resource. It's picked in the following order:
-
-    * The rss entry's summary
-    * The oEmbed description
-    * The open graph description
-    * The ``meta`` description tag
-    * An excerpt pulled programmaticly by Embedly
-
 ``authors``
     A list of all the authors that are associated with this article. Each author
     has a ``url`` and ``name``. Here is an example response::
@@ -246,6 +237,9 @@ Response Attributes
 
 ``entities``
     See :doc:`../../../features/entities`
+
+``related``
+    See :doc:`../../../features/related`
 
 ``images``
     See :ref:`Images and Dominant Colors <extract-images>`

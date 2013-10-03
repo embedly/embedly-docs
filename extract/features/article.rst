@@ -27,7 +27,7 @@ expect.
 
 We then flatten the markup structure and get rid of common patterns like
 "Related Articles", "Print this Page" or "Share This". The output is added to
-the ``article.content`` attribute in the response.
+the ``content`` attribute in the :doc:`../api/endpoints/1/extract` response.
 
 Once we have confirmed that the extractor can pull an article we will try to
 find an Author and Published date. We use a number of microformats to
@@ -44,9 +44,9 @@ Examples
 --------
 Here are a few examples of what Embedly returns via the Article feature:
 
-* `Blog Post </docs/explore/article?url=http%3A%2F%2Frdegges.com%2Fmy-heroku-book-is-finished>`_
-* `News Article </docs/explore/article?url=http%3A%2F%2Fwww.nytimes.com%2F2012%2F09%2F11%2Feducation%2Fteacher-strike-begins-in-chicago-amid-signs-that-deal-isnt-close.html%3Fsmid%3Dtw-nytimes%26seid%3Dauto>`_
-* `Another News Article </docs/explore/article?url=http%3A%2F%2Fwww.economist.com%2Fnode%2F21562226>`_
+* `Blog Post </docs/explore/extract?url=http%3A%2F%2Frdegges.com%2Fmy-heroku-book-is-finished>`_
+* `News Article </docs/explore/extract?url=http%3A%2F%2Fwww.nytimes.com%2F2012%2F09%2F11%2Feducation%2Fteacher-strike-begins-in-chicago-amid-signs-that-deal-isnt-close.html%3Fsmid%3Dtw-nytimes%26seid%3Dauto>`_
+* `Another News Article </docs/explore/extract?url=http%3A%2F%2Fwww.economist.com%2Fnode%2F21562226>`_
 
 Response
 --------

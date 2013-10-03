@@ -36,7 +36,7 @@ Load JS Libraries
 
 We need to load jQuery (1.3.1+) and the Embedly jQuery plugin. The latest
 Embedly jQuery can be found at
-``http://scripts.embed.ly/jquery.embedly.min.js``. You can add these
+``http://cdn.embed.ly/jquery.embedly-3.1.1.min.js``. You can add these
 dependencies anywhere in your page, as long as you add them in the right
 order. We'll just put them in the ``<head>``:
 
@@ -46,7 +46,7 @@ order. We'll just put them in the ``<head>``:
     <title>Page Title</title>
     ...
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://cdn.embed.ly/jquery.embedly-3.0.5.min.js"></script>
+    <script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js"></script>
   </head>
 
 Call the Script
@@ -72,7 +72,7 @@ Here's a complete implementation:
     <title>Page Title</title>
     ...
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="http://cdn.embed.ly/jquery.embedly-3.0.5.min.js"></script>
+    <script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js"></script>
     <script type="text/javascript">
       $('document').ready(function(){
         $('div.content').embedly({key: your_api_key});
