@@ -138,9 +138,9 @@ You may regenerate your key at anytime through the Account tab.
 
 Where can I find contractors to integrate Embedly for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We offer several libraries to help integrate Embedly, so developers with experience
-in web development or mobile app development should be able to help you integrate Embedly.
-There is also `a listing of developers who can help <http://embed.ly/odesk>`_
-provided by odesk.
+We offer `several libraries <http://embed.ly/docs/libraries>`_ to help integrate Embedly,
+so developers with experience in web development or mobile app development should be able
+to help you integrate Embedly. There is also `a listing of developers who can help <http://embed.ly/odesk>`_,
+provided by oDesk.
 
 

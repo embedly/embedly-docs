@@ -19,7 +19,7 @@ Query Parameters
 ``lang`` (optional)
     Format the regex for specific langage. accepted values are ``php``,
     ``python``, ``ruby`` or ``javascript``. An example call would be
-    ``http://api.embed.ly/1/services/python``
+    ``http://api.embed.ly/1/services/python``.
     Note: if language not specified, default will be generic oEmbed url scheme.
 
 ``callback`` (optional)
@@ -27,10 +27,11 @@ Query Parameters
     javascript function to execute.
 
 ``mobile`` (optional)
-    Format the regex to reflect ios or android support. accepted values are ``ios``
-     or ``android``. An example call would be
-    ``http://api.embed.ly/1/services/ios``
-    Note: if mobile is not specified, default will be generic oEmbed url scheme.
+    Filter the returned providers to reflect ios or android support. Accepted values are ``ios`` or ``android``.
+    An example call would be ``http://api.embed.ly/1/services/ios``.
+    You can also use ``lang`` after specifying ``mobile`` to format the regex.
+    An example call would be ``http://api.embed.ly/1/services/ios/python``.
+    Note: If mobile is not specified, default will be all providers.
 
 
 Response
