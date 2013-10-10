@@ -171,7 +171,7 @@ Conclusion
 ----------
 While Embedly has a `Python library
 <https://github.com/embedly/embedly-python>`_ that abstracts a number of these
-issues away, Requests is a get way to get a basic understanding of how the API
+issues away, Requests is a great way to get a basic understanding of how the API
 works.
 
 .. container:: keywords
