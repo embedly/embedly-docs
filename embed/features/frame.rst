@@ -38,10 +38,8 @@ around the object, or it will be cut off, creating a terrible user experience.
 Because of this, we do not allow script tag embeds unless we know the exact
 size of the embed after it's rendered.
 
-For example, we will not render Twitter embeds when ``frame=true`` is added.
+For example, we will not render Github embeds when ``frame=true`` is added.
 
-* `With Frame </docs/explore/oembed?url=https%3A%2F%2Ftwitter
-  .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500&frame=true>`_
-* `Without Frame </docs/explore/oembed?url=https%3A%2F%2Ftwitter
-  .com%2FTechmeme%2Fstatus%2F243754453814108160&maxwidth=500>`_
+* `With Frame </docs/explore/oembed?url=https%3A%2F%2Fgist.github.com%2Fwhichlight%2F7169160&maxwidth=500&frame=true>`_
+* `Without Frame </docs/explore/oembed?url=https%3A%2F%2Fgist.github.com%2Fwhichlight%2F7169160&maxwidth=500>`_
 
