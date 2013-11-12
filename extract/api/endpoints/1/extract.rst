@@ -106,6 +106,12 @@ Example response
     "entropy":6.568857137759403,
     "size":228025
     }],
+    
+    "favicon_colors": [
+    {"color": [243, 245, 245], "weight": 0.68701171875},
+    {"color": [10, 169, 25], "weight": 0.223388671875},
+    {"color": [0, 100, 6], "weight": 0.089599609375}],
+    
     "provider_name": "Embed",
     "cache_age": 86301,
     "type": "html"
@@ -145,6 +151,10 @@ Response Attributes
 
 ``favicon_url``
     The url of the favicon.
+
+``favicon_colors``
+    List of dominant colors extracted from ``favicon_url``.
+    See :ref:`Dominant Colors <extract-images>`
 
 ``title``
     The title of the resource. It's picked in the following order:
