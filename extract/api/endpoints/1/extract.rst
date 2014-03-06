@@ -199,23 +199,12 @@ Response Attributes
     information about ``offset`` and how to use it with the ``published`` time.
 
 ``description``
-    This is much like the ``excerpt`` of the article, but with a few changes that
-    make it better to use in an index view of the articles. The length of the
-    description is controlled by the ``words`` :doc:`query argument
-    <../../arguments>`. Unlike the ``excerpt``, ``description`` has the correct line
-    breaks added. For example, imagine the following article ``content``::
-
-      <div>
-        <p>Text 1</p>
-        <p>Text 2</p>
-        <p>Text 3</p>
-      </div>
-
-    The description for the above would be::
-
-      Text 1
-      Text 2
-      Text 3
+    The description of the resource. It's picked in the following order:
+    
+    * The oEmbed description
+    * The open graph description
+    * The ``meta`` description tag
+    * An excerpt pulled programmaticly by Embedly
 
 ``lead``
     Often there is a lead paragraph that is a brief summary of the rest of the
