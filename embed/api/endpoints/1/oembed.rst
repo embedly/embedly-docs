@@ -21,7 +21,7 @@ on what the oEmbed API returns. Try these:
 
 * `YFrog </docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
 * `Embedly blog </docs/explore/oembed?url=http://blog.embed.ly/31814817>`_
-* `SoundCloud </docs/explore/oembed?url=http://soundcloud.com/mrenti/merenti-la-karambaa>`_
+* `SoundCloud </docs/explore/oembed?url=http://soundcloud.com/whichlight/how-to-pronounce-my-name>`_
 * `YouTube (bitly short link) </docs/explore/oembed?url=http://bit.ly/cXVifg>`_
 
 Arguments
