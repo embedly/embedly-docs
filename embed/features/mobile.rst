@@ -7,15 +7,7 @@ and tablets.
 Endpoints
 ---------
 All :doc:`Embed <../api/index>` endpoints are supported.
-Use them just as you would from a desktop device. 
-However, they may behave slightly differently. For
-instance, if you don't set ``maxwidth`` or ``maxheight`` 
-parameters, the defaults are 100% of the mobile device's screen size.
-
-Responses
----------
-We check the ``User-Agent`` identifier sent by the device to ensure
-compatibility. For example, we never send Flash to an iOS device.
+Use them just as you would from a desktop device.
 
 HTML5 Providers
 ---------------
