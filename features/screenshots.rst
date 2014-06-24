@@ -1,7 +1,7 @@
 Screenshots
 ===========
 
-This Product is coming soon. Contact us, support@embed.ly for early access.
+This Product is still in the works. Contact us, support@embed.ly if you're interested.
 
 This allows you to create a screenshot of any URL and use it to create
 previews, navigation grids or anything else you can think of. This document
