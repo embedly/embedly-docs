@@ -78,8 +78,7 @@ Response
     choose to ignore this value.
 
 ``thumbnail_url`` (optional)
-    A URL to a thumbnail image representing the resource. The thumbnail must
-    respect any maxwidth and maxheight parameters. If this parameter is present,
+    A URL to a thumbnail image representing the resource. If this parameter is present,
     thumbnail_width and thumbnail_height must also be present.
 
 ``thumbnail_width`` (optional)
