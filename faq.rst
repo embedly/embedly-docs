@@ -17,8 +17,8 @@ embodied in Embed, Extract, and Display—tools that provide ultra-fast
 ways to present richer content more effectively.
 
 For more information, see our introductions
-:doc:`for authors </authors>` or
-:doc:`for developers </tutorials/start>`.
+:doc:`for authors </products/index>` or
+:doc:`for developers </api/tutorials/start>`.
 
 Why Embedly?
 ^^^^^^^^^^^^
@@ -63,12 +63,7 @@ Fast. Embedly uses several techniques to accelerate the embedding process:
 
 Where can I find a demo of Embedly in action?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Try `Parrotfish plugin <http://labs.embed.ly>`_, which provides an enhanced
-Twitter experience under Google Chrome. It was built using our
-:doc:`Preview API <endpoints/1/preview>`.
-
-You should also check out what our `customers </customers>`_ have been
-building.
+You should check out what our `customers </customers>`_ have been building.
 
 API
 ---
@@ -113,18 +108,12 @@ built to allow the services to scale and become a
 better offering. If you are perplexed and want to
 try it out, feel free to create a new account.
 
-Can I still use the beta features?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you were part of the beta for our
-SSL, Image proxy, and Colors features you will have
-until June 1, 2013 to move up to our products.
-Check out :doc:`/features/index` to see which products you will need.
 
 What are the legacy endpoints?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Preview and Objectify endpoints are becoming legacy endpoints,
 they will still exist for users with Starter, Basic, Core, or Plus plans.
-Read more about the :doc:`endpoints/index`.
+Read more about the :doc:`api/legacy/endpoints/index`.
 
 Will the legacy endpoints work after I upgrade to a product?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
