@@ -11,6 +11,13 @@ For a more detailed intro into Analytics, check out the FAQ.
 |more| :doc:`Learn more <faq>`
 
 
+API
+---
+Learn how to retrieve your analytics data via the analytics API.
+
+|more| :doc:`Learn more <api>`
+
+
 Replace Existing Embeds
 -----------------------
 Replace allows you to easily convert your existing embeds into Embedly embeds
