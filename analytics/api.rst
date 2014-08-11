@@ -87,6 +87,23 @@ Additional parameters
 ``filter=<url>``
     For time series requests, only include data for the specified URL.
 
+
+Media analytics
+^^^^^^^^^^^^^^^
+The media analytics endpoint provides information on how embeds done via the Embedly API
+(Embed and Extract) are performing.
+
+The general form used to retrieve data is::
+
+        http://api.embed.ly/1/analytics/media/{urls,stats,sources,urldomains,sourcedomains}
+
+    ``urls``
+    ``stats``
+    ``sources``
+    ``urldomains``
+    ``sourcedomains``
+
+
 Anatomy of a response
 ---------------------
 Analytics data can sliced in two ways: either in a time series bucketed by hour
