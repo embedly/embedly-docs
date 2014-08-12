@@ -97,79 +97,11 @@ The general form used to retrieve data is::
 
         http://api.embed.ly/1/analytics/media/{urls,stats,sources,urldomains,sourcedomains}
 
-    ``urls``
-    ``stats``
-    ``sources``
-    ``urldomains``
-    ``sourcedomains``
+``urls``
+``stats``
+``sources``
+``urldomains``
+``sourcedomains``
 
 
-Anatomy of a response
----------------------
-Analytics data can sliced in two ways: either in a time series bucketed by hour
-or per URL. The former might be used to answer questions like, "How has this
-embed been performing over time?" while the latter might help with "What
-content on my domain is receiving the most hits?" The two formats share
-a lot of structure and are mostly made of objects containing various analytics
-data.
-
-The basic analytics object
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-``actions``
-    An object containing counts for various analytics events. These counts
-    are all non-unique, so one visitor clicking play five times counts as five
-    actions
-    
-    ``load``
-        The number of times the URL in question has been loaded
-    
-    ``play``
-        Number of video plays
-    ``hover``
-    
-    ``meta``
-    
-    ``progress``
-    
-    ``click``
-    
-    ``view``
-
-``unique``
-    This is similar to the ``actions`` object, but instead tracks actions by
-    unique user. Hence, one user clicking play five times counts as one play.
-``referrers``
-    A list of traffic sources to this content, sorted by count. Each entry in the
-    list is an object with a ``url`` and ``count`` field.
-``media``
-    An object describing the media for the requested URL.
-    
-    ``duration``
-        The length of the video or sound clip in seconds.
-    ``average_playtime``
-        How long the average user watched or listened in seconds.
-    ``engagement``
-        A dimensionless number used to quantify how "good" an particular piece
-        of media is performing. It takes into account number of views, average playtime
-        and the duration of the video. It is generally useful as a way to rank and compare
-        content.
-    ``watched``
-        A list of numbers to be interpreted as a histogram across the duration of the media.
-        Each bucket contains the number of times it has been watched or listened to.
-
-
-Time series analytics response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The time series response is a list of the above analytics objects with a ``time`` parameter added.
-
-``time``
-    The time slice this object is referring to. A string of the format 
-    YYYYMMDDHHmm in UTC time.
-
-
-URL-oriented analytics response
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The URL response is a list of analytics objects with a ``url`` parameter added. This URL
-is either the URL of the actual embed or the page containing the embed, depending on
-the request parameters.
 
