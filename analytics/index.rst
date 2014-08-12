@@ -12,13 +12,6 @@ code on your site. The install documentation will walk you through the process.
 |more| :doc:`Learn more <install>`
 
 
-API
----
-Learn how to retrieve your analytics data via the Analytics API.
-
-|more| :doc:`Learn more <api>`
-
-
 Analytics FAQ
 -------------
 For a more detailed intro into Analytics, check out the FAQ.
