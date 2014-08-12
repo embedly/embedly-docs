@@ -1,8 +1,16 @@
 Analytics
 =========
 Embedly Analytics measures the performance of your embeds. To get a better
-understand of the benefits of Analytics, checkout out the
+understanding of the benefits of Analytics, checkout out the
 `overview </analytics>`_.
+
+Install
+-------
+In order to get Analytics to work properly, you must install a little bit of
+code on your site. The install documentation will walk you through the process.
+
+|more| :doc:`Learn more <install>`
+
 
 Analytics FAQ
 -------------
@@ -11,16 +19,6 @@ For a more detailed intro into Analytics, check out the FAQ.
 |more| :doc:`Learn more <faq>`
 
 
-API
----
-Learn how to retrieve your analytics data via the analytics API.
-
-|more| :doc:`Learn more <api>`
 
 
-Replace Existing Embeds
------------------------
-Replace allows you to easily convert your existing embeds into Embedly embeds
-where we can help you measure attention and engagement.
 
-|more| :doc:`Learn more <replace>`

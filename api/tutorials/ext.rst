@@ -36,15 +36,15 @@ this before. Below are a few screenshots from various different services.
 
 Facebook
 
-.. image:: ../images/ext_facebook.png
+.. image:: /images/ext_facebook.png
 
 Yammer (Uses Embedly)
 
-.. image:: ../images/ext_yammer.png
+.. image:: /images/ext_yammer.png
 
 Google+
 
-.. image:: ../images/ext_googleplus.png
+.. image:: /images/ext_googleplus.png
 
 The interface for all three are fairly similar. Each has a textarea for the
 status and when a user enters a URL, they all recognize it and fetch the
@@ -56,7 +56,7 @@ all the metadata comes from. We will use the `10k Apart
 <http://10k.aneventapart.com/>`_ website as an example and this is a screenshot
 of the homepage at the time of writing.
 
-.. image:: ../images/ext_10kapart.png
+.. image:: /images/ext_10kapart.png
 
 Let's look at the metadata in the Facebook, Yammer, Google+ comparison from
 above. The title is the same for each, but the first image and description
@@ -205,7 +205,7 @@ provider_url
 
     .. code-block:: html
 
-        <a href="{{provider_url}}">{{provider_display}}</a>
+        <a href="\{\{provider_url\}\}">\{\{provider_display\}\}</a>
 
 object
 
@@ -630,7 +630,7 @@ the CRUD functions for a set of data:
     .. code-block:: javascript
 
         var Feed = {
-          createFeedItem : function (data){}},
+          createFeedItem : function (data){\}\},
           storeFeedItem: function(data){},
           populateFeed: function(){},
           submitFeedItem: function(e,t){},
@@ -662,18 +662,18 @@ of a feed item for us looks like so:
     .. code-block:: html
 
         <div class="item">
-          <a class="favicon" href="{{provider_url}}" title="{{provider_display}}">
-            <img src="{{favicon_url}}">
+          <a class="favicon" href="\{\{provider_url\}\}" title="\{\{provider_display\}\}">
+            <img src="\{\{favicon_url\}\}">
           </a>
-          <a class="title" href="{{url}}">{{title}}</a>
+          <a class="title" href="\{\{url\}\}">\{\{title\}\}</a>
           <div class="thumbnail">
             <a href="#">
-              <img src="{{thumbnail_url}}">
+              <img src="\{\{thumbnail_url\}\}">
             </a>
           </div>
           <div class="info">
-            <a class="provider" href="{{provider_url}}">{{provider_display}}</a>
-            <p>{{description}}</p>
+            <a class="provider" href="\{\{provider_url\}\}">\{\{provider_display\}\}</a>
+            <p>\{\{description\}\}</p>
             <a class="close" href="#">x</a>
           </div>
         </div>
@@ -725,13 +725,13 @@ like so:
     .. code-block:: html
 
         <a href="#" class="video">
-            <img src="{{thumbnail_url}}">
+            <img src="\{\{thumbnail_url\}\}">
             <span class="player_overlay"></span>
         </a>
 
 This creates an embed that looks like
 
-.. image:: ../images/ext_rdio_item.png
+.. image:: /images/ext_rdio_item.png
 
 We can then use Ext to bind the click event to the ``Feed.playVideo`` callback:
 
@@ -754,7 +754,7 @@ with the embed html that we saved in custom data attributes:
 
 Once a user clicks the thumbnail, the end result looks like this:
 
-.. image:: ../images/ext_rdio_expanded.png
+.. image:: /images/ext_rdio_expanded.png
 
 While we could add a few other features here, we have chosen to keep it simple.
 Hopefully you have a good understanding of how all the parts fit together and

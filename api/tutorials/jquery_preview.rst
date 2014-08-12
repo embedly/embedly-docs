@@ -7,10 +7,10 @@ share links with rich, customized previews attached.
 Unlike the standard :doc:`Embedly jQuery <jquery>` plugin, which generates 
 previews in a preset format, jQuery Preview allows users to select a thumbnail 
 image and edit the title and description. Additionally, jQuery Preview takes
-advantage of the :doc:`Extract endpoint </extract/api/endpoints/1/extract>`, which provides
+advantage of the :doc:`Extract endpoint </api/extract/endpoints/1/extract>`, which provides
 precise control over how embeds are displayed on the page.
 
-.. image:: ../images/jquery_preview.png
+.. image:: /images/jquery_preview.png
 
 Demos
 -----
