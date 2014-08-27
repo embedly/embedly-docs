@@ -148,9 +148,9 @@ Time series data has the following response format::
       ],
       "audience": {
         "platform": {
-          "mobile": 35.00,
-          "desktop": 60.00,
-          "other": 5.00
+          "mobile": .35,
+          "desktop": .60,
+          "other": .05
         }
       }
     }
@@ -196,7 +196,7 @@ site. For example: http://vimeo.com/18150336.
 Note that all URL arguments must be URL encoded, so an example URL would look
 like::
 
-  http://api.embed.ly/1/analytics/media/on/url/http%3A%2F%2Fvimeo.com%2F18150336/urls
+  http://api.embed.ly/1/analytics/media/of/url/http%3A%2F%2Fvimeo.com%2F18150336/urls
 
 .. _analytics-media-urls-on:
 
@@ -206,12 +206,12 @@ Retrieve all the embedded URLs that appeared on a particular URL on your
 domain. For example: http://example.com/path/to/video.
 ::
 
-  http://api.embed.ly/1/analytics/media/of/url/{url}/stats
+  http://api.embed.ly/1/analytics/media/on/url/{url}/stats
 
 Note that all URL arguments must be URL encoded, so an example URL would look
 like::
 
-  http://api.embed.ly/1/analytics/media/of/url/http%3A%2F%2Fexample.com%2Fpath%2Fto%2Fvideo/urls
+  http://api.embed.ly/1/analytics/media/on/url/http%3A%2F%2Fexample.com%2Fpath%2Fto%2Fvideo/urls
 
 
 Response
