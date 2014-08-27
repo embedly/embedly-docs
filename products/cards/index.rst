@@ -70,13 +70,24 @@ Platform.js has some pretty interesting features for customizing cards further.
 For example, if you do not want to use a custom class instead of
 ``embedly-card`` you can use the following code::
 
-  embedly('card', 'card-this');
+  embedly('card', '.card-this');
 
 If you would like to create a card from a single element you can do the
 following::
 
   var a = document.getElementById('#myCard');
   embedly('card', a);
+
+.. _cards-custom-types:
+
+Lastly if you would like to limit the cards to only embed certain types of
+media you can pass in a ``types`` argument::
+
+  embedly('card', {types: ['rich', 'video', 'image']});
+
+or with a custom selector as well::
+
+  embedly('card', {selector: 'a.embed', types: ['article', 'image']});
 
 If ``platform.js`` has not loaded yet, it will queue actions till we are ready
 to act on them.
