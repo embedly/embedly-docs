@@ -44,7 +44,7 @@ In additional to the query parameters above these parameters can also be used.
 ``realtime``
   For the ``of/url`` method you may also use the realtime argument as
   ``realtime=true`` this will return the last 90 minutes of data as a time
-  series by minute.
+  series by minute. When using ``realtime``, ``start`` and ``end`` are not needed.
 
 Methods
 """""""
