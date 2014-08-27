@@ -322,7 +322,7 @@ The unique object normalizes the data to only count unique user actions.
   Unique times an embed was shown.
 
 ``view``
-  Unique times an embed was in view of the user. I.e. the video was about the
+  Unique times an embed was in view of the user. I.e. the video was above the
   fold or the user scrolled down so the embed was on screen.
 
 ``hover``
@@ -339,7 +339,7 @@ The total object counts the all the actions that were taken on the media.
   Total number of times an embed was shown.
 
 ``view``
-  Total number times an embed was in view of the user. I.e. the video was about
+  Total number times an embed was in view of the user. I.e. the video was above
   the fold or the user scrolled down so the embed was on screen.
 
 ``hover``
