@@ -89,13 +89,13 @@ Retrieve the stats for a particular URL on your domain. For example,
 http://example.com/path/to/video.
 ::
 
-  http://api.embed.ly/1/analytics/media/of/url/{url}/stats
+  http://api.embed.ly/1/analytics/media/on/url/{url}/stats
 
 If there are multiple embeds on a page, it will combine the data into one time
 series. If you wish to only retrieve the data for one embed you can add a
 filter::
 
-  http://api.embed.ly/1/analytics/media/of/url/{url}/stats?filter={embed_url}
+  http://api.embed.ly/1/analytics/media/on/url/{url}/stats?filter={embed_url}
 
 Note that all URL arguments must be URL encoded, so an example URL would look
 like::
