@@ -260,9 +260,9 @@ Urls data has the following response format::
       ],
       "audience": {
         "platform": {
-          "mobile": 35.00,
-          "desktop": 60.00,
-          "other": 5.00
+          "mobile": .35,
+          "desktop": .6,
+          "other": .05
         }
       }
     }
