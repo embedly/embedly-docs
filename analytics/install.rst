@@ -40,7 +40,7 @@ We'll start with the problem:
 Replace allows you to easily convert your existing embeds to Embedly Embeds, so
 we can measure engagement and attention.
 
-How is Works
+How it Works
 ------------
 Replace looks for embeds from the following services:
 
