@@ -40,41 +40,42 @@ Features
 --------
 These are the features of the ``Embed`` product and its API endpoints.
 
-:doc:`Providers <features/providers>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`Providers </providers>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^
 Embedly supports over 250 video, photo and rich media providers for you to
 embed with. All you need to do is send us a link to any of the supported
 providers and we will return embed code or image url for you to add to your
 site or application.
 
-|more| :doc:`Learn more <features/providers>`
+|more| `View Providers </providers>`_
 
-:doc:`Mobile <features/mobile>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Many content providers have added support for mobile embeds, by using the
-``Embed`` product, our API will automatically switch in/out the correct
-embed code based on your mobile or web user agent.
+:doc:`Player.js <features/playerjs>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ever want to prgramatically control embedded media over multiple different
+providers? Well, with Embedly and Player.js you can!
 
-|more| :doc:`Learn more <features/mobile>`
-
-
-Security and Extra
-------------------
-These security features are available at an extra cost with the ``Embed`` product.
+|more| :doc:`Learn more <features/playerjs>`
 
 :doc:`Frame <features/frame>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For sites that require XSS protection, by adding a query argument to your API calls
-the ``Embed`` API endpoints will wrap all embeds in a hosted IFrame for any
-embed.
+Embedly wraps all our embeds in an iframe for a bunch of reasons. If you are
+interested in the technical details of way, then read on.
 
 |more| :doc:`Learn more <features/frame>`
+
+
+:doc:`Mobile <features/mobile>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Looking to Embed in iOS, Andriod or HTML5? Embedly provides some tools to make
+it easy and fast.
+
+|more| :doc:`Learn more <features/mobile>`
 
 :doc:`SSL <features/ssl>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 For sites that require SSL, by adding a query argument to your API calls
-the ``Embed`` API endpoints will send back an SSL hosted IFrame for any
-embed.
+the ``oEmbed`` API endpoints will send back an SSL hosted assests for you to
+use.
 
 |more| :doc:`Learn more <features/ssl>`
 

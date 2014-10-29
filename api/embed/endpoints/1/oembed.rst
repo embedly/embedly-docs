@@ -8,21 +8,24 @@ standard.
 
 Example call (1 URL)::
 
-    http://api.embed.ly/1/oembed?key=:key&url=:url&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
+    http://api.embed.ly/1/oembed?key=:key&url=:url
 
 Example call (multiple URLs)::
 
-    http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3&maxwidth=:maxwidth&maxheight=:maxheight&format=:format&callback=:callback
+    http://api.embed.ly/1/oembed?key=:key&urls=:url1,:url2,:url3
 
 Examples
 --------
 `Embedly Explore </docs/explore/oembed>`_ can be used to get a better handle
 on what the oEmbed API returns. Try these:
 
-* `YFrog </docs/explore/oembed?url=http://yfrog.com/ng41306327j>`_
-* `Embedly blog </docs/explore/oembed?url=http://blog.embed.ly/31814817>`_
-* `SoundCloud </docs/explore/oembed?url=http://soundcloud.com/whichlight/how-to-pronounce-my-name>`_
-* `YouTube (bitly short link) </docs/explore/oembed?url=http://bit.ly/cXVifg>`_
+* `Vimeo </docs/explore/oembed?url=http%3A%2F%2Fvimeo.com%2F18150336>`_
+* `YouTube
+  </docs/explore/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjofNR_WkoCE>`_
+* `Embedly blog
+  </docs/explore/oembed?url=http%3A%2F%2Fblog.embed.ly%2Fpost%2F89265229166%2F
+  what-twitter-isnt-telling-you-about-gifs>`_
+* `SoundCloud </docs/explore/oembed?url=http%3A%2F%2Fsoundcloud.com%2Fwhichlight%2Fhow-to-pronounce-my-name>`_
 
 Arguments
 ---------

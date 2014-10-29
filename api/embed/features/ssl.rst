@@ -15,9 +15,12 @@ Add the :doc:`Display </api/display/index>` product and you can even proxy all
 images via SSL, read about the
 :doc:`integration </api/display/integration>`.
 
+By default all Embedly's embeds work over HTTP and HTTPS, but if you need image
+assets to be over SSL as well, keep reading.
+
 Enabling SSL
 ------------
-Add the query parameters ``secure=true`` and ``frame=true`` to any API call::
+Add the query parameters ``secure=true`` to any API call::
 
   http://api.embed.ly/1/oembed?secure=true&frame=true&url=http%3A%2F%2Fvimeo.com%2F18150336&key=<key>&maxwidth=500
 
@@ -29,11 +32,11 @@ The response will look like this:
     "provider_url": "http://vimeo.com/",
     "description": "The Need 4 Speed: ....",
     "title": "Wingsuit Basejumping - The Need 4 Speed: The Art of Flight",
-    "html": "<iframe src=\"https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281\" width=\"500\" height=\"281\" border=\"0\" scrolling=\"no\" frameborder=\"0\"></iframe>",
+    "html": "<iframe class="embedly-embed" src="https://cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F18150336&src_secure=1&url=http%3A%2F%2Fvimeo.com%2F18150336&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F117311910_1280.jpg&key=<:key>&type=text%2Fhtml&schema=vimeo" width="500" height="281" scrolling="no" frameborder="0" allowfullscreen></iframe>",
     "author_name": "Phoenix Fly",
     "height": 281,
     "width": 500,
-    "thumbnail_url": "https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<key>",
+    "thumbnail_url": "https://i.embed.ly/1/display?url=http%3A%2F%2Fb.vimeocdn.com%2Fts%2F117%2F311%2F117311910_1280.jpg&key=<:key>",
     "thumbnail_width": 1280,
     "version": "1.0",
     "provider_name": "Vimeo",
@@ -45,27 +48,26 @@ The response will look like this:
 Images
 ------
 For proxying images over SSL you will need to have
-:doc:`Display </api/display/index>`. You can add it
-easily through `your dashboard <https://app.embed.ly>`_.
+:doc:`Display </api/display/index>`. You can add it easily through
+`your dashboard <https://app.embed.ly>`_.
 
 |more| Read the :doc:`Display integration </api/display/integration>`.
 
 Video and Rich Media Embeds
 ---------------------------
-Secure will also modify all video and rich embed fields (oembed.html,
-object.html, etc.) passed back from the :doc:`Embed API endpoints
-<../endpoints/1/oembed>`. Each embed will now be wrapped in an HTTPS iframe::
+Secure will also modify all video and rich embed fields passed back from the
+:doc:`Embed API endpoints <../endpoints/1/oembed>`. Each embed will now be
+wrapped in an HTTPS iframe::
 
-  <iframe src="https://media.embed.ly/1/frame?url=http%3A%2F%2Fvimeo.com%2F18150336&width=500&secure=true&key=<key>&height=281"
-  width="500" height="281" border="0" scrolling="no" frameborder="0"></iframe>
+  <iframe class="embedly-embed" src="https://cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F18150336&src_secure=1&url=http%3A%2F%2Fvimeo.com%2F18150336&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F117311910_1280.jpg&key=<:key>&type=text%2Fhtml&schema=vimeo" width="500" height="281" scrolling="no" frameborder="0" allowfullscreen></iframe>
 
-Secure utilizes Embedly's :doc:`XSS Protection <frame>` to accomplish this.
 There are a few things to note here when dealing with HTTPS embeds, as the
 implementation depends on the provider and the browser.
 
 Secure Providers
 ^^^^^^^^^^^^^^^^
-There are a few sites that serve embeds over HTTPS, they are as follows:
+There are a bunch of sites that now support SSL and here are a few that serve
+embeds over HTTPS, they are as follows:
 
   * `YouTube <http://youtube.com>`_
   * `Vimeo <http://vimeo.com>`_
@@ -79,7 +81,7 @@ secure providers.
 
 Insecure Providers
 ^^^^^^^^^^^^^^^^^^
-Every other `provider <http://embed.ly/providers>`_ falls in this category. In
+Other `providers </providers>`_ falls in this category. In
 order to have the best of both worlds, Embedly will still serve the insecure
 content within a secure iframe. This will cause the mild security warning that
 you see on most HTTPS sites that serve embeds, like Twitter.
@@ -99,31 +101,6 @@ seen it it looks like this:
   :class: exampleimg
 
 The user must click 'yes' before proceeding to the site. To get around this,
-Embedly will switch out the embed with a secure representation. It looks like
-this:
-
-.. image:: /images/ie_insecure_embed.png
-  :class: exampleimg
-
-When the user clicks that giant play button, they are taken to the embed's URL.
-If you would like to see what any one embed looks like in IE mode you can add
-``browser=Explorer`` to any media.embed.ly URL like so::
-
-  https://media.embed.ly/1/frame?browser=Explorer
-  &url=http%3A%2F%2Fwww.rdio.com%2Fartist%2FBon_Iver%2Falbum%2FBon_Iver%2F
-  &width=500&secure=true&key=internal&height=250
-
-Script Tags
-^^^^^^^^^^^
-Like :doc:`XSS Protection <frame>`, Secure will not embed content that is
-generated via script tags. It's impossible to determine the embed dimensions
-and ensure that everything is served over HTTPs.
-
-Examples
---------
-Here are a few API calls that return the SSL feature::
-
-  http://api.embed.ly/1/oembed?url=www.khanacademy.org%2Fmath%2Farithmetic%2Faddition-subtraction%2Fv%2Fbasic-addition&secure=true&key=<key>
-  http://api.embed.ly/1/oembed?url=http%3A%2F%2Fitunes.apple.com%2Fus%2Falbum%2Fdrop-it-like-its-hot-single%2Fid21807343&secure=true&key=<key>
-
-NOTE: You will need to add your key and have SSL enabled to test.
+Embedly will switch out the embed with a secure representation. It's just the
+thumbnail with a play button. When the user clicks that giant play button, they
+are taken to the embed's URL.
