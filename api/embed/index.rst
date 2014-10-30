@@ -33,7 +33,7 @@ Authentication
 --------------
 All endpoints offer a key based or oAuth for authentication.
 
-|more| Check out the :doc:`authentication`
+|more| Check out the :doc:`../authentication`
 
 
 Features
@@ -49,27 +49,27 @@ site or application.
 
 |more| `View Providers </providers>`_
 
-:doc:`Player.js <features/playerjs>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`Player.js <../features/playerjs>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Ever want to prgramatically control embedded media over multiple different
 providers? Well, with Embedly and Player.js you can!
 
-|more| :doc:`Learn more <features/playerjs>`
+|more| :doc:`Learn more <../features/playerjs>`
 
-:doc:`Frame <features/frame>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`Frame <../features/frame>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Embedly wraps all our embeds in an iframe for a bunch of reasons. If you are
 interested in the technical details of way, then read on.
 
-|more| :doc:`Learn more <features/frame>`
+|more| :doc:`Learn more <../features/frame>`
 
 
-:doc:`Mobile <features/mobile>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`Mobile <../features/mobile>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Looking to Embed in iOS, Andriod or HTML5? Embedly provides some tools to make
 it easy and fast.
 
-|more| :doc:`Learn more <features/mobile>`
+|more| :doc:`Learn more <../features/mobile>`
 
 :doc:`SSL <features/ssl>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^

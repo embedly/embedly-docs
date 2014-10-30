@@ -23,7 +23,7 @@ But your friends won't just see a link. They'll also see something like this:
 
 That rich HTML preview is called an **embed.** Embeds can contain any combination
 of text, images, audio, and video. With Embedly's API,
-you can add embeds to any web page or :doc:`mobile app <../embed/features/mobile>`.
+you can add embeds to any web page or :doc:`mobile app <../features/mobile>`.
 
 .. Embedly's API will handle any web address, but it yields the best results with queries to our |num_providers| `providers </providers>`_.
 
@@ -50,7 +50,7 @@ it in JSON format. For example, to get the embed for that Vimeo link, you would 
 (The ``/1/oembed`` part of the request tells Embedly that you want to use the
 :doc:`oEmbed endpoint <../embed/endpoints/1/oembed>`. For brevity, we've omitted the
 ``key`` that you would normally use for
-:doc:`authentication <../embed/authentication>`.)
+:doc:`authentication <../authentication>`.)
 
 This will return the following JSON response:
 

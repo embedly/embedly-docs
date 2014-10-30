@@ -1,29 +1,28 @@
 Authentication
 ==============
-
 To authenticate your requests, include ``key`` as a query parameter,
 like so::
 
     https://api.embed.ly/:version/:endpoint?key=:key&<additional query parameters>
 
-Choose ``:version`` and ``:endpoint`` depending on the part of Embedly's API
-that you want to access, e.g. ``endpoints/1/extract`` for the
-:doc:`oEmbed endpoint <endpoints/1/extract>`. Replace ``:key`` with the
-unique API key shown in
-`your dashboard`_.
+Choose ``:version`` and ``:endpoint`` depending on the part of the API
+that you want to access, e.g. ``1/oembed`` for the
+:doc:`oEmbed endpoint <embed/endpoints/1/oembed>` or ``1/extract`` for the
+:doc:`Extract endpoint <extract/endpoints/1/extract>`. Replace ``:key`` with
+the unique API key shown in `your dashboard`_.
 
-Notice the use of `https` instead of `http`, which is **strongly recommended**
-if you intend to keep your key a secret. Plain HTTP requests are faster, but
-they run the risk of revealing your key to the world.
+If you wish to use a ``.com`` instead of a ``.ly`` you may also use the
+following schema::
+
+  https://api.embedly.com/:version/:endpoint?key=:key&<additional query parameters>
 
 Restricting Access
 ------------------
 
 By default, Embedly allows requests from anywhere. For tighter security, you
-can use the **Manage your Referrers** section of
-`your dashboard`_ to create a whitelist of referrers
-and/or IP addresses that Embedly will accept requests from. All other requests
-will be rejected with a ``403 Forbidden`` response.
+can use the **Manage your Referrers** section of `your dashboard`_ to create a
+whitelist of referrers and/or IP addresses that Embedly will accept requests
+from. All other requests will be rejected with a ``403 Forbidden`` response.
 
 We use a simple "globbing" syntax for referrers, where ``*`` is a wildcard
 that will match any number of characters. To allow all traffic from
@@ -39,11 +38,7 @@ a cluster of servers with IP addresses in the range ``1.1.1.1`` to
 
 OAuth
 -----
-
 Two-legged OAuth is supported as an alternative to key-based authentication.
-However, the added complexity is unnecessary for most applications. As long as
-HTTPS is used for all requests, key-based authentication is just as secure as
-OAuth.
 
 Your account can only be configured to use either key-based authentication or
 OAuth, not both. To switch from one form of authentication to the other, visit

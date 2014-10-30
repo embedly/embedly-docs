@@ -26,13 +26,13 @@ There are many query arguments that allow you to customize the ``Extract`` API r
 This includes arguments to resize embed or even adjust the number words in a
 description field.
 
-|more| Check out the :doc:`arguments`
+|more| Check out the :doc:`Query Arguments <arguments>`
 
 Authentication
 --------------
 All endpoints offer a key based or oAuth for authentication.
 
-|more| Check out the :doc:`authentication`
+|more| Check out the :doc:`../authentication`
 
 
 Features
@@ -66,6 +66,7 @@ story, or article link sent through the API.
 
 |more| :doc:`Learn more <features/entities>`
 
+
 :doc:`Keywords <features/keywords>`
 """""""""""""""""""""""""""""""""""
 Provides a list of ranked keywords extracted from an article, blog,
@@ -84,18 +85,27 @@ to the story link you send to the API.
 |more| :doc:`Learn more <features/related>`
 
 
-Security and Extra
-------------------
+:doc:`Player.js <../features/playerjs>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ever want to prgramatically control embedded media over multiple different
+providers? Well, with Embedly and Player.js you can!
 
-These security features are available at an extra cost with the ``Extract`` product.
+|more| :doc:`Learn more <../features/playerjs>`
 
-:doc:`Frame <features/frame>`
-"""""""""""""""""""""""""""""
-For sites that require XSS protection, by adding a query argument to your API calls
-the ``Extract`` API endpoints will wrap all embeds in a hosted IFrame for any
-embed.
+:doc:`Frame <../features/frame>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Embedly wraps all our embeds in an iframe for a bunch of reasons. If you are
+interested in the technical details of way, then read on.
 
-|more| :doc:`Learn more <features/ssl>`
+|more| :doc:`Learn more <../features/frame>`
+
+
+:doc:`Mobile <../features/mobile>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Looking to Embed in iOS, Andriod or HTML5? Embedly provides some tools to make
+it easy and fast.
+
+|more| :doc:`Learn more <../features/mobile>`
 
 :doc:`SSL <features/ssl>`
 """""""""""""""""""""""""

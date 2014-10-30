@@ -66,8 +66,8 @@ implementation depends on the provider and the browser.
 
 Secure Providers
 ^^^^^^^^^^^^^^^^
-There are a bunch of sites that now support SSL and here are a few that serve
-embeds over HTTPS, they are as follows:
+There are a bunch of sites that now support SSL and here are just a few that
+serve embeds over HTTPS:
 
   * `YouTube <http://youtube.com>`_
   * `Vimeo <http://vimeo.com>`_
