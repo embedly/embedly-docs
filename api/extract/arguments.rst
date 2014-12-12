@@ -16,10 +16,10 @@ An in-depth view of all the `Extract` API query arguments:
 
     Should be sent as::
 
-        http%3A//embed.ly/%3Fembedly%2Cis_awesome%23docs
+        http%3A%2F%2Fembed.ly%2F%3Fembedly%2Cis_awesome%23docs
 
-    In Javascript this is as easy as using the `escape
-    <http://mzl.la/moz_escape>`_ function.
+    In Javascript this is as easy as using the `encodeURIComponent
+    <http://mzl.la/1jDiP65e>`_ function.
 
 ``urls``
     A comma separated list of urls for Embedly to process. Each URL must be
@@ -32,7 +32,7 @@ An in-depth view of all the `Extract` API query arguments:
 
     would be::
 
-        http%3A//google.com,http%3A//apple.com,http%3A//embed.ly
+        http%3A%2F%2Fgoogle.com,http%3A%2F%2Fapple.com,http%3A%2F%2Fembed.ly
 
     We can obtain this path in Javascript by using:
 
@@ -41,7 +41,7 @@ An in-depth view of all the `Extract` API query arguments:
          urls.map(escape).join(',')
 
     ``urls`` accepts a maximum of 10 urls at a time. Embedly processes these
-    urls in parallel, therefore, it's much quicker to use ``urls`` for batched
+    urls in parallel, therefore, it's quicker to use ``urls`` for batched
     processing.
 
 ``maxwidth`` (optional)
